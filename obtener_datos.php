@@ -1,72 +1,60 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Datos Facturación</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/estilos_datos_factura.css">
+    <!-- Javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script> 
+    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <?php
     $usuario    = "root";
-    $pass       = "";
-    $servidor   = "127.0.0.1";
+    $pass       = "@l**pbx++t3l3";
+    $servidor   = "10.9.2.21";
     $basededatos= "telefonia";
     $conexion = mysqli_connect( $servidor, $usuario, $pass );
     $db = mysqli_select_db( $conexion, $basededatos );
-
+                
     $carrier=$_POST['carrier'];
     $fe_inicio=$_POST['fecha_inicio'];
     $fe_termino=$_POST['fecha_termino'];
-    echo "$carrier";
+    //echo "$carrier";
+    //echo "$fe_inicio";
+    //echo "$fe_termino";
+
     switch ($carrier){
         case 'reporte_5':
-            $consulta ="SELECT distinct(d_carrier_prefix) FROM telefonia.'$carrier' WHERE fecha_registro>='$fe_inicio 00:00:00' AND fecha_registro<='$fe_termino 23:59:59' AND c_dialstatus in ('ANSWER')";
+            $consulta ="SELECT distinct d_carrier_prefix FROM reporte_5 WHERE u_start_time>='$fe_inicio 00:00:00' AND u_start_time<='$fe_termino 23:59:59' AND c_dialstatus in ('ANSWER') ORDER BY d_carrier_prefix";
+            
+            $consulta2 = "SELECT distinct d_campaign_id FROM reporte_5  WHERE u_start_time>='$fe_inicio 00:00:00' AND u_start_time<='$fe_termino 23:59:59' and c_dialstatus in ('ANSWER') ORDER BY d_campaign_id";
             $resultado = mysqli_query($conexion, $consulta);
-            echo "<table>
+            echo '<table>
                     <tr>
-                        <td>Prefijo</td>
-                    </tr>";
+                        <td class="font-weight-bold" >Prefijo</td>
+                    </tr>';
+
             while ($mostrar=mysqli_fetch_array($resultado)) {
-                echo "{$mostrar['d_carrier_prefix']}";
+                echo "<tr>";
+                echo "<td>".$mostrar['d_carrier_prefix']."</td>";
+                echo "</tr>";
+                echo "</table";
             }
                         
         break;
 
     }
-    /*if ($carrier = 'Directo') {
-        $select = "SELECT * FROM factura_directo WHERE fecha_registro>='$fe_inicio 00:00:00' AND fecha_registro<='$fe_termino 23:59:59' ORDER BY ip_server";
-        $resul = mysqli_query($conexion, $select);
-        $contador=1;
-        $ip_servidor="";
-        echo"   <table class=\"table-striped\">
-                <thead>
-                    <tr>
-                        <th>Servidor</th>
-                        <th>Prefijo</th>
-                        <th>Sucursal</th>
-                        <th>Campaña</th>
-                        <th>Grupo</th>
-                        <th>Eventos</th>
-                        <th>Celular</th>
-                        <th>Fijo</th>
-                        <th>Drop Movil</th>
-                        <th>Drop Fijo</th>
-                        <th>Buzon Movil</th>
-                        <th>Buzon Fijo</th>
-                        <th>Fecha Registro</th>
-                    </tr>
-                </thead>";
-        while( $row = mysqli_fetch_assoc($resul)) {
-        //$ip_servidor = $row['ip_server'];
-        //$activo = $row['active'];
-        echo "<tr>";
-        echo "
-            <td id='user_".$contador."'>".$row['ip_server']."</td>
-            <td>".$row['prefijo']."</td>
-            <td>".$row['sucursal']."</td>
-            <td>".$row['id_campania']."</td>
-            <td>".$row['grupo']."</td>
-            <td>".$row['eventos']."</td>
-            <td>".$row['celular']."</td>
-            <td>".$row['fijo']."</td>
-            <td>".$row['drop_movil']."</td>
-            <td>".$row['drop_fijo']."</td>
-            <td>".$row['buzon_movil']."</td>
-            <td>".$row['buzon_fijo']."</td>
-            <td>".$row['fecha_registro']."</td>";
-            echo"</tr>";
-        }
-    }*/
+    
 ?>
+</body>
+</html>
+
+
+
+
+

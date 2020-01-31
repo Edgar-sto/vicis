@@ -13,22 +13,7 @@
 </head>
 <body>
 	<header>
-		<?php
-	            $usuario      = "root";
-	            $pass         = "";  // en mi caso tengo contraseña pero en casa caso introducidla aquí.
-	            $servidor     = "127.0.0.1";
-	            $basededatos  = "telefonia";
-	            if ($conexion = mysqli_connect( $servidor, $usuario, $pass )) {
-	                //echo "<h1 class='title'>Conección servidor pruebas</h1>";
-	            } else {
-	                //echo "<h1 class='title'>Conección fallida</h1>";
-	            }
-	            if ($db = mysqli_select_db( $conexion, $basededatos )) {
-	                //echo "<h1 class='title'>Conección a BD de pruebas</h1>";
-	            } else {
-	                //echo "<h1 class='title'>Conección a BD fallida</h1>";
-	            }
-	    ?>
+		
 	</header>
 	<div class="container-fluid">
 		<div class="outset row">
