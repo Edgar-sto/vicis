@@ -3,6 +3,10 @@
     height: 912px;
 }
 
+.h3_titulos{
+    background: #FAFAFA;
+}
+
 .navbar .dropdown-toggle, .navbar .dropdown-menu a {
     cursor: pointer;
 }

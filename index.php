@@ -56,88 +56,109 @@
                         });
                     </script>
                     <!--Server5-->
-                    <div id="ocultar_ser_5" style="background:#000000;display:none;width:1000px;height:100px;">
-                        <object type="text/html" width="100%" height="900px" data="http://10.9.2.5/vicidial/welcome.php"></object>
+                    <div id="ocultar_ser_5" style="display:none;width:1000px;height:100px;">
+                        <h3 class="h3_titulos">10.9.2.5</h3>
+                        <object type="text/html" width="100%" height="871px" data="http://10.9.2.5/vicidial/welcome.php"></object>
                     </div> 
                     <!--Server6-->
-                    <div id="ocultar_ser_6" style="background:#000000;display:none;width:1000px;height:100px;">
+                    <div id="ocultar_ser_6" style="display:none;width:1000px;height:100px;">
+                        <h3 class="h3_titulos">10.9.2.6</h3>
                         <object type="text/html" width="100%" height="900px" data="http://10.9.2.6/vicidial/welcome.php"></object>  
                     </div>
                     <!--Server8-->
-                    <div id="ocultar_ser_8" style="background:#000000;display:none;width:1000px;height:100px;">
+                    <div id="ocultar_ser_8" style="display:none;width:1000px;height:100px;">
+                        <h3 class="h3_titulos">10.9.2.8</h3>
                         <object type="text/html" width="100%" height="900px" data="http://10.9.2.8/vicidial/welcome.php"></object>  
                     </div>
                     <!--Server9-->
-                    <div id="ocultar_ser_9" style="background:#000000;display:none;width:1000px;height:100px;">
+                    <div id="ocultar_ser_9" style="display:none;width:1000px;height:100px;">
+                        <h3 class="h3_titulos">10.9.2.9</h3>
                         <object type="text/html" width="100%" height="900px" data="http://10.9.2.9/vicidial/welcome.php"></object>  
                     </div>
                     <!--Server14-->
-                    <div id="ocultar_ser_14" style="background:#000000;display:none;width:1000px;height:100px;">
+                    <div id="ocultar_ser_14" style="display:none;width:1000px;height:100px;">
+                        <h3 class="h3_titulos">10.9.2.14</h3>
                         <object type="text/html" width="100%" height="900px" data="http://10.9.2.14/vicidial/welcome.php"></object>  
                     </div>
                     <!--Server16-->
-                    <div id="ocultar_ser_16" style="background:#000000;display:none;width:1000px;height:100px;">
+                    <div id="ocultar_ser_16" style="display:none;width:1000px;height:100px;">
+                        <h3 class="h3_titulos">10.9.2.16</h3>
                         <object type="text/html" width="100%" height="900px" data="http://10.9.2.16/vicidial/welcome.php"></object>  
                     </div>
                     <!--Server35-->
-                    <div id="ocultar_ser_35" style="background:#000000;display:none;width:1000px;height:100px;">
+                    <div id="ocultar_ser_35" style="display:none;width:1000px;height:100px;">
+                        <h3 class="h3_titulos">10.9.2.35</h3>
                         <object type="text/html" width="100%" height="900px" data="http://10.9.2.35/vicidial/welcome.php"></object>  
                     </div>
                     <!--Server38-->
-                    <div id="ocultar_ser_38" style="background:#000000;display:none;width:1000px;height:100px;">
+                    <div id="ocultar_ser_38" style="display:none;width:1000px;height:100px;">
+                        <h3 class="h3_titulos">10.9.2.38</h3>
                         <object type="text/html" width="100%" height="900px" data="http://10.9.2.38/vicidial/welcome.php"></object>  
                     </div>
                     <!--Server42-->
-                    <div id="ocultar_ser_42" style="background:#000000;display:none;width:1000px;height:100px;">
+                    <div id="ocultar_ser_42" style="display:none;width:1000px;height:100px;">
+                        <h3 class="h3_titulos">10.9.2.42</h3>
                         <object type="text/html" width="100%" height="900px" data="http://10.9.2.42/vicidial/welcome.php"></object>  
                     </div>
                     <!--Server43-->
-                    <div id="ocultar_ser_43" style="background:#000000;display:none;width:1000px;height:100px;">
+                    <div id="ocultar_ser_43" style="display:none;width:1000px;height:100px;">
+                        <h3 class="h3_titulos">10.9.2.43</h3>
                         <object type="text/html" width="100%" height="900px" data="http://10.9.2.43/vicidial/welcome.php"></object>  
                     </div>
                     <!--Server45-->
-                    <div id="ocultar_ser_45" style="background:#000000;display:none;width:1000px;height:100px;">
+                    <div id="ocultar_ser_45" style="display:none;width:1000px;height:100px;">
+                        <h3 class="h3_titulos">10.9.2.45</h3>
                         <object type="text/html" width="100%" height="900px" data="http://10.9.2.45/vicidial/welcome.php"></object>  
                     </div>
                     <!--Sucursales Externas-->
                     <!--Server22-->
-                    <div id="ocultar_ser_22" style="background:#000000;display:none;width:1000px;height:100px;">
+                    <div id="ocultar_ser_22" style="display:none;width:1000px;height:100px;">
+                        <h3 class="h3_titulos">10.9.2.22</h3>
                         <object type="text/html" width="100%" height="900px" data="http://10.9.2.22/vicidial/welcome.php"></object>  
                     </div>
                     <!--Server27-->
-                    <div id="ocultar_ser_27" style="background:#000000;display:none;width:1000px;height:100px;">
+                    <div id="ocultar_ser_27" style="display:none;width:1000px;height:100px;">
+                        <h3 class="h3_titulos">10.9.2.27</h3>
                         <object type="text/html" width="100%" height="900px" data="http://10.9.2.27/vicidial/welcome.php"></object>  
                     </div>
                     <!--Server28-->
-                    <div id="ocultar_ser_28" style="background:#000000;display:none;width:1000px;height:100px;">
+                    <div id="ocultar_ser_28" style="display:none;width:1000px;height:100px;">
+                        <h3 class="h3_titulos">10.9.2.28</h3>
                         <object type="text/html" width="100%" height="900px" data="http://10.9.2.28/vicidial/welcome.php"></object>  
                     </div>
                     <!--Server29-->
-                    <div id="ocultar_ser_29" style="background:#000000;display:none;width:1000px;height:100px;">
+                    <div id="ocultar_ser_29" style="display:none;width:1000px;height:100px;">
+                        <h3 class="h3_titulos">10.9.2.29</h3>
                         <object type="text/html" width="100%" height="900px" data="http://10.9.2.29/vicidial/welcome.php"></object>  
                     </div>
                     <!--Server36-->
-                    <div id="ocultar_ser_36" style="background:#000000;display:none;width:1000px;height:100px;">
+                    <div id="ocultar_ser_36" style="display:none;width:1000px;height:100px;">
+                        <h3 class="h3_titulos">10.9.2.36</h3>
                         <object type="text/html" width="100%" height="900px" data="http://10.9.2.36/vicidial/welcome.php"></object>  
                     </div>
                     <!--Server39-->
-                    <div id="ocultar_ser_39" style="background:#000000;display:none;width:1000px;height:100px;">
+                    <div id="ocultar_ser_39" style="display:none;width:1000px;height:100px;">
+                        <h3 class="h3_titulos">10.9.2.39</h3>
                         <object type="text/html" width="100%" height="900px" data="http://10.9.2.39/vicidial/welcome.php"></object>  
                     </div>
                     <!--Server41-->
-                    <div id="ocultar_ser_41" style="background:#000000;display:none;width:1000px;height:100px;">
+                    <div id="ocultar_ser_41" style="display:none;width:1000px;height:100px;">
+                        <h3 class="h3_titulos">10.9.2.41</h3>
                         <object type="text/html" width="100%" height="900px" data="http://10.9.2.41/vicidial/welcome.php"></object>  
                     </div>
                     <!--Server44-->
-                    <div id="ocultar_ser_44" style="background:#000000;display:none;width:1000px;height:100px;">
+                    <div id="ocultar_ser_44" style="display:none;width:1000px;height:100px;">
+                        <h3 class="h3_titulos">10.9.2.44</h3>
                         <object type="text/html" width="100%" height="900px" data="http://10.9.2.44/vicidial/welcome.php"></object>  
                     </div>
                     <!--Server46-->
-                    <div id="ocultar_ser_46" style="background:#000000;display:none;width:1000px;height:100px;">
+                    <div id="ocultar_ser_46" style="display:none;width:1000px;height:100px;">
+                        <h3 class="h3_titulos">10.9.2.46</h3>
                         <object type="text/html" width="100%" height="900px" data="http://10.9.2.46/vicidial/welcome.php"></object>  
                     </div>
                     <!--Server201-->
-                    <div id="ocultar_ser_201" style="background:#000000;display:none;width:1000px;height:100px;">
+                    <div id="ocultar_ser_201" style="display:none;width:1000px;height:100px;">
+                        <h3 class="h3_titulos">10.9.2.201</h3>
                         <object type="text/html" width="100%" height="900px" data="http://10.9.2.201/vicidial/welcome.php"></object>  
                     </div>
                 </div>
