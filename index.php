@@ -14,6 +14,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        #contenador {
+            background: red;
+            margin: auto;
+            width: 90%;
+            height: 200px;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -36,14 +44,16 @@
         </ul>
     </nav> 
     <br>
-    <section class="container">
-	<!--img class="sucursal-lazaro" src="img/suc lazaro.png" alt="sucursal lazaro"-->
+    <div id="contenedor">
+        
+    </div>
+    <!--section class="container">
         <div class="row">
             <div class="col-md-2">
                 <i class="flaticon-023-monitor"></i>
                 <input class="btn btn-info btn-lg validacion" type="button" value="Estación 001" onclick="window.open('estaciones/estacion001.html','Estación 001','width=300, height=400')" />
             </div>
         </div>
-    </section>
+    </section-->
 </body>
 </html>
