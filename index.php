@@ -14,22 +14,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-<<<<<<< HEAD
-    <script>
-        $(document).ready(function(){
-        $('[data-toggle="tooltip"]').tooltip();   
-        });
-    </script>
-=======
-    <style type="text/css">
-        #contenedor {
-            background: red;
-            margin: auto;
-            width: 90%;
-            height: 200px;
-        }
-    </style>
->>>>>>> c03782478dcf9b961723b20915c77cd54a4fe638
 </head>
 <body>
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -58,32 +42,36 @@
                 <div class="box" id="columna_1" >
                     <i class="material-icons">desktop_windows</i>
                     <br>
-                    <input class="btn btn-dark btn-lg" type="button" value="Estación 001" onclick="window.open('estaciones/estacion001.html','Estación 001','width=300, height=200')" />
+                    <input id="est_001" class="btn btn-dark btn-lg" type="button" value="Estación 001" onclick="window.open('estaciones/estacion001.php','Estación 001','width=300, height=200')" />
                 </div>
+
+
+
+
                 <div class="box" id="columna_2">
                     <i class="material-icons">desktop_windows</i>
                     <br>
-                    <input class="btn btn-dark btn-lg" type="button" value="Estación 002" onclick="window.open('estaciones/estacion002.html','Estación 002','width=300, height=400')" />
+                    <input class="btn btn-dark btn-lg" type="button" value="Estación 002" onclick="window.open('estaciones/estacion002.php','Estación 002','width=300, height=400')" />
                 </div>
                 <div class="box" id="columna_3">
                     <i class="material-icons">desktop_windows</i>
                     <br>
-                    <input class="btn btn-dark btn-lg" type="button" value="Estación 003" onclick="window.open('estaciones/estacion003.html','Estación 001','width=300, height=400')" />
+                    <input class="btn btn-dark btn-lg" type="button" value="Estación 003" onclick="window.open('estaciones/estacion003.php','Estación 001','width=300, height=400')" />
                 </div>
                 <div class="box" id="columna_4">
                     <i class="material-icons">desktop_windows</i>
                     <br>
-                    <input class="btn btn-dark btn-lg" type="button" value="Estación 004" onclick="window.open('estaciones/estacion004.html','Estación 004','width=300, height=400')" />
+                    <input class="btn btn-dark btn-lg" type="button" value="Estación 004" onclick="window.open('estaciones/estacion004.php','Estación 004','width=300, height=400')" />
                 </div>
                 <div class="box" id="columna_5">
                     <i class="material-icons">desktop_windows</i>
                     <br>
-                    <input class="btn btn-dark btn-lg" type="button" value="Estación 005" onclick="window.open('estaciones/estacion005.html','Estación 005','width=300, height=400')" />
+                    <input class="btn btn-dark btn-lg" type="button" value="Estación 005" onclick="window.open('estaciones/estacion005.php','Estación 005','width=300, height=400')" />
                 </div>
                 <div class="box" id="columna_6">
                     <i class="material-icons">desktop_windows</i>
                     <br>
-                    <input class="btn btn-dark btn-lg" type="button" value="Estación 006" onclick="window.open('estaciones/estacion006.html','Estación 006','width=300, height=400')" />
+                    <input class="btn btn-dark btn-lg" type="button" value="Estación 006" onclick="window.open('estaciones/estacion006.php','Estación 006','width=300, height=400')" />
                 </div>
             </div>
         </div>
