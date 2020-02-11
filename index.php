@@ -14,11 +14,22 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<<<<<<< HEAD
     <script>
         $(document).ready(function(){
         $('[data-toggle="tooltip"]').tooltip();   
         });
     </script>
+=======
+    <style type="text/css">
+        #contenedor {
+            background: red;
+            margin: auto;
+            width: 90%;
+            height: 200px;
+        }
+    </style>
+>>>>>>> c03782478dcf9b961723b20915c77cd54a4fe638
 </head>
 <body>
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
