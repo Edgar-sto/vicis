@@ -1,8 +1,33 @@
-.flaticon-023-monitor{
-	color: #FB8C00;
+#area_uno {
+    background: white;
+    margin: auto;
+    height: auto;
+    border-bottom-style: solid;
+	border-color: #B0BEC5;
 }
 
-.validacion {
-	background: #FB8C00;
+* {
+  box-sizing: border-box;
 }
 
+.box {
+  float: left;
+  width: 16.66%;
+  padding: 20px 20px 20px 20px;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.material-icons {
+	color: #353535;
+	font-size: 100px;
+	display: block;
+}
+
+#columna_1, #columna_2, #columna_3, #columna_4, #columna_5, #columna_6{
+	text-align: center;
+}
