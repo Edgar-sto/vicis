@@ -17,7 +17,7 @@
 		    $basededatos= "soporte";
 		    $conexion = mysqli_connect( $servidor, $usuario, $pass );
 		    $db = mysqli_select_db( $conexion, $basededatos );
-
+      
 		    $colsulta = "SELECT * FROM estaciones WHERE num_estacion = 'Estacion 001'";
 
 		    $resultado = mysqli_query($conexion, $consulta);
