@@ -18,16 +18,27 @@
 		    $conexion = mysqli_connect( $servidor, $usuario, $pass );
 		    $db = mysqli_select_db( $conexion, $basededatos );
             
-		    $colsulta = "SELECT * FROM estaciones WHERE num_estacion = 'Estacion 001'";
-            echo "$consulta";
-		    $resultado = mysqli_query($conexion, $consulta);
-            echo "$resultado";
-		    echo '<div class="text-center font-weight-bold">Estacion 001</div>';
-                echo "<br>";
-                echo "<br>";
-                echo "<br>";
-    	?>
-        
+		    $consulta = "SELECT * FROM estaciones WHERE num_estacion = 'Estacion 001'";
+            $resultado = mysqli_query($conexion, $consulta);
+            while ($fila = mysqli_fetch_array($resultado)) {
+                echo '<div class="container-fluid">';
+                    echo '<div class="text-center font-weight-bold">Estacion 001</div>';
+                    echo "<br>";
+                    echo "<br>";
+                    echo "<div class='text-center'>".$fila['num_estacion']."</div>";
+                    echo "<br>";
+                    echo "<div class='text-center'>".$fila['local_host']."</div>";
+                    echo "<br>";
+                    echo "<div class='text-center'>".$fila['campania']."</div>";
+                    echo "<br>";
+                    echo "<div class='text-center'>".$fila['teclado']."</div>";
+                    echo "<br>";
+                    echo "<div class='text-center'>".$fila['mouse']."</div>";
+                    echo "<br>";
+                    echo "<div class='text-center'>".$fila['diadema']."</div>";
+                echo "</div>";
+            }           
+    	?>       
     </div>
 </body>
 </html>
