@@ -25,6 +25,7 @@
                 echo "<br>";
                 echo "<br>";
                 echo "<br>";
+            echo "<p class='text-lg-center'>".['num_estacion']."</p>"//cada linea imprime un campo de la tabla
     	?>
         
     </div>
