@@ -42,7 +42,7 @@
                 <div class="box" id="columna_1" >
                     <i class="material-icons">desktop_windows</i>
                     <br>
-                    <input id="est_001" class="btn btn-dark btn-lg" type="button" value="Estación 001" onclick="window.open('estaciones/estacion001.php','Estación 001','width=300, height=500')" />
+                    <input id="est_001" class="btn btn-dark btn-lg" type="button" value="Estación 001" onclick="window.open('estaciones/estacion001.php','Estación 001','width=500, height=308')" />
                 </div>
 
                 <div class="box" id="columna_2">
