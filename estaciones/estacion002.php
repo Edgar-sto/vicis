@@ -18,7 +18,7 @@
         $basededatos= "soporte";
         $conexion = mysqli_connect( $servidor, $usuario, $pass );
         $db = mysqli_select_db( $conexion, $basededatos );
-        $consulta = "SELECT * FROM estaciones WHERE num_estacion = 'Estacion 001'";
+        $consulta = "SELECT * FROM estaciones WHERE num_estacion = 'Estacion 002'";
         $resultado = mysqli_query($conexion, $consulta);
         while ($fila = mysqli_fetch_array($resultado)) {
             echo '<div class="container-fluid">';

@@ -42,16 +42,13 @@
                 <div class="box" id="columna_1" >
                     <i class="material-icons">desktop_windows</i>
                     <br>
-                    <input id="est_001" class="btn btn-dark btn-lg" type="button" value="Estación 001" onclick="window.open('estaciones/estacion001.php','Estación 001','width=300, height=200')" />
+                    <input id="est_001" class="btn btn-dark btn-lg" type="button" value="Estación 001" onclick="window.open('estaciones/estacion001.php','Estación 001','width=300, height=500')" />
                 </div>
-
-
-
 
                 <div class="box" id="columna_2">
                     <i class="material-icons">desktop_windows</i>
                     <br>
-                    <input class="btn btn-dark btn-lg" type="button" value="Estación 002" onclick="window.open('estaciones/estacion002.php','Estación 002','width=300, height=400')" />
+                    <input class="btn btn-dark btn-lg" type="button" value="Estación 002" onclick="window.open('estaciones/estacion002.php','Estación 002','width=300, height=500')" />
                 </div>
                 <div class="box" id="columna_3">
                     <i class="material-icons">desktop_windows</i>
