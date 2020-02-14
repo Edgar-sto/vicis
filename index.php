@@ -14,6 +14,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script>
+        function ventanaNueva(documento,ancho,alto,nombreVentana){
+            window.open(documento, nombreVentana,'width=' + ancho + ', height=' + alto);
+        }
+    </script>
     <!--script>
         $(document).on('ready',function()
         {
@@ -77,7 +82,8 @@
                                 echo "<div class='box' id='columna_".$columna[$i]."'>";
                                     echo "<i class='material-icons'>desktop_windows</i>";
                                     echo "<br>";
-                                    echo "<input id='est_00".$columna[$i]."' class='btn btn-dark btn-lg' type='button' value='Estación 00".$columna[$i]."' onclick='window.open('estaciones/estacion001.php','Estación 00".$columna[$i]."','width=500, height=308')'/>";
+                                    echo "<input type='button' value='Abrir ventana' onclick='ventanaNueva('estacion00".$columna[$i].".html', 300, 400, 'ventana1')' />";
+                                    /*echo "<input id='est_00".$columna[$i]."' class='btn btn-dark btn-lg' type='button' value='Estación 00".$columna[$i]."' onclick='window.open('estaciones/estacion001.php','Estación 00".$columna[$i]."','width=500, height=308')'/>";*/
                                 echo "</div>";
                             }
 
