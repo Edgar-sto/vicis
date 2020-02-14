@@ -24,12 +24,11 @@
         $resultado = mysqli_query($conexion, $consulta);
         while ($fila = mysqli_fetch_array($resultado)) {
             echo '<table class="table table-dark">';
-                echo "<thead class='nom_campo'>";
-                    echo "<tr>";
-                        echo '<th id="titulo" scope="3 row">'.$fila['num_estacion'].'</th>';
-                    echo "</tr>";
-                echo "</thead";
                 echo "<tbody>";
+                    echo "<tr class='nom_campo'>";
+                            echo '<td id="titulo" scope="2 row">'.$fila['num_estacion'].'</td>';
+                    echo "</tr>";
+                
                     echo "<tr>";
                         echo "<td>Nombre de la estacion</td>";
                         echo '<td>'.$fila['local_host'].'</td>';
@@ -62,29 +61,26 @@
 
                     echo "<tr>";
                         echo "<td>Mouse</td>";
-                        echo "<td>Teclado</td>";
-                        echo "<td>Diadema</td>";
+                        //echo $fila['mouse'];
+                        echo "<td><i class='material-icons'>mouse</i></td>";   
                     echo "</tr>";
 
                     echo "<tr>";
-                        echo '<td>';
-                            //echo $fila['mouse'];
-                            echo "<i class='material-icons'>mouse</i>";
-                        echo '</td>';
-                        echo "<td>";
-                            //echo $fila['teclado'];
-                            echo "<i class='material-icons'>keyboard</i>";
-                        echo "</td>";
-                        echo "<td>";
-                            //echo $fila['diadema'];
-                            echo "<i class='material-icons'>headset_mic</i>";
-                        echo "</td>";
+                        echo "<td>Teclado</td>";
+                        //echo $fila['teclado'];
+                        echo "<td><i class='material-icons'>keyboard</i></td>";
                     echo "</tr>";
 
-                    /*echo "<tr>";
-                        echo "<td'>Comentario</td>";
-                        echo '<td">'.$fila['comentario']."</td>";
-                    echo "</tr>";*/
+                    echo "<tr>";
+                        echo "<td>Diadema</td>";
+                            //echo $fila['diadema'];
+                            echo "<td><i class='material-icons'>headset_mic</i></td>";
+                    echo "</tr>";
+
+                    echo "<tr>";
+                        echo "<td>Comentario</td>";
+                        echo '<td>'.$fila['comentario'].'</td>';
+                    echo "</tr>";
                 echo "</tbody>";
             echo "</table>";
         }           
