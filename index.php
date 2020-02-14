@@ -33,6 +33,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="http://127.0.0.1/vicis/nueva.php" target="_blank">Estaciones</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://127.0.0.1/vicis/correos.php" target="_blank">Correos</a>
+            </li>
         </ul>
     </nav> 
     <br>
