@@ -11,6 +11,11 @@
     <link rel="stylesheet" href="../css/estaciones.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+        function abrir(url) {
+            open(url,'','top=300,left=300,width=300,height=300') ;
+        }
+</script>
 </head>
 <body>
     <?php
@@ -23,13 +28,14 @@
         $consulta = "SELECT * FROM estaciones WHERE num_estacion = 'Estacion 001'";
         $resultado = mysqli_query($conexion, $consulta);
         while ($fila = mysqli_fetch_array($resultado)) {
-            echo '<table class="table table-dark">';
+            echo '<table class="table">';
                 echo "<tbody>";
                     echo "<tr class='nom_campo'>";
                             echo '<td id="titulo" scope="row">'.$fila['num_estacion'].'</td>';
                             echo "  <td>
                                         <a href='#'>Agregar</a>
-                                        <a href='#'>Ping</a>
+                                        <a href='ping.php'>Ping</a>
+                                        <a href='javascript:abrir('pagina.html')'>Enlace</a>
                                     </td>";
                     echo "</tr>";
                 
@@ -65,20 +71,32 @@
 
                     echo "<tr>";
                         echo "<td>Mouse</td>";
-                        //echo $fila['mouse'];
-                        echo "<td><i class='material-icons'>mouse</i></td>";   
+                        $color_mouse = $fila['mouse'];
+                        if ($color_mouse == 1) {
+                            echo "<td><i class='material-icons text-success'>mouse</i></td>";
+                        } else {
+                            echo "<td><i class='material-icons text-danger'>mouse</i></td>";
+                        }
                     echo "</tr>";
 
                     echo "<tr>";
                         echo "<td>Teclado</td>";
-                        //echo $fila['teclado'];
-                        echo "<td><i class='material-icons'>keyboard</i></td>";
+                        $color_teclado = $fila['teclado'];
+                        if ($color_teclado == 1) {
+                            echo "<td><i class='material-icons text-success'>keyboard</i></td>";
+                        } else {
+                            echo "<td><i class='material-icons text-danger'>keyboard</i></td>";
+                        }                        
                     echo "</tr>";
 
                     echo "<tr>";
                         echo "<td>Diadema</td>";
-                            //echo $fila['diadema'];
-                            echo "<td><i class='material-icons'>headset_mic</i></td>";
+                            $color_diadema = $fila['diadema'];
+                            if ($color_diadema == 1) {
+                                echo "<td><i class='material-icons text-success'>headset_mic</i></td>";
+                            } else {
+                                echo "<td><i class='material-icons text-danger'>headset_mic</i></td>";
+                            }                            
                     echo "</tr>";
 
                     echo "<tr>";

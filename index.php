@@ -74,7 +74,7 @@
         <div id="area_uno">
             <div class="clearfix">
                 <!--General etiquetas por reporte-->
-                        <!--?php
+                       <!-- <?php
                             $columna = array(001, 002, 003, 004, 005, 006);
                             $tamanio_array_columnas = count($columna);
                             for ($i=0; $i < $tamanio_array_columnas; $i++)
@@ -82,12 +82,11 @@
                                 echo "<div class='box' id='columna_".$columna[$i]."'>";
                                     echo "<i class='material-icons'>desktop_windows</i>";
                                     echo "<br>";
-                                    echo '<input id="est_00'.$columna[$i].'" class="btn btn-dark btn-lg" type="button" value="Estación 00'.$columna[$i].'" onclick="ventanaNueva("estacion001.php", 300, 400, "ventana1")">';
-                                    /*echo "<input id='est_00".$columna[$i]."' class='btn btn-dark btn-lg' type='button' value='Estación 00".$columna[$i]."' onclick='window.open('estaciones/estacion001.php','Estación 00".$columna[$i]."','width=500, height=308')'/>";*/
+                                    echo "<input id='est_00".$columna[$i]."' class='btn btn-dark btn-lg' type='button' value='Estación 00".$columna[$i]."' onclick='window.open('estaciones/estacion.php','Estación 00".$columna[$i]."','width=500, height=308')'/>";
                                 echo "</div>";
                             }
-
-                        ?-->
+                        ?>
+                        -->
 
                 <div class="box" id="columna_1" >
                     <i class="material-icons">desktop_windows</i>
