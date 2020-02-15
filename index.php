@@ -16,7 +16,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script>
         function ventanaNueva(documento,ancho,alto,nombreVentana){
-            window.open(documento, nombreVentana,'width=' + ancho + ', height=' + alto);
+            window.open(documento,'width=' + ancho + ', height=' + alto, nombreVentana);
         }
     </script>
     <!--script>
@@ -74,7 +74,7 @@
         <div id="area_uno">
             <div class="clearfix">
                 <!--General etiquetas por reporte-->
-                        <?php
+                        <!--?php
                             $columna = array(001, 002, 003, 004, 005, 006);
                             $tamanio_array_columnas = count($columna);
                             for ($i=0; $i < $tamanio_array_columnas; $i++)
@@ -82,13 +82,13 @@
                                 echo "<div class='box' id='columna_".$columna[$i]."'>";
                                     echo "<i class='material-icons'>desktop_windows</i>";
                                     echo "<br>";
-                                    echo "<input type='button' value='Abrir ventana' onclick='ventanaNueva('estacion00".$columna[$i].".html', 300, 400, 'ventana1')' />";
+                                    echo '<input id="est_00'.$columna[$i].'" class="btn btn-dark btn-lg" type="button" value="Estación 00'.$columna[$i].'" onclick="ventanaNueva("estacion001.php", 300, 400, "ventana1")">';
                                     /*echo "<input id='est_00".$columna[$i]."' class='btn btn-dark btn-lg' type='button' value='Estación 00".$columna[$i]."' onclick='window.open('estaciones/estacion001.php','Estación 00".$columna[$i]."','width=500, height=308')'/>";*/
                                 echo "</div>";
                             }
 
-                        ?>
-<!--
+                        ?-->
+
                 <div class="box" id="columna_1" >
                     <i class="material-icons">desktop_windows</i>
                     <br>
@@ -120,7 +120,6 @@
                     <br>
                     <input class="btn btn-dark btn-lg" type="button" value="Estación 006" onclick="window.open('estaciones/estacion006.php','Estación 006','width=300, height=400')" />
                 </div>
--->
             </div>
         </div>
     </section>

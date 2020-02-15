@@ -26,7 +26,11 @@
             echo '<table class="table table-dark">';
                 echo "<tbody>";
                     echo "<tr class='nom_campo'>";
-                            echo '<td id="titulo" scope="2 row">'.$fila['num_estacion'].'</td>';
+                            echo '<td id="titulo" scope="row">'.$fila['num_estacion'].'</td>';
+                            echo "  <td>
+                                        <a href='#'>Agregar</a>
+                                        <a href='#'>Ping</a>
+                                    </td>";
                     echo "</tr>";
                 
                     echo "<tr>";
@@ -40,8 +44,8 @@
                     echo "</tr>";
 
                     echo "<tr>";
-                        echo "<td>Marca CPU</td>";
-                        echo '<td>'.$fila['marca_cpu'].'</td>';
+                        echo "<td>Modelo CPU</td>";
+                        echo '<td>'.$fila['modelo_cpu'].'</td>';
                     echo "</tr>";
 
                     echo "<tr>";
