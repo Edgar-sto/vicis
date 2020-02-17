@@ -1,16 +1,20 @@
 #area_uno {
-    margin: auto;
+    margin: 800px;
     height: auto;
+    background-color: #188C77;
     border-bottom-style: solid;
-	border-color: #B0BEC5;
+	border-color: #BF2517;
 }
 
+
+/*
 * {
   box-sizing: border-box;
 }
 
-.box {
+.col {
   float: left;
+  margin: 0 auto;
   width: 16.66%;
   padding: 20px 20px 20px 20px;
 }
@@ -21,12 +25,20 @@
   display: table;
 }
 
+.filas {
+  display: block;
+  margin: auto;
+}
+
 .material-icons {
-	color: #353535;
+	color: #BF2517;
 	font-size: 100px;
 	display: block;
 }
 
+.fondofilauno {
+  background: #BF2517;
+}
 #columna_1, #columna_2, #columna_3, #columna_4, #columna_5, #columna_6{
 	text-align: center;
-}
+}*/

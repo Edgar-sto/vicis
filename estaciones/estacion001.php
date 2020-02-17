@@ -32,11 +32,12 @@
                 echo "<tbody>";
                     echo "<tr class='nom_campo'>";
                             echo '<td id="titulo" scope="row">'.$fila['num_estacion'].'</td>';
-                            echo "  <td>
-                                        <a href='#'>Agregar</a>
-                                        <a href='ping.php'>Ping</a>
-                                        <a href='javascript:abrir('pagina.html')'>Enlace</a>
-                                    </td>";
+    ?>
+                                  <td>
+                                    <a href="javascript:abrir('modificar.php')">Modificar</a>
+                                    <a href="ping.php">Ping</a>
+                                  </td>
+    <?php
                     echo "</tr>";
                 
                     echo "<tr>";

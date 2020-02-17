@@ -14,11 +14,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script>
-        function ventanaNueva(documento,ancho,alto,nombreVentana){
-            window.open(documento,'width=' + ancho + ', height=' + alto, nombreVentana);
-        }
-    </script>
     <!--script>
         $(document).on('ready',function()
         {
@@ -73,52 +68,44 @@
     <section class="container-fluid">
         <div id="area_uno">
             <div class="clearfix">
-                <!--General etiquetas por reporte-->
-                       <!-- <?php
-                            $columna = array(001, 002, 003, 004, 005, 006);
+                <!-- Estaciones Validación -->
+                    <div class="row fondofilauno">
+                        <!-- Fila 1 -->
+                        <?php
+                            $columna = array(1, 2, 3, 4, 5, 6);
                             $tamanio_array_columnas = count($columna);
                             for ($i=0; $i < $tamanio_array_columnas; $i++)
-                            { 
-                                echo "<div class='box' id='columna_".$columna[$i]."'>";
+                            {
+                                echo "<div class='col' id='columna_".$columna[$i]."'>";
                                     echo "<i class='material-icons'>desktop_windows</i>";
                                     echo "<br>";
-                                    echo "<input id='est_00".$columna[$i]."' class='btn btn-dark btn-lg' type='button' value='Estación 00".$columna[$i]."' onclick='window.open('estaciones/estacion.php','Estación 00".$columna[$i]."','width=500, height=308')'/>";
+                        ?>
+                                    <input id='est_00<?=$columna[$i]?>' class='btn btn-dark btn-lg' type='button' value='Estación 00<?=$columna[$i]?>' onclick="window.open('estaciones/estacion001.php','Estación 00<?=$columna[$i]?>','width=500, height=308')"/>;
+                        <?php 
+                            
                                 echo "</div>";
                             }
                         ?>
-                        -->
+                    </div>
 
-                <div class="box" id="columna_1" >
-                    <i class="material-icons">desktop_windows</i>
-                    <br>
-                    <input id="est_001" class="btn btn-dark btn-lg" type="button" value="Estación 001" onclick="window.open('estaciones/estacion001.php','Estación 001','width=500, height=308')" />
-                </div>
-
-                <div class="box" id="columna_2">
-                    <i class="material-icons">desktop_windows</i>
-                    <br>
-                    <input class="btn btn-dark btn-lg" type="button" value="Estación 002" onclick="window.open('estaciones/estacion002.php','Estación 002','width=300, height=500')" />
-                </div>
-                <div class="box" id="columna_3">
-                    <i class="material-icons">desktop_windows</i>
-                    <br>
-                    <input class="btn btn-dark btn-lg" type="button" value="Estación 003" onclick="window.open('estaciones/estacion003.php','Estación 001','width=300, height=400')" />
-                </div>
-                <div class="box" id="columna_4">
-                    <i class="material-icons">desktop_windows</i>
-                    <br>
-                    <input class="btn btn-dark btn-lg" type="button" value="Estación 004" onclick="window.open('estaciones/estacion004.php','Estación 004','width=300, height=400')" />
-                </div>
-                <div class="box" id="columna_5">
-                    <i class="material-icons">desktop_windows</i>
-                    <br>
-                    <input class="btn btn-dark btn-lg" type="button" value="Estación 005" onclick="window.open('estaciones/estacion005.php','Estación 005','width=300, height=400')" />
-                </div>
-                <div class="box" id="columna_6">
-                    <i class="material-icons">desktop_windows</i>
-                    <br>
-                    <input class="btn btn-dark btn-lg" type="button" value="Estación 006" onclick="window.open('estaciones/estacion006.php','Estación 006','width=300, height=400')" />
-                </div>
+                    <div class="row">
+                        <!-- Fila 2 -->
+                        <?php
+                            $columna = array(7, 8, 9, 10, 11, 12);
+                            $tamanio_array_columnas = count($columna);
+                            for ($i=0; $i < $tamanio_array_columnas; $i++)
+                            {
+                                echo "<div class='col' id='columna_".$columna[$i]."'>";
+                                    echo "<i class='material-icons'>desktop_windows</i>";
+                                    echo "<br>";
+                        ?>
+                                    <input id='est_00<?=$columna[$i]?>' class='btn btn-dark btn-lg' type='button' value='Estación 00<?=$columna[$i]?>' onclick="window.open('estaciones/estacion001.php','Estación 00<?=$columna[$i]?>','width=500, height=308')"/>;
+                        <?php 
+                            
+                                echo "</div>";
+                            }
+                        ?>
+                    </div>
             </div>
         </div>
     </section>
