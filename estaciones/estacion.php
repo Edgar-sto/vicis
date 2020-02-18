@@ -25,6 +25,18 @@
         $basededatos= "soporte";
         $conexion = mysqli_connect( $servidor, $usuario, $pass );
         $db = mysqli_select_db( $conexion, $basededatos );
+
+
+
+        $estacion1=$_POST['est_01'];
+        $estacion2=$_POST['est_02'];
+        $estacion3=$_POST['est_03'];
+        $estacion4=$_POST['est_04'];
+        $estacion5=$_POST['est_05'];
+        $estacion6=$_POST['est_06'];
+        echo "$estacion1";
+
+
         $consulta = "SELECT * FROM estaciones WHERE num_estacion = 'Estacion 001'";
         $resultado = mysqli_query($conexion, $consulta);
         while ($fila = mysqli_fetch_array($resultado)) {

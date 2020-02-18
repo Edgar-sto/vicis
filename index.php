@@ -14,13 +14,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <!--script>
+    <script>
         $(document).on('ready',function()
         {
-            $('#btn-obtener-grupos').click(function()
+            $('#est_01, #est_02, #est_03, #est_04, #est_05, #est_06').click(function()
             {
-                var url         =   "estacion001.php";
-                var estacion     =   $('#est_001').val();
+                var url         =   "estacion.php";
+                var estacion01     =   $('#est_01').val();
+                var estacion02     =   $('#est_02').val();
+                var estacion03     =   $('#est_03').val();
+                var estacion04     =   $('#est_04').val();
+                var estacion05     =   $('#est_05').val();
+                var estacion06     =   $('#est_06').val();
                 if(estacion =='')
                 {
                     alert('No se encontro informacion sobre la estación.');
@@ -29,7 +34,7 @@
                 {
                     type: "POST",
                     url: url,
-                    data:{est_001:estacion},
+                    data:{est_01:estacion01, est_02:estacion02, est_03:estacion03, est_04:estacion04, est_05:estacion05, est_06:estacion06},
                     //beforeSend:function (){},
                     success:function(data)
                     {
@@ -39,7 +44,7 @@
                 });
             });
         });
-    </script-->
+    </script
 </head>
 <body>
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -78,7 +83,7 @@
                     echo "<i class='material-icons'>desktop_windows</i>";
                     echo "<br>";
             ?>
-                <input id='est_0<?=$columna[$i]?>' class='btn btn-dark btn-lg' type='button' value='Estación 0<?=$columna[$i]?>' onclick="window.open('estaciones/estacion001.php','Estación 0<?=$columna[$i]?>','width=500, height=308')"/>;
+                <input id='est_0<?=$columna[$i]?>' class='btn btn-dark btn-lg' type='submit' value='Estación 0<?=$columna[$i]?>' onclick="window.open('estaciones/estacion.php','Estación 0<?=$columna[$i]?>','width=500, height=350')"/>;
             <?php 
                 echo "</div>";
                 }
@@ -97,7 +102,7 @@
                     echo "<i class='material-icons'>desktop_windows</i>";
                     echo "<br>";
             ?>
-                <input id='est_0<?=$columna[$i]?>' class='btn btn-dark btn-lg' type='button' value='Estación 0<?=$columna[$i]?>' onclick="window.open('estaciones/estacion001.php','Estación 0<?=$columna[$i]?>','width=500, height=308')"/>;
+                <input id='est_0<?=$columna[$i]?>' class='btn btn-dark btn-lg' type='button' value='Estación 0<?=$columna[$i]?>' onclick="window.open('estaciones/estacion.php','Estación 0<?=$columna[$i]?>','width=500, height=350')"/>;
             <?php 
                 echo "</div>";
                 }
@@ -116,7 +121,7 @@
                     echo "<i class='material-icons'>desktop_windows</i>";
                     echo "<br>";
             ?>
-                <input id='est_0<?=$columna[$i]?>' class='btn btn-dark btn-lg' type='button' value='Estación 0<?=$columna[$i]?>' onclick="window.open('estaciones/estacion001.php','Estación 0<?=$columna[$i]?>','width=500, height=308')"/>;
+                <input id='est_0<?=$columna[$i]?>' class='btn btn-dark btn-lg' type='button' value='Estación 0<?=$columna[$i]?>' onclick="window.open('estaciones/estacion.php','Estación 0<?=$columna[$i]?>','width=500, height=350')"/>;
             <?php 
                 echo "</div>";
                 }
@@ -135,7 +140,7 @@
                     echo "<i class='material-icons'>desktop_windows</i>";
                     echo "<br>";
             ?>
-                <input id='est_0<?=$columna[$i]?>' class='btn btn-dark btn-lg' type='button' value='Estación 0<?=$columna[$i]?>' onclick="window.open('estaciones/estacion001.php','Estación 0<?=$columna[$i]?>','width=500, height=308')"/>;
+                <input id='est_0<?=$columna[$i]?>' class='btn btn-dark btn-lg' type='button' value='Estación 0<?=$columna[$i]?>' onclick="window.open('estaciones/estacion.php','Estación 0<?=$columna[$i]?>','width=500, height=350')"/>;
             <?php 
                 echo "</div>";
                 }
