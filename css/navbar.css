@@ -3,16 +3,16 @@
     height: auto;
     background-color: #188C77;
     border-bottom-style: solid;
-	border-color: #BF2517;
+    border-color: #BF2517;
 }
 
 
-/*
+
 * {
   box-sizing: border-box;
 }
 
-.col {
+.box {
   float: left;
   margin: 0 auto;
   width: 16.66%;
@@ -36,9 +36,6 @@
 	display: block;
 }
 
-.fondofilauno {
-  background: #BF2517;
-}
 #columna_1, #columna_2, #columna_3, #columna_4, #columna_5, #columna_6{
 	text-align: center;
-}*/
+}
