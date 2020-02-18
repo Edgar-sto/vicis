@@ -6,32 +6,33 @@
     border-color: #BF2517;
 }
 
-
-
-* {
-  box-sizing: border-box;
+#area-libre {
+  background-color: #90A4AE;
 }
 
-.box {
-  float: left;
-  margin: 0 auto;
-  width: 16.66%;
-  padding: 20px 20px 20px 20px;
+#monitoreo {
+  background-color: #78909C;
 }
 
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
+#validacion {
+  background-color: #CFD8DC;
+}
+
+#vali-invex {
+  background-color: #B0BEC5;
 }
 
 .filas {
-  display: block;
-  margin: auto;
+margin: 10px auto;
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center
 }
 
 .material-icons {
-	color: #BF2517;
+	color: ##212121;
 	font-size: 100px;
 	display: block;
 }
