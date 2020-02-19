@@ -6,6 +6,24 @@ td {
 	color: #ffffff;
 }
 
+.acciones {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.acciones a {
+	color: #ffffff;
+	/*color: rgba(41, 48, 59, 1);*/
+	font-size: 12px;
+ 	margin-right: 10px;
+ 	margin-top: 4px;
+ 	text-decoration: none;
+}
+
+.nom_campo{
+	margin: auto 0 auto 0;
+}
+
 #titulo{
 	color: #ffffff;
 	font-family: 'Montserrat Subrayada', sans-serif;

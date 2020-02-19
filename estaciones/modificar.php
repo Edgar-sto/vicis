@@ -5,15 +5,9 @@
 	<title>Modificar</title>
 </head>
 <body>
-	<table class="table">
-		<tbody>
-			<tr>
-				<td>Modificar</td>
-			</tr>
-			<tr>
-				
-			</tr>
-		</tbody>
-	</table>
+	<h1>Modificar</h1>
+	<form action="">
+		<label></label>
+	</form>
 </body>
 </html>

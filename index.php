@@ -72,7 +72,7 @@
         </ul>
     </nav> 
     <br>
-    <div class="container">
+    <div class="container-fluid"> 
         <h2>Validación HSBC</h2>
         <div class="row filas" id="validacion">
             <!-- Fila 1 -->

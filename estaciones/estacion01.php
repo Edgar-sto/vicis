@@ -9,13 +9,14 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat+Subrayada&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/estaciones.css">
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script>
         function abrir(url) {
             open(url,'','top=300,left=300,width=300,height=300') ;
         }
-</script>
+</script> 
 </head>
 <body>
     <?php
@@ -33,7 +34,7 @@
                     echo "<tr class='nom_campo'>";
                             echo '<td id="titulo" scope="row">'.$fila['num_estacion'].'</td>';
     ?>
-                                  <td>
+                                  <td class="acciones">
                                     <a href="javascript:abrir('modificar.php')">Modificar</a>
                                     <a href="ping.php">Ping</a>
                                   </td>

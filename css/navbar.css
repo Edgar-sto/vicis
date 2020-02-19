@@ -5,11 +5,19 @@
     border-bottom-style: solid;
     border-color: #BF2517;
 }
-
+/*
 #area-libre {
   background-color: #90A4AE;
 }
+*/
+.container-fluid {
+  background: url(../img/fondo_index.jpg);
+}
 
+h2 {
+  color: #ffffff;
+}
+/*
 #monitoreo {
   background-color: #78909C;
 }
@@ -21,7 +29,7 @@
 #vali-invex {
   background-color: #B0BEC5;
 }
-
+*/
 .filas {
 margin: 10px auto;
 width: 100%;
@@ -32,7 +40,7 @@ text-align: center
 }
 
 .material-icons {
-	color: ##212121;
+	color: #ffffff;
 	font-size: 100px;
 	display: block;
 }
