@@ -11,7 +11,8 @@
 }
 */
 body {
-  background: url(" http://api.thumbr.it/whitenoise-361x370.png?background=1a1c1cff&noise=626262&density=9&opacity=23");
+  /*background: url(" http://api.thumbr.it/whitenoise-361x370.png?background=1a1c1cff&noise=626262&density=9&opacity=23");*/
+  background: url(../img/fondo_index.png);
   width: 100%;
 }
 

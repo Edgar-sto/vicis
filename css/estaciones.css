@@ -1,5 +1,6 @@
 body {
-	background: #212529;
+	/*background: #ffffff;*/
+	background: url(../img/estaciones.png);
 }
 
 td {
@@ -20,6 +21,21 @@ td {
  	text-decoration: none;
 }
 
+#datos {
+	background: #212529;
+	border-radius: 20px 20px 20px 20px;
+	-moz-border-radius: 20px 20px 20px 20px;
+	-webkit-border-radius: 20px 20px 20px 20px;
+	border: 0px solid #000000;
+	margin: 30px 30px 30px 30px;
+}
+
+#codigo_qr {
+	/*background: #212529;*/
+	background-color: rgba(46, 138, 138, 0.5);
+	margin: 30px 30px 30px 30px;
+
+}
 
 .nom_campo{
 	margin: auto 0 auto 0;
