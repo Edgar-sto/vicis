@@ -81,15 +81,24 @@
                 $tamanio_array_columnas = count($columna);
                 for ($i=0; $i < $tamanio_array_columnas; $i++)
                 {
-                    echo "<div class='col'>";
-                    echo "<i class='material-icons'>desktop_windows</i>";
-                    echo "<br>";
+                    if ($columna[$i] <= 9)
+                    {
+                        echo "<div class='col' id='columna_".$columna[$i]."'>";
+                        echo "<i class='material-icons'>desktop_windows</i>";
+                        echo "<br>";
             ?>
-                <form action="estacion.php" method="POST" id="form_btn_estaciones">
-                    <input class="btn btn-dark btn-lg" name="est_0<?=$columna[$i]?>" type="button" value='estacion 0<?=$columna[$i]?>' onclick="window.open('estaciones/estacion0<?=$columna[$i]?>.php','Estación 0<?=$columna[$i]?>','width=275, height=440')"/>;
-                </form>
+                <input id='est_00<?=$columna[$i]?>' class='btn btn-dark btn-lg' type='button' value='estacion 00<?=$columna[$i]?>' onclick="window.open('estaciones/estacion00<?=$columna[$i]?>.php','Estación 00<?=$columna[$i]?>','width=320, height=450')"/>;
             <?php 
-                echo "</div>";
+                        echo "</div>";
+                    } else {
+                        echo "<div class='col' id='columna_".$columna[$i]."'>";
+                        echo "<i class='material-icons'>desktop_windows</i>";
+                        echo "<br>";    
+            ?>
+                <input id='est_0<?=$columna[$i]?>' class='btn btn-dark btn-lg' type='button' value='estacion 0<?=$columna[$i]?>' onclick="window.open('estaciones/estacion0<?=$columna[$i]?>.php','Estación 0<?=$columna[$i]?>','width=500, height=350')"/>;
+            <?php
+                        echo "</div>";
+                    }
                 }
             ?>
         </div>
@@ -145,6 +154,76 @@
                     echo "<br>";
             ?>
                 <input id='est_0<?=$columna[$i]?>' class='btn btn-dark btn-lg' type='button' value='estacion 0<?=$columna[$i]?>' onclick="window.open('estaciones/estacion.php','Estación 0<?=$columna[$i]?>','width=500, height=350')"/>;
+            <?php 
+                echo "</div>";
+                }
+            ?>
+        </div>
+
+        <h2>Proceso</h2>
+        <div class="row filas" id="proceso">
+            <!-- Fila 1 -->
+            <?php
+                $columna = array(83, 84);
+                $tamanio_array_columnas = count($columna);
+                for ($i=0; $i < $tamanio_array_columnas; $i++)
+                {
+                    echo "<div class='col' id='columna_".$columna[$i]."'>";
+                    echo "<i class='material-icons'>desktop_windows</i>";
+                    echo "<br>";
+            ?>
+                <input id='est_0<?=$columna[$i]?>' class='btn btn-dark btn-lg' type='button' value='estacion 0<?=$columna[$i]?>' onclick="window.open('estaciones/estacion.php','Estación 0<?=$columna[$i]?>','width=500, height=350')"/>;
+            <?php 
+                echo "</div>";
+                }
+            ?>
+        </div>
+
+        <h2>Formalizacion</h2>
+        <div class="row filas" id="formalizacion">
+            <!-- Fila 1 -->
+            <?php
+                $columna = array(85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100);
+                $tamanio_array_columnas = count($columna);
+                for ($i=0; $i < $tamanio_array_columnas; $i++)
+                {
+                    if ($columna[$i] <= 99)
+                    {
+                        echo "<div class='col' id='columna_".$columna[$i]."'>";
+                        echo "<i class='material-icons'>desktop_windows</i>";
+                        echo "<br>";
+            ?>
+                <input id='est_0<?=$columna[$i]?>' class='btn btn-dark btn-lg' type='button' value='estacion 0<?=$columna[$i]?>' onclick="window.open('estaciones/estacion.php','Estación 0<?=$columna[$i]?>','width=500, height=350')"/>;
+            <?php 
+                        echo "</div>";
+                    } else {
+                        echo "<div class='col' id='columna_".$columna[$i]."'>";
+                        echo "<i class='material-icons'>desktop_windows</i>";
+                        echo "<br>";    
+            ?>
+                <input id='est_<?=$columna[$i]?>' class='btn btn-dark btn-lg' type='button' value='estacion <?=$columna[$i]?>' onclick="window.open('estaciones/estacion.php','Estación <?=$columna[$i]?>','width=500, height=350')"/>;
+            <?php
+                        echo "</div>";
+                    }
+                }
+            ?>
+        </div>
+
+        <h2>Auditoria</h2>
+        <div class="row filas" id="auditoria">
+            <!-- Fila 1 -->
+            <?php
+                $columna = array(101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119);
+                $tamanio_array_columnas = count($columna);
+                for ($i=0; $i < $tamanio_array_columnas; $i++)
+                {
+                    echo "<div class='col'>";
+                    echo "<i class='material-icons'>desktop_windows</i>";
+                    echo "<br>";
+            ?>
+                <form action="estacion.php" method="POST" id="form_btn_estaciones">
+                    <input class="btn btn-dark btn-lg" name="est_<?=$columna[$i]?>" type="button" value='estacion <?=$columna[$i]?>' onclick="window.open('estaciones/estacion<?=$columna[$i]?>.php','Estación <?=$columna[$i]?>','width=275, height=440')"/>;
+                </form>
             <?php 
                 echo "</div>";
                 }

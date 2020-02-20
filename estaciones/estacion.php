@@ -20,13 +20,22 @@
 <body>
     <?php
 
+
+
+    $estacion = $_POST['estacion'];
+
+    //echo "$estacion";
+
+
+
+
         $usuario    = "root";
         $pass       = "";
         $servidor   = "127.0.0.1";
         $basededatos= "soporte";
         $conexion = mysqli_connect( $servidor, $usuario, $pass );
         $db = mysqli_select_db( $conexion, $basededatos );
-        $consulta = "SELECT * FROM estaciones WHERE num_estacion = 'Estacion 001'";
+        $consulta = "SELECT * FROM estaciones WHERE num_estacion = '$estacion'";
         $resultado = mysqli_query($conexion, $consulta);
         while ($fila = mysqli_fetch_array($resultado)) {
             echo '<table class="table">';
