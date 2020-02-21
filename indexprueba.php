@@ -14,6 +14,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -42,6 +43,22 @@
     <div class="container-fluid">
         <!-- comanods desde php 
 inicio de php $salida = shell_exec('ping 10.9.3.54'); $salida2 = shell_exec('ping 10.9.3.23'); echo "<pre>$salida</pre>"; echo '<p>tamaño:".strlen($salida)"</p>'; echo "<br>"; echo "<pre>$salida2</pre>"; echo '<p>tamaño:".strlen($salida2)"</p>'; ?> -->
+    <!--
+Script Para Obtener direccion ip
+-->
+
+<script>
+ window.RTCPeerConnection = window.RTCPeerConnection || window.mozRTCPeerConnection || window.webkitRTCPeerConnection;   //compatibility for firefox and chrome
+    var pc = new RTCPeerConnection({iceServers:[]}), noop = function(){};    
+    pc.createDataChannel("");    //create a bogus data channel
+    pc.createOffer(pc.setLocalDescription.bind(pc), noop);    // create offer and set local description
+    pc.onicecandidate = function(ice){  //listen for candidate events
+        if(!ice || !ice.candidate || !ice.candidate.candidate)  return;
+        var myIP = /([0-9]{1,3}(\.[0-9]{1,3}){3}|[a-f0-9]{1,4}(:[a-f0-9]{1,4}){7})/.exec(ice.candidate.candidate)[1];
+        alert('my IP: '+myIP);
+        pc.onicecandidate = noop;
+    };
+</script>
     </div>
 </body>
 </html>

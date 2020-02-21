@@ -124,8 +124,8 @@
                 <br>
                 <h2>Ping</h2>
                 <p>
-                    
-                    <?php
+                
+                    <?php/*
                     echo '<pre>';
 
                     // Muestra el resultado completo del comando "ls", y devuelve la
@@ -137,14 +137,14 @@
                     echo '
                     </pre>
                     <hr />Ultima linea de la salida: ' . $ultima_linea . '
-                    <hr />Valor de retorno: ' . $retval;
+                    <hr />Valor de retorno: ' . $retval;*/
                     ?>                    
                 </p>
             </div>
 
             <div class="col-4" id="modificar">
                 <h1 class="titulo_modificar">Modificar</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore praesentium enim rerum totam iure deleniti eveniet sequi, similique quos commodi minima maxime, aspernatur adipisci quis qui numquam at nostrum quia.</p>
+                <form action=""></form>
             </div>
         </div>
         <div class="row">
