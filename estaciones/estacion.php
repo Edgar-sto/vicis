@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/estaciones.css">
+    <!-- Tipografias -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat+Subrayada&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/estaciones.css">
+    <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script>
@@ -36,7 +38,7 @@
                         echo '<table class="table">';
                             echo "<tbody>";
                                 echo "<tr class='nom_campo'>";
-                                        echo '<td id="titulo" scope="row">'.$fila['num_estacion'].'</td>';
+                                        echo '<td class="titulo" scope="row">'.$fila['num_estacion'].'</td>';
                 ?>
                                               <td>
                                                 <a href="javascript:abrir('modificar.php')">Modificar</a>
@@ -114,10 +116,40 @@
                     }           
                 ?>
             </div>
-            <div class="col-6" id="codigo_qr">
+            
+            <div class="col-2" id="codigo_qr">
+                <h1 class="titulo_codigo_qr">Código QR</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit quisquam in repellendus fugit doloribus eveniet, minus nostrum officiis fugiat, soluta. Pariatur ab iusto id quod fugit ex nostrum reprehenderit, quo.
                 </p>
+                <br>
+                <h2>Ping</h2>
+                <p>
+                    
+                    <?php
+                    echo '<pre>';
+
+                    // Muestra el resultado completo del comando "ls", y devuelve la
+                    // ultima linea de la salida en $ultima_linea. Almacena el valor de
+                    // retorno del comando en $retval.
+                    $ultima_linea = system('ping 10.9.3.238', $retval);
+
+                    // Imprimir informacion adicional
+                    echo '
+                    </pre>
+                    <hr />Ultima linea de la salida: ' . $ultima_linea . '
+                    <hr />Valor de retorno: ' . $retval;
+                    ?>                    
+                </p>
             </div>
+
+            <div class="col-4" id="modificar">
+                <h1 class="titulo_modificar">Modificar</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore praesentium enim rerum totam iure deleniti eveniet sequi, similique quos commodi minima maxime, aspernatur adipisci quis qui numquam at nostrum quia.</p>
+            </div>
+        </div>
+        <div class="row">
+            
+
         </div>
     </div>
 </body>

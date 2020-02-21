@@ -1,6 +1,5 @@
 body {
-	/*background: #ffffff;*/
-	background: url(../img/estaciones.png);
+	background: url(../img/estaciones.jpg);
 }
 
 td {
@@ -21,27 +20,32 @@ td {
  	text-decoration: none;
 }
 
-#datos {
-	background: #212529;
+#datos, #codigo_qr, #modificar{
+	margin: 30px 30px 30px 30px;
+	padding: 10px 10px 10px 10px;
 	border-radius: 20px 20px 20px 20px;
 	-moz-border-radius: 20px 20px 20px 20px;
 	-webkit-border-radius: 20px 20px 20px 20px;
-	border: 0px solid #000000;
-	margin: 30px 30px 30px 30px;
+}
+
+#datos {
+	background: rgba(69, 39, 160, .5); /*fondo morado*/
+	/*border: 0px solid #000000;*/
 }
 
 #codigo_qr {
-	/*background: #212529;*/
 	background-color: rgba(46, 138, 138, 0.5);
-	margin: 30px 30px 30px 30px;
+}
 
+#modificar {
+	background-color: rgba(255, 87, 34, 0.5);
 }
 
 .nom_campo{
 	margin: auto 0 auto 0;
 }
 
-#titulo{
+.titulo, .titulo_codigo_qr, .titulo_modificar{
 	color: #ffffff;
 	font-family: 'Montserrat Subrayada', sans-serif;
 	font-size: 1.75em;

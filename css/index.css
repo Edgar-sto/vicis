@@ -1,0 +1,88 @@
+body {
+  /*background: #202020;*/
+  background: url(../img/estaciones.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100%;
+}
+
+.button_xdx {
+   background: #3D94F6;
+   background-image: -webkit-linear-gradient(top, #3D94F6, #1E62D0);
+   background-image: -moz-linear-gradient(top, #3D94F6, #1E62D0);
+   background-image: -ms-linear-gradient(top, #3D94F6, #1E62D0);
+   background-image: -o-linear-gradient(top, #3D94F6, #1E62D0);
+   background-image: linear-gradient(to bottom, #3D94F6, #1E62D0);
+   -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   border-radius: 20px;
+   color: #FFFFFF;
+   font-family: monospace;
+   font-size: 12px;
+   font-weight: 100;
+   padding: 13px;
+   box-shadow: 0px 0px 8px 0px #000000;
+   -webkit-box-shadow: 0px 0px 8px 0px #000000;
+   -moz-box-shadow: 0px 0px 8px 0px #000000;
+   text-shadow: 1px 1px 20px #000000;
+   border: solid #337FED 1px;
+   text-decoration: none;
+   display: inline-block;
+   cursor: pointer;
+   text-align: center;
+}
+
+.button_xdx:hover {
+   border: solid #337FED 1px;
+   background: #1E62D0;
+   background-image: -webkit-linear-gradient(top, #1E62D0, #3D94F6);
+   background-image: -moz-linear-gradient(top, #1E62D0, #3D94F6);
+   background-image: -ms-linear-gradient(top, #1E62D0, #3D94F6);
+   background-image: -o-linear-gradient(top, #1E62D0, #3D94F6);
+   background-image: linear-gradient(to bottom, #1E62D0, #3D94F6);
+   -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   border-radius: 20px;
+   text-decoration: none;
+}
+
+
+h2 {
+  color: #e0e0e0;
+}
+
+
+.filas {
+margin: 20px auto;
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+border-bottom-style: solid;
+border-color: #e0e0e0;
+}
+
+
+
+.navbar {
+    border-radius: 0px;
+    margin-bottom: 0px;
+}
+
+.material-icons {
+  color: #e0e0e0;
+  display: block;
+  font-size: 50px;
+}
+
+i.material-icons{
+  font-size: 60px;
+}
+
+/*
+
+
+#columna_1, #columna_2, #columna_3, #columna_4, #columna_5, #columna_6{
+	text-align: center;
+}*/

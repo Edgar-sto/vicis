@@ -39,6 +39,9 @@
         </ul>
     </nav> 
     <br>
-    <div class="container-fluid"></div>
+    <div class="container-fluid">
+        <!-- comanods desde php 
+inicio de php $salida = shell_exec('ping 10.9.3.54'); $salida2 = shell_exec('ping 10.9.3.23'); echo "<pre>$salida</pre>"; echo '<p>tamaño:".strlen($salida)"</p>'; echo "<br>"; echo "<pre>$salida2</pre>"; echo '<p>tamaño:".strlen($salida2)"</p>'; ?> -->
+    </div>
 </body>
 </html>

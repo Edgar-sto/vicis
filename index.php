@@ -7,46 +7,14 @@
     <!-- ESTILOS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <!-- Fuentes de iconos -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/navbar.css">
     <!-- SCRIPT -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script src="indes.js">
-    </script>
-    <!--script>
-        $(document).on('ready',function()
-        {
-            $('#est_01, #est_02, #est_03, #est_04, #est_05, #est_06').click(function()
-            {
-                var url         =   "estacion.php";
-                var estacion01     =   $('#est_01').val();
-                var estacion02     =   $('#est_02').val();
-                var estacion03     =   $('#est_03').val();
-                var estacion04     =   $('#est_04').val();
-                var estacion05     =   $('#est_05').val();
-                var estacion06     =   $('#est_06').val();
-                if(estacion =='')
-                {
-                    alert('No se encontro informacion sobre la estación.');
-                }
-                $.ajax(
-                {
-                    type: "POST",
-                    url: url,
-                    data:{est_01:estacion01, est_02:estacion02, est_03:estacion03, est_04:estacion04, est_05:estacion05, est_06:estacion06},
-                    //beforeSend:function (){},
-                    success:function(data)
-                    {
-                        /*console.log(data);
-                        $('#resp_grupos').html(data);*/
-                    }
-                });
-            });
-        });
-    </script-->
 </head>
 <body>
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -86,20 +54,25 @@
                         echo "<div class='col' id='columna_".$columna[$i]."'>";
                         echo "<i class='material-icons'>desktop_windows</i>";
                         echo "<br>";
+                        echo "<br>";
             ?>
                 <form action="estaciones/estacion.php" method="post" target="_blank">
-                  <input name='estacion' id='est_00<?=$columna[$i]?>' class='btn btn-dark btn-lg' type='submit' value='estacion 00<?=$columna[$i]?>'/>;
+                  <input name='estacion' id='est_00<?=$columna[$i]?>' class='button_xdx btn btn-dark btn-lg' type='submit' value='estacion 00<?=$columna[$i]?>'/>
                 </form>
+                <br>
             <?php 
                         echo "</div>";
                     } else {
                         echo "<div class='col' id='columna_".$columna[$i]."'>";
                         echo "<i class='material-icons'>desktop_windows</i>";
-                        echo "<br>";    
+                        echo "<br>";
+                        echo "<br>";
+   
             ?>
                 <form action="estaciones/estacion.php" method="post" target="_blank">
-                  <input name='estacion' id='est_0<?=$columna[$i]?>' class='btn btn-dark btn-lg' type='submit' value='estacion 0<?=$columna[$i]?>'/>;
+                  <input name='estacion' id='est_0<?=$columna[$i]?>' class='button_xdx btn btn-dark btn-lg' type='submit' value='estacion 0<?=$columna[$i]?>'/>
                 </form>
+                <br>
             <?php
                         echo "</div>";
                     }
@@ -120,7 +93,7 @@
                     echo "<br>";
             ?>
                 <form action="estaciones/estacion.php" method="post" target="_blank">
-                  <input name='estacion' id='est_0<?=$columna[$i]?>' class='btn btn-dark btn-lg' type='submit' value='estacion 0<?=$columna[$i]?>'/>;
+                  <input name='estacion' id='est_0<?=$columna[$i]?>' class='button_xdx btn btn-dark btn-lg' type='submit' value='estacion 0<?=$columna[$i]?>'/>
                 </form>
             <?php 
                 echo "</div>";
@@ -141,7 +114,7 @@
                     echo "<br>";
             ?>
                 <form action="estaciones/estacion.php" method="post" target="_blank">
-                  <input name='estacion' id='est_0<?=$columna[$i]?>' class='btn btn-dark btn-lg' type='submit' value='estacion 0<?=$columna[$i]?>'/>;
+                  <input name='estacion' id='est_0<?=$columna[$i]?>' class='button_xdx btn btn-dark btn-lg' type='submit' value='estacion 0<?=$columna[$i]?>'/>
                 </form>
             <?php 
                 echo "</div>";
@@ -162,7 +135,7 @@
                     echo "<br>";
             ?>
                 <form action="estaciones/estacion.php" method="post" target="_blank">
-                  <input name='estacion' id='est_0<?=$columna[$i]?>' class='btn btn-dark btn-lg' type='submit' value='estacion 0<?=$columna[$i]?>'/>;
+                  <input name='estacion' id='est_0<?=$columna[$i]?>' class='button_xdx btn btn-dark btn-lg' type='submit' value='estacion 0<?=$columna[$i]?>'/>
                 </form>
             <?php 
                 echo "</div>";
@@ -183,7 +156,7 @@
                     echo "<br>";
             ?>
                 <form action="estaciones/estacion.php" method="post" target="_blank">
-                  <input name='estacion' id='est_0<?=$columna[$i]?>' class='btn btn-dark btn-lg' type='submit' value='estacion 0<?=$columna[$i]?>'/>;
+                  <input name='estacion' id='est_0<?=$columna[$i]?>' class='button_xdx btn btn-dark btn-lg' type='submit' value='estacion 0<?=$columna[$i]?>'/>
                 </form>
             <?php 
                 echo "</div>";
@@ -206,7 +179,7 @@
                         echo "<br>";
             ?>
                 <form action="estaciones/estacion.php" method="post" target="_blank">
-                  <input name='estacion' id='est_0<?=$columna[$i]?>' class='btn btn-dark btn-lg' type='submit' value='estacion 0<?=$columna[$i]?>'/>;
+                  <input name='estacion' id='est_0<?=$columna[$i]?>' class='button_xdx btn btn-dark btn-lg' type='submit' value='estacion 0<?=$columna[$i]?>'/>
                 </form>
             <?php 
                         echo "</div>";
@@ -216,7 +189,7 @@
                         echo "<br>";    
             ?>
                 <form action="estaciones/estacion.php" method="post" target="_blank">
-                  <input name='estacion' id='est_<?=$columna[$i]?>' class='btn btn-dark btn-lg' type='submit' value='estacion <?=$columna[$i]?>'/>;
+                  <input name='estacion' id='est_<?=$columna[$i]?>' class='button_xdx btn btn-dark btn-lg' type='submit' value='estacion <?=$columna[$i]?>'/>
                 </form>
             <?php
                         echo "</div>";
@@ -238,7 +211,7 @@
                     echo "<br>";
             ?>
                 <form action="estaciones/estacion.php" method="post" target="_blank">
-                  <input name='estacion' id='est_<?=$columna[$i]?>' class='btn btn-dark btn-lg' type='submit' value='estacion <?=$columna[$i]?>'/>;
+                  <input name='estacion' id='est_<?=$columna[$i]?>' class='button_xdx btn btn-dark btn-lg' type='submit' value='estacion <?=$columna[$i]?>'/>
                 </form>
             <?php 
                 echo "</div>";
