@@ -1,5 +1,5 @@
  <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <title>Estación</title>
     <meta charset="utf-8">
@@ -13,11 +13,12 @@
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script>
+    <script src="script/ajax_generate_code.js"></script><!-- llama archivo generador del codigo QR -->
+    <script>//Script para abrir ventana de tamaño asignado.
         function abrir(url) {
             open(url,'','top=300,left=300,width=300,height=300') ;
         }
-</script>
+    </script>
 </head>
 <body>
     <div class="container-fluid">
@@ -25,7 +26,6 @@
             <div class="col-4" id="datos">
                 <?php
                     $estacion = $_POST['estacion'];
-                    //echo '<h1 id="titulo">'.$estacion.'</h1>';
                     $usuario    = "root";
                     $pass       = "";
                     $servidor   = "127.0.0.1";
@@ -119,32 +119,37 @@
             
             <div class="col-2" id="codigo_qr">
                 <h1 class="titulo_codigo_qr">Código QR</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit quisquam in repellendus fugit doloribus eveniet, minus nostrum officiis fugiat, soluta. Pariatur ab iusto id quod fugit ex nostrum reprehenderit, quo.
-                </p>
+                <div class="showQRCode">
+                    <!-- Impresión de código QR -->
+                </div>
                 <br>
-                <h2>Ping</h2>
-                <p>
-                
-                    <?php/*
-                    echo '<pre>';
-
-                    // Muestra el resultado completo del comando "ls", y devuelve la
-                    // ultima linea de la salida en $ultima_linea. Almacena el valor de
-                    // retorno del comando en $retval.
-                    $ultima_linea = system('ping 10.9.3.238', $retval);
-
-                    // Imprimir informacion adicional
-                    echo '
-                    </pre>
-                    <hr />Ultima linea de la salida: ' . $ultima_linea . '
-                    <hr />Valor de retorno: ' . $retval;*/
-                    ?>                    
-                </p>
+                    <form class="form" method="post" id="codeForm" onsubmit="return false">
+                        <div class="form-group">
+                            <label class="control-label">Información : </label>
+                            <input class="form-control form-control-sm" id="content" type="text" required="required">
+                            
+                            <label class="control-label">Nivel del código (ECC) : </label>
+                            <select class="form-control form-control-sm" id="ecc">
+                                <option value="H">H - Mejor</option>
+                                <option value="M">Me - Media</option>
+                                <option value="Q">B - baja</option>
+                                <option value="L">P - Peor</option>                         
+                            </select>
+                        
+                            <label class="control-label">Tamaño : </label>
+                            <input type="number" min="1" max="10" step="1" class="form-control form-control-sm" id="size" value="5">
+                            <br>
+                            <label class="control-label"></label>
+                            <input type="submit" name="submit" id="submit" class="btn_codigo_qr btn btn-success" value="Generar código QR">
+                        </div>
+                    </form>
             </div>
 
             <div class="col-4" id="modificar">
                 <h1 class="titulo_modificar">Modificar</h1>
-                <form action=""></form>
+                <form action="">
+                    
+                </form>
             </div>
         </div>
         <div class="row">
