@@ -15,7 +15,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-2">
-                    <img class=".img-fluid" src="img/vicidial_admin_web_logo.png">
+                    <img class=".img-fluid" src="../img/vicidial_admin_web_logo.png">
                     <!--General botones-->
                     <?php
                         $servidor = array(5, 6, 8, 9, 14, 16, 35, 38, 42, 43, 45, 22, 27, 28, 29, 36, 39, 41, 44, 46, 201);

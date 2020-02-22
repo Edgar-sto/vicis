@@ -1,64 +1,179 @@
+<?php 
+    require_once 'phpqrcode/qrlib.php';
+    $content = "Espero y funcione";
+
+    //QRcode::png ($contenido, $archivo, $ecc, $tamaño, $margen)
+
+    QRcode::png(
+        $content,           //CONTENIDO
+        "example.png",      //NOMBRE DEL ARCHIVO
+        QR_ECLEVEL_L,       //INDICE DE CORRECION DE ERROREES
+        5,                  //TAMAÑO EN PIXELES
+        1,                  //TAMAÑO DEL MARGEN
+    );
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>Panel Edgar</title>
+    <title>Estación</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- ESTILOS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <!-- Tipografias -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/navbarprueba.css">
-    <!-- SCRIPT -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat+Subrayada&display=swap" rel="stylesheet">
+    <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>//Script para abrir ventana de tamaño asignado.
+        function abrir(url) {
+            open(url,'','top=300,left=300,width=300,height=300') ;
+        }
+    </script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <!-- Brand -->
-        <img class=".img-fluid" src="img/vicidial_admin_web_logo.png">
-        <!-- Links -->
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="http://127.0.0.1/facturacion/index.php" target="_blank">Facturación</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="http://127.0.0.1/vicis/datos_factura.php" target="_blank">Datos Facturación</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="http://127.0.0.1/vicis/panel_vicis.php" target="_blank">Vicis Dial</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="http://127.0.0.1/vicis/nueva.php" target="_blank">Estaciones</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="http://127.0.0.1/vicis/correos.php" target="_blank">Correos</a>
-            </li>
-        </ul>
-    </nav> 
-    <br>
     <div class="container-fluid">
-        <!-- comanods desde php 
-inicio de php $salida = shell_exec('ping 10.9.3.54'); $salida2 = shell_exec('ping 10.9.3.23'); echo "<pre>$salida</pre>"; echo '<p>tamaño:".strlen($salida)"</p>'; echo "<br>"; echo "<pre>$salida2</pre>"; echo '<p>tamaño:".strlen($salida2)"</p>'; ?> -->
-    <!--
-Script Para Obtener direccion ip
--->
+        <div class="row">
+            <div class="col-4" id="datos">
+                <?php
+                    $estacion = $_POST['estacion'];
+                    $usuario    = "root";
+                    $pass       = "";
+                    $servidor   = "127.0.0.1";
+                    $basededatos= "soporte";
+                    $conexion = mysqli_connect( $servidor, $usuario, $pass );
+                    $db = mysqli_select_db( $conexion, $basededatos );
+                    $consulta = "SELECT * FROM estaciones WHERE num_estacion = '$estacion'";
+                    $resultado = mysqli_query($conexion, $consulta);
+                    while ($fila = mysqli_fetch_array($resultado)) {
+                        echo '<table class="table">';
+                            echo "<tbody>";
+                                echo "<tr class='nom_campo'>";
+                                        echo '<td class="titulo" scope="row">'.$fila['num_estacion'].'</td>';
+                ?>
+                                              <td>
+                                                <a href="javascript:abrir('modificar.php')">Modificar</a>
+                                                <a href="ping.php">Ping</a>
+                                              </td>
+                <?php
+                                echo "</tr>";
+                            
+                                echo "<tr>";
+                                    echo "<td>Nombre de la estacion</td>";
+                                    echo '<td>'.$fila['local_host'].'</td>';
+                                echo "</tr>";
 
-<script>
- window.RTCPeerConnection = window.RTCPeerConnection || window.mozRTCPeerConnection || window.webkitRTCPeerConnection;   //compatibility for firefox and chrome
-    var pc = new RTCPeerConnection({iceServers:[]}), noop = function(){};    
-    pc.createDataChannel("");    //create a bogus data channel
-    pc.createOffer(pc.setLocalDescription.bind(pc), noop);    // create offer and set local description
-    pc.onicecandidate = function(ice){  //listen for candidate events
-        if(!ice || !ice.candidate || !ice.candidate.candidate)  return;
-        var myIP = /([0-9]{1,3}(\.[0-9]{1,3}){3}|[a-f0-9]{1,4}(:[a-f0-9]{1,4}){7})/.exec(ice.candidate.candidate)[1];
-        alert('my IP: '+myIP);
-        pc.onicecandidate = noop;
-    };
-</script>
+                                echo "<tr>";
+                                    echo "<td>Número de serie</td>";
+                                    echo '<td>'.$fila['serie_cpu'].'</td>';
+                                echo "</tr>";
+
+                                echo "<tr>";
+                                    echo "<td>Modelo CPU</td>";
+                                    echo '<td>'.$fila['modelo_cpu'].'</td>';
+                                echo "</tr>";
+
+                                echo "<tr>";
+                                    echo "<td>Número de serie monitor</td>";
+                                    echo '<td>'.$fila['serie_monitor'].'</td>';
+                                echo "</tr>";
+
+                                echo "<tr>";
+                                    echo "<td>Marca Monitor</td>";
+                                    echo '<td>'.$fila['marca_monito'].'</td>';
+                                echo "</tr>";
+
+                                echo "<tr>";
+                                    echo "<td>Campaña</td>";
+                                    echo '<td>'.$fila['campania'].'</td>';
+                                echo "</tr>";
+
+                                echo "<tr>";
+                                    echo "<td>Mouse</td>";
+                                    $color_mouse = $fila['mouse'];
+                                    if ($color_mouse == 1) {
+                                        echo "<td><i class='material-icons text-success'>mouse</i></td>";
+                                    } else {
+                                        echo "<td><i class='material-icons text-danger'>mouse</i></td>";
+                                    }
+                                echo "</tr>";
+
+                                echo "<tr>";
+                                    echo "<td>Teclado</td>";
+                                    $color_teclado = $fila['teclado'];
+                                    if ($color_teclado == 1) {
+                                        echo "<td><i class='material-icons text-success'>keyboard</i></td>";
+                                    } else {
+                                        echo "<td><i class='material-icons text-danger'>keyboard</i></td>";
+                                    }                        
+                                echo "</tr>";
+
+                                echo "<tr>";
+                                    echo "<td>Diadema</td>";
+                                        $color_diadema = $fila['diadema'];
+                                        if ($color_diadema == 1) {
+                                            echo "<td><i class='material-icons text-success'>headset_mic</i></td>";
+                                        } else {
+                                            echo "<td><i class='material-icons text-danger'>headset_mic</i></td>";
+                                        }                            
+                                echo "</tr>";
+
+                                echo "<tr>";
+                                    echo "<td>Comentario</td>";
+                                    echo '<td>'.$fila['comentario'].'</td>';
+                                echo "</tr>";
+                            echo "</tbody>";
+                        echo "</table>";
+                    }           
+                ?>
+            </div>
+            
+            <div class="col-2" id="codigo_qr">
+                <h1 class="titulo_codigo_qr">Código QR</h1>
+                
+                <div class="result">
+                    <!-- Impresión de código QR -->
+                    <h1>codigo qr</h1>
+                    <img src="example.png">
+                </div>
+                <br>
+                    <!--form class="form" method="post" name="generador" id="generador">
+                        <div class="form-group">
+                            <label class="control-label">Información : </label>
+                            <input class="form-control form-control-sm" type="text" name="textqr" id="content">
+                            
+                            <label class="control-label">Tamaño : </label>
+                            <select class="form-control form-control-sm" name="sizeqr" id="sizeqr">
+                                <option value="100">100 px</option>
+                                <option value="200">200 px</option>
+                                <option value="300">300 px</option>
+                                <option value="400">400 px</option>
+                            </select>
+
+
+                            
+                            <br>
+                            <label class="control-label"></label>
+                            <input type="submit" name="submit" id="submit" class="btn_codigo_qr btn btn-success" value="Generar código QR">
+                        </div>
+                    </form-->
+            </div>
+
+            <div class="col-4" id="modificar">
+                <h1 class="titulo_modificar">Modificar</h1>
+                <form action="">
+                    
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            
+
+        </div>
     </div>
 </body>
 </html>
