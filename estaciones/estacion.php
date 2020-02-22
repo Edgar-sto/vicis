@@ -1,4 +1,19 @@
- <!DOCTYPE html>
+<?php 
+    require_once '../phpqrcode/qrlib.php';
+    $content = "Espero y funcione";
+
+    //QRcode::png ($contenido, $archivo, $ecc, $tamaño, $margen)
+
+    QRcode::png(
+        $content,           //CONTENIDO
+        "example.png",      //NOMBRE DEL ARCHIVO
+        QR_ECLEVEL_L,       //INDICE DE CORRECION DE ERROREES
+        8,                  //TAMAÑO EN PIXELES
+        1,                  //TAMAÑO DEL MARGEN
+    );
+?>
+
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <title>Estación</title>
@@ -50,6 +65,7 @@
                                 echo "<tr>";
                                     echo "<td>Nombre de la estacion</td>";
                                     echo '<td>'.$fila['local_host'].'</td>';
+                                    $local_host = $fila['local_host'];
                                 echo "</tr>";
 
                                 echo "<tr>";
@@ -122,9 +138,10 @@
                 
                 <div class="result">
                     <!-- Impresión de código QR -->
+                    <img src="example.png">
                 </div>
                 <br>
-                    <form class="form" method="post" name="generador" id="generador">
+                    <!--form class="form" method="post" name="generador" id="generador">
                         <div class="form-group">
                             <label class="control-label">Información : </label>
                             <input class="form-control form-control-sm" type="text" name="textqr" id="content">
@@ -143,13 +160,13 @@
                             <label class="control-label"></label>
                             <input type="submit" name="submit" id="submit" class="btn_codigo_qr btn btn-success" value="Generar código QR">
                         </div>
-                    </form>
+                    </form-->
             </div>
 
             <div class="col-4" id="modificar">
                 <h1 class="titulo_modificar">Modificar</h1>
                 <form action="">
-                    
+                    <h2><?=$local_host?></h2>
                 </form>
             </div>
         </div>
