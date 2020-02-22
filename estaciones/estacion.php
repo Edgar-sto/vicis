@@ -13,7 +13,7 @@
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="script/ajax_generate_code.js"></script><!-- llama archivo generador del codigo QR -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script>//Script para abrir ventana de tamaño asignado.
         function abrir(url) {
             open(url,'','top=300,left=300,width=300,height=300') ;
@@ -119,25 +119,26 @@
             
             <div class="col-2" id="codigo_qr">
                 <h1 class="titulo_codigo_qr">Código QR</h1>
-                <div class="showQRCode">
+                
+                <div class="result">
                     <!-- Impresión de código QR -->
                 </div>
                 <br>
-                    <form class="form" method="post" id="codeForm" onsubmit="return false">
+                    <form class="form" method="post" name="generador" id="generador">
                         <div class="form-group">
                             <label class="control-label">Información : </label>
-                            <input class="form-control form-control-sm" id="content" type="text" required="required">
+                            <input class="form-control form-control-sm" type="text" name="textqr" id="content">
                             
-                            <label class="control-label">Nivel del código (ECC) : </label>
-                            <select class="form-control form-control-sm" id="ecc">
-                                <option value="H">H - Mejor</option>
-                                <option value="M">Me - Media</option>
-                                <option value="Q">B - baja</option>
-                                <option value="L">P - Peor</option>                         
-                            </select>
-                        
                             <label class="control-label">Tamaño : </label>
-                            <input type="number" min="1" max="10" step="1" class="form-control form-control-sm" id="size" value="5">
+                            <select class="form-control form-control-sm" name="sizeqr" id="sizeqr">
+                                <option value="100">100 px</option>
+                                <option value="200">200 px</option>
+                                <option value="300">300 px</option>
+                                <option value="400">400 px</option>
+                            </select>
+
+
+                            
                             <br>
                             <label class="control-label"></label>
                             <input type="submit" name="submit" id="submit" class="btn_codigo_qr btn btn-success" value="Generar código QR">
