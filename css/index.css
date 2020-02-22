@@ -1,12 +1,12 @@
 body {
   /*background: #202020;*/
-  background: url(../img/estaciones.jpg);
+  background: url(../img/estaciones1.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
-  width: 100%;
+  width: auto;
 }
 
-.button_xdx {
+.button_xdx { 
    background: #3D94F6;
    background-image: -webkit-linear-gradient(top, #3D94F6, #1E62D0);
    background-image: -moz-linear-gradient(top, #3D94F6, #1E62D0);

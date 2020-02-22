@@ -56,10 +56,14 @@ td {
    text-decoration: none;
 }
 
+#codigo_qr {
+   display: block;
+   background-color: rgba(46, 138, 138, 0.5);
+}
+
 .control-label {
 	color: #ECEFF1;
 }
-
 
 #datos, #codigo_qr, #modificar{
 	margin: 30px 30px 30px 30px;
@@ -73,10 +77,6 @@ td {
 	background: rgba(69, 39, 160, .5);
 }
 
-#codigo_qr {
-	display: block;
-	background-color: rgba(46, 138, 138, 0.5);
-}
 
 #modificar {
 	background-color: rgba(255, 87, 34, 0.5);
@@ -86,10 +86,12 @@ td {
 	margin: auto 0 auto 0;
 }
 
-.result {
-	width: auto 100%;
-	height: 180px;
-	background-color: white;
+.result_qr {
+   background-color: rgba(46, 138, 138, 1);
+	height: 232px;
+   padding: 12px 12px 12px 12px;
+   text-align: center;
+   width: auto 100%;
 }
 
 .titulo, .titulo_codigo_qr, .titulo_modificar{
