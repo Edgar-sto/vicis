@@ -161,32 +161,12 @@
                     <img src='../img/codigos_qr/<?=$nombre_de_imagen?>.png'>
                 </div>
                 <br>
-                    <!--form class="form" method="post" name="generador" id="generador">
-                        <div class="form-group">
-                            <label class="control-label">Información : </label>
-                            <input class="form-control form-control-sm" type="text" name="textqr" id="content">
-                            
-                            <label class="control-label">Tamaño : </label>
-                            <select class="form-control form-control-sm" name="sizeqr" id="sizeqr">
-                                <option value="100">100 px</option>
-                                <option value="200">200 px</option>
-                                <option value="300">300 px</option>
-                                <option value="400">400 px</option>
-                            </select>
-
-
-                            
-                            <br>
-                            <label class="control-label"></label>
-                            <input type="submit" name="submit" id="submit" class="btn_codigo_qr btn btn-success" value="Generar código QR">
-                        </div>
-                    </form-->
             </div>
 
             <div class="col-4" id="modificar">
                 <h1 class="titulo_modificar">Modificar</h1>
-                <form action="">
-                    <h2><?=$local_host?></h2>
+                <form class="form" action="modificar.php" method="post" name="generador" id="generador">
+                    
                 </form>
             </div>
         </div>
