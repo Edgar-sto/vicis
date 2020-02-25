@@ -26,7 +26,7 @@
                 <a class="nav-link" href="http://127.0.0.1/facturacion/index.php" target="_blank">Facturación</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="http://127.0.0.1/vicis/factura/datos_factura.php" target="_blank">Datos Facturación</a>
+                <a class="nav-link" href="http://127.0.0.1/vicis/factura/datos_factura.php" target="_blank">Teléfonia</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="http://127.0.0.1/vicis/panelvicis/panel_vicis.php" target="_blank">Vicis Dial</a>
