@@ -23,19 +23,35 @@
         <!-- Links -->
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="http://127.0.0.1/facturacion/index.php" target="_blank">Facturación</a>
+                <a class="nav-link" href="http://127.0.0.1/vicis/panelvicis/panel_vicis.php" target="_blank">Vicis Dial</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="http://127.0.0.1/vicis/factura/datos_factura.php" target="_blank">Teléfonia</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="http://127.0.0.1/vicis/panelvicis/panel_vicis.php" target="_blank">Vicis Dial</a>
+            <li class="nav-item dropdown"><!-- Inicio de cambios en nav-->
+                <a class="nav-link dropdown-toggle" href="" target="_blank" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
+                    <span class="nav-label">Estaciones</span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="http://127.0.0.1/vicis/estaciones/agregar.php">Agregar</a>
+                    </li>
+                    <li>
+                        <a href="http://127.0.0.1/vicis/estaciones/modificar.php">Modificar</a>
+                    </li>
+                    <li>
+                        <a href="http://127.0.0.1/vicis/estaciones/eliminar.php">Eliminar</a>
+                    </li>
+                </ul>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="http://127.0.0.1/vicis/nueva.php" target="_blank">Estaciones</a>
+                <a class="nav-link" href="http://127.0.0.1/facturacion/index.php" target="_blank">Facturación</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="http://127.0.0.1/vicis/correos.php" target="_blank">Correos</a>
+                <a class="nav-link" href="http://127.0.0.1/vicis/correos/correos.php" target="_blank">Correos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://127.0.0.1/vicis/stock/stock.php" target="_blank">Correos</a>
             </li>
         </ul>
     </nav> 

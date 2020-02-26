@@ -93,6 +93,10 @@ td {
    text-align: center;
    width: auto 100%;
 }
+.row{
+   display: flex;
+   margin-left: 100px;
+}
 
 .titulo, .titulo_codigo_qr, .titulo_modificar{
 	color: #ffffff;

@@ -38,7 +38,7 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-4" id="datos">
+            <div class="col-3" id="datos">
                 <?php
                     while ($fila = mysqli_fetch_array($resultado)){
                         echo '<table class="table">';
@@ -141,7 +141,7 @@
                 ?>
             </div>
             
-            <div class="col-2" id="codigo_qr">
+            <div class="col-3" id="codigo_qr">
                 <h1 class="titulo_codigo_qr">Código QR</h1>
                 
                 <div class="result_qr">
@@ -163,7 +163,7 @@
                 <br>
             </div>
 
-            <div class="col-4" id="modificar">
+            <div class="col-3" id="modificar">
                 <h1 class="titulo_modificar">Modificar</h1>
                 <form class="form" action="modificar.php" method="post" name="generador" id="generador">
                     

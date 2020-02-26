@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-02-2020 a las 03:15:43
+-- Tiempo de generación: 26-02-2020 a las 03:56:25
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.1
 
@@ -53,6 +53,7 @@ INSERT INTO `estaciones` (`uniqueid`, `num_estacion`, `local_host`, `mac_address
 (1, 'Estacion 001', 'EST-LAZ-001', '00:1B:78:B3:B7:72', 'MXJ73801R1', 'HP', 'HP', 'CNN73107D9', 'HP', '0002 - Validacion', 1, 1, 1, 'Funcionando al 100'),
 (2, 'Estacion 002', 'EST-LAZ-002', '00:24:E8:0C:A4:95', '28TK5J1', 'Optiplex 760', 'DELL', 'CNN6410484', 'HP', '0002 - Validacion', 1, 1, 1, 'Funcionando al 100'),
 (3, 'Estacion 003', 'EST-LAZ-003', 'EC:A8:6B:D0:51:FA', '183684', 'PCGHIA-1496', 'GHIA', 'PANTALLA LG', 'LG', '0002 - Validacion', 1, 1, 0, 'Equipo para pantalla de monitoreo'),
+(4, 'Estacion 004', 'EST-LAZ-004', '00:23:7D:13:9C:55', 'MXJ84908Y6', 'DC5800', 'HP', 'CNN64104Z4', 'HP', '0002 - Validación', 1, 1, 1, 'Equipo completo'),
 (5, 'Estacion 005', 'EST-LAZ-005', '00:1F:29:47:02:79', 'MXJ8200BBV', 'DC5800', 'HP', 'CNN5381C1R', 'HP', '0002 - Validacion', 1, 1, 1, 'Equipo completo'),
 (6, 'Estacion 006', 'EST-LAZ-006', '00:1C:C4:19:D7:68', 'MXJ74403G4', 'DC5700', 'HP', 'CNN64106MH', 'HP', '0002 - Validacion', 1, 1, 1, 'Equipo completo'),
 (7, 'Estacion 007', 'EST-LAZ-007', '00:1E:0B:3B:32:3B', 'MXJ81109DT', 'DC5700', 'HP', 'CNN64104YR', 'HP', '0002 - Validacion', 1, 1, 1, 'Equipo completo'),
@@ -67,11 +68,11 @@ INSERT INTO `estaciones` (`uniqueid`, `num_estacion`, `local_host`, `mac_address
 (16, 'Estacion 016', 'EST-LAZ-016', '00:18:FE:6E:63:86', 'MXJ6490D6N', 'DC5750', 'HP', 'CNN64104ZF', 'HP', '0002 - Validacion', 1, 1, 1, 'Equipo completo'),
 (17, 'Estacion 017', 'EST-LAZ-017', '00:1B:78:B7:51:7B', 'MXJ7370C36', 'DC5750', 'HP', 'CNN641048V', 'HP', '0002 - Validacion', 1, 1, 1, 'Equipo completo'),
 (18, 'Estacion 018', 'EST-LAZ-018', '00:1B:78:B7:45:71', 'MXJ7370C5L', 'DC5750', 'HP', 'CNN64105W3', 'HP', '0002 - Validacion', 1, 1, 1, 'Equipo completo'),
-(19, 'Estacion 019', 'EST-LAZ-019', '', 'MXJ7370C3Q', 'DC5750', 'HP', 'CNOUH572-466', 'DELL', '0002 - Validacion', 1, 1, 1, 'Equipo completo'),
-(20, 'Estacion 020', 'EST-LAZ-020', '', 'B6JHKH1', 'Optiplex 755', 'DELL', 'CNN73106YN', 'DELL', '0002 - Validacion', 1, 1, 1, 'Equipo completo'),
+(19, 'Estacion 019', 'EST-LAZ-019', '00:1B:78:B7:51:7B', 'MXJ7370C3Q', 'DC5750', 'HP', 'CNOUH572-466', 'DELL', '0002 - Validacion', 1, 1, 1, 'Equipo completo'),
+(20, 'Estacion 020', 'EST-LAZ-020', '00:21:70:47:FF:2A', 'B6JHKH1', 'Optiplex 755', 'DELL', 'CNN73106YN', 'DELL', '0002 - Validacion', 1, 1, 1, 'Equipo completo'),
 (21, 'Estacion 021', 'EST-LAZ-021', '00:1B:78:B7:52:1C', 'MXJ7370C35', 'DC5750', 'HP', 'CNN73106Y8', 'DELL', '0002 - Validacion', 1, 1, 1, 'Equipo completo'),
 (22, 'Estacion 022', 'EST-LAZ-022', '00:18:FE:6E:94:A1', 'MXJ6490D7Y', 'DC5750', 'HP', 'CNN7322GQ0', 'HP', '0002 - Validacion', 1, 1, 1, 'Equipo completo'),
-(23, 'Estacion 023', 'EST-LAZ-023', '00:1A:A0:56:25:A8', 'CZM2KD1', 'Optiplex 745', 'DELL', 'CNN ', 'HP', '0002 - Validacion', 1, 1, 1, 'Falta agregar número de serie de monitor'),
+(23, 'Estacion 023', 'EST-LAZ-023', '00:1A:A0:56:25:A8', 'CZM2KD1', 'Optiplex 745', 'DELL', 'CNN5381BVZ', 'HP', '0002 - Validacion', 1, 1, 1, 'Equipo completo'),
 (24, 'Estacion 024', 'EST-LAZ-024', '00:1B:78:B7:53:08', 'MXJ7370C45', 'DC5750', 'HP', 'CNN64106PT ', 'HP', '0002 - Validacion', 1, 1, 1, 'Equipo completo'),
 (25, 'Estacion 025', 'EST-LAZ-025', '00:18:FE:6E:62:BA', 'MXJ6490D77', 'DC5750', 'HP', 'CNN5381BJ7', 'HP', '0002 - Validacion', 1, 1, 1, 'Equipo completo'),
 (26, 'Estacion 026', 'EST-LAZ-026', '00:21:54:77:C8:DF', 'MXJ83509GB', 'DC5800', 'HP', 'CNN5381BJD', '', '0002 - Validacion', 1, 1, 1, 'Equipo completo'),
