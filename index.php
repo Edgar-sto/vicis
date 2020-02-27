@@ -23,10 +23,20 @@
         <!-- Links -->
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="http://127.0.0.1/vicis/panelvicis/panel_vicis.php" target="_blank">Vicis Dial</a>
+                <a class="nav-link" href="http://127.0.0.1/vicis/panelvicis/panel_vicis.php" target="_blank">VICIDial</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="http://127.0.0.1/vicis/factura/datos_factura.php" target="_blank">Teléfonia</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="" target="_blank" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
+                    <span class="nav-label">Telefonía</span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="http://127.0.0.1/vicis/factura/datos_factura.php" target="_blank">Datos Telefonía</a>
+                    </li>
+                    <li>
+                        <a href="http://127.0.0.1/facturacion/index.php" target="_blank">Factura</a>
+                    </li>
+                </ul>
             </li>
             <li class="nav-item dropdown"><!-- Inicio de cambios en nav-->
                 <a class="nav-link dropdown-toggle" href="" target="_blank" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
@@ -34,13 +44,13 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li>
-                        <a href="http://127.0.0.1/vicis/estaciones/agregar.php">Agregar</a>
+                        <a href="http://127.0.0.1/vicis/estaciones/agregar.php" target="_blank">Agregar</a>
                     </li>
                     <li>
-                        <a href="http://127.0.0.1/vicis/estaciones/modificar.php">Modificar</a>
+                        <a href="http://127.0.0.1/vicis/estaciones/modificar.php" target="_blank">Modificar</a>
                     </li>
                     <li>
-                        <a href="http://127.0.0.1/vicis/estaciones/eliminar.php">Eliminar</a>
+                        <a href="http://127.0.0.1/vicis/estaciones/eliminar.php" target="_blank">Eliminar</a>
                     </li>
                 </ul>
             </li>
