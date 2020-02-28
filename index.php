@@ -49,13 +49,13 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li>
-                        <a href="javascript:abrir('estaciones/agregar.php')">Agregar</a>
+                        <a href="javascript:abrir('estaciones/agregar.html')">Agregar</a>
                     </li>
                     <li>
                         <a href="javascript:abrir('estaciones/modificar.php')">Modificar</a>
                     </li>
                     <li>
-                        <a href="javascript:abrir('estaciones/eliminar.php')">Eliminar</a>
+                        <a href="javascript:abrir('estaciones/eliminar.html')">Eliminar</a>
                     </li>
                 </ul>
             </li>
