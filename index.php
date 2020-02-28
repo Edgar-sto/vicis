@@ -15,6 +15,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script>//Script para abrir ventana de tamaño asignado.
+        function abrir(url) {
+            open(url,'','top=300,left=300,width=280,height=550') ;
+        }
+    </script>
 </head>
 <body>
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -44,13 +49,13 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li>
-                        <a href="http://127.0.0.1/vicis/estaciones/agregar.php" target="_blank">Agregar</a>
+                        <a href="javascript:abrir('estaciones/agregar.php')">Agregar</a>
                     </li>
                     <li>
-                        <a href="http://127.0.0.1/vicis/estaciones/modificar.php" target="_blank">Modificar</a>
+                        <a href="javascript:abrir('estaciones/modificar.php')">Modificar</a>
                     </li>
                     <li>
-                        <a href="http://127.0.0.1/vicis/estaciones/eliminar.php" target="_blank">Eliminar</a>
+                        <a href="javascript:abrir('estaciones/eliminar.php')">Eliminar</a>
                     </li>
                 </ul>
             </li>

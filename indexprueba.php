@@ -1,18 +1,3 @@
-<?php 
-    require_once 'phpqrcode/qrlib.php';
-    $content = "Espero y funcione";
-
-    //QRcode::png ($contenido, $archivo, $ecc, $tamaño, $margen)
-
-    QRcode::png(
-        $content,           //CONTENIDO
-        "example.png",      //NOMBRE DEL ARCHIVO
-        QR_ECLEVEL_L,       //INDICE DE CORRECION DE ERROREES
-        5,                  //TAMAÑO EN PIXELES
-        1,                  //TAMAÑO DEL MARGEN
-    );
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -34,146 +19,79 @@
             open(url,'','top=300,left=300,width=300,height=300') ;
         }
     </script>
+    <script languague="javascript">
+        function mostrar() {
+            div = document.getElementById('flotante');
+            div.style.display = '';
+        }
+
+        function cerrar() {
+            div = document.getElementById('flotante');
+            div.style.display = 'none';
+        }
+</script>
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-4" id="datos">
-                <?php
-                    $estacion = $_POST['estacion'];
-                    $usuario    = "root";
-                    $pass       = "";
-                    $servidor   = "127.0.0.1";
-                    $basededatos= "soporte";
-                    $conexion = mysqli_connect( $servidor, $usuario, $pass );
-                    $db = mysqli_select_db( $conexion, $basededatos );
-                    $consulta = "SELECT * FROM estaciones WHERE num_estacion = '$estacion'";
-                    $resultado = mysqli_query($conexion, $consulta);
-                    while ($fila = mysqli_fetch_array($resultado)) {
-                        echo '<table class="table">';
-                            echo "<tbody>";
-                                echo "<tr class='nom_campo'>";
-                                        echo '<td class="titulo" scope="row">'.$fila['num_estacion'].'</td>';
-                ?>
-                                              <td>
-                                                <a href="javascript:abrir('modificar.php')">Modificar</a>
-                                                <a href="ping.php">Ping</a>
-                                              </td>
-                <?php
-                                echo "</tr>";
-                            
-                                echo "<tr>";
-                                    echo "<td>Nombre de la estacion</td>";
-                                    echo '<td>'.$fila['local_host'].'</td>';
-                                echo "</tr>";
-
-                                echo "<tr>";
-                                    echo "<td>Número de serie</td>";
-                                    echo '<td>'.$fila['serie_cpu'].'</td>';
-                                echo "</tr>";
-
-                                echo "<tr>";
-                                    echo "<td>Modelo CPU</td>";
-                                    echo '<td>'.$fila['modelo_cpu'].'</td>';
-                                echo "</tr>";
-
-                                echo "<tr>";
-                                    echo "<td>Número de serie monitor</td>";
-                                    echo '<td>'.$fila['serie_monitor'].'</td>';
-                                echo "</tr>";
-
-                                echo "<tr>";
-                                    echo "<td>Marca Monitor</td>";
-                                    echo '<td>'.$fila['marca_monito'].'</td>';
-                                echo "</tr>";
-
-                                echo "<tr>";
-                                    echo "<td>Campaña</td>";
-                                    echo '<td>'.$fila['campania'].'</td>';
-                                echo "</tr>";
-
-                                echo "<tr>";
-                                    echo "<td>Mouse</td>";
-                                    $color_mouse = $fila['mouse'];
-                                    if ($color_mouse == 1) {
-                                        echo "<td><i class='material-icons text-success'>mouse</i></td>";
-                                    } else {
-                                        echo "<td><i class='material-icons text-danger'>mouse</i></td>";
-                                    }
-                                echo "</tr>";
-
-                                echo "<tr>";
-                                    echo "<td>Teclado</td>";
-                                    $color_teclado = $fila['teclado'];
-                                    if ($color_teclado == 1) {
-                                        echo "<td><i class='material-icons text-success'>keyboard</i></td>";
-                                    } else {
-                                        echo "<td><i class='material-icons text-danger'>keyboard</i></td>";
-                                    }                        
-                                echo "</tr>";
-
-                                echo "<tr>";
-                                    echo "<td>Diadema</td>";
-                                        $color_diadema = $fila['diadema'];
-                                        if ($color_diadema == 1) {
-                                            echo "<td><i class='material-icons text-success'>headset_mic</i></td>";
-                                        } else {
-                                            echo "<td><i class='material-icons text-danger'>headset_mic</i></td>";
-                                        }                            
-                                echo "</tr>";
-
-                                echo "<tr>";
-                                    echo "<td>Comentario</td>";
-                                    echo '<td>'.$fila['comentario'].'</td>';
-                                echo "</tr>";
-                            echo "</tbody>";
-                        echo "</table>";
-                    }           
-                ?>
-            </div>
-            
-            <div class="col-2" id="codigo_qr">
-                <h1 class="titulo_codigo_qr">Código QR</h1>
-                
-                <div class="result">
-                    <!-- Impresión de código QR -->
-                    <h1>codigo qr</h1>
-                    <img src="example.png">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <!-- Brand -->
+        <img class=".img-fluid" src="img/vicidial_admin_web_logo.png">
+        <!-- Links -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="http://127.0.0.1/vicis/panelvicis/panel_vicis.php" target="_blank">VICIDial</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="" target="_blank" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
+                    <span class="nav-label">Telefonía</span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="http://127.0.0.1/vicis/factura/datos_factura.php" target="_blank">Datos Telefonía</a>
+                    </li>
+                    <li>
+                        <a href="http://127.0.0.1/facturacion/index.php" target="_blank">Factura</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown"><!-- Inicio de cambios en nav-->
+                <a class="nav-link dropdown-toggle" href="" target="_blank" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
+                    <span class="nav-label">Estaciones</span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="javascript:abrir('estaciones/agregar.php')">Agregar</a>
+                    </li>
+                    <li>
+                        <a href="javascript:abrir('estaciones/modificar.php')">Modificar</a>
+                    </li>
+                    <li>
+                        <a href="javascript:abrir('estaciones/eliminar.php')">Eliminar</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://127.0.0.1/facturacion/index.php" target="_blank">Facturación</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://127.0.0.1/vicis/correos/correos.php" target="_blank">Correos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://127.0.0.1/vicis/stock/stock.php" target="_blank">Correos</a>
+            </li>
+        </ul>
+    </nav> 
+    <br>
+    <div class="container"> 
+        <p>
+            <a href="javascript:mostrar();">Mostrar</a>
+        </p>
+        <div id="flotante" style="display:none;">
+                <div id="close"><a href="javascript:cerrar();">cerrar</a>
+                Este es un div ocultar
                 </div>
-                <br>
-                    <!--form class="form" method="post" name="generador" id="generador">
-                        <div class="form-group">
-                            <label class="control-label">Información : </label>
-                            <input class="form-control form-control-sm" type="text" name="textqr" id="content">
-                            
-                            <label class="control-label">Tamaño : </label>
-                            <select class="form-control form-control-sm" name="sizeqr" id="sizeqr">
-                                <option value="100">100 px</option>
-                                <option value="200">200 px</option>
-                                <option value="300">300 px</option>
-                                <option value="400">400 px</option>
-                            </select>
-
-
-                            
-                            <br>
-                            <label class="control-label"></label>
-                            <input type="submit" name="submit" id="submit" class="btn_codigo_qr btn btn-success" value="Generar código QR">
-                        </div>
-                    </form-->
-            </div>
-
-            <div class="col-4" id="modificar">
-                <h1 class="titulo_modificar">Modificar</h1>
-                <form action="">
-                    
-                </form>
-            </div>
-        </div>
-        <div class="row">
             
-
         </div>
-    </div>
+        <div id="flotante" style="display:none;">CONTENIDO A OCULTAR/MOSTRAR</div>
+</div>
 </body>
 </html>
