@@ -20,6 +20,11 @@
             open(url,'','top=300,left=300,width=280,height=550') ;
         }
     </script>
+    <script>
+        function delete(url){
+            open(url,'','top=300,left=300,width=280,height=300');
+        }
+    </script>
 </head>
 <body>
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -55,7 +60,7 @@
                         <a href="javascript:abrir('estaciones/modificar.php')">Modificar</a>
                     </li>
                     <li>
-                        <a href="javascript:abrir('estaciones/eliminar.html')">Eliminar</a>
+                        <a href="javascript:delete('estaciones/eliminar.html')">Eliminar</a>
                     </li>
                 </ul>
             </li>
