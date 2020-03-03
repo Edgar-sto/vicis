@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="shortcut icon" href="img/favicon.ico" />
     <!-- Fuentes de iconos -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- SCRIPT -->
@@ -15,16 +16,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script>//Script para abrir ventana de tamaño asignado.
+    <script>//Script para abrir ventana agregar y modificar de tamaño asignado.
         function abrir(url) {
             open(url,'','top=300,left=300,width=280,height=550') ;
         }
     </script>
-    <script>
-        function delete(url){
-            open(url,'','top=300,left=300,width=280,height=300');
+
+    <script>//Script para abrir ventana eliminar de tamaño asignado.
+        function cerrar(url) {
+            open(url,'','top=300,left=300,width=280,height=200') ;
         }
     </script>
+    
 </head>
 <body>
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -56,11 +59,11 @@
                     <li>
                         <a href="javascript:abrir('estaciones/agregar.html')">Agregar</a>
                     </li>
-                    <li>
-                        <a href="javascript:abrir('estaciones/modificar.php')">Modificar</a>
+                    <li><!--Elemento dehabilitado-->
+                        <a class="dropdown-item disabled" href="javascript:abrir('estaciones/modificar.php')">Modificar</a>
                     </li>
                     <li>
-                        <a href="javascript:delete('estaciones/eliminar.html')">Eliminar</a>
+                        <a href="javascript:cerrar('estaciones/eliminar.html')">Eliminar</a>
                     </li>
                 </ul>
             </li>
@@ -68,10 +71,10 @@
                 <a class="nav-link" href="http://127.0.0.1/facturacion/index.php" target="_blank">Facturación</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="http://127.0.0.1/vicis/correos/correos.php" target="_blank">Correos</a>
+                <a class="nav-link" href="http://127.0.0.1/vicis/correos/correos.HTML" target="_blank">Correos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="http://127.0.0.1/vicis/stock/stock.php" target="_blank">Correos</a>
+                <a class="nav-link" href="http://127.0.0.1/vicis/stock/stock.php" target="_blank">Almacén</a>
             </li>
         </ul>
     </nav> 

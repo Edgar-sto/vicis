@@ -1,3 +1,18 @@
+body#agregar {
+   background: url(../img/fondo_agregar.jpg);
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   width: auto;
+}
+
+body#delete {
+   background: url(../img/fondo_eliminar.jpg);
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   width: auto;
+}
+
+
 .button_xdx { 
    background: #4CAF50;
    background-image: -webkit-linear-gradient(top, #4CAF50, #8BC34A);
@@ -52,10 +67,10 @@
    font-family: monospace;
    font-size: 12px;
    font-weight: 100;
-   padding: 10px;
-   box-shadow: 0px 0px 8px 0px #000000;
-   -webkit-box-shadow: 0px 0px 8px 0px #000000;
-   -moz-box-shadow: 0px 0px 8px 0px #000000;
+   padding: 12px;
+   box-shadow: 0px 0px 10px 0px #000000;
+   -webkit-box-shadow: 0px 0px 10px 0px #000000;
+   -moz-box-shadow: 0px 0px 10px 0px #000000;
    text-shadow: 1px 1px 20px #000000;
    border: solid #A5D6A7 1px;
    text-decoration: none;
@@ -78,6 +93,22 @@
    text-decoration: none;
 }
 
+.caja_de_texto {
+   margin-left: auto;
+   margin-right: auto;
+}
+
 .columna_btn {
+   text-align: center;
+}
+
+.form-check-label {
+   color: #ECEFF1;
+   font-size: 12px;
+   margin-left: 12px;
+}
+
+.titulo {
+   color: #ECEFF1;
    text-align: center;
 }

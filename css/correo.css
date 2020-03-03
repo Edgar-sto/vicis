@@ -1,0 +1,6 @@
+body {
+   background: url(../img/fondo_correos.jpg);
+   /*background-repeat: no-repeat;*/
+   background-attachment: fixed;
+   width: auto;
+}

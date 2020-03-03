@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../css/agregar-modificar.css">
+    <link rel="shortcut icon" href="../img/eliminar.ico" />
     <!-- Fuentes de iconos -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- SCRIPT -->
@@ -17,24 +18,22 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body id="delete">
 	<form action="eliminar.php" method="POST" name="form_guardar">
 		<table class="table">
             <tbody>
-                <tr class='nom_campo'>
+                <tr class='titulo'>
                 	<td>
                 		<h1>¿Qué estación vas a eleminar?</h1>
                 	</td>
 				</tr>
-
-				<tr>
+				<tr class="caja_de_texto">
 					<td>
-						<input class="form-control-lg" type="text" name="numero_de_estacion" id="estacion" placeholder="Número de estación">
+						<input class="form-control" type="text" name="numero_de_estacion" id="estacion" placeholder="Número de estación">
 					</td>
 				</tr>
-				
-				<tr>
-					<td class="columna_btn" colspan="2">
+				<tr class="columna_btn">
+					<td>
 						<input class="button_xdx_eliminar" type="submit" value="Eliminar">
 					</td>
 				</tr>
