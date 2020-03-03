@@ -3,7 +3,7 @@
 <head>
     <title>Panel Edgar</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <!-- ESTILOS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -74,7 +74,7 @@
                 <a class="nav-link" href="http://127.0.0.1/vicis/correos/correos.HTML" target="_blank">Correos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="http://127.0.0.1/vicis/stock/stock.php" target="_blank">Almacén</a>
+                <a class="nav-link" href="http://127.0.0.1/vicis/stock/stock.php" target="_blank">Stock</a>
             </li>
         </ul>
     </nav> 

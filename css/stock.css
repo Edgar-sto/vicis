@@ -1,0 +1,50 @@
+body {
+   background: url(../img/fondo_stock_opt.jpg);
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   width: auto;
+}
+
+.col {
+	background-color: rgba(46,125,50,.30);
+}
+
+.contenedor {
+	background-color: rgba(69,90,100,.75);
+	border-radius: 20px 20px 20px 20px;
+	height: 550px;
+	margin-top: 80px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 40px;
+	width: 85%;
+}
+
+.material-icons {
+  color: #e0e0e0;
+  display: block;
+  font-size: 50px;
+}
+
+#fila1 {
+	background-color: rgba(238,238,238,0.85);
+	height: 200px;
+	margin: 25px 0 0 0;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	text-align: center;
+}
+
+#fila2 {
+	background-color: rgba(238,238,238,0.85);
+	height: 200px;
+	margin: 25px 0 0 0;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	text-align: center;
+}
+
+
+
