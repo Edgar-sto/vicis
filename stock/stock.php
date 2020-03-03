@@ -21,11 +21,16 @@
 <body>
 	<div class="contenedor">
 		<div class="row" id="fila1">
-			<div class="col">
+			<div class="col uno">
 				<i class='material-icons'>desktop_windows</i>
+				<br>
 				<label>CPU</label>
 			</div>
-			<div class="col">columna 2</div>
+			<div class="col">
+				<i class='material-icons'>mouse</i>
+				<br>
+				<label for="">MOUSE</label>
+			</div>
 			<div class="col">columna 3</div>
 		</div>
 		<div class="row" id="fila2">

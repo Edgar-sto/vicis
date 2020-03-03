@@ -5,8 +5,9 @@ body {
    width: auto;
 }
 
-.col {
+.uno {
 	background-color: rgba(46,125,50,.30);
+	font-size: 50px;
 }
 
 .contenedor {
@@ -21,13 +22,13 @@ body {
 }
 
 .material-icons {
-  color: #e0e0e0;
+  color: rgba(255,87,34,1);
   display: block;
-  font-size: 50px;
+  margin: 65px 25px 25px 25px;
 }
 
 #fila1 {
-	background-color: rgba(238,238,238,0.85);
+	/*background-color: rgba(238,238,238,0.85);*/
 	height: 200px;
 	margin: 25px 0 0 0;
 	margin-left: auto;
