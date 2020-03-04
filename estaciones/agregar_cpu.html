@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Agregar CPU</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!-- ESTILOS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <!-- Fuentes de iconos -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- SCRIPT -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<form action="agregar_cpu.php" method="POST" name="form_guardar">
+		<table class="table">
+            <tbody>
+                <tr>
+					<td>	<label class="form-check-label" for="marca_cpu">Marca CPU</label>				</td>
+					<td>	<input class="form-control-sm" type="text" name="marcaCPU" id="marca_cpu">		</td>	
+				</tr>
+				<tr>
+					<td>	<label class="form-check-label" for="num_serie_cpu">Número de serie</label>		</td>
+					<td>	<input class="form-control-sm" type="text" name="num_serieCPU" id="num_serie_cpu">	</td>
+				</tr>
+				<tr>
+					<td>	<label class="form-check-label" for="modelo_cpu">Modelo CPU</label>				</td>
+					<td>	<input class="form-control-sm" type="text" name="modeloCPU" id="modelo_cpu">	</td>
+				</tr>
+				<tr>
+					<td>	<label class="form-check-label" for="direccion_mac">Dirección MAC</label>		</td>
+					<td>	<input class="form-control-sm" type="text" name="direccionMAC" id="direccion_mac">	</td>
+				</tr>
+				<tr>
+					<td>	<label class="form-check-label" for="ubicacion">Ubicación</label>						</td>
+					<td>	<input class="form-control-sm" type="text" name="ubicacion" id="ubicacion">	</td>
+				</tr>
+				<tr>
+					<td>	<label class="form-check-label" for="comentary">Comentario</label>			</td>
+					<td>	<input class="form-control-sm" type="text" name="comentario" id="comentary">	</td>
+				</tr>
+				<tr>
+					<td class="columna_btn" colspan="2">
+						<input class="button_xdx" type="submit" value="Guardar">
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+</body>
+</html>

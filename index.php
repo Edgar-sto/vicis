@@ -21,13 +21,26 @@
             open(url,'','top=300,left=300,width=280,height=550') ;
         }
     </script>
-
     <script>//Script para abrir ventana eliminar de tamaño asignado.
         function cerrar(url) {
             open(url,'','top=300,left=300,width=280,height=200') ;
         }
     </script>
-    
+    <script>//Script para abrir ventana modificar de tamaño asignado.
+        function modificar(url) {
+            open(url,'','top=300,left=300,width=280,height=200') ;
+        }
+    </script>
+    <script>//Script para abrir ventana agregar cpu de tamaño asignado.
+        function agregarCPU(url) {
+            open(url,'','top=300,left=300,width=280,height=300') ;
+        }
+    </script>
+    <script>//Script para abrir ventana agregar monitor de tamaño asignado.
+        function agregarMONITOR(url) {
+            open(url,'','top=300,left=300,width=280,height=300') ;
+        }
+    </script>
 </head>
 <body>
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -36,7 +49,7 @@
         <!-- Links -->
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="http://127.0.0.1/vicis/panelvicis/panel_vicis.php" target="_blank">VICIDial</a>
+                <a class="nav-link" href="http://127.0.0.1/vicis/panelvicis/panel_vicis.php" target="_blank">VICIdial</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="" target="_blank" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
@@ -57,10 +70,16 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li>
-                        <a href="javascript:abrir('estaciones/agregar.html')">Agregar</a>
+                        <a href="javascript:abrir('estaciones/agregar.html')">Agregar estación</a>
+                    </li>
+                    <li>
+                        <a href="javascript:agregarCPU('estaciones/agregar_cpu.html')">Agregar CPU</a>
+                    </li>
+                    <li>
+                        <a href="javascript:agregarMONITOR('estaciones/agregar_monitor.html')">Agregar Monitor</a>
                     </li>
                     <li><!--Elemento dehabilitado-->
-                        <a class="dropdown-item disabled" href="javascript:abrir('estaciones/modificar.php')">Modificar</a>
+                        <a class="dropdown-item disabled" href="javascript:modificar('estaciones/modificar.php')">Modificar</a>
                     </li>
                     <li>
                         <a href="javascript:cerrar('estaciones/eliminar.html')">Eliminar</a>

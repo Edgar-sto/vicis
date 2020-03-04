@@ -20,26 +20,17 @@
 </head>
 <body>
 	<div class="contenedor">
-		<div class="row" id="fila1">
-			<div class="col uno">
-				<i class='material-icons'>desktop_windows</i>
-				<br>
-				<label>CPU</label>
-			</div>
-			<div class="col">
-				<i class='material-icons'>mouse</i>
-				<br>
-				<label for="">MOUSE</label>
-			</div>
-			<div class="col">columna 3</div>
-		</div>
-		<div class="row" id="fila2">
-			<div class="col">columna 4</div>
-			<div class="col">columna 5</div>
-			<div class="col">columna 6</div>
-			<div class="col">columna 7</div>
-		</div>
+		<h1>Equipo en almacén</h1>
+		<table>
+			<tbody>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr></tr>
+			</tbody>
+		</table>
 	</div>
-	
-</body>
+</body> 
 </html>

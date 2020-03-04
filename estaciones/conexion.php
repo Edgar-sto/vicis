@@ -4,9 +4,6 @@
     $servidor   	=	"127.0.0.1";
     $basededatos	= 	"soporte";
     $conectar 		= 	mysqli_connect($servidor, $usuario, $pass, $basededatos);
-
-//$enlace = mysqli_connect("localhost", "mi_usuario", "mi_contraseña", "world");
-
 /* comprobar la conexión 
 if (mysqli_connect_errno()) {
     printf("Conexión fallida: %s", mysqli_connect_error());
