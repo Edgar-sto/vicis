@@ -19,18 +19,81 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
+	<h1>Inventario</h1>
 	<div class="contenedor">
-		<h1>Equipo en almacén</h1>
-		<table>
-			<tbody>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr></tr>
-			</tbody>
-		</table>
+		<h2>CPU</h2>
+			<?php
+				require '../estaciones/conexion.php';
+				$conectar 		= 	mysqli_connect($servidor, $usuario, $pass, $basededatos);
+           		$select = "SELECT * FROM cpu";
+           		$resul = mysqli_query($conectar, $select);
+           		$contador_cpu=1;
+           	?>
+       		<table class="table table-striped table-dark table-hover" id="cpu-id">
+	           	<thead class="cabecera_tabla">
+		           	<tr>
+		           		<th>Marca</th>
+		           		<th>Número de serie</th>
+		           		<th>Modelo </th>
+		           		<th>Dirección MAC</th>
+		           		<th>Ubicación</th>
+		                <th>Comentarios</th>
+		            </tr>
+	            </thead>
+	            <tbody class="cuerpo_tabla">
+	                <?php
+	            		while( $row = mysqli_fetch_assoc($resul)) {
+	                		echo "<tr>";
+	                		echo "
+	            					<td id='user_".$contador_cpu."'>".$row['marca_cpu']."</td>
+	            					<td>".$row['serie_cpu']."</td>
+	            					<td>".$row['modelo_cpu']."</td>
+	            					<td>".$row['mac_address']."</td>
+	            					<td>".$row['ubicacion']."</td>
+	            					<td>".$row['comentario']."</td>";
+	                		echo "</tr>";
+	            		}
+	            	?>
+				</tbody>
+			</table>
+	</div>
+
+	<div class="contenedor">
+		<h2>Monitor</h2>
+			<?php
+				$select = "SELECT * FROM monitor";
+
+            		$resul = mysqli_query($conectar, $select);
+
+            		$contador_monitor=1;
+            ?>
+            <table class="table table-striped table-dark" id="monitor-id">
+	           	<thead class="cabecera_tabla">
+		           	<tr>
+		           		<th>Marca</th>
+		           		<th>Número de serie</th>
+		           		<th>Modelo </th>
+		           		<th>Ubicación</th>
+		                <th>Comentarios</th>
+		            </tr>
+	            </thead>
+	            <tbody class="cuerpo_tabla">
+	                <?php
+	            		while( $row = mysqli_fetch_assoc($resul)) {
+	                		echo "<tr>";
+	                		echo "
+	            					<td id='user_".$contador_monitor."'>".$row['marca_monitor']."</td>
+	            					<td>".$row['num_serie_monitor']."</td>
+	            					<td>".$row['modelo_monitor']."</td>
+	            					<td>".$row['ubicacion']."</td>
+	            					<td>".$row['comentario']."</td>";
+	                		echo "</tr>";
+	            		}
+	            	?>
+				</tbody>
+			</table>
+			
+		
 	</div>
 </body> 
 </html>
