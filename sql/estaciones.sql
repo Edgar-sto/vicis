@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-02-2020 a las 03:56:25
+-- Tiempo de generación: 06-03-2020 a las 07:43:37
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.1
 
@@ -50,8 +50,8 @@ CREATE TABLE `estaciones` (
 --
 
 INSERT INTO `estaciones` (`uniqueid`, `num_estacion`, `local_host`, `mac_address`, `serie_cpu`, `modelo_cpu`, `marca_cpu`, `serie_monitor`, `marca_monito`, `campania`, `mouse`, `teclado`, `diadema`, `comentario`) VALUES
-(1, 'Estacion 001', 'EST-LAZ-001', '00:1B:78:B3:B7:72', 'MXJ73801R1', 'HP', 'HP', 'CNN73107D9', 'HP', '0002 - Validacion', 1, 1, 1, 'Funcionando al 100'),
-(2, 'Estacion 002', 'EST-LAZ-002', '00:24:E8:0C:A4:95', '28TK5J1', 'Optiplex 760', 'DELL', 'CNN6410484', 'HP', '0002 - Validacion', 1, 1, 1, 'Funcionando al 100'),
+(1, 'Estacion 001', 'EST-LAZ-001', '00:1B:78:B3:B7:72', 'MXJ73801R1', 'DC5800', 'HP', 'CNN73107D9', 'HP', '0002 - Validacion', 1, 1, 1, 'Funcionando al 100'),
+(2, 'Estacion 002', 'EST-LAZ-002', '00:24:E8:0C:A4:95', 'MXJ7370C2L', 'DC5750', 'HP', 'CNN6410484', 'HP', '0002 - Validacion', 1, 1, 1, 'Funcionando al 100'),
 (3, 'Estacion 003', 'EST-LAZ-003', 'EC:A8:6B:D0:51:FA', '183684', 'PCGHIA-1496', 'GHIA', 'PANTALLA LG', 'LG', '0002 - Validacion', 1, 1, 0, 'Equipo para pantalla de monitoreo'),
 (4, 'Estacion 004', 'EST-LAZ-004', '00:23:7D:13:9C:55', 'MXJ84908Y6', 'DC5800', 'HP', 'CNN64104Z4', 'HP', '0002 - Validación', 1, 1, 1, 'Equipo completo'),
 (5, 'Estacion 005', 'EST-LAZ-005', '00:1F:29:47:02:79', 'MXJ8200BBV', 'DC5800', 'HP', 'CNN5381C1R', 'HP', '0002 - Validacion', 1, 1, 1, 'Equipo completo'),
@@ -127,7 +127,7 @@ INSERT INTO `estaciones` (`uniqueid`, `num_estacion`, `local_host`, `mac_address
 (75, 'Estacion 075', 'EST-LAZ-075', '00:21:70:1F:A1:57', '359R5J1', 'Optiplex 760', 'DELL', 'CNN64106MN', 'HP', 'Monitoreo', 1, 1, 1, 'Equipo completo'),
 (76, 'Estacion 076', 'EST-LAZ-076', '', '9B1G7D1', 'Optiplex 745', 'DELL', 'CNN5381C28', 'HP', 'Monitoreo', 1, 1, 1, 'Equipo completo'),
 (77, 'Estacion 077', 'EST-LAZ-077', '00:1B:78:B7:53:0F\r\n', 'MXJ7370C41', 'DC5750', 'HP', 'CNN6410485', 'HP', 'Monitoreo', 1, 1, 1, 'Equipo completo'),
-(78, 'Estacion 078', 'EST-LAZ-078', '', 'MXJ7370C2L', 'DC5750', 'HP', 'CNN7322GQ7', 'HP', 'Monitoreo', 1, 1, 1, 'Equipo completo'),
+(78, 'Estacion 078', 'EST-LAZ-078', '00:24:E8:0C:A4:95', '28TK5J1', 'Optiplex 760', 'DELL', 'CNN7322GQ7', 'HP', 'Monitoreo', 1, 1, 1, 'Equipo completo'),
 (79, 'Estacion 079', 'EST-LAZ-079', '00:1A:A0:7A:67:8E\r\n', '48DR8F1', 'Optiplex 755', 'DELL', 'CNN64106RN', 'HP', 'Monitoreo', 1, 1, 1, 'Equipo completo'),
 (80, 'Estacion 080', 'EST-LAZ-080', '', 'HS4TMG1', 'Optiplex 755', 'DELL', 'CNN7322G92', 'HP', 'Monitoreo', 1, 1, 1, 'Equipo completo'),
 (81, 'Estacion 081', 'EST-LAZ-081', '', 'MXJ7460CJC', 'DC5750', 'HP', 'CNN64105RZ', 'HP', 'Monitoreo', 1, 1, 1, 'Equipo completo'),
@@ -179,6 +179,16 @@ INSERT INTO `estaciones` (`uniqueid`, `num_estacion`, `local_host`, `mac_address
 --
 ALTER TABLE `estaciones`
   ADD PRIMARY KEY (`uniqueid`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `estaciones`
+--
+ALTER TABLE `estaciones`
+  MODIFY `uniqueid` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=120;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
