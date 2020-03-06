@@ -41,6 +41,7 @@
 		            </tr>
 	            </thead>
 	            <tbody class="cuerpo_tabla">
+	            	<form action="estaciones/estacion.php" method="post" target="_blank">
 	                <?php
 	            		while( $row = mysqli_fetch_assoc($resul)) {
 	                		echo "<tr>";
@@ -51,9 +52,17 @@
 	            					<td>".$row['mac_address']."</td>
 	            					<td>".$row['ubicacion']."</td>
 	            					<td>".$row['comentario']."</td>";
+	            	?>
+	            					<td>
+	            						
+                  							<input name='codigoQR_cpu' id='' class='button_xdx btn btn-dark btn-lg' type='submit' value='Generar QR'/>
+						                
+	            					</td>
+	            	<?php
 	                		echo "</tr>";
 	            		}
 	            	?>
+	            	</form>
 				</tbody>
 			</table>
 	</div>
