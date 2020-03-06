@@ -83,7 +83,7 @@
 	                		echo "<tr>";
 	                		echo "
 	            					<td id='user_".$contador_monitor."'>".$row['marca_monitor']."</td>
-	            					<td>".$row['num_serie_monitor']."</td>
+	            					<td>".$row['serie_monitor']."</td>
 	            					<td>".$row['modelo_monitor']."</td>
 	            					<td>".$row['ubicacion']."</td>
 	            					<td>".$row['comentario']."</td>";
