@@ -96,7 +96,10 @@
                 <a class="nav-link" href="http://127.0.0.1/vicis/correos/correos.HTML" target="_blank">Correos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="http://127.0.0.1/vicis/stock/stock.php" target="_blank">Stock</a>
+                <a class="nav-link" href="http://127.0.0.1/vicis/activos_fijos/activos_fijos.php" target="_blank">Activos Fijos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://127.0.0.1/vicis/indexprueba.php" target="_blank">Pruebas</a>
             </li>
         </ul>
     </nav> 
