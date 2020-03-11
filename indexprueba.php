@@ -75,10 +75,6 @@
 
         $fila9  =   mysqli_fetch_assoc($resul_teclado);
         $fila10  =   mysqli_fetch_assoc($resul_teclado2);
-
-        
-
-                
     ?>
     <h1>Activos fijos</h1>
     <br>
@@ -132,7 +128,7 @@
         </div>
 
         <div class="todo">
-            <table class="table table-striped table-dark table-hover" id="cpu-id">
+            <table class="table table-dark table-hover" id="cpu-id">
                 <thead class="cabecera_tabla">
                     <tr>
                         <th>MARCA</th>
@@ -142,25 +138,32 @@
                         <th>Ubicación</th>
                         <th>Área</th>
                         <th>Comentario</th>
+                        <th>Codigo QR</th>
                     </tr>
                 </thead>
                 <tbody class="cuerpo_tabla">
                     <?php
                         $consulta_general_cpu       =   "SELECT * FROM cpu";
                         $res_consulta_general_cpu   =   mysqli_query($conectar, $consulta_general_cpu);
-                        
                         $contador=1;
                         
                         while( $fila_general   =   mysqli_fetch_assoc($res_consulta_general_cpu)) {
                 echo "<tr>";
                 echo "
-                    <td id='user_".$contador."'>".$fila_general['marca_cpu']."</td>
+                    <td class='user_".$contador."'>".$fila_general['marca_cpu']."</td>
                     <td>".$fila_general['serie_cpu']."</td>
                     <td>".$fila_general['modelo_cpu']."</td>
                     <td>".$fila_general['mac_address']."</td>
                     <td>".$fila_general['ubicacion']."</td>
                     <td>".$fila_general['area']."</td>
-                    <td>".$fila_general['comentario']."</td>";                    
+                    <td>".$fila_general['comentario']."</td>";
+                    ?>
+                    <td>
+                        <form action="activos_fijos/cpu.php" method="post" target="_blank">
+                            <input name='codigo_qr' id='<?=$fila_general['uniqueid']?>' class='button_xdx btn btn-dark btn-md' type='submit' value='QR <?=$fila_general['uniqueid']?>'/>
+                        </form>
+                    </td>
+                    <?php                  
                 echo"</tr>";
             }
                     ?>
