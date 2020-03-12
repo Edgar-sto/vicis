@@ -57,10 +57,12 @@ body {
 	font-size: 12px;
 	text-align: center;
 }
-/*
+
 .datos_generales {
-	position: fixed;
-}*/
+   width: 90%;
+	margin-right: auto;
+   margin-left: auto;
+}
 
 h1 {
 	color: rgba(236,239,241,1);
@@ -73,7 +75,7 @@ h1 {
 h2 {
 	color: rgba(236,239,241,1);
 	font-size: 20px;
-	margin-left: 20px;
+	margin-left: 80px;
 }
 
 i.material-icons {

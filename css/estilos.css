@@ -11,6 +11,10 @@
     display: inline;
 }
 
+.margen {
+    margin-right: 15px;
+}
+
 .sucursal-lazaro{
     width: 1280px;
     height: 914px;
