@@ -36,11 +36,11 @@
         $consulta_diadema_operacion =   "SELECT COUNT(*) ubicacion FROM diademas WHERE ubicacion != 'Almacen'";
         $consulta_diadema_almacen   =   "SELECT COUNT(*) ubicacion FROM diademas WHERE ubicacion = 'Almacen'";
 
-        $consulta_mouse_operaciones =   "SELECT COUNT(*) ubicacion FROM mouse WHERE ubicacion != 'Almacen'";
-        $consulta_mouse_almacen     =   "SELECT COUNT(*) ubicacion FROM mouse WHERE ubicacion = 'Almacen'";
+        $consulta_mouse_operaciones =   "SELECT * FROM mouse";
+        $consulta_mouse_almacen     =   "SELECT * FROM mouse";
 
-        $consulta_teclado_operaciones =   "SELECT COUNT(*) ubicacion FROM teclados WHERE ubicacion != 'Almacen'";
-        $consulta_teclado_almacen     =   "SELECT COUNT(*) ubicacion FROM teclados WHERE ubicacion = 'Almacen'";
+        $consulta_teclado_operaciones =   "SELECT * FROM teclados";
+        $consulta_teclado_almacen     =   "SELECT * FROM teclados";
 
         
         //conexion y ejecucion de querys
@@ -116,11 +116,11 @@
                             echo "<td class='texto'><i class='material-icons'>headset_mic</i><br>".$fila5['ubicacion']."</td>";
                             echo "<td class='texto'><i class='material-icons'>headset_mic</i><br>".$fila6['ubicacion']."</td>";
                             //Sección conteo mouse
-                            echo "<td class='texto'><i class='material-icons'>mouse</i><br>".$fila7['ubicacion']."</td>";
-                            echo "<td class='texto'><i class='material-icons'>mouse</i><br>".$fila8['ubicacion']."</td>";
+                            echo "<td class='texto'><i class='material-icons'>mouse</i><br>".$fila7['piso']."</td>";
+                            echo "<td class='texto'><i class='material-icons'>mouse</i><br>".$fila8['almacen']."</td>";
                             //Sección conteo teclado
-                            echo "<td class='texto'><i class='material-icons'>keyboard</i><br>".$fila9['ubicacion']."</td>";
-                            echo "<td class='texto'><i class='material-icons'>keyboard</i><br>".$fila10['ubicacion']."</td>";
+                            echo "<td class='texto'><i class='material-icons'>keyboard</i><br>".$fila9['piso']."</td>";
+                            echo "<td class='texto'><i class='material-icons'>keyboard</i><br>".$fila10['almacen']."</td>";
                         echo "</tr>";
                     ?>
                 </tbody>
