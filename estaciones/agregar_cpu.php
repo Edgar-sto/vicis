@@ -26,7 +26,7 @@
 	$query = mysqli_query($conectar, $insertar);
 
 	//Codigo QR
-	$nombre_de_imagen = $numSerieCpu;
+	$nombre_de_imagen = $ubicacion;
     $content = "$marcaCpu, $numSerieCpu, $modeloCpu, $mac, $ubicacion, $area, $comentary";
     //QRcode::png ($contenido, $archivo, $ecc, $tamaño, $margen)
     QRcode::png(
