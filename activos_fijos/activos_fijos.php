@@ -159,7 +159,7 @@
                     <td>".$fila_general['comentario']."</td>";
                     ?>
                     <td>
-                        <form action="activos_fijos/cpu.php" method="post" target="_blank">
+                        <form action="../estaciones/estacion.php" method="post" >
                             <input name='codigo_qr' id='<?=$fila_general['uniqueid']?>' class='button_xdx btn btn-dark btn-md' type='submit' value='QR <?=$fila_general['uniqueid']?>'/>
                         </form>
                     </td>
@@ -202,7 +202,7 @@
                     <td>".$fila_general['comentario']."</td>";
                     ?>
                     <td>
-                        <form action="activos_fijos/monitor.php" method="post" target="_blank">
+                        <form action="../estaciones/estacion.php" method="post" target="_blank">
                             <input name='codigo_qr' id='<?=$fila_general['uniqueid']?>' class='button_xdx btn btn-dark btn-md' type='submit' value='QR <?=$fila_general['uniqueid']?>'/>
                         </form>
                     </td>

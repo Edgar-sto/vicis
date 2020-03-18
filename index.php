@@ -33,7 +33,7 @@
     </script>
     <script>//Script para abrir ventana agregar cpu de tamaño asignado.
         function agregarCPU(url) {
-            open(url,'','top=300,left=300,width=280,height=300') ;
+            open(url,'','top=300,left=300,width=280,height=370') ;
         }
     </script>
     <script>//Script para abrir ventana agregar monitor de tamaño asignado.

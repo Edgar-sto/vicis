@@ -105,6 +105,10 @@ td {
 	text-align: left;
 }
 
+.form-control-sm{
+   color: #212121;
+}
+
 .table{
 	border: 0px;
 }

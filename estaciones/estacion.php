@@ -1,16 +1,20 @@
-<?php 
+<?php  
     require_once '../phpqrcode/qrlib.php';
     $estacion = $_POST['estacion'];
+    $cpus        =   $_POST['uniqueid'];
     $usuario    = "root";
     $pass       = "";
     $servidor   = "127.0.0.1";
     $basededatos= "soporte";
     $conexion = mysqli_connect( $servidor, $usuario, $pass );
     $db = mysqli_select_db( $conexion, $basededatos );
-    $consulta = "SELECT * FROM estaciones WHERE num_estacion = '$estacion'";
-    $resultado = mysqli_query($conexion, $consulta);
+    echo "$estacion";
+    echo "$cpus";
+    $consulta       =   "SELECT * FROM estaciones WHERE num_estacion = '$estacion'";
+    $consulta_cpu   =   "SELECT * FROM cpu WHERE uniqueid = '260'";
 
-    
+    $resultado_cpu  =   mysqli_query($conexion, $consulta_cpu);
+    $resultado      =   mysqli_query($conexion, $consulta); 
 ?>
 
 <!DOCTYPE html>
@@ -40,105 +44,60 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-3" id="datos">
-                <?php
-                    while ($fila = mysqli_fetch_array($resultado)){
-                        echo '<table class="table">';
-                            echo "<tbody>";
-                                echo "<tr class='nom_campo'>";
-                                        $num_estacion = $fila['num_estacion'];
-                                        echo '<td class="titulo" scope="row">'.$fila['num_estacion'].'</td>';
-                ?>
-                                              <td>
-                                                <a href="javascript:abrir('modificar.php')">Modificar</a>
-                                                <a href="ping.php">Ping</a>
-                                              </td>
-                <?php
-                                echo "</tr>";
-                            
-                                echo "<tr>";
-                                    echo "<td>Nombre de la estacion</td>";
-                                    $local_host = $fila['local_host'];
-                                    echo '<td>'.$fila['local_host'].'</td>';
-                                echo "</tr>";
+                <?php 
+                while ($fila_cpu = mysqli_fetch_array($resultado_cpu)){
+                    echo '<table class="table">';
+                        echo "<tbody>";
+                            echo "<tr class='nom_campo'>";
+                                $uniqueid = $fila_cpu['uniqueid'];
+                                echo "<td class='titulo'>ID</td>";
+                                echo '<td class="titulo" scope="row">'.$fila_cpu['uniqueid'].'</td>';
+                            echo "</tr>";
 
-                                echo "<tr>";
-                                    echo "<td>Dirección MAC</td>";
-                                    $direccion_mac = $fila['mac_address'];
-                                    echo '<td>'.$fila['mac_address'].'</td>';
+                            echo "<tr>";
+                                $marcaCPU = $fila_cpu['marca_cpu'];
+                                echo "<td>Marca CPU</td>";
+                                echo '<td>'.$fila_cpu['marca_cpu'].'</td>';
+                            echo "</tr>";
 
-                                echo "<tr>";
-                                    echo "<td>Número de serie</td>";
-                                    $serieCPU = $fila['serie_cpu'];
-                                    echo '<td>'.$fila['serie_cpu'].'</td>';
-                                echo "</tr>";
+                            echo "<tr>";
+                                $serieCPU = $fila_cpu['serie_cpu'];
+                                echo '<td>Número de Serie</td>';
+                                echo '<td>'.$fila_cpu['serie_cpu'].'</td>';
+                            echo "</tr>";
 
-                                echo "<tr>";
-                                    echo "<td>Modelo CPU</td>";
-                                    $modeloCPU = $fila['modelo_cpu'];
-                                    echo '<td>'.$fila['modelo_cpu'].'</td>';
-                                echo "</tr>";
+                            echo "<tr>";
+                                $modeloCPU = $fila_cpu['modelo_cpu'];
+                                echo '<td>Modelo CPU</td>';
+                                echo '<td>'.$fila_cpu['modelo_cpu'].'</td>';
+                            echo "</tr>";
 
-                                echo "<tr>";
-                                    echo "<td>Marca CPU</td>";
-                                    $marcaCPU = $fila['marca_cpu'];
-                                    echo '<td>'.$fila['marca_cpu'].'</td>';
-                                echo "</tr>";
+                            echo "<tr>";
+                                $mac_address = $fila_cpu['mac_address'];
+                                echo '<td>Dirección MAC</td>';
+                                echo '<td>'.$fila_cpu['mac_address'].'</td>';
+                            echo "</tr>";
 
-                                echo "<tr>";
-                                    echo "<td>Número de serie monitor</td>";
-                                    $serieMONITOR = $fila['serie_monitor'];
-                                    echo '<td>'.$fila['serie_monitor'].'</td>';
-                                echo "</tr>";
+                            echo "<tr>";
+                                $ubicacion = $fila_cpu['ubicacion'];
+                                echo "<td>Ubicacion</td>";
+                                echo '<td>'.$fila_cpu['ubicacion'].'</td>';
+                            echo "</tr>";
 
-                                echo "<tr>";
-                                    echo "<td>Marca Monitor</td>";
-                                    $marcaMONITOR = $fila['marca_monito'];
-                                    echo '<td>'.$fila['marca_monito'].'</td>';
-                                echo "</tr>";
+                            echo "<tr>";
+                                $area = $fila_cpu['area'];
+                                echo '<td>Área</td>';
+                                echo '<td>'.$fila_cpu['area'].'</td>';
+                            echo "</tr>";
 
-                                echo "<tr>";
-                                    echo "<td>Campaña</td>";
-                                    $campain = $fila['campania'];
-                                    echo '<td>'.$fila['campania'].'</td>';
-                                echo "</tr>";
-
-                                echo "<tr>";
-                                    echo "<td>Mouse</td>";
-                                    $color_mouse = $fila['mouse'];
-                                    if ($color_mouse == 1) {
-                                        echo "<td><i class='material-icons text-success'>mouse</i></td>";
-                                    } else {
-                                        echo "<td><i class='material-icons text-danger'>mouse</i></td>";
-                                    }
-                                echo "</tr>";
-
-                                echo "<tr>";
-                                    echo "<td>Teclado</td>";
-                                    $color_teclado = $fila['teclado'];
-                                    if ($color_teclado == 1) {
-                                        echo "<td><i class='material-icons text-success'>keyboard</i></td>";
-                                    } else {
-                                        echo "<td><i class='material-icons text-danger'>keyboard</i></td>";
-                                    }                        
-                                echo "</tr>";
-
-                                echo "<tr>";
-                                    echo "<td>Diadema</td>";
-                                    $color_diadema = $fila['diadema'];
-                                        if ($color_diadema == 1) {
-                                            echo "<td><i class='material-icons text-success'>headset_mic</i></td>";
-                                        } else {
-                                            echo "<td><i class='material-icons text-danger'>headset_mic</i></td>";
-                                        }                            
-                                echo "</tr>";
-
-                                echo "<tr>";
-                                    echo "<td>Comentario</td>";
-                                    echo '<td>'.$fila['comentario'].'</td>';
-                                echo "</tr>";
-                            echo "</tbody>";
-                        echo "</table>";
-                    }           
+                            echo "<tr>";
+                                $comentario = $fila_cpu['comentario'];
+                                echo '<td>Comentario</td>';
+                                echo '<td>'.$fila_cpu['comentario'].'</td>';
+                            echo "</tr>";
+                        echo "</tbody>";
+                    echo "</table>";
+                }
                 ?>
             </div>
             
@@ -148,27 +107,79 @@
                 <div class="result_qr">
                     <!-- Impresión de código QR -->
                     <?php
-                        $nombre_de_imagen = $local_host;
-                        $content = "$local_host, $direccion_mac, $serieCPU, $modeloCPU, $marcaCPU, $serieMONITOR, $marcaMONITOR";
+                        $nombre_de_imagen = $uniqueid;
+                        $content = "$uniqueid, $marcaCPU, $serieCPU, $modeloCPU, $mac_address, $ubicacion, $area, $comentario";
                         //QRcode::png ($contenido, $archivo, $ecc, $tamaño, $margen)
                         QRcode::png(
                             $content,                                           //CONTENIDO
-                            "../img/codigos_qr/".$nombre_de_imagen.".png",      //NOMBRE DEL ARCHIVO
+                            "../img/codigos_qr/cpu/".$nombre_de_imagen.".png",      //NOMBRE DEL ARCHIVO
                             QR_ECLEVEL_L,                                       //INDICE DE CORRECION DE ERROREES
                             6,                                                  //TAMAÑO EN PIXELES
                             1,                                                  //TAMAÑO DEL MARGEN
                         );
                     ?>
-                    <img src='../img/codigos_qr/<?=$nombre_de_imagen?>.png'>
+                    <img src='../img/codigos_qr/cpu/<?=$nombre_de_imagen?>.png'>
                 </div>
                 <br>
             </div>
 
             <div class="col-3" id="modificar">
                 <h1 class="titulo_modificar">Modificar</h1>
-                <form class="form" action="modificar.php" method="post" name="generador" id="generador">
-                    
-                </form>
+                <?php 
+                while ($fila_cpu = mysqli_fetch_array($resultado_cpu)){
+                    echo '<table class="table">';
+                        echo "<tbody>";
+                            echo "<tr class='nom_campo'>";
+                                $uniqueid = $fila_cpu['uniqueid'];
+                                echo "<td class='titulo'>ID</td>";
+                                echo '<td class="titulo" scope="row">'.$fila_cpu['uniqueid'].'</td>';
+                            echo "</tr>";
+
+                            echo "<tr>";
+                                $marcaCPU = $fila_cpu['marca_cpu'];
+                                echo "<td>Marca CPU</td>";
+                                echo '<td>'.$fila_cpu['marca_cpu'].'</td>';
+                            echo "</tr>";
+
+                            echo "<tr>";
+                                $serieCPU = $fila_cpu['serie_cpu'];
+                                echo '<td>Número de Serie</td>';
+                                echo '<td>'.$fila_cpu['serie_cpu'].'</td>';
+                            echo "</tr>";
+
+                            echo "<tr>";
+                                $modeloCPU = $fila_cpu['modelo_cpu'];
+                                echo '<td>Modelo CPU</td>';
+                                echo '<td>'.$fila_cpu['modelo_cpu'].'</td>';
+                            echo "</tr>";
+
+                            echo "<tr>";
+                                $mac_address = $fila_cpu['mac_address'];
+                                echo '<td>Dirección MAC</td>';
+                                echo '<td>'.$fila_cpu['mac_address'].'</td>';
+                            echo "</tr>";
+
+                            echo "<tr>";
+                                $ubicacion = $fila_cpu['ubicacion'];
+                                echo "<td>Ubicacion</td>";
+                                echo '<td>'.$fila_cpu['ubicacion'].'</td>';
+                            echo "</tr>";
+
+                            echo "<tr>";
+                                $area = $fila_cpu['area'];
+                                echo '<td>Área</td>';
+                                echo '<td>'.$fila_cpu['area'].'</td>';
+                            echo "</tr>";
+
+                            echo "<tr>";
+                                $comentario = $fila_cpu['comentario'];
+                                echo '<td>Comentario</td>';
+                                echo '<td>'.$fila_cpu['comentario'].'</td>';
+                            echo "</tr>";
+                        echo "</tbody>";
+                    echo "</table>";
+                }
+                ?>
             </div>
         </div>
         <div class="row">
