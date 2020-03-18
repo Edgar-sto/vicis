@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../css/activos_fijos.css"">
-    <link rel="shortcut icon" href="../img/favicon.ico" />
+    <link rel="shortcut icon" href="img/favicon.ico" />
     <!-- Tipografias -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat+Subrayada&display=swap" rel="stylesheet">
@@ -24,7 +24,7 @@
 
 <body>
     <?php
-        require '../estaciones/conexion.php';
+        require 'estaciones/conexion.php';
         $conectar       =   mysqli_connect($servidor, $usuario, $pass, $basededatos);
         //querys
         $consulta_cpu_operacion     =   "SELECT COUNT(*) ubicacion FROM cpu WHERE ubicacion != 'Almacen'";
@@ -159,7 +159,7 @@
                     <td>".$fila_general['comentario']."</td>";
                     ?>
                     <td>
-                        <form action="../estaciones/estacion.php" method="post" >
+                        <form action="estaciones/estacion.php" method="post" >
                             <input name='codigo_qr' id='<?=$fila_general['uniqueid']?>' class='button_xdx btn btn-dark btn-md' type='submit' value='QR <?=$fila_general['uniqueid']?>'/>
                         </form>
                     </td>
@@ -202,7 +202,7 @@
                     <td>".$fila_general['comentario']."</td>";
                     ?>
                     <td>
-                        <form action="../estaciones/estacion.php" method="post" target="_blank">
+                        <form action="estaciones/estacion.php" method="post" target="_blank">
                             <input name='codigo_qr' id='<?=$fila_general['uniqueid']?>' class='button_xdx btn btn-dark btn-md' type='submit' value='QR <?=$fila_general['uniqueid']?>'/>
                         </form>
                     </td>

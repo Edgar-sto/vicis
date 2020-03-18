@@ -1,6 +1,6 @@
 body {
-  /*background: #202020;*/
-  background: url(../img/estaciones1.jpg);
+  background: #ffffff;
+  /*background: url(../img/estaciones1.jpg);*/
   background-repeat: no-repeat;
   background-attachment: fixed;
   width: auto;
@@ -46,6 +46,51 @@ body {
    text-decoration: none;
 }
 
+.button {
+   border-top: 1px solid #ffffff;
+   background: #ffffff;
+   background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#ffffff));
+   background: -webkit-linear-gradient(top, #ffffff, #ffffff);
+   background: -moz-linear-gradient(top, #ffffff, #ffffff);
+   background: -ms-linear-gradient(top, #ffffff, #ffffff);
+   background: -o-linear-gradient(top, #ffffff, #ffffff);
+   padding: 6.5px 13px;
+   -webkit-border-radius: 0px;
+   -moz-border-radius: 0px;
+   border-radius: 0px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: #000000;
+   font-size: 16px;
+   font-family: Helvetica, Arial, Sans-Serif;
+   text-decoration: none;
+   text-align: center;
+   vertical-align: middle;
+   }
+.button:hover {
+   border-top-color: #ffffff;
+   background: #ffffff;
+   color: #000000;
+   }
+.button:active {
+   border-top-color: #ffffff;
+   background: #ffffff;
+   }
+
+.cabecera_tabla {
+    color: rgba(0, 0, 0, 1);
+    font-size: 20px;
+    text-align: center;
+}
+
+.cabecera_tabla1 {
+    color: rgba(0, 0, 0, 1);
+    font-size: 20px;
+    text-align: left;
+}
+
 
 h2 {
   color: #e0e0e0;
@@ -78,11 +123,35 @@ width: 100%;
 }
 
 .material-icons {
-  color: #e0e0e0;
+  color: rgba(0, 0, 0, 1);
   display: block;
   font-size: 85px;
 }
 
 i.material-icons{
   font-size: 90px;
+}
+
+.table {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.texto {
+    color: rgba(0, 0, 0, 1);
+    text-align: center;
+    font-family: verdana, sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 0.4pt;
+    word-spacing: 3pt;
+}
+
+.texto1 {
+    color: rgba(0, 0, 0, 1);
+    font-family: verdana, sans-serif;
+    font-size: 14px;
+    letter-spacing: -1.2pt;
+    word-spacing: 3.8pt;
+    line-height: 1.1;
 }

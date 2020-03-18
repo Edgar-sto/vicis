@@ -4,14 +4,13 @@ body#agregar {
    background-attachment: fixed;
    width: auto;
 }
-
+ 
 body#delete {
    background: url(../img/fondo_eliminar.jpg);
    background-repeat: no-repeat;
    background-attachment: fixed;
    width: auto;
 }
-
 
 .button_xdx { 
    background: #4CAF50;
@@ -93,6 +92,39 @@ body#delete {
    text-decoration: none;
 }
 
+.button {
+   border-top: 1px solid #ffffff;
+   background: #ffffff;
+   background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#ffffff));
+   background: -webkit-linear-gradient(top, #ffffff, #ffffff);
+   background: -moz-linear-gradient(top, #ffffff, #ffffff);
+   background: -ms-linear-gradient(top, #ffffff, #ffffff);
+   background: -o-linear-gradient(top, #ffffff, #ffffff);
+   padding: 6.5px 13px;
+   -webkit-border-radius: 0px;
+   -moz-border-radius: 0px;
+   border-radius: 0px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: #000000;
+   font-size: 16px;
+   font-family: Helvetica, Arial, Sans-Serif;
+   text-decoration: none;
+   text-align: center;
+   vertical-align: middle;
+   }
+.button:hover {
+   border-top-color: #ffffff;
+   background: #ffffff;
+   color: #000000;
+   }
+.button:active {
+   border-top-color: #ffffff;
+   background: #ffffff;
+   }
+
 .caja_de_texto {
    margin-left: auto;
    margin-right: auto;
@@ -102,10 +134,15 @@ body#delete {
    text-align: center;
 }
 
+
 .form-check-label {
-   color: #ECEFF1;
+   color: rgba(0, 0, 0, 1);
    font-size: 12px;
    margin-left: 12px;
+}
+
+h1 {
+   color: rgba(0, 0, 0, 1);
 }
 
 .titulo {
