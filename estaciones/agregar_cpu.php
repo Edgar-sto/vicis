@@ -41,7 +41,7 @@
 	if ($query) {
 		echo "<script>
 				alert('Equipo guardado');
-				window.open('agregar_cpu.html');
+				window.close();
 			  </script>";
 	} else {
 		echo "<script>

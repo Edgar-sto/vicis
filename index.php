@@ -38,7 +38,7 @@
     </script>
     <script>//Script para abrir ventana agregar monitor de tamaño asignado.
         function agregarMONITOR(url) {
-            open(url,'','top=300,left=300,width=280,height=300') ;
+            open(url,'','top=300,left=300,width=280,height=330') ;
         }
     </script>
 </head>
@@ -109,14 +109,14 @@
         require 'estaciones/conexion.php';
         $conectar       =   mysqli_connect($servidor, $usuario, $pass, $basededatos);
         //querys
-        $consulta_cpu_operacion     =   "SELECT COUNT(*) ubicacion FROM cpu WHERE ubicacion != 'Almacen'";
-        $consulta_cpu_almacen       =   "SELECT COUNT(*) ubicacion FROM cpu WHERE ubicacion = 'Almacen'";
+        $consulta_cpu_operacion     =   "SELECT COUNT(*) ubicacion FROM cpu_oficial WHERE ubicacion != 'Almacen'";
+        $consulta_cpu_almacen       =   "SELECT COUNT(*) ubicacion FROM cpu_oficial WHERE ubicacion = 'Almacen'";
 
-        $consulta_monitor_operacion =   "SELECT COUNT(*) ubicacion FROM monitor WHERE ubicacion !='Almacen' ";
-        $consulta_monitor_almacen   =   "SELECT COUNT(*) ubicacion FROM monitor WHERE ubicacion ='Almacen' ";
+        $consulta_monitor_operacion =   "SELECT COUNT(*) ubicacion FROM monitor_oficial WHERE ubicacion !='Almacen' ";
+        $consulta_monitor_almacen   =   "SELECT COUNT(*) ubicacion FROM monitor_oficial WHERE ubicacion ='Almacen' ";
 
-        $consulta_diadema_operacion =   "SELECT COUNT(*) ubicacion FROM diademas WHERE ubicacion != 'Almacen'";
-        $consulta_diadema_almacen   =   "SELECT COUNT(*) ubicacion FROM diademas WHERE ubicacion = 'Almacen'";
+        $consulta_diadema_operacion =   "SELECT * FROM diademas WHERE marca = 'General'";
+        $consulta_diadema_almacen   =   "SELECT * FROM diademas WHERE marca = 'General'";
 
         $consulta_mouse_operaciones =   "SELECT * FROM mouse";
         $consulta_mouse_almacen     =   "SELECT * FROM mouse";
@@ -194,8 +194,8 @@
                             echo "<td class='texto'><i class='material-icons'>desktop_windows</i><br>".$fila3['ubicacion']."</td>";
                             echo "<td class='texto'><i class='material-icons'>desktop_windows</i><br>".$fila4['ubicacion']."</td>";
                             //Sección conteo diadema
-                            echo "<td class='texto'><i class='material-icons'>headset_mic</i><br>".$fila5['ubicacion']."</td>";
-                            echo "<td class='texto'><i class='material-icons'>headset_mic</i><br>".$fila6['ubicacion']."</td>";
+                            echo "<td class='texto'><i class='material-icons'>headset_mic</i><br>".$fila5['piso']."</td>";
+                            echo "<td class='texto'><i class='material-icons'>headset_mic</i><br>".$fila6['almacen']."</td>";
                             //Sección conteo mouse
                             echo "<td class='texto'><i class='material-icons'>mouse</i><br>".$fila7['piso']."</td>";
                             echo "<td class='texto'><i class='material-icons'>mouse</i><br>".$fila8['almacen']."</td>";
@@ -223,7 +223,7 @@
                 </thead>
                 <tbody class="cuerpo_tabla">
                     <?php
-                        $consulta_general_cpu       =   "SELECT * FROM cpu";
+                        $consulta_general_cpu       =   "SELECT * FROM cpu_oficial";
                         $res_consulta_general_cpu   =   mysqli_query($conectar, $consulta_general_cpu);
                         $contador=1;
                         
@@ -259,7 +259,7 @@
                 </thead>
                 <tbody class="cuerpo_tabla">
                     <?php
-                        $consulta_general_monitor       =   "SELECT * FROM monitor";
+                        $consulta_general_monitor       =   "SELECT * FROM monitor_oficial";
                         $res_consulta_general_monitor   =   mysqli_query($conectar, $consulta_general_monitor);
                         $contador=1;
                         
@@ -288,6 +288,8 @@
                         <th class="cabecera_tabla1">Serie</th>
                         <th class="cabecera_tabla1">Ubicación</th>
                         <th class="cabecera_tabla1">Área</th>
+                        <th class="cabecera_tabla1">Piso</th>
+                        <th class="cabecera_tabla1">Almacen</th>
                     </tr>
                 </thead>
                 <tbody class="cuerpo_tabla">
@@ -302,7 +304,10 @@
                     <td class='texto1'>".$fila_general['marca_diadema']."</td>
                     <td class='texto1'>".$fila_general['num_serie']."</td>
                     <td class='texto1'>".$fila_general['ubicacion']."</td>
-                    <td class='texto1'>".$fila_general['area']."</td>";
+                    <td class='texto1'>".$fila_general['area']."</td>
+                    <td class='texto1'>".$fila_general['piso']."</td>
+                    <td class='texto1'>".$fila_general['almacen']."</td>
+                    ";
                                       
                 echo"</tr>";
             }
