@@ -115,8 +115,8 @@
         $consulta_monitor_operacion =   "SELECT COUNT(*) ubicacion FROM monitor_oficial WHERE ubicacion !='Almacen' ";
         $consulta_monitor_almacen   =   "SELECT COUNT(*) ubicacion FROM monitor_oficial WHERE ubicacion ='Almacen' ";
 
-        $consulta_diadema_operacion =   "SELECT * FROM diademas WHERE marca = 'General'";
-        $consulta_diadema_almacen   =   "SELECT * FROM diademas WHERE marca = 'General'";
+        $consulta_diadema_operacion =   "SELECT * FROM diadema_oficial";
+        $consulta_diadema_almacen   =   "SELECT * FROM diadema_oficial";
 
         $consulta_mouse_operaciones =   "SELECT * FROM mouse";
         $consulta_mouse_almacen     =   "SELECT * FROM mouse";

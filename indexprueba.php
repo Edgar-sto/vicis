@@ -41,6 +41,17 @@
             open(url,'','top=300,left=300,width=280,height=300') ;
         }
     </script>
+    <script>
+        function muestra_oculta(id){
+            if (document.getElementById){ //se obtiene el id
+                var el = document.getElementById(id); //se define la variable "el" igual a nuestro div
+                el.style.display = (el.style.display == 'none') ? 'block' : 'none'; //damos un atributo display:none que oculta el div
+            }
+        }
+        window.onload = function(){/*hace que se cargue la función lo que predetermina que div estará oculto hasta llamar a la función nuevamente*/
+            muestra_oculta('contenido');/* "contenido_a_mostrar" es el nombre que le dimos al DIV */
+        }
+    </script>
 </head>
 <body>
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -105,183 +116,151 @@
     </nav> 
     <br>
     <div class="container-fluid"> 
-        <h2>Validación HSBC</h2>
-        <div class="row filas" id="validacion">
-            <!-- Fila 1 -->
-            <?php
-                $columna = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43);
-                $tamanio_array_columnas = count($columna);
-                for ($i=0; $i < $tamanio_array_columnas; $i++)
-                {
-                    if ($columna[$i] <= 9)
-                    {
-                        echo "<div class='col' id='columna_".$columna[$i]."'>";
-                        echo "<i class='material-icons'>desktop_windows</i>";
-                        echo "<br>";
-                        echo "<br>";
-            ?>
-                <form action="estaciones/estacion.php" method="post" target="_blank">
-                  <input name='estacion' id='est_00<?=$columna[$i]?>' class='button_xdx btn btn-dark btn-lg' type='submit' value='estacion 00<?=$columna[$i]?>'/>
-                </form>
-                <br>
-            <?php 
-                        echo "</div>";
-                    } else {
-                        echo "<div class='col' id='columna_".$columna[$i]."'>";
-                        echo "<i class='material-icons'>desktop_windows</i>";
-                        echo "<br>";
-                        echo "<br>";
-   
-            ?>
-                <form action="estaciones/estacion.php" method="post" target="_blank">
-                  <input name='estacion' id='est_0<?=$columna[$i]?>' class='button_xdx btn btn-dark btn-lg' type='submit' value='estacion 0<?=$columna[$i]?>'/>
-                </form>
-                <br>
-            <?php
-                        echo "</div>";
-                    }
-                }
-            ?>
-        </div>
+        <div class="container-fluid">
+        <?php
+        require 'estaciones/conexion.php';
+        $conectar       =   mysqli_connect($servidor, $usuario, $pass, $basededatos);
+        //querys
+        $consulta_cpu_operacion     =   "SELECT COUNT(*) ubicacion FROM cpu_oficial WHERE ubicacion != 'Almacen'";
+        $consulta_cpu_almacen       =   "SELECT COUNT(*) ubicacion FROM cpu_oficial WHERE ubicacion = 'Almacen'";
 
-        <h2>Validación Invex</h2>
-        <div class="row filas" id="vali-invex">
-            <!-- Fila 1 -->
-            <?php
-                $columna = array(44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54);
-                $tamanio_array_columnas = count($columna);
-                for ($i=0; $i < $tamanio_array_columnas; $i++)
-                {
-                    echo "<div class='col' id='columna_".$columna[$i]."'>";
-                    echo "<i class='material-icons'>desktop_windows</i>";
-                    echo "<br>";
-            ?>
-                <form action="estaciones/estacion.php" method="post" target="_blank">
-                  <input name='estacion' id='est_0<?=$columna[$i]?>' class='button_xdx btn btn-dark btn-lg' type='submit' value='estacion 0<?=$columna[$i]?>'/>
-                </form>
-            <?php 
-                echo "</div>";
-                }
-            ?>
-        </div>
+        $consulta_monitor_operacion =   "SELECT COUNT(*) ubicacion FROM monitor_oficial WHERE ubicacion !='Almacen' ";
+        $consulta_monitor_almacen   =   "SELECT COUNT(*) ubicacion FROM monitor_oficial WHERE ubicacion ='Almacen' ";
 
-        <h2>Área libre</h2>
-        <div class="row filas" id="area-libre">
-            <!-- Fila 1 -->
-            <?php
-                $columna = array(55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66);
-                $tamanio_array_columnas = count($columna);
-                for ($i=0; $i < $tamanio_array_columnas; $i++)
-                {
-                    echo "<div class='col' id='columna_".$columna[$i]."'>";
-                    echo "<i class='material-icons'>desktop_windows</i>";
-                    echo "<br>";
-            ?>
-                <form action="estaciones/estacion.php" method="post" target="_blank">
-                  <input name='estacion' id='est_0<?=$columna[$i]?>' class='button_xdx btn btn-dark btn-lg' type='submit' value='estacion 0<?=$columna[$i]?>'/>
-                </form>
-            <?php 
-                echo "</div>";
-                }
-            ?>
-        </div>
+        $consulta_diadema_operacion =   "SELECT * FROM diadema_oficial";
+        $consulta_diadema_almacen   =   "SELECT * FROM diadema_oficial";
 
-        <h2>Monitoreo</h2>
-        <div class="row filas" id="monitoreo">
-            <!-- Fila 1 -->
-            <?php
-                $columna = array(67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82);
-                $tamanio_array_columnas = count($columna);
-                for ($i=0; $i < $tamanio_array_columnas; $i++)
-                {
-                    echo "<div class='col' id='columna_".$columna[$i]."'>";
-                    echo "<i class='material-icons'>desktop_windows</i>";
-                    echo "<br>";
-            ?>
-                <form action="estaciones/estacion.php" method="post" target="_blank">
-                  <input name='estacion' id='est_0<?=$columna[$i]?>' class='button_xdx btn btn-dark btn-lg' type='submit' value='estacion 0<?=$columna[$i]?>'/>
-                </form>
-            <?php 
-                echo "</div>";
-                }
-            ?>
-        </div>
+        $consulta_mouse_operaciones =   "SELECT * FROM mouse";
+        $consulta_mouse_almacen     =   "SELECT * FROM mouse";
 
-        <h2>Proceso</h2>
-        <div class="row filas" id="proceso">
-            <!-- Fila 1 -->
-            <?php
-                $columna = array(83, 84);
-                $tamanio_array_columnas = count($columna);
-                for ($i=0; $i < $tamanio_array_columnas; $i++)
-                {
-                    echo "<div class='col' id='columna_".$columna[$i]."'>";
-                    echo "<i class='material-icons'>desktop_windows</i>";
-                    echo "<br>";
-            ?>
-                <form action="estaciones/estacion.php" method="post" target="_blank">
-                  <input name='estacion' id='est_0<?=$columna[$i]?>' class='button_xdx btn btn-dark btn-lg' type='submit' value='estacion 0<?=$columna[$i]?>'/>
-                </form>
-            <?php 
-                echo "</div>";
-                }
-            ?>
-        </div>
+        $consulta_teclado_operaciones =   "SELECT * FROM teclados";
+        $consulta_teclado_almacen     =   "SELECT * FROM teclados";
 
-        <h2>Formalizacion</h2>
-        <div class="row filas" id="formalizacion">
-            <!-- Fila 1 -->
-            <?php
-                $columna = array(85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100);
-                $tamanio_array_columnas = count($columna);
-                for ($i=0; $i < $tamanio_array_columnas; $i++)
-                {
-                    if ($columna[$i] <= 99)
-                    {
-                        echo "<div class='col' id='columna_".$columna[$i]."'>";
-                        echo "<i class='material-icons'>desktop_windows</i>";
-                        echo "<br>";
-            ?>
-                <form action="estaciones/estacion.php" method="post" target="_blank">
-                  <input name='estacion' id='est_0<?=$columna[$i]?>' class='button_xdx btn btn-dark btn-lg' type='submit' value='estacion 0<?=$columna[$i]?>'/>
-                </form>
-            <?php 
-                        echo "</div>";
-                    } else {
-                        echo "<div class='col' id='columna_".$columna[$i]."'>";
-                        echo "<i class='material-icons'>desktop_windows</i>";
-                        echo "<br>";    
-            ?>
-                <form action="estaciones/estacion.php" method="post" target="_blank">
-                  <input name='estacion' id='est_<?=$columna[$i]?>' class='button_xdx btn btn-dark btn-lg' type='submit' value='estacion <?=$columna[$i]?>'/>
-                </form>
-            <?php
-                        echo "</div>";
-                    }
-                }
-            ?>
-        </div>
+        
+        //conexion y ejecucion de querys
+        $resul              =   mysqli_query($conectar, $consulta_cpu_operacion);
+        $resul2             =   mysqli_query($conectar, $consulta_cpu_almacen);
 
-        <h2>Auditoria</h2>
-        <div class="row filas" id="auditoria">
-            <!-- Fila 1 -->
-            <?php
-                $columna = array(101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119);
-                $tamanio_array_columnas = count($columna);
-                for ($i=0; $i < $tamanio_array_columnas; $i++)
-                {
-                    echo "<div class='col'>";
-                    echo "<i class='material-icons'>desktop_windows</i>";
-                    echo "<br>";
-            ?>
-                <form action="estaciones/estacion.php" method="post" target="_blank">
-                  <input name='estacion' id='est_<?=$columna[$i]?>' class='button_xdx btn btn-dark btn-lg' type='submit' value='estacion <?=$columna[$i]?>'/>
-                </form>
-            <?php 
-                echo "</div>";
-                }
-            ?>
+        $resul_monitor      =   mysqli_query($conectar, $consulta_monitor_operacion);
+        $resul_monitor2     =   mysqli_query($conectar, $consulta_monitor_almacen);
+
+        $resul_diadema      =   mysqli_query($conectar, $consulta_diadema_operacion);
+        $resul_diadema2     =   mysqli_query($conectar, $consulta_diadema_almacen);
+
+        $resul_mouse        =   mysqli_query($conectar, $consulta_mouse_operaciones);
+        $resul_mouse2       =   mysqli_query($conectar, $consulta_mouse_almacen);
+
+        $resul_teclado        =   mysqli_query($conectar, $consulta_teclado_operaciones);
+        $resul_teclado2       =   mysqli_query($conectar, $consulta_teclado_almacen);
+
+        
+        //resultados
+        $fila   =   mysqli_fetch_assoc($resul);
+        $fila2  =   mysqli_fetch_assoc($resul2);
+
+        $fila3  =   mysqli_fetch_assoc($resul_monitor);
+        $fila4  =   mysqli_fetch_assoc($resul_monitor2);
+
+        $fila5  =   mysqli_fetch_assoc($resul_diadema);
+        $fila6  =   mysqli_fetch_assoc($resul_diadema2);
+
+        $fila7  =   mysqli_fetch_assoc($resul_mouse);
+        $fila8  =   mysqli_fetch_assoc($resul_mouse2);
+
+        $fila9  =   mysqli_fetch_assoc($resul_teclado);
+        $fila10  =   mysqli_fetch_assoc($resul_teclado2);
+    ?>
+    <h1>Activos fijos</h1>
+    <br>
+        <section class="row datos_generales" id="stock">
+            <table class="table">
+                <thead class="cabecera_tabla">
+                    <tr>
+                        <th class="cabecera_tabla">PISO</th>
+                        <th class="cabecera_tabla">ALMACÉN</th>
+                        <th class="cabecera_tabla">PISO</th>
+                        <th class="cabecera_tabla">ALMACÉN</th>
+                        <th class="cabecera_tabla">PISO</th>
+                        <th class="cabecera_tabla">ALMACÉN</th>
+                        <th class="cabecera_tabla">PISO</th>
+                        <th class="cabecera_tabla">ALMACÉN</th>
+                        <th class="cabecera_tabla">PISO</th>
+                        <th class="cabecera_tabla">ALMACÉN</th>
+                    </tr>
+                </thead>
+                <tbody class="cuerpo_tabla">
+                    <?php
+                        
+                        echo "<tr>";
+                            echo "<td colspan='2' class='button'><a href='#cpu-id'>CPU</a></td>";
+                            echo '<td colspan="2" class="button"><a href="#monitor-id">Monitor</a></td>';
+                            echo '<td colspan="2" class="button"><a href="#diadema-id">Diadema</a></td>';
+                            echo '<td colspan="2" class="button">Mouse</td>';
+                            echo '<td colspan="2" class="button">Teclado</td>';
+                        echo "</tr>";
+                        echo "<tr>";
+                            //Sección conteo CPU
+                            echo "<td class='texto'><i class='material-icons'>smartphone</i><br>".$fila['ubicacion']."</td>";
+                            echo "<td class='texto'><i class='material-icons'>smartphone</i><br>".$fila2['ubicacion']."</td>";
+                            //Sección conteo Monitor
+                            echo "<td class='texto'><i class='material-icons'>desktop_windows</i><br>".$fila3['ubicacion']."</td>";
+                            echo "<td class='texto'><i class='material-icons'>desktop_windows</i><br>".$fila4['ubicacion']."</td>";
+                            //Sección conteo diadema
+                            echo "<td class='texto'><i class='material-icons'>headset_mic</i><br>".$fila5['piso']."</td>";
+                            echo "<td class='texto'><i class='material-icons'>headset_mic</i><br>".$fila6['almacen']."</td>";
+                            //Sección conteo mouse
+                            echo "<td class='texto'><i class='material-icons'>mouse</i><br>".$fila7['piso']."</td>";
+                            echo "<td class='texto'><i class='material-icons'>mouse</i><br>".$fila8['almacen']."</td>";
+                            //Sección conteo teclado
+                            echo "<td class='texto'><i class='material-icons'>keyboard</i><br>".$fila9['piso']."</td>";
+                            echo "<td class='texto'><i class='material-icons'>keyboard</i><br>".$fila10['almacen']."</td>";
+                        echo "</tr>";
+                    ?>
+                </tbody>
+            </table>
+        </section>
+        
+        <div class="titulo_boton">
+            Información adicional
+          <a style='cursor: pointer;' onClick="muestra_oculta('contenido')" title="" class="boton_mostrar">Mostrar / Ocultar</a>
         </div>
+        
+        <section class="row datos_generales" id="contenido">
+            <h2 id="cpu-id">CPU</h2>
+            <table class="table table-dark table-hover">
+                <thead class="cabecera_tabla">
+                    <tr>
+                        <th class="cabecera_tabla1">MARCA</th>
+                        <th class="cabecera_tabla1">Serie</th>
+                        <th class="cabecera_tabla1">Modelo</th>
+                        <th class="cabecera_tabla1">Direccion MAC</th>
+                        <th class="cabecera_tabla1">Ubicación</th>
+                        <th class="cabecera_tabla1">Área</th>
+                        <th class="cabecera_tabla1">Comentario</th>
+                    </tr>
+                </thead>
+                <tbody class="cuerpo_tabla">
+                    <?php
+                        $consulta_general_cpu       =   "SELECT * FROM cpu_oficial";
+                        $res_consulta_general_cpu   =   mysqli_query($conectar, $consulta_general_cpu);
+                        $contador=1;
+                        
+                        while( $fila_general   =   mysqli_fetch_assoc($res_consulta_general_cpu)) {
+                echo "<tr>";
+                echo "
+                    <td class='texto1'>".$fila_general['marca_cpu']."</td>
+                    <td class='texto1'>".$fila_general['serie_cpu']."</td>
+                    <td class='texto1'>".$fila_general['modelo_cpu']."</td>
+                    <td class='texto1'>".$fila_general['mac_address']."</td>
+                    <td class='texto1'>".$fila_general['ubicacion']."</td>
+                    <td class='texto1'>".$fila_general['area']."</td>
+                    <td class='texto1'>".$fila_general['comentario']."</td>";                 
+                echo"</tr>";
+            }
+                    ?>
+                </tbody>
+            </table>
+        </section>
     </div>
 </body>
 </html>
