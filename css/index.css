@@ -46,38 +46,9 @@ body {
    text-decoration: none;
 }
 
-.button {
-   border-top: 1px solid #ffffff;
-   background: #ffffff;
-   background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#ffffff));
-   background: -webkit-linear-gradient(top, #ffffff, #ffffff);
-   background: -moz-linear-gradient(top, #ffffff, #ffffff);
-   background: -ms-linear-gradient(top, #ffffff, #ffffff);
-   background: -o-linear-gradient(top, #ffffff, #ffffff);
-   padding: 6.5px 13px;
-   -webkit-border-radius: 0px;
-   -moz-border-radius: 0px;
-   border-radius: 0px;
-   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
-   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
-   box-shadow: rgba(0,0,0,1) 0 1px 0;
-   text-shadow: rgba(0,0,0,.4) 0 1px 0;
-   color: #000000;
-   font-size: 16px;
-   font-family: Helvetica, Arial, Sans-Serif;
-   text-decoration: none;
-   text-align: center;
-   vertical-align: middle;
-   }
-.button:hover {
-   border-top-color: #ffffff;
-   background: #ffffff;
-   color: #000000;
-   }
-.button:active {
-   border-top-color: #ffffff;
-   background: #ffffff;
-   }
+.btn-small {
+    text-align: right;
+}
 
 .cabecera_tabla {
     color: rgba(0, 0, 0, 1);
@@ -91,10 +62,27 @@ body {
     text-align: left;
 }
 
+.datos_base {
+    color:rgba(51, 51, 51, 1);
+    font-family: 'Rubik Mono One', sans-serif;
+    font-size: 24px;
+    /*text-shadow: -5px 5px 5px rgba(0,0,0, 0.3);*/
+    text-align: center;
+}
+
+.parrafo_enlaces {
+    margin: auto;
+}
+
+p a#show, a#show1, a#show2 {
+    color: rgba(51, 51, 51, 1);
+    text-decoration:none;
+}
 
 h2 {
-  color: #e0e0e0;
-  font-size: 28px;
+  color: rgba(0, 0, 0, 1);
+  font-family: 'Rubik Mono One', sans-serif;
+  font-size: 24px;
   margin: 5px 0 5px 0;
 }
 
@@ -119,6 +107,7 @@ width: 100%;
     border-radius: 0px;
     font-size: 14px;
     margin-bottom: 0px;
+    position: fixed;
     width: 100%;
 }
 

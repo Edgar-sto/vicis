@@ -11,6 +11,7 @@
     <link rel="shortcut icon" href="img/favicon1.ico" />
     <!-- Fuentes de iconos -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rubik+Mono+One&display=swap" rel="stylesheet">
     <!-- SCRIPT -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -189,14 +190,15 @@
                     </tr>
                 </thead>
                 <tbody class="cuerpo_tabla">
+                        <tr>
+                            <td colspan="2" class="datos_base">
+                                <a style='cursor: pointer;' onClick="muestra_oculta('contenido')" title="" class="boton_mostrar">CPU</a>
+                            </td>
+                            <td colspan="2" class="button"><a href="#monitor-id">Monitor</a></td>
+                            <td colspan="2" class="button"><a href="#diadema-id">Diadema</a></td>
+                            <td colspan="2" class="button"><a style="cursor: pointer;" onClick="muestra_oculta("contenido")" title="" class="boton_mostrar">Mouse</a></td>
+                            <td colspan="2" class="button">Teclado</td>
                     <?php
-                        
-                        echo "<tr>";
-                            echo "<td colspan='2' class='button'><a href='#cpu-id'>CPU</a></td>";
-                            echo '<td colspan="2" class="button"><a href="#monitor-id">Monitor</a></td>';
-                            echo '<td colspan="2" class="button"><a href="#diadema-id">Diadema</a></td>';
-                            echo '<td colspan="2" class="button">Mouse</td>';
-                            echo '<td colspan="2" class="button">Teclado</td>';
                         echo "</tr>";
                         echo "<tr>";
                             //Sección conteo CPU
@@ -220,10 +222,9 @@
             </table>
         </section>
         
-        <div class="titulo_boton">
-            Información adicional
-          <a style='cursor: pointer;' onClick="muestra_oculta('contenido')" title="" class="boton_mostrar">Mostrar / Ocultar</a>
-        </div>
+        <!--div class="titulo_boton">
+            <a style='cursor: pointer;' onClick="muestra_oculta('contenido')" title="" class="boton_mostrar">CPU</a>
+        </div-->
         
         <section class="row datos_generales" id="contenido">
             <h2 id="cpu-id">CPU</h2>

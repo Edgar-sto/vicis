@@ -11,6 +11,7 @@
     <link rel="shortcut icon" href="img/favicon1.ico" />
     <!-- Fuentes de iconos -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rubik+Mono+One&display=swap" rel="stylesheet">
     <!-- SCRIPT -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -40,6 +41,44 @@
         function agregarMONITOR(url) {
             open(url,'','top=300,left=300,width=280,height=330') ;
         }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#hide").on('click', function() {
+                $("#element").hide();
+                return false;
+            });
+         
+            $("#show").on('click', function() {
+                $("#element").show();
+                return false;
+            });
+        });
+
+        $(document).ready(function(){
+            $("#hide1").on('click', function() {
+                $("#element1").hide();
+                return false;
+            });
+         
+            $("#show1").on('click', function() {
+                $("#element1").show();
+                return false;
+            });
+        });
+
+        $(document).ready(function(){
+            $("#hide2").on('click', function() {
+                $("#element2").hide();
+                return false;
+            });
+         
+            $("#show2").on('click', function() {
+                $("#element2").show();
+                return false;
+            });
+        });
     </script>
 </head>
 <body>
@@ -177,15 +216,33 @@
                     </tr>
                 </thead>
                 <tbody class="cuerpo_tabla">
+                    <tr>
+                            <td colspan="2" class="datos_base">
+                                <p class="parrafo_enlaces">
+                                    <a href="#" id="show"><!--span class="material-icons">remove_red_eye</span-->CPU</a>
+                                </p>
+                            </td>
+                            <td colspan="2" class="datos_base">
+                                <p class="parrafo_enlaces">
+                                    <a href="#" id="show1"><!--span class="material-icons">remove_red_eye</span-->Monitor</a>
+                                </p>
+                            </td>
+                            <td colspan="2" class="datos_base">
+                                <p class="parrafo_enlaces">
+                                    <a href="#" id="show2"><!--span class="material-icons">remove_red_eye</span-->Diademas</a>
+                                </p>
+                            </td>
+                            <td colspan="2" class="datos_base">
+                                <p class="parrafo_enlaces">
+                                    Mouse
+                                </p>
+                            </td>
+                            <td colspan="2" class="datos_base">
+                                <p class="parrafo_enlaces">
+                                    Teclado
+                                </p>
+                            </td>
                     <?php
-                        
-                        echo "<tr>";
-                            echo "<td colspan='2' class='button'><a href='#cpu-id'>CPU</a></td>";
-                            echo '<td colspan="2" class="button"><a href="#monitor-id">Monitor</a></td>';
-                            echo '<td colspan="2" class="button"><a href="#diadema-id">Diadema</a></td>';
-                            echo '<td colspan="2" class="button">Mouse</td>';
-                            echo '<td colspan="2" class="button">Teclado</td>';
-                        echo "</tr>";
                         echo "<tr>";
                             //Sección conteo CPU
                             echo "<td class='texto'><i class='material-icons'>smartphone</i><br>".$fila['ubicacion']."</td>";
@@ -207,9 +264,14 @@
                 </tbody>
             </table>
         </section>
-        <h2 id="cpu-id">CPU</h2>
-        <section class="row datos_generales">
-            <table class="table table-dark table-hover">
+        <section class="container datos_generales" id="element" style="display: none;">
+            <div id="close" class="row">
+                <h2 id="cpu-id" class="col">CPU</h2>
+                <a class="btn btn-small col" href="#" id="hide" title="Cerrar">
+                    <span class="material-icons">visibility_off</span>
+                </a>
+            </div>
+            <table class="table table-dark table-hover" >
                 <thead class="cabecera_tabla">
                     <tr>
                         <th class="cabecera_tabla1">MARCA</th>
@@ -243,9 +305,13 @@
                 </tbody>
             </table>
         </section>
-        <br>
-        <h2 id="monitor-id">Monitores</h2>
-        <section class="row datos_generales">
+        <section class="container datos_generales" id="element1" style="display: none;">
+            <div id="close1" class="row">
+                <h2 id="monitor-id" class="col">Monitores</h2>
+                <a class="btn btn-small col" href="#" id="hide1" title="Cerrar">
+                    <span class="material-icons">visibility_off</span>
+                </a>
+            </div>
             <table class="table table-dark table-hover">
                 <thead class="cabecera_tabla">
                     <tr>
@@ -279,8 +345,13 @@
             </table>
         </section>
         <br>
-        <h2 id="diadema-id">Diademas</h2>
-        <section class="row datos_generales">
+        <section class="container datos_generales" id="element2" style="display: none;">
+            <div id="close2" class="row">
+                <h2 id="diadema-id" class="col">Diademas</h2>
+                <a class="btn btn-small col" href="#" id="hide2" title="Cerrar">
+                    <span class="material-icons">visibility_off</span>
+                </a>
+            </div>
             <table class="table table-dark table-hover">
                 <thead class="cabecera_tabla">
                     <tr>
