@@ -17,6 +17,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script>//Script para abrir ventana agregar y modificar de tamaño asignado.
         function abrir(url) {
             open(url,'','top=300,left=300,width=280,height=550') ;
@@ -42,7 +43,11 @@
             open(url,'','top=300,left=300,width=280,height=330') ;
         }
     </script>
-    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script>//Script para abrir ventana agregar monitor de tamaño asignado.
+        function reubicar(url) {
+            open(url,'','top=300,left=300,width=280,height=360') ;
+        }
+    </script>
     <script type="text/javascript">
         $(document).ready(function(){
             $("#hide").on('click', function() {
@@ -125,6 +130,9 @@
                     </li>
                     <li>
                         <a href="javascript:cerrar('estaciones/eliminar.html')">Eliminar</a>
+                    </li>
+                    <li>
+                        <a href="javascript:reubicar('estaciones/reubicar.html')">Reubicar</a>
                     </li>
                 </ul>
             </li>
