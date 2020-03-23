@@ -22,32 +22,32 @@
         function abrir(url) {
             open(url,'','top=300,left=300,width=280,height=550') ;
         }
-    </script>
-    <script>//Script para abrir ventana eliminar de tamaño asignado.
+    //Script para abrir ventana eliminar de tamaño asignado.
         function cerrar(url) {
             open(url,'','top=300,left=300,width=280,height=200') ;
         }
-    </script>
-    <script>//Script para abrir ventana modificar de tamaño asignado.
+    //Script para abrir ventana modificar de tamaño asignado.
         function modificar(url) {
             open(url,'','top=300,left=300,width=280,height=200') ;
         }
-    </script>
-    <script>//Script para abrir ventana agregar cpu de tamaño asignado.
+    //Script para abrir ventana agregar cpu de tamaño asignado.
         function agregarCPU(url) {
             open(url,'','top=300,left=300,width=280,height=370') ;
         }
-    </script>
-    <script>//Script para abrir ventana agregar monitor de tamaño asignado.
+    //Script para abrir ventana agregar monitor de tamaño asignado.
         function agregarMONITOR(url) {
             open(url,'','top=300,left=300,width=280,height=330') ;
         }
-    </script>
-    <script>//Script para abrir ventana agregar monitor de tamaño asignado.
+    //Script para abrir ventana reubicar equipo.
         function reubicar(url) {
             open(url,'','top=300,left=300,width=280,height=360') ;
         }
+    //Script para abrir ventana ping.
+        function ping(url) {
+            open(url,'','top=300,left=300,width=480,height=360') ;
+        }
     </script>
+
     <script type="text/javascript">
         $(document).ready(function(){
             $("#hide").on('click', function() {
@@ -143,7 +143,7 @@
                 <a class="nav-link" href="http://127.0.0.1/vicis/correos/correos.HTML" target="_blank">Correos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="http://127.0.0.1/vicis/activos_fijos/activos_fijos.php" target="_blank">Activos Fijos</a>
+                <a class="nav-link" href="javascript:ping('ping/ping.html')">Ping</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="http://127.0.0.1/vicis/indexprueba.php" target="_blank">Pruebas</a>

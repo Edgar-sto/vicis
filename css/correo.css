@@ -4,3 +4,21 @@ body {
    background-attachment: fixed;
    width: auto;
 }
+
+.btn-small {
+    text-align: right;
+}
+
+.material-icons {
+  color: rgba(0, 0, 0, 1);
+  display: block;
+  font-size: 85px;
+}
+
+i.material-icons{
+  font-size: 80px;
+}
+
+.parrafo_enlaces {
+    margin: auto;
+}

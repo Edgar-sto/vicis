@@ -15,40 +15,153 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#hide_escorza").on('click', function() {
+                $("#elementos_escorza").hide();
+                return false;
+            });
+         
+            $("#show_escorza").on('click', function() {
+                $("#elementos_escorza").show();
+                return false;
+            });
+        });
+    </script>
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-            <form action="correo.php">
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                    <label class="form-check-label" for="inlineRadio1">Suc. Lázaro</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                  <label class="form-check-label" for="inlineRadio2">Suc. Mariano</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                    <label class="form-check-label" for="inlineRadio2">Suc. Revolución</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                    <label class="form-check-label" for="inlineRadio2">Suc. Tlajomulco</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                    <label class="form-check-label" for="inlineRadio2">Suc. Escorza</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <button type="submit" class="btn btn-primary mb-2">Seleccionar</button>
-                </div>
-            </form>
+    <div class="container-fluid">
+        <div id="seccion_sucursales" class="row">
+            <div class="col">
+                <p class="parrafo_enlaces">
+                    <a href="#" id="show_escorza"><!--span class="material-icons">remove_red_eye</span-->Escorza</a>
+                </p>
+            </div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
         </div>
         <div class="row">
-            
+            <section class="container datos_generales" id="elementos_escorza" style="display: none;">
+                <div id="close row">
+                    <h2 id="escorza-id" class="col">Correos Escorza</h2>
+                    <a class="btn btn-small col" href="#" id="hide_escorza" title="Cerrar">
+                        <span class="material-icons">visibility_off</span>
+                    </a>
+                </div> 
+                <table class="sucursal_escorza table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <td>Nombre completo</td>
+                            <td>Sucursal</td>
+                            <td>Puesto</td>
+                            <td>Correo</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="contenido">
+                            <td>Fernando Sosa</td>
+                            <td>Escorza</td>
+                            <td>Generalista</td>
+                            <td>analista.rh@sto.com.mx</td>
+                        </tr>
+                        <tr class="contenido">
+                            <td>Renato Lopez</td>
+                            <td>Escorza</td>
+                            <td>Coordinador de capacitacion </td>
+                            <td>coordinador.capacitacion@sto.com.mx</td>
+                        </tr>
+                        <tr class="contenido">
+                            <td>Fernanda Martinez </td>
+                            <td>Escorza</td>
+                            <td>Comunicación</td>
+                            <td>aux.organizacion@sto.com.mx</td>
+                        </tr>
+                        <tr class="contenido">
+                            <td></td>
+                            <td>Escorza</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="contenido">
+                            <td>Julio Gonzalez </td>
+                            <td>Escorza</td>
+                            <td>Analista rrhh</td>
+                            <td>analista.procesos4@sto.com.mx</td>
+                        </tr>
+                        <tr class="contenido">
+                            <td>Luis Cobarrubias</td>
+                            <td>Escorza</td>
+                            <td>Comunicación</td>
+                            <td>aux.comunicacion@sto.com.mx</td>
+                        </tr>
+                        <tr class="contenido">
+                            <td>Lena Avila</td>
+                            <td>Escorza</td>
+                            <td>Comunicación</td>
+                            <td>comunicación.organizacion@sto.com.mx</td>
+                        </tr>
+                        <tr class="contenido">
+                            <td>Kathia Macias</td>
+                            <td>Escorza</td>
+                            <td>Gerente RRHH</td>
+                            <td>kathia.macias@sto.com.mx</td>
+                        </tr>
+                        <tr class="contenido">
+                            <td>Juan Carlos Villanueva</td>
+                            <td>Escorza</td>
+                            <td>Reclutador</td>
+                            <td>reclutamiento.escorza@sto.com.mx </td>
+                        </tr>
+                        <tr class="contenido">
+                            <td>Asdrúval Martínez</td>
+                            <td>Escorza</td>
+                            <td>Capacitador</td>
+                            <td>capacitación.expiatorio@sto.com.mx </td>
+                        </tr>
+                        <tr class="contenido">
+                            <td>Rogelio Vasquez</td>
+                            <td>Escorza</td>
+                            <td>Capacitador</td>
+                            <td>capacitación.expiatorio2@sto.com.mx</td>
+                        </tr>
+                        <tr class="contenido">
+                            <td>Yamilette Garces </td>
+                            <td>Escorza</td>
+                            <td>Gerente</td>
+                            <td>yamilette.garces@sto.com.mx</td>
+                        </tr>
+                        <tr class="contenido">
+                            <td>Paulina Bueno</td>
+                            <td>Escorza</td>
+                            <td>Supervisora</td>
+                            <td>paulina.bueno@sto.com.mx</td>
+                        </tr>
+                        <tr class="contenido">
+                            <td>Dany</td>
+                            <td>Escorza</td>
+                            <td>Sistemas</td>
+                            <td>omar.mojica@sto.com.mx</td>
+                        </tr>
+                        <tr class="contenido">
+                            <td>Nayeli Sanchez</td>
+                            <td>Escorza</td>
+                            <td>Reclutador</td>
+                            <td>reclutamiento.lazaro@sto.com.mx</td>
+                        </tr>
+                        <tr class="contenido">
+                            <td>Jessica Alcantar</td>
+                            <td>Escorza</td>
+                            <td>Coordinadora de Reclutamiento</td>
+                            <td>coordinador.reclutamiento@sto.com.mx</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
         </div>
+    
     </div>
 </body>
 </html>
