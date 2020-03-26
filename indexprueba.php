@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Panel Edgar</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!-- ESTILOS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="shortcut icon" href="img/favicon1.ico" />
+    <!-- Fuentes de iconos -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rubik+Mono+One&display=swap" rel="stylesheet">
+    <!-- SCRIPT -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script>//Script para abrir ventana agregar y modificar de tamaño asignado.
+        function abrir(url) {
+            open(url,'','top=300,left=300,width=280,height=550') ;
+        }
+    //Script para abrir ventana eliminar de tamaño asignado.
+        function cerrar(url) {
+            open(url,'','top=300,left=300,width=280,height=200') ;
+        }
+    //Script para abrir ventana modificar de tamaño asignado.
+        function modificar(url) {
+            open(url,'','top=300,left=300,width=280,height=200') ;
+        }
+    //Script para abrir ventana agregar cpu de tamaño asignado.
+        function agregarCPU(url) {
+            open(url,'','top=300,left=300,width=280,height=370') ;
+        }
+    //Script para abrir ventana agregar monitor de tamaño asignado.
+        function agregarMONITOR(url) {
+            open(url,'','top=300,left=300,width=280,height=330') ;
+        }
+    //Script para abrir ventana reubicar equipo.
+        function reubicar(url) {
+            open(url,'','top=300,left=300,width=280,height=360') ;
+        }
+    //Script para abrir ventana ping.
+        function ping(url) {
+            open(url,'','top=300,left=300,width=480,height=360') ;
+        }
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#hide").on('click', function() {
+                $("#element").hide();
+                return false;
+            });
+         
+            $("#show").on('click', function() {
+                $("#element").show();
+                return false;
+            });
+        });
+
+        $(document).ready(function(){
+            $("#hide1").on('click', function() {
+                $("#element1").hide();
+                return false;
+            });
+         
+            $("#show1").on('click', function() {
+                $("#element1").show();
+                return false;
+            });
+        });
+
+        $(document).ready(function(){
+            $("#hide2").on('click', function() {
+                $("#element2").hide();
+                return false;
+            });
+         
+            $("#show2").on('click', function() {
+                $("#element2").show();
+                return false;
+            });
+        });
+    </script>
+</head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2">
+                    <?php
+                        require 'estaciones/conexion.php';
+                        $conectar       =   mysqli_connect($servidor, $usuario, $pass, $basededatos);
+                        //querys
+                        $consulta_cpu_operacion     =   "SELECT COUNT(*) ubicacion FROM cpu_oficial WHERE ubicacion != 'Almacen'";
+                        $consulta_cpu_almacen       =   "SELECT COUNT(*) ubicacion FROM cpu_oficial WHERE ubicacion = 'Almacen'";
+
+                        $consulta_monitor_operacion =   "SELECT COUNT(*) ubicacion FROM monitor_oficial WHERE ubicacion !='Almacen' ";
+                        $consulta_monitor_almacen   =   "SELECT COUNT(*) ubicacion FROM monitor_oficial WHERE ubicacion ='Almacen' ";
+
+                        $consulta_diadema_operacion =   "SELECT * FROM diadema_oficial";
+                        $consulta_diadema_almacen   =   "SELECT * FROM diadema_oficial";
+
+                        $consulta_mouse_operaciones =   "SELECT * FROM mouse";
+                        $consulta_mouse_almacen     =   "SELECT * FROM mouse";
+
+                        $consulta_teclado_operaciones =   "SELECT * FROM teclados";
+                        $consulta_teclado_almacen     =   "SELECT * FROM teclados";
+
+                        
+                        //conexion y ejecucion de querys
+                        $resul              =   mysqli_query($conectar, $consulta_cpu_operacion);
+                        $resul2             =   mysqli_query($conectar, $consulta_cpu_almacen);
+
+                        $resul_monitor      =   mysqli_query($conectar, $consulta_monitor_operacion);
+                        $resul_monitor2     =   mysqli_query($conectar, $consulta_monitor_almacen);
+
+                        $resul_diadema      =   mysqli_query($conectar, $consulta_diadema_operacion);
+                        $resul_diadema2     =   mysqli_query($conectar, $consulta_diadema_almacen);
+
+                        $resul_mouse        =   mysqli_query($conectar, $consulta_mouse_operaciones);
+                        $resul_mouse2       =   mysqli_query($conectar, $consulta_mouse_almacen);
+
+                        $resul_teclado        =   mysqli_query($conectar, $consulta_teclado_operaciones);
+                        $resul_teclado2       =   mysqli_query($conectar, $consulta_teclado_almacen);
+
+                        
+                        //resultados
+                        $fila   =   mysqli_fetch_assoc($resul);
+                        $fila2  =   mysqli_fetch_assoc($resul2);
+
+                        $fila3  =   mysqli_fetch_assoc($resul_monitor);
+                        $fila4  =   mysqli_fetch_assoc($resul_monitor2);
+
+                        $fila5  =   mysqli_fetch_assoc($resul_diadema);
+                        $fila6  =   mysqli_fetch_assoc($resul_diadema2);
+
+                        $fila7  =   mysqli_fetch_assoc($resul_mouse);
+                        $fila8  =   mysqli_fetch_assoc($resul_mouse2);
+
+                        $fila9  =   mysqli_fetch_assoc($resul_teclado);
+                        $fila10  =   mysqli_fetch_assoc($resul_teclado2);
+                    ?>
+                    <h1>Activos fijos</h1>
+                    <br>
+                        <section class="row datos_generales" id="stock">
+                            <table class="table">
+                                
+                                <tbody class="cuerpo_tabla">
+                                    <tr>                     
+                                        <?php
+                                            //Sección conteo CPU
+                                        echo "<tr>
+                                                <th class='cabecera_tabla'>PISO</th>
+                                                <th class='cabecera_tabla'>ALMACÉN</th>
+                                            </tr>";
+                                        echo "<tr>
+                                                <td colspan='2' class='datos_base'>
+                                                    <p class='parrafo_enlaces'>
+                                                        <a href='#'' id='show'><!--span class='material-icons'>remove_red_eye</span-->CPU</a>
+                                                    </p>
+                                                </td>
+                                            </tr>";
+                                        echo "<tr>
+                                                <td class='texto'><i class='material-icons'>smartphone</i><br>".$fila['ubicacion']."</td>
+                                                <td class='texto'><i class='material-icons'>smartphone</i><br>".$fila2['ubicacion']."</td>
+                                            </tr>";
+                                        //Sección conteo Monitor
+                                        echo "<tr>
+                                                <th class='cabecera_tabla'>PISO</th>
+                                                <th class='cabecera_tabla'>ALMACÉN</th>
+                                            </tr>";
+                                        echo "<tr>
+                                                <td colspan='2' class='datos_base'>
+                                                <p class='parrafo_enlaces'>
+                                                    <a href='#'' id='show1'><!--span class='material-icons'>remove_red_eye</span-->Monitor</a>
+                                                </p>
+                                            </td>";
+                                        echo "<tr>
+                                                <td class='texto'><i class='material-icons'>desktop_windows</i><br>".$fila3['ubicacion']."</td>
+                                                <td class='texto'><i class='material-icons'>desktop_windows</i><br>".$fila4['ubicacion']."</td>
+                                            ";
+                                        //Sección conteo diadema
+                                        echo "<tr>
+                                                <th class='cabecera_tabla'>PISO</th>
+                                                <th class='cabecera_tabla'>ALMACÉN</th>
+                                            </tr>";
+                                        echo "<tr>
+                                            <td colspan='2' class='datos_base'>
+                                                <p class='parrafo_enlaces'>
+                                                    <a href='#'' id='show2'><!--span class='material-icons'>remove_red_eye</span-->Diademas</a>
+                                                </p>
+                                            </td>";
+                                        echo "<tr>
+                                                <td class='texto'><i class='material-icons'>headset_mic</i><br>".$fila5['piso']."</td>
+                                                <td class='texto'><i class='material-icons'>headset_mic</i><br>".$fila6['almacen']."</td>
+                                            ";
+                                        //Sección conteo mouse
+                                        echo "<tr>
+                                                <th class='cabecera_tabla'>PISO</th>
+                                                <th class='cabecera_tabla'>ALMACÉN</th>
+                                            </tr>";
+                                        echo "<tr>
+                                                <td colspan='2' class='datos_base'>
+                                                <p class='parrafo_enlaces'>
+                                                    Mouse
+                                                </p>
+                                            </td>
+                                            ";
+                                        echo "<tr>
+                                                <td class='texto'><i class='material-icons'>mouse</i><br>".$fila7['piso']."</td>
+                                                <td class='texto'><i class='material-icons'>mouse</i><br>".$fila8['almacen']."</td>
+                                            ";
+                                        //Sección conteo teclado
+                                        echo "<tr>
+                                                <th class='cabecera_tabla'>PISO</th>
+                                                <th class='cabecera_tabla'>ALMACÉN</th>
+                                            </tr>";
+                                        echo "<tr>
+                                                <td colspan='2' class='datos_base'>
+                                                    <p class='parrafo_enlaces'>
+                                                        Teclado
+                                                    </p>
+                                                </td>
+                                            </tr>";
+                                        echo "<tr>
+                                                <td class='texto'><i class='material-icons'>keyboard</i><br>".$fila9['piso']."</td>
+                                                <td class='texto'><i class='material-icons'>keyboard</i><br>".$fila10['almacen']."</td>
+                                        </tr>";
+                                    ?>
+                                </tbody>
+                            </table>
+                        </section>
+                </div>
+                <!-- COLUMNA CONTENEDOR -->
+                <div class="col-md-1 align-self-start">
+                    
+                </div>
+                
+            </div>
+        </div>
+    </body>
+</html>
