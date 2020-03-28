@@ -18,7 +18,7 @@
                     <img class=".img-fluid" src="../img/logo-STO.png">
                     <!--General botones-->
                     <?php
-                        $servidor = array(5, 6, 8, 9, 14, 16, 35, 38, 42, 43, 45, 22, 27, 28, 29, 36, 39, 41, 44, 46, 201);
+                        $servidor = array(5, 6, 8, 9, 14, 16, 22, 27, 28, 29, 35, 36, 37, 38, 39, 41, 42, 43, 44, 45, 46, 201);
                         $tamanio_array_servidor = count($servidor);
                         echo "<br/>";
                         for ($i=0; $i < $tamanio_array_servidor; $i++) {
@@ -166,6 +166,11 @@
                     <div id="ocultar_ser_46" style="display:none;width:1000px;height:100px;">
                         <h3 class="h3_titulos">10.9.2.46</h3>
                         <object type="text/html" width="100%" height="900px" data="http://10.9.2.46/vicidial/welcome.php"></object>  
+                    </div>
+                    <!--Server37-->
+                    <div id="ocultar_ser_37" style="display:none;width:1000px;height:100px;">
+                        <h3 class="h3_titulos">10.9.2.37</h3>
+                        <object type="text/html" width="100%" height="900px" data="http://10.9.2.37/vicidial/welcome.php"></object>  
                     </div>
                     <!--Server201-->
                     <div id="ocultar_ser_201" style="display:none;width:1000px;height:100px;">

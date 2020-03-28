@@ -152,255 +152,286 @@
     </nav> 
     <br>
     <div class="container-fluid">
-        <?php
-        require 'estaciones/conexion.php';
-        $conectar       =   mysqli_connect($servidor, $usuario, $pass, $basededatos);
-        //querys
-        $consulta_cpu_operacion     =   "SELECT COUNT(*) ubicacion FROM cpu_oficial WHERE ubicacion != 'Almacen'";
-        $consulta_cpu_almacen       =   "SELECT COUNT(*) ubicacion FROM cpu_oficial WHERE ubicacion = 'Almacen'";
-
-        $consulta_monitor_operacion =   "SELECT COUNT(*) ubicacion FROM monitor_oficial WHERE ubicacion !='Almacen' ";
-        $consulta_monitor_almacen   =   "SELECT COUNT(*) ubicacion FROM monitor_oficial WHERE ubicacion ='Almacen' ";
-
-        $consulta_diadema_operacion =   "SELECT * FROM diadema_oficial";
-        $consulta_diadema_almacen   =   "SELECT * FROM diadema_oficial";
-
-        $consulta_mouse_operaciones =   "SELECT * FROM mouse";
-        $consulta_mouse_almacen     =   "SELECT * FROM mouse";
-
-        $consulta_teclado_operaciones =   "SELECT * FROM teclados";
-        $consulta_teclado_almacen     =   "SELECT * FROM teclados";
-
-        
-        //conexion y ejecucion de querys
-        $resul              =   mysqli_query($conectar, $consulta_cpu_operacion);
-        $resul2             =   mysqli_query($conectar, $consulta_cpu_almacen);
-
-        $resul_monitor      =   mysqli_query($conectar, $consulta_monitor_operacion);
-        $resul_monitor2     =   mysqli_query($conectar, $consulta_monitor_almacen);
-
-        $resul_diadema      =   mysqli_query($conectar, $consulta_diadema_operacion);
-        $resul_diadema2     =   mysqli_query($conectar, $consulta_diadema_almacen);
-
-        $resul_mouse        =   mysqli_query($conectar, $consulta_mouse_operaciones);
-        $resul_mouse2       =   mysqli_query($conectar, $consulta_mouse_almacen);
-
-        $resul_teclado        =   mysqli_query($conectar, $consulta_teclado_operaciones);
-        $resul_teclado2       =   mysqli_query($conectar, $consulta_teclado_almacen);
-
-        
-        //resultados
-        $fila   =   mysqli_fetch_assoc($resul);
-        $fila2  =   mysqli_fetch_assoc($resul2);
-
-        $fila3  =   mysqli_fetch_assoc($resul_monitor);
-        $fila4  =   mysqli_fetch_assoc($resul_monitor2);
-
-        $fila5  =   mysqli_fetch_assoc($resul_diadema);
-        $fila6  =   mysqli_fetch_assoc($resul_diadema2);
-
-        $fila7  =   mysqli_fetch_assoc($resul_mouse);
-        $fila8  =   mysqli_fetch_assoc($resul_mouse2);
-
-        $fila9  =   mysqli_fetch_assoc($resul_teclado);
-        $fila10  =   mysqli_fetch_assoc($resul_teclado2);
-    ?>
-    <h1>Activos fijos</h1>
-    <br>
-        <section class="row datos_generales" id="stock">
-            <table class="table">
-                <thead class="cabecera_tabla">
-                    <tr>
-                        <th class="cabecera_tabla">PISO</th>
-                        <th class="cabecera_tabla">ALMACÉN</th>
-                        <th class="cabecera_tabla">PISO</th>
-                        <th class="cabecera_tabla">ALMACÉN</th>
-                        <th class="cabecera_tabla">PISO</th>
-                        <th class="cabecera_tabla">ALMACÉN</th>
-                        <th class="cabecera_tabla">PISO</th>
-                        <th class="cabecera_tabla">ALMACÉN</th>
-                        <th class="cabecera_tabla">PISO</th>
-                        <th class="cabecera_tabla">ALMACÉN</th>
-                    </tr>
-                </thead>
-                <tbody class="cuerpo_tabla">
-                    <tr>
-                            <td colspan="2" class="datos_base">
-                                <p class="parrafo_enlaces">
-                                    <a href="#" id="show"><!--span class="material-icons">remove_red_eye</span-->CPU</a>
-                                </p>
-                            </td>
-                            <td colspan="2" class="datos_base">
-                                <p class="parrafo_enlaces">
-                                    <a href="#" id="show1"><!--span class="material-icons">remove_red_eye</span-->Monitor</a>
-                                </p>
-                            </td>
-                            <td colspan="2" class="datos_base">
-                                <p class="parrafo_enlaces">
-                                    <a href="#" id="show2"><!--span class="material-icons">remove_red_eye</span-->Diademas</a>
-                                </p>
-                            </td>
-                            <td colspan="2" class="datos_base">
-                                <p class="parrafo_enlaces">
-                                    Mouse
-                                </p>
-                            </td>
-                            <td colspan="2" class="datos_base">
-                                <p class="parrafo_enlaces">
-                                    Teclado
-                                </p>
-                            </td>
+            <div class="row">
+                <div class="col-md-2">
                     <?php
-                        echo "<tr>";
-                            //Sección conteo CPU
-                            echo "<td class='texto'><i class='material-icons'>smartphone</i><br>".$fila['ubicacion']."</td>";
-                            echo "<td class='texto'><i class='material-icons'>smartphone</i><br>".$fila2['ubicacion']."</td>";
-                            //Sección conteo Monitor
-                            echo "<td class='texto'><i class='material-icons'>desktop_windows</i><br>".$fila3['ubicacion']."</td>";
-                            echo "<td class='texto'><i class='material-icons'>desktop_windows</i><br>".$fila4['ubicacion']."</td>";
-                            //Sección conteo diadema
-                            echo "<td class='texto'><i class='material-icons'>headset_mic</i><br>".$fila5['piso']."</td>";
-                            echo "<td class='texto'><i class='material-icons'>headset_mic</i><br>".$fila6['almacen']."</td>";
-                            //Sección conteo mouse
-                            echo "<td class='texto'><i class='material-icons'>mouse</i><br>".$fila7['piso']."</td>";
-                            echo "<td class='texto'><i class='material-icons'>mouse</i><br>".$fila8['almacen']."</td>";
-                            //Sección conteo teclado
-                            echo "<td class='texto'><i class='material-icons'>keyboard</i><br>".$fila9['piso']."</td>";
-                            echo "<td class='texto'><i class='material-icons'>keyboard</i><br>".$fila10['almacen']."</td>";
-                        echo "</tr>";
-                    ?>
-                </tbody>
-            </table>
-        </section>
-        <section class="container datos_generales" id="element" style="display: none;">
-            <div id="close" class="row">
-                <h2 id="cpu-id" class="col">CPU</h2>
-                <a class="btn btn-small col" href="#" id="hide" title="Cerrar">
-                    <span class="material-icons">visibility_off</span>
-                </a>
-            </div>
-            <table class="table table-dark table-hover" >
-                <thead class="cabecera_tabla">
-                    <tr>
-                        <th class="cabecera_tabla1">MARCA</th>
-                        <th class="cabecera_tabla1">Serie</th>
-                        <th class="cabecera_tabla1">Modelo</th>
-                        <th class="cabecera_tabla1">Direccion MAC</th>
-                        <th class="cabecera_tabla1">Ubicación</th>
-                        <th class="cabecera_tabla1">Área</th>
-                        <th class="cabecera_tabla1">Comentario</th>
-                    </tr>
-                </thead>
-                <tbody class="cuerpo_tabla">
-                    <?php
-                        $consulta_general_cpu       =   "SELECT * FROM cpu_oficial";
-                        $res_consulta_general_cpu   =   mysqli_query($conectar, $consulta_general_cpu);
-                        $contador=1;
+                        require 'estaciones/conexion.php';
+                        $conectar       =   mysqli_connect($servidor, $usuario, $pass, $basededatos);
+                        //querys
+                        $consulta_cpu_operacion     =   "SELECT COUNT(*) ubicacion FROM cpu_oficial WHERE ubicacion != 'Almacen'";
+                        $consulta_cpu_almacen       =   "SELECT COUNT(*) ubicacion FROM cpu_oficial WHERE ubicacion = 'Almacen'";
+
+                        $consulta_monitor_operacion =   "SELECT COUNT(*) ubicacion FROM monitor_oficial WHERE ubicacion !='Almacen' ";
+                        $consulta_monitor_almacen   =   "SELECT COUNT(*) ubicacion FROM monitor_oficial WHERE ubicacion ='Almacen' ";
+
+                        $consulta_diadema_operacion =   "SELECT * FROM diadema_oficial";
+                        $consulta_diadema_almacen   =   "SELECT * FROM diadema_oficial";
+
+                        $consulta_mouse_operaciones =   "SELECT * FROM mouse";
+                        $consulta_mouse_almacen     =   "SELECT * FROM mouse";
+
+                        $consulta_teclado_operaciones =   "SELECT * FROM teclados";
+                        $consulta_teclado_almacen     =   "SELECT * FROM teclados";
+
                         
-                        while( $fila_general   =   mysqli_fetch_assoc($res_consulta_general_cpu)) {
-                echo "<tr>";
-                echo "
-                    <td class='texto1'>".$fila_general['marca_cpu']."</td>
-                    <td class='texto1'>".$fila_general['serie_cpu']."</td>
-                    <td class='texto1'>".$fila_general['modelo_cpu']."</td>
-                    <td class='texto1'>".$fila_general['mac_address']."</td>
-                    <td class='texto1'>".$fila_general['ubicacion']."</td>
-                    <td class='texto1'>".$fila_general['area']."</td>
-                    <td class='texto1'>".$fila_general['comentario']."</td>";                 
-                echo"</tr>";
-            }
-                    ?>
-                </tbody>
-            </table>
-        </section>
-        <section class="container datos_generales" id="element1" style="display: none;">
-            <div id="close1" class="row">
-                <h2 id="monitor-id" class="col">Monitores</h2>
-                <a class="btn btn-small col" href="#" id="hide1" title="Cerrar">
-                    <span class="material-icons">visibility_off</span>
-                </a>
-            </div>
-            <table class="table table-dark table-hover">
-                <thead class="cabecera_tabla">
-                    <tr>
-                        <th class="cabecera_tabla1">MARCA</th>
-                        <th class="cabecera_tabla1">Serie</th>
-                        <th class="cabecera_tabla1">Modelo</th>
-                        <th class="cabecera_tabla1">Ubicación</th>
-                        <th class="cabecera_tabla1">Área</th>
-                        <th class="cabecera_tabla1">Comentario</th>
-                    </tr>
-                </thead>
-                <tbody class="cuerpo_tabla">
-                    <?php
-                        $consulta_general_monitor       =   "SELECT * FROM monitor_oficial";
-                        $res_consulta_general_monitor   =   mysqli_query($conectar, $consulta_general_monitor);
-                        $contador=1;
-                        
-                        while( $fila_general   =   mysqli_fetch_assoc($res_consulta_general_monitor)) {
-                echo "<tr>";
-                echo "
-                    <td class='texto1'>".$fila_general['marca_monitor']."</td>
-                    <td class='texto1'>".$fila_general['serie_monitor']."</td>
-                    <td class='texto1'>".$fila_general['modelo_monitor']."</td>
-                    <td class='texto1'>".$fila_general['ubicacion']."</td>
-                    <td class='texto1'>".$fila_general['area']."</td>
-                    <td class='texto1'>".$fila_general['comentario']."</td>";                 
-                echo"</tr>";
-            }
-                    ?>
-                </tbody>
-            </table>
-        </section>
-        <br>
-        <section class="container datos_generales" id="element2" style="display: none;">
-            <div id="close2" class="row">
-                <h2 id="diadema-id" class="col">Diademas</h2>
-                <a class="btn btn-small col" href="#" id="hide2" title="Cerrar">
-                    <span class="material-icons">visibility_off</span>
-                </a>
-            </div>
-            <table class="table table-dark table-hover">
-                <thead class="cabecera_tabla">
-                    <tr>
-                        <th class="cabecera_tabla1">MARCA</th>
-                        <th class="cabecera_tabla1">Serie</th>
-                        <th class="cabecera_tabla1">Ubicación</th>
-                        <th class="cabecera_tabla1">Área</th>
-                        <th class="cabecera_tabla1">Piso</th>
-                        <th class="cabecera_tabla1">Almacen</th>
-                    </tr>
-                </thead>
-                <tbody class="cuerpo_tabla">
-                    <?php
-                        $consulta_general_diadema       =   "SELECT * FROM diademas";
-                        $res_consulta_general_diadema   =   mysqli_query($conectar, $consulta_general_diadema);
-                        $contador=1;
-                        
-                        while( $fila_general   =   mysqli_fetch_assoc($res_consulta_general_diadema)) {
-                echo "<tr>";
-                echo "
-                    <td class='texto1'>".$fila_general['marca_diadema']."</td>
-                    <td class='texto1'>".$fila_general['num_serie']."</td>
-                    <td class='texto1'>".$fila_general['ubicacion']."</td>
-                    <td class='texto1'>".$fila_general['area']."</td>
-                    <td class='texto1'>".$fila_general['piso']."</td>
-                    <td class='texto1'>".$fila_general['almacen']."</td>
-                    ";
-                                      
-                echo"</tr>";
-            }
-                    ?>
-                </tbody>
-            </table>
-        </section>
+                        //conexion y ejecucion de querys
+                        $resul              =   mysqli_query($conectar, $consulta_cpu_operacion);
+                        $resul2             =   mysqli_query($conectar, $consulta_cpu_almacen);
 
-<!--li>
-<a href="javascript:generar_QR('activos_fijos/generarQR.php')">Eliminar</a>
-</li-->
+                        $resul_monitor      =   mysqli_query($conectar, $consulta_monitor_operacion);
+                        $resul_monitor2     =   mysqli_query($conectar, $consulta_monitor_almacen);
 
-</div>
-    </div>
+                        $resul_diadema      =   mysqli_query($conectar, $consulta_diadema_operacion);
+                        $resul_diadema2     =   mysqli_query($conectar, $consulta_diadema_almacen);
+
+                        $resul_mouse        =   mysqli_query($conectar, $consulta_mouse_operaciones);
+                        $resul_mouse2       =   mysqli_query($conectar, $consulta_mouse_almacen);
+
+                        $resul_teclado        =   mysqli_query($conectar, $consulta_teclado_operaciones);
+                        $resul_teclado2       =   mysqli_query($conectar, $consulta_teclado_almacen);
+
+                        
+                        //resultados
+                        $fila   =   mysqli_fetch_assoc($resul);
+                        $fila2  =   mysqli_fetch_assoc($resul2);
+
+                        $fila3  =   mysqli_fetch_assoc($resul_monitor);
+                        $fila4  =   mysqli_fetch_assoc($resul_monitor2);
+
+                        $fila5  =   mysqli_fetch_assoc($resul_diadema);
+                        $fila6  =   mysqli_fetch_assoc($resul_diadema2);
+
+                        $fila7  =   mysqli_fetch_assoc($resul_mouse);
+                        $fila8  =   mysqli_fetch_assoc($resul_mouse2);
+
+                        $fila9  =   mysqli_fetch_assoc($resul_teclado);
+                        $fila10  =   mysqli_fetch_assoc($resul_teclado2);
+                    ?>
+                    <br>
+                    <br>
+                    <br>
+                        <section class="row datos_generales" id="stock">
+                            <table class="table">
+                                <tr>
+                                    <h1>Activos fijos</h1>
+                                </tr>
+                                <tbody class="cuerpo_tabla">
+                                    <tr>                     
+                                        <?php
+                                            //Sección conteo CPU
+                                        echo "<tr>
+                                                <th class='cabecera_tabla'>PISO</th>
+                                                <th class='cabecera_tabla'>ALMACÉN</th>
+                                            </tr>";
+                                        echo "<tr>
+                                                <td colspan='2' class='datos_base'>
+                                                    <p class='parrafo_enlaces'>
+                                                        <a href='#'' id='show'><!--span class='material-icons'>remove_red_eye</span-->CPU</a>
+                                                    </p>
+                                                </td>
+                                            </tr>";
+                                        echo "<tr>
+                                                <td class='texto'><i class='material-icons'>smartphone</i><br>".$fila['ubicacion']."</td>
+                                                <td class='texto'><i class='material-icons'>smartphone</i><br>".$fila2['ubicacion']."</td>
+                                            </tr>";
+                                        //Sección conteo Monitor
+                                        echo "<tr>
+                                                <th class='cabecera_tabla'>PISO</th>
+                                                <th class='cabecera_tabla'>ALMACÉN</th>
+                                            </tr>";
+                                        echo "<tr>
+                                                <td colspan='2' class='datos_base'>
+                                                <p class='parrafo_enlaces'>
+                                                    <a href='#'' id='show1'><!--span class='material-icons'>remove_red_eye</span-->Monitor</a>
+                                                </p>
+                                            </td>";
+                                        echo "<tr>
+                                                <td class='texto'><i class='material-icons'>desktop_windows</i><br>".$fila3['ubicacion']."</td>
+                                                <td class='texto'><i class='material-icons'>desktop_windows</i><br>".$fila4['ubicacion']."</td>
+                                            ";
+                                        //Sección conteo diadema
+                                        echo "<tr>
+                                                <th class='cabecera_tabla'>PISO</th>
+                                                <th class='cabecera_tabla'>ALMACÉN</th>
+                                            </tr>";
+                                        echo "<tr>
+                                            <td colspan='2' class='datos_base'>
+                                                <p class='parrafo_enlaces'>
+                                                    <a href='#'' id='show2'><!--span class='material-icons'>remove_red_eye</span-->Diademas</a>
+                                                </p>
+                                            </td>";
+                                        echo "<tr>
+                                                <td class='texto'><i class='material-icons'>headset_mic</i><br>".$fila5['piso']."</td>
+                                                <td class='texto'><i class='material-icons'>headset_mic</i><br>".$fila6['almacen']."</td>
+                                            ";
+                                        //Sección conteo mouse
+                                        echo "<tr>
+                                                <th class='cabecera_tabla'>PISO</th>
+                                                <th class='cabecera_tabla'>ALMACÉN</th>
+                                            </tr>";
+                                        echo "<tr>
+                                                <td colspan='2' class='datos_base'>
+                                                <p class='parrafo_enlaces'>
+                                                    Mouse
+                                                </p>
+                                            </td>
+                                            ";
+                                        echo "<tr>
+                                                <td class='texto'><i class='material-icons'>mouse</i><br>".$fila7['piso']."</td>
+                                                <td class='texto'><i class='material-icons'>mouse</i><br>".$fila8['almacen']."</td>
+                                            ";
+                                        //Sección conteo teclado
+                                        echo "<tr>
+                                                <th class='cabecera_tabla'>PISO</th>
+                                                <th class='cabecera_tabla'>ALMACÉN</th>
+                                            </tr>";
+                                        echo "<tr>
+                                                <td colspan='2' class='datos_base'>
+                                                    <p class='parrafo_enlaces'>
+                                                        Teclado
+                                                    </p>
+                                                </td>
+                                            </tr>";
+                                        echo "<tr>
+                                                <td class='texto'><i class='material-icons'>keyboard</i><br>".$fila9['piso']."</td>
+                                                <td class='texto'><i class='material-icons'>keyboard</i><br>".$fila10['almacen']."</td>
+                                        </tr>";
+                                    ?>
+                                </tbody>
+                            </table>
+                        </section>
+                </div>
+                <br>
+                <br>
+                <br>
+                <!-- COLUMNA CONTENEDOR -->
+                <div class="col align-self-start">
+                    <section class="container datos_generales" id="element" style="display: none;">
+                        <div id="close" class="row">
+                            <h2 id="cpu-id" class="col">CPU</h2>
+                            <a class="btn btn-small col" href="#" id="hide" title="Cerrar">
+                                <span class="material-icons">visibility_off</span>
+                            </a>
+                        </div>
+                        <table class="table table-dark table-hover" >
+                            <thead class="cabecera_tabla">
+                                <tr>
+                                    <th class="cabecera_tabla1">MARCA</th>
+                                    <th class="cabecera_tabla1">Serie</th>
+                                    <th class="cabecera_tabla1">Modelo</th>
+                                    <th class="cabecera_tabla1">Direccion MAC</th>
+                                    <th class="cabecera_tabla1">Ubicación</th>
+                                    <th class="cabecera_tabla1">Área</th>
+                                    <th class="cabecera_tabla1">Comentario</th>
+                                </tr> 
+                            </thead>
+                            <tbody class="cuerpo_tabla">
+                                <?php
+                                    $consulta_general_cpu       =   "SELECT * FROM cpu_oficial";
+                                    $res_consulta_general_cpu   =   mysqli_query($conectar, $consulta_general_cpu);
+                                    $contador=1;
+                                    
+                                    while( $fila_general   =   mysqli_fetch_assoc($res_consulta_general_cpu)) {
+                            echo "<tr>";
+                            echo "
+                                <td class='texto1'>".$fila_general['marca_cpu']."</td>
+                                <td class='texto1'>".$fila_general['serie_cpu']."</td>
+                                <td class='texto1'>".$fila_general['modelo_cpu']."</td>
+                                <td class='texto1'>".$fila_general['mac_address']."</td>
+                                <td class='texto1'>".$fila_general['ubicacion']."</td>
+                                <td class='texto1'>".$fila_general['area']."</td>
+                                <td class='texto1'>".$fila_general['comentario']."</td>";                 
+                            echo"</tr>";
+                        }
+                                ?>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section class="container datos_generales" id="element1" style="display: none;">
+                        <div id="close1" class="row">
+                            <h2 id="monitor-id" class="col">Monitores</h2>
+                            <a class="btn btn-small col" href="#" id="hide1" title="Cerrar">
+                                <span class="material-icons">visibility_off</span>
+                            </a>
+                        </div>
+                        <table class="table table-dark table-hover">
+                            <thead class="cabecera_tabla">
+                                <tr>
+                                    <th class="cabecera_tabla1">MARCA</th>
+                                    <th class="cabecera_tabla1">Serie</th>
+                                    <th class="cabecera_tabla1">Modelo</th>
+                                    <th class="cabecera_tabla1">Ubicación</th>
+                                    <th class="cabecera_tabla1">Área</th>
+                                    <th class="cabecera_tabla1">Comentario</th>
+                                </tr>
+                            </thead>
+                            <tbody class="cuerpo_tabla">
+                                <?php
+                                    $consulta_general_monitor       =   "SELECT * FROM monitor_oficial";
+                                    $res_consulta_general_monitor   =   mysqli_query($conectar, $consulta_general_monitor);
+                                    $contador=1;
+                                    
+                                    while( $fila_general   =   mysqli_fetch_assoc($res_consulta_general_monitor)) {
+                            echo "<tr>";
+                            echo "
+                                <td class='texto1'>".$fila_general['marca_monitor']."</td>
+                                <td class='texto1'>".$fila_general['serie_monitor']."</td>
+                                <td class='texto1'>".$fila_general['modelo_monitor']."</td>
+                                <td class='texto1'>".$fila_general['ubicacion']."</td>
+                                <td class='texto1'>".$fila_general['area']."</td>
+                                <td class='texto1'>".$fila_general['comentario']."</td>";                 
+                            echo"</tr>";
+                        }
+                                ?>
+                            </tbody>
+                        </table>
+                    </section>
+                    <br>
+                    <section class="container datos_generales" id="element2" style="display: none;">
+                        <div id="close2" class="row">
+                            <h2 id="diadema-id" class="col">Diademas</h2>
+                            <a class="btn btn-small col" href="#" id="hide2" title="Cerrar">
+                                <span class="material-icons">visibility_off</span>
+                            </a>
+                        </div>
+                        <table class="table table-dark table-hover">
+                            <thead class="cabecera_tabla">
+                                <tr>
+                                    <th class="cabecera_tabla1">MARCA</th>
+                                    <th class="cabecera_tabla1">Serie</th>
+                                    <th class="cabecera_tabla1">Ubicación</th>
+                                    <th class="cabecera_tabla1">Área</th>
+                                    <th class="cabecera_tabla1">Piso</th>
+                                    <th class="cabecera_tabla1">Almacen</th>
+                                </tr>
+                            </thead>
+                            <tbody class="cuerpo_tabla">
+                                <?php
+                                    $consulta_general_diadema       =   "SELECT * FROM diademas";
+                                    $res_consulta_general_diadema   =   mysqli_query($conectar, $consulta_general_diadema);
+                                    $contador=1;
+                                    
+                                    while( $fila_general   =   mysqli_fetch_assoc($res_consulta_general_diadema)) {
+                            echo "<tr>";
+                            echo "
+                                <td class='texto1'>".$fila_general['marca_diadema']."</td>
+                                <td class='texto1'>".$fila_general['num_serie']."</td>
+                                <td class='texto1'>".$fila_general['ubicacion']."</td>
+                                <td class='texto1'>".$fila_general['area']."</td>
+                                <td class='texto1'>".$fila_general['piso']."</td>
+                                <td class='texto1'>".$fila_general['almacen']."</td>
+                                ";
+                                                  
+                            echo"</tr>";
+                        }
+                                ?>
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+                
+            </div>
+        </div>
 </body>
 </html>
 
