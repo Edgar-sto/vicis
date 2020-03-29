@@ -96,7 +96,7 @@
                     <a class="nav-link" href="http://127.0.0.1/vicis/panelvicis/panel_vicis.php" target="_blank">VICIdial</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="http://127.0.0.1/Crear_Usuarios_vici/index.php" target="_blank">Usuarios Vici</a>
+                    <a class="nav-link" href="Crear_Usuarios_vici/index.php" target="_blank">Usuarios Vici</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="" target="_blank" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">

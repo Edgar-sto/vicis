@@ -87,234 +87,67 @@
         </script>
     </head>
     <body>
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-            <!-- Brand -->
-            <img class=".img-fluid" src="img/vicidial_admin_web_logo.png">
-            <!-- Links -->
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="http://127.0.0.1/vicis/panelvicis/panel_vicis.php" target="_blank">VICIdial</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="http://127.0.0.1/Crear_Usuarios_vici/index.php" target="_blank">Usuarios Vici</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="" target="_blank" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
-                        <span class="nav-label">Telefonía</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="http://127.0.0.1/vicis/factura/datos_factura.php" target="_blank">Datos Telefonía</a>
-                        </li>
-                        <li>
-                            <a href="http://127.0.0.1/facturacion/index.php" target="_blank">Factura</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown"><!-- Inicio de cambios en nav-->
-                    <a class="nav-link dropdown-toggle" href="" target="_blank" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
-                        <span class="nav-label">Estaciones</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="javascript:abrir('estaciones/agregar.html')">Agregar estación</a>
-                        </li>
-                        <li>
-                            <a href="javascript:agregarCPU('estaciones/agregar_cpu.html')">Agregar CPU</a>
-                        </li>
-                        <li>
-                            <a href="javascript:agregarMONITOR('estaciones/agregar_monitor.html')">Agregar Monitor</a>
-                        </li>
-                        <li><!--Elemento dehabilitado-->
-                            <a class="dropdown-item disabled" href="javascript:modificar('estaciones/modificar.php')">Modificar</a>
-                        </li>
-                        <li>
-                            <a href="javascript:cerrar('estaciones/eliminar.html')">Eliminar</a>
-                        </li>
-                        <li>
-                            <a href="javascript:reubicar('estaciones/reubicar.html')">Reubicar</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="http://127.0.0.1/facturacion/index.php" target="_blank">Facturación</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="http://127.0.0.1/vicis/correos/correos.HTML" target="_blank">Correos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="javascript:ping('ping/ping.html')">Ping</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="http://127.0.0.1/vicis/indexprueba.php" target="_blank">Pruebas</a>
-                </li>
-            </ul>
-        </nav> 
-        <div class="container-fluid">
-            <div class="menu2">
-                <?php
-                        require 'estaciones/conexion.php';
-                        $conectar       =   mysqli_connect($servidor, $usuario, $pass, $basededatos);
-                        //querys
-                        $consulta_cpu_operacion     =   "SELECT COUNT(*) ubicacion FROM cpu_oficial WHERE ubicacion != 'Almacen'";
-                        $consulta_cpu_almacen       =   "SELECT COUNT(*) ubicacion FROM cpu_oficial WHERE ubicacion = 'Almacen'";
-                        $consulta_monitor_operacion =   "SELECT COUNT(*) ubicacion FROM monitor_oficial WHERE ubicacion !='Almacen' ";
-                        $consulta_monitor_almacen   =   "SELECT COUNT(*) ubicacion FROM monitor_oficial WHERE ubicacion ='Almacen' ";
-                        $consulta_diadema_operacion =   "SELECT * FROM diadema_oficial";
-                        $consulta_diadema_almacen   =   "SELECT * FROM diadema_oficial";
-                        $consulta_mouse_operaciones =   "SELECT * FROM mouse";
-                        $consulta_mouse_almacen     =   "SELECT * FROM mouse";
-                        $consulta_teclado_operaciones =   "SELECT * FROM teclados";
-                        $consulta_teclado_almacen     =   "SELECT * FROM teclados";
-                        //conexion y ejecucion de querys
-                        $resul              =   mysqli_query($conectar, $consulta_cpu_operacion);
-                        $resul2             =   mysqli_query($conectar, $consulta_cpu_almacen);
-                        $resul_monitor      =   mysqli_query($conectar, $consulta_monitor_operacion);
-                        $resul_monitor2     =   mysqli_query($conectar, $consulta_monitor_almacen);
-                        $resul_diadema      =   mysqli_query($conectar, $consulta_diadema_operacion);
-                        $resul_diadema2     =   mysqli_query($conectar, $consulta_diadema_almacen);
-                        $resul_mouse        =   mysqli_query($conectar, $consulta_mouse_operaciones);
-                        $resul_mouse2       =   mysqli_query($conectar, $consulta_mouse_almacen);
-                        $resul_teclado        =   mysqli_query($conectar, $consulta_teclado_operaciones);
-                        $resul_teclado2       =   mysqli_query($conectar, $consulta_teclado_almacen);                            
-                        //resultados
-                        $fila   =   mysqli_fetch_assoc($resul);
-                        $fila2  =   mysqli_fetch_assoc($resul2);
-                        $fila3  =   mysqli_fetch_assoc($resul_monitor);
-                        $fila4  =   mysqli_fetch_assoc($resul_monitor2);
-                        $fila5  =   mysqli_fetch_assoc($resul_diadema);
-                        $fila6  =   mysqli_fetch_assoc($resul_diadema2);
-                        $fila7  =   mysqli_fetch_assoc($resul_mouse);
-                        $fila8  =   mysqli_fetch_assoc($resul_mouse2);
-                        $fila9  =   mysqli_fetch_assoc($resul_teclado);
-                        $fila10  =   mysqli_fetch_assoc($resul_teclado2);
-                ?>
-                <div class="col-md-2">
-                    <img class=".img-fluid" src="../img/logo-STO.png">
-                    <!--General botones-->
-                    <input class="btn btn-primary btn-md btn-block" type="button" id="server_$servidor[$i]" value="boton uno" target="_blank" />
-                </div>
-            </div>
-                <br>
-                <br>
-                <br>
-                <!-- COLUMNA CONTENEDOR -->
-                <div class="col align-self-start">
-                    <section class="container datos_generales" id="element" style="display: none;">
-                        <div id="close" class="row">
-                            <h2 id="cpu-id" class="col">CPU</h2>
-                            <a class="btn btn-small col" href="#" id="hide" title="Cerrar">
-                                <span class="material-icons">visibility_off</span>
-                            </a>
-                        </div>
-                        <table class="table table-dark table-hover" >
-                            <thead class="cabecera_tabla">
-                                <tr>
-                                    <th class="cabecera_tabla1">MARCA</th>
-                                    <th class="cabecera_tabla1">Serie</th>
-                                    <th class="cabecera_tabla1">Modelo</th>
-                                    <th class="cabecera_tabla1">Direccion MAC</th>
-                                    <th class="cabecera_tabla1">Ubicación</th>
-                                    <th class="cabecera_tabla1">Área</th>
-                                    <th class="cabecera_tabla1">Comentario</th>
-                                </tr> 
-                            </thead>
-                            <tbody class="cuerpo_tabla">
-                                <?php
-                                    $consulta_general_cpu       =   "SELECT * FROM cpu_oficial";
-                                    $res_consulta_general_cpu   =   mysqli_query($conectar, $consulta_general_cpu);
-                                    $contador=1;
-                                    while( $fila_general   =   mysqli_fetch_assoc($res_consulta_general_cpu)) {
-                                    echo "<tr>
-                                        <td class='texto1'>".$fila_general['marca_cpu']."</td>
-                                        <td class='texto1'>".$fila_general['serie_cpu']."</td>
-                                        <td class='texto1'>".$fila_general['modelo_cpu']."</td>
-                                        <td class='texto1'>".$fila_general['mac_address']."</td>
-                                        <td class='texto1'>".$fila_general['ubicacion']."</td>
-                                        <td class='texto1'>".$fila_general['area']."</td>
-                                        <td class='texto1'>".$fila_general['comentario']."</td>                 
-                                    </tr>";
-                                    }
-                                ?>
-                            </tbody>
-                        </table>
-                    </section>
-                    <section class="container datos_generales" id="element1" style="display: none;">
-                        <div id="close1" class="row">
-                            <h2 id="monitor-id" class="col">Monitores</h2>
-                            <a class="btn btn-small col" href="#" id="hide1" title="Cerrar">
-                                <span class="material-icons">visibility_off</span>
-                            </a>
-                        </div>
-                        <table class="table table-dark table-hover">
-                            <thead class="cabecera_tabla">
-                                <tr>
-                                    <th class="cabecera_tabla1">MARCA</th>
-                                    <th class="cabecera_tabla1">Serie</th>
-                                    <th class="cabecera_tabla1">Modelo</th>
-                                    <th class="cabecera_tabla1">Ubicación</th>
-                                    <th class="cabecera_tabla1">Área</th>
-                                    <th class="cabecera_tabla1">Comentario</th>
-                                </tr>
-                            </thead>
-                            <tbody class="cuerpo_tabla">
-                                <?php
-                                    $consulta_general_monitor       =   "SELECT * FROM monitor_oficial";
-                                    $res_consulta_general_monitor   =   mysqli_query($conectar, $consulta_general_monitor);
-                                    $contador=1; 
-                                    while( $fila_general   =   mysqli_fetch_assoc($res_consulta_general_monitor)) {
-                                    echo "<tr>
-                                        <td class='texto1'>".$fila_general['marca_monitor']."</td>
-                                        <td class='texto1'>".$fila_general['serie_monitor']."</td>
-                                        <td class='texto1'>".$fila_general['modelo_monitor']."</td>
-                                        <td class='texto1'>".$fila_general['ubicacion']."</td>
-                                        <td class='texto1'>".$fila_general['area']."</td>
-                                        <td class='texto1'>".$fila_general['comentario']."</td>
-                                    </tr>";
-                                    }
-                                ?>
-                            </tbody>
-                        </table>
-                    </section>
-                    <br>
-                    <section class="container datos_generales" id="element2" style="display: none;">
-                        <div id="close2" class="row">
-                            <h2 id="diadema-id" class="col">Diademas</h2>
-                            <a class="btn btn-small col" href="#" id="hide2" title="Cerrar">
-                                <span class="material-icons">visibility_off</span>
-                            </a>
-                        </div>
-                        <table class="table table-dark table-hover">
-                            <thead class="cabecera_tabla">
-                                <tr>
-                                    <th class="cabecera_tabla1">MARCA</th>
-                                    <th class="cabecera_tabla1">Serie</th>
-                                    <th class="cabecera_tabla1">Ubicación</th>
-                                    <th class="cabecera_tabla1">Área</th>
-                                    <th class="cabecera_tabla1">Piso</th>
-                                    <th class="cabecera_tabla1">Almacen</th>
-                                </tr>
-                            </thead>
-                            <tbody class="cuerpo_tabla">
-                                <?php
-                                    $consulta_general_diadema       =   "SELECT * FROM diademas";
-                                    $res_consulta_general_diadema   =   mysqli_query($conectar, $consulta_general_diadema);
-                                    $contador=1;
-                                    while( $fila_general   =   mysqli_fetch_assoc($res_consulta_general_diadema)) {
-                                    echo "<tr>
-                                        <td class='texto1'>".$fila_general['marca_diadema']."</td>
-                                        <td class='texto1'>".$fila_general['num_serie']."</td>
-                                        <td class='texto1'>".$fila_general['ubicacion']."</td>
-                                        <td class='texto1'>".$fila_general['area']."</td>
-                                        <td class='texto1'>".$fila_general['piso']."</td>
-                                        <td class='texto1'>".$fila_general['almacen']."</td>
-                                    </tr>";
-                                    }
-                                ?>
-                            </tbody>
-                        </table>
-                    </section>
-                </div>
+        
+      <div class="collapse" id="instagram">
+        <a class="instagram" href="#instagram"
+          ><i class="fab fa-instagram"></i> Instagram</a
+        >
+        <div class="content">
+          <div class="inner-content">
+            <h3>Instagram</h3>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
+            nobis iusto deleniti corporis alias quo a quam similique cupiditate
+            pariatur aliquid, omnis, officia dicta officiis impedit nisi dolores
+            ut, distinctio placeat. Magni dolores perferendis ab laborum in
+            neque, non exercitationem!
+          </div>
         </div>
+      </div>
+      <div class="collapse" id="twitter">
+        <a class="twitter" href="#twitter"
+          ><i class="fab fa-twitter"></i> Twitter</a
+        >
+        <div class="content">
+          <div class="inner-content">
+            <h3>Twitter</h3>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
+            nobis iusto deleniti corporis alias quo a quam similique cupiditate
+            pariatur aliquid, omnis, officia dicta officiis impedit nisi dolores
+            ut, distinctio placeat. Magni dolores perferendis ab laborum in
+            neque, non exercitationem!
+          </div>
+        </div>
+      </div>
+      <div class="collapse" id="dribbble">
+        <a class="dribbble" href="#dribbble"
+          ><i class="fab fa-dribbble"></i> Dribble</a
+        >
+        <div class="content">
+          <div class="inner-content">
+            <h3>Dribbble</h3>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
+            nobis iusto deleniti corporis alias quo a quam similique cupiditate
+            pariatur aliquid, omnis, officia dicta officiis impedit nisi dolores
+            ut, distinctio placeat. Magni dolores perferendis ab laborum in
+            neque, non exercitationem!
+          </div>
+        </div>
+      </div>
+      <div class="collapse" id="youtube">
+        <a class="youtube" href="#youtube"
+          ><i class="fab fa-youtube"></i> Youtube</a
+        >
+        <div class="content">
+          <div class="inner-content">
+            <h3>Youtube</h3>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
+            nobis iusto deleniti corporis alias quo a quam similique cupiditate
+            pariatur aliquid, omnis, officia dicta officiis impedit nisi dolores
+            ut, distinctio placeat. Magni dolores perferendis ab laborum in
+            neque, non exercitationem!
+          </div>
+        </div>
+      </div>
+    </div>
     </body>
 </html>
