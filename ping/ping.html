@@ -7,7 +7,7 @@
     <!-- ESTILOS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="../css/cmd.css">
     <link rel="shortcut icon" href="img/favicon1.ico" />
     <!-- Fuentes de iconos -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -17,33 +17,49 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+ 
     <script>
-        $(document).on('ready',function()
-        {
-           	$('#btn_hacer_ping').click(function()
-           	{
-                var url 		=	"ping.php";
-                var ping		= 	$('#ping').val();
-                if(ping =='')
-                {
-                    alert('No se puede realizar ping');
-			    }
-                $.ajax(
-    	        {
-                    type: "POST",
-                    url: url,
-                    data:{ping:ping},
-                    //beforeSend:function (){},
-                    success:function(data)
-                    {
-                      	console.log(data);
-                       	$('#respuesta').html(data);
-                	}
-                });
-            });
+        /*Cargar imagen GIF de carga*/
+        $(document).ajaxStart(function () {
+            $('#ajaxBusy').show();
+        }).ajaxStop(function () {
+            $('#ajaxBusy').hide();
         });
-	</script>
+        /*Funcion para cargar  archivos de consulta*/
+        function realizaProceso(valorCaja1, valorCaja2){
+            var parametros = {
+                "valorCaja1" : valorCaja1,
+            };
+            $.ajax({
+                data:  parametros,
+                url:   'ping.php',
+                type:  'post',
+                beforeSend: function () {
+                    $("#resultado").html("Procesando, espere por favor...");
+                },
+                success:  function (response) {
+                    $("#resultado").html(response);
+                }
+            });
+        }
+        function revisarMemoriaRam(memoriaRAM){
+            var parametros = {
+                "memoriaRAM" : memoriaRAM,
+            };
+            $.ajax({
+                data:  parametros,
+                url:   'ping.php',
+                type:  'post',
+                beforeSend: function () {
+                    $("#resultado").html("Procesando, espere por favor...");
+                },
+                success:  function (response) {
+                    $("#resultado").html(response);
+                }
+            });
+        }
+    </script>
 </head>
 <body>
 	<form method="POST" name="form_ping">
@@ -56,17 +72,36 @@
 				</tr>
                 <tr class="caja_de_texto">
                     <td>
-						<input class="form-control" type="text" name="ip_ping" id="ping" placeholder="IP">
+						<input class="form-control" type="text" name="caja_texto" id="valor1" placeholder="IP">
 					</td>
 					<td class="columna_btn">
-						<input id="btn_hacer_ping" class="button_ping" type="submit" value="PING">
+                        <input class="button_ping" type="button" href="javascript:;" onclick="realizaProceso($('#valor1').val());return false;" value="PING"/>
 					</td>
 				</tr>
-				<tr id="respuesta">
-					
+				<tr id="resultado">
+					<div id="ajaxBusy">
+                      <p>
+                        <img src="ajax-loader.gif">
+                      </p>
+                    </div>
 				</tr>
 			</tbody>
 		</table>
 	</form>
+<!--
+    Introduce valor 1
+ 
+<input type="text" name="caja_texto" id="valor1" value="0"/> 
+ 
+ 
+Introduce valor 2
+ 
+<input type="text" name="caja_texto" id="valor2" value="0"/>
+ 
+Realiza suma
+ 
+<input type="button" href="javascript:;" onclick="realizaProceso($('#valor1').val(), $('#valor2').val());return false;" value="Calcula"/>
+ -->
+<br/>
 </body>
 </html>
