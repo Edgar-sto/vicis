@@ -26,20 +26,26 @@
     //echo "$carrier";
     //echo "$fe_inicio";
     //echo "$fe_termino";
-
+ 
     switch ($carrier){
         case 'reporte_5':
             $consulta ="SELECT distinct d_carrier_prefix FROM reporte_5 WHERE u_start_time>='$fe_inicio 00:00:00' AND u_start_time<='$fe_termino 23:59:59' AND c_dialstatus in ('ANSWER') ORDER BY d_carrier_prefix";
             $resultado = mysqli_query($conexion, $consulta);
             echo '<div class="text-center font-weight-bold">Prefijo</div>';
             echo "<br>";
-            echo "<br>";
-            echo "<br>";
             while ($mostrar=mysqli_fetch_array($resultado))
             {
                 echo "<p class='text-lg-center'>".$mostrar['d_carrier_prefix']."</p>";
             }
-                        
+
+            $consultacampania = "SELECT distinct d_campaign_id FROM reporte_5  WHERE u_start_time>='$fe_inicio 00:00:00' AND u_start_time<='$fe_termino 23:59:59' and c_dialstatus in ('ANSWER') ORDER BY d_campaign_id";
+            $resultadocampania = mysqli_query($conexion, $consultacampania);
+            echo '<div class="text-center font-weight-bold">Campaña</div>';
+            echo "<br>";
+            while ($mostrarcampania=mysqli_fetch_array($resultadocampania))
+            {
+                echo "<p class='text-lg-center'>".$mostrarcampania['d_campaign_id']."</p>";
+            }            
         break;
         case 'reporte_6':
             $consulta ="SELECT distinct d_carrier_prefix FROM reporte_6 WHERE u_start_time>='$fe_inicio 00:00:00' AND u_start_time<='$fe_termino 23:59:59' AND c_dialstatus in ('ANSWER') ORDER BY d_carrier_prefix";

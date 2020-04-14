@@ -13,13 +13,4 @@
 
 	echo "<br>";
 
-	$output = shell_exec('ls'); 
-  
-// Display the list of all file 
-// and directory 
-echo "<pre>$output</pre>"; 
-	/*exec("$ping", $output);
-	foreach ($output as $x) {
-		print_r($x."<br>");
-	}*/
  ?>

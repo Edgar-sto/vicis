@@ -31,7 +31,11 @@
                     url: url,
                     data:{carrier:carrier, fecha_inicio:f_inicio, fecha_termino:f_termino},
                     //beforeSend:function (){},
-                    success:function(data)
+                    beforeSend: function ()
+                    {
+                    	$("#resp").html("Procesando, espere por favor...");
+                	},
+                	success:function(data)
                     {
                       	console.log(data);
                        	$('#resp').html(data);
