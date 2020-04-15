@@ -7,10 +7,7 @@
 	if (strpos($res, "recibidos = 0")) {
 		echo "Nose pudo hacer ping";
 	} else {
-		echo "Ping exitoso";
+		echo "Ping exitoso <br>";
 		echo "$res";
 	}
-
-	echo "<br>";
-
  ?>
