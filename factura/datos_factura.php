@@ -18,6 +18,7 @@
            	{
                 var url = "obtener_prefijos.php";
                 var carrier= $('#carrier').val();
+                var troncales = $('#troncales').val();
                 var f_inicio = $('#fecha_inicio').val();
                 var f_termino = $('#fecha_termino').val();
                 console.log(f_inicio+f_termino);
@@ -29,7 +30,7 @@
     	        {
                     type: "POST",
                     url: url,
-                    data:{carrier:carrier, fecha_inicio:f_inicio, fecha_termino:f_termino},
+                    data:{carrier:carrier, troncales:troncales, fecha_inicio:f_inicio, fecha_termino:f_termino},
                     //beforeSend:function (){},
                     beforeSend: function ()
                     {
@@ -44,159 +45,28 @@
             });
         });
 	</script>
-	<!-- Script obtener campañas -->
-    <script>
-        $(document).on('ready',function()
-        {
-           	$('#btn-obtener-campañas').click(function()
-           	{
-                var url = "obtener_campañas.php";
-                var carrier= $('#carrier').val();
-                var f_inicio = $('#fecha_inicio').val();
-                var f_termino = $('#fecha_termino').val();
-                console.log(f_inicio+f_termino);
-                if(f_inicio =='')
-                {
-                    alert('hola mundo');
-			    }
-                $.ajax(
-    	        {
-                    type: "POST",
-                    url: url,
-                    data:{carrier:carrier, fecha_inicio:f_inicio, fecha_termino:f_termino},
-                    //beforeSend:function (){},
-                    success:function(data)
-                    {
-                      	console.log(data);
-                       	$('#resp_campañas').html(data);
-                	}
-                });
-            });
-        });
-	</script>
-	<!-- Script obtener grupos -->
-    <script>
-        $(document).on('ready',function()
-        {
-           	$('#btn-obtener-grupos').click(function()
-           	{
-                var url 		=	"obtener_grupos.php";
-                var carrier		= 	$('#carrier').val();
-                var campania 	=	$('#campania').val(); 
-                var prefijos 	=	$('#prefijos').val(); 
-                var f_inicio = $('#fecha_inicio').val();
-                var f_termino = $('#fecha_termino').val();
-                console.log(f_inicio+f_termino);
-                if(f_inicio =='')
-                {
-                    alert('hola mundo');
-			    }
-                $.ajax(
-    	        {
-                    type: "POST",
-                    url: url,
-                    data:{carrier:carrier, campania:campania, prefijos:prefijos, fecha_inicio:f_inicio, fecha_termino:f_termino},
-                    //beforeSend:function (){},
-                    success:function(data)
-                    {
-                      	console.log(data);
-                       	$('#resp_grupos').html(data);
-                	}
-                });
-            });
-        });
-	</script>
 </head>
-
 <body>
 	<div class="container-fluid">
-		<div class="outset row">
-
-			<!-- PREFIJOS -->
-			<div class="col-md-2 fondopanel">
-				<h3>Prefijos:</h3>
-				<div class="form-group">
-					<!-- Selector de reporte -->
-                	<div class="form-check">
-                        <label class="nav-group-title" for="carrier">Reporte</label>
-                        <select class="form-control form-control-sm" id="carrier" name="carrier">
-                        <!--General etiquetas por reporte-->
-			            <?php
-			                $servidor = array(5, 6, 8, 11, 22, 27, 28, 29, 35, 36, 37, 38, 39, 41, 42, 43, 44, 45, 46, 201);
-			                $tamanio_array_servidor = count($servidor);
-			                echo "<br/>";
-			                for ($i=0; $i < $tamanio_array_servidor; $i++)
-			                {
-			                   	echo "<option>reporte_$servidor[$i]</option>";
-			                }
-			            ?>
-                        </select>
-                	</div>
-                	<!-- Seccion para seleccionar fehas -->	
-	                <div class="form-check">
-	                    <label for="fecha_inicio" class="nav-group-title">Fechas Inicio</label>
-	                    <input id="fecha_inicio" type="date" name="fecha_inicio" class="form-control form-control-sm">
-					    <label class="nav-group-title" for="fecha_termino">Fechas Termino</label>
-	                    <input class="form-control form-control-sm" id="fecha_termino" name="fecha_termino" type="date">
-	                </div>
-	                <br>
-	                <!-- Seccion botón -->	
-	                <div >
-	                  	<input class="btn btn-secondary btn-lg btn-block" id='btn-obtener' name="btn-obtener" type="submit" value="Obtener" >
-                    </div>
-                </div>
-			</div>
-			<div class="col-md-1 fondoresultados" id="resp">
-			</div>
-			<!-- FIN PREFIJOS -->
-
-			<!-- CAMPAÑAS -->
-			<div class="col-md-2 fondopanel">
-				<h3>Campañas:</h3>
-				<div class="form-group">
-					<!-- Selector de reporte -->
-                	<div class="form-check">
-                        <label class="nav-group-title" for="carrier">Reporte</label>
-                        <select class="form-control form-control-sm" id="carrier" name="carrier">
-                        <!--General etiquetas por reporte-->
-			            <?php
-			                $servidor = array(5, 6, 8, 11, 22, 27, 28, 29, 35, 36, 37, 38, 39, 41, 42, 43, 44, 45, 46, 201);
-			                $tamanio_array_servidor = count($servidor);
-			                echo "<br/>";
-			                for ($i=0; $i < $tamanio_array_servidor; $i++)
-			                {
-			                   	echo "<option>reporte_$servidor[$i]</option>";
-			                }
-			            ?>
-                        </select>
-                	</div>
-                	<!-- Seccion para seleccionar fehas -->	
-	                <div class="form-check">
-	                    <label for="fecha_inicio" class="nav-group-title">Fechas Inicio</label>
-	                    <input id="fecha_inicio" type="date" name="fecha_inicio" class="form-control form-control-sm">
-					    <label class="nav-group-title" for="fecha_termino">Fechas Termino</label>
-	                    <input class="form-control form-control-sm" id="fecha_termino" name="fecha_termino" type="date">
-	                </div>
-	                <br>
-	                <!-- Seccion botón -->	
-	                <div >
-	                  	<input class="btn btn-secondary btn-lg btn-block" id='btn-obtener-campañas' name="btn-obtener" type="submit" value="Obtener" >
-                    </div>
-                </div>
-			</div>
-			<div class="col-md-1 fondoresultados" id="resp_campañas">
-			</div>
-			<!-- FIN CAMPAÑAS -->
-
-			<!-- GRUPOS -->
-			<div class="col-md-2 fondopanel">
-				<h3>Grupos:</h3>
-				<div class="form-group">
-					<!-- Selector de rreporte -->
-                	<div class="form-check">
-                        <label class="nav-group-title" for="carrier">Reporte</label>
-                        <select class="form-control form-control-sm" id="carrier" name="carrier">
-                        <!--Generar etiquetas por reporte-->
+		<div class="container">
+			<!-- Monto por server -->
+			<div class="row">
+				<h3>Datos</h3>
+				<table style="width: 100%;" border="1">
+					<thead>
+						<tr>
+							<th>Reporte</th>
+							<th>Prefijos</th>
+							<th>Fecha de inicio</th>
+							<th>Fecha de termino</th>
+							<th>Botón</th>
+						</tr>
+					</thead>
+					<tbody>
+					<tr>
+					<td>
+						<select class="form-control form-control-sm" id="carrier" name="carrier">
+	                        <!--General etiquetas por reporte-->
 				            <?php
 				                $servidor = array(5, 6, 8, 11, 22, 27, 28, 29, 35, 36, 37, 38, 39, 41, 42, 43, 44, 45, 46, 201);
 				                $tamanio_array_servidor = count($servidor);
@@ -206,62 +76,46 @@
 				                   	echo "<option>reporte_$servidor[$i]</option>";
 				                }
 				            ?>
-						</select>
-						<!--Generar etiquetas por campaña-->
-						<label class="nav-group-title" for="campania">Campaña</label>
-						<select class="form-control form-control-sm" id="campania" name="campania">
-							<?php
-								$campania = array('0001', '0002', '0003', '0004', '0005', '0006', '0007', '0008', '0009', '0011', '0012', '0013', '0014', '0015', '0016', '0027', '001',' 002', '003', '004', '005', '006', '007', '008', '009', '010', '011', '012', '013', '014', '015', '016', '017', '018', '019', '020', '021', '022', '027');
-								$tamanio_array_campania = count($campania);
-								echo "<br/>";
-								for ($j=0; $j < $tamanio_array_campania; $j++)
+	                    </select>
+					</td>
+					<td>
+						<select class="form-control form-control-sm" id="troncales" name="troncales">
+	                        <!--General etiquetas por reporte-->
+				            <?php
+				                $troncales = array("'11', '999'" , "'444'" , "'888', '209','210','222','223'" , "'9', '777'");
+				                $tamanio_array_troncal = count($troncales);
+				                echo "<br/>";
+				                for ($z=0; $z < $tamanio_array_troncal; $z++)
 				                {
-				                	echo "<option>$campania[$j]</option>";
+				                   	echo "<option>$troncales[$z]</option>";
 				                }
-							?>
-						</select>
-						<!--Generar etiquetas por prefijo-->
-						<label class="nav-group-title" for="prefijos">Prefijo</label>
-						<select class="form-control form-control-sm" id="prefijos" name="prefijos">
-							<?php 
-								$prefijo_local = array(9, 11, 209, 210, 222, 223);
-								$tamanio_array_prefijo_local = count($prefijo_local);
-								$prefijo_raptor = array(777, 999, 444, 888);
-								$tamanio_array_prefijo_raptor = count($prefijo_raptor);
-								echo "<br/>";
-								for ($pl=0; $pl < $tamanio_array_prefijo_local; $pl++)
-				                {
-				                	echo "<option>$prefijo_local[$pl]</option>";
-				                }
-				                for ($pr=0; $pr < $tamanio_array_prefijo_raptor; $pr++)
-				                {
-				                	echo "<option>$prefijo_raptor[$pr]</option>";
-				                }
-							?>
-						</select>
-                	</div>
-                	<div class="form-check">
-	                    <label for="fecha_inicio" class="nav-group-title">Fechas Inicio</label>
-	                    <input id="fecha_inicio" type="date" name="fecha_inicio" class="form-control form-control-sm">
-					    <label class="nav-group-title" for="fecha_termino">Fechas Termino</label>
-	                    <input class="form-control form-control-sm" id="fecha_termino" name="fecha_termino" type="date">
-	                </div>
-	                <br>
-	                <!-- Seccion botón -->	
-	                <div >
-	                  	<input class="btn btn-secondary btn-lg btn-block" id='btn-obtener-grupos' name="btn-obtener" type="submit" value="Obtener" >
-                    </div>
-                </div>
+				            ?>
+	                    </select>
+					</td>
+					<td>
+						<input id="fecha_inicio" type="date" name="fecha_inicio" class="form-control form-control-sm">
+					</td>
+					<td>
+						<input class="form-control form-control-sm" id="fecha_termino" name="fecha_termino" type="date">
+					</td>
+					<td>
+						<input class="btn btn-secondary btn-lg btn-block" id='btn-obtener' name="btn-obtener" type="submit" value="Obtener" >
+					</td>
+					</tr>
+					</tbody>
+				</table>
 			</div>
-			<div class="col-md-1 fondoresultados" id="resp_grupos">
-			</div>
-			<!-- FIN GRUPOS -->
-		</div>
 
-		<!-- Segunda sección de la ventana -->
-		<div class="row">
+			<div class="row fondoresultados" id="resp">
+
+			</div>
+			<!-- FIN PREFIJOS -->
+
+			<!-- Segunda sección de la ventana -->
+			<div class="row">
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam nemo officiis ipsam, architecto ad, ipsa molestias dignissimos voluptate tempore, at expedita provident incidunt. Voluptas debitis quos, asperiores, molestias vitae sed.</p>
 
+			</div>
 		</div>
 	</div>
 </body>

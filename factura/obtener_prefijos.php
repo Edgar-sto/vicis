@@ -10,316 +10,119 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script> 
     <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <style>
+table.customTable {
+  width: 100%;
+  background-color: #FFFFFF;
+  border-collapse: collapse;
+  border-width: 2px;
+  border-color: #7EA8F8;
+  border-style: dotted;
+  color: #000000;
+}
+
+table.customTable td, table.customTable th {
+  border-width: 2px;
+  border-color: #7EA8F8;
+  border-style: dotted;
+  padding: 5px;
+}
+
+table.customTable thead {
+  background-color: #7EA8F8;
+}
+</style>
 </head>
 <body>
     <?php
-    $usuario    = "root";
-    $pass       = "@l**pbx++t3l3";
-    $servidor   = "10.9.2.21";
-    $basededatos= "telefonia";
-    $conexion = mysqli_connect( $servidor, $usuario, $pass );
-    $db = mysqli_select_db( $conexion, $basededatos );
-                
-    $carrier=$_POST['carrier'];
-    $fe_inicio=$_POST['fecha_inicio'];
-    $fe_termino=$_POST['fecha_termino'];
-    //echo "$carrier";
-    //echo "$fe_inicio";
-    //echo "$fe_termino";
+        $usuario    = "root";
+        $pass       = "@l**pbx++t3l3";
+        $servidor   = "10.9.2.21";
+        $basededatos= "telefonia";
+        $conexion = mysqli_connect( $servidor, $usuario, $pass );
+        $db = mysqli_select_db( $conexion, $basededatos );
+                    
+        $carrier=$_POST['carrier'];
+        $troncales=$_POST['troncales'];
+        $fe_inicio=$_POST['fecha_inicio'];
+        $fe_termino=$_POST['fecha_termino'];
+        //echo "$carrier";
+        //echo "$fe_inicio";
+        //echo "$fe_termino";
  
-    switch ($carrier){
-        case 'reporte_5':
-            $consulta ="SELECT distinct d_carrier_prefix FROM reporte_5 WHERE u_start_time>='$fe_inicio 00:00:00' AND u_start_time<='$fe_termino 23:59:59' AND c_dialstatus in ('ANSWER') ORDER BY d_carrier_prefix";
-            $resultado = mysqli_query($conexion, $consulta);
-            echo '<div class="text-center font-weight-bold">Prefijo</div>';
-            echo "<br>";
-            while ($mostrar=mysqli_fetch_array($resultado))
-            {
-                echo "<p class='text-lg-center'>".$mostrar['d_carrier_prefix']."</p>";
+            $server =   "$carrier";
+            $consulta1 ="SELECT DISTINCT (d_carrier_prefix), (d_campaign_id) , (d_user_group)
+                        FROM $carrier
+                        WHERE    u_start_time>='$fe_inicio 00:00:00'  AND  u_start_time<='$fe_termino 23:59:59'
+                        AND c_dialstatus IN ('ANSWER') AND d_carrier_prefix IN ($troncales)
+                        ORDER BY d_carrier_prefix";
+            $resultado = mysqli_query($conexion, $consulta1);
+    ?>
+    <div class="text-center font-weight-bold container-fluid">Prefijo</div>
+    <br>
+        <div></div>
+        <?php
+                while ($mostrar=mysqli_fetch_array($resultado)) {
+        ?>
+            <div class='row'>
+                <div class='col-md-2'>
+                    <label><?php echo "$server" ?></label>
+                </div>
+                <div class='col-md-1'>
+        <?php
+            $prefijo_t  =   $mostrar['d_carrier_prefix'];
+            if ($prefijo_t == '11') {
+                echo "<label>Local 11</label>";
+            } else {
+                echo "<label>Raptor 999</label>";
             }
+        ?>
+    <?php     
+                        echo "</div>
+                    
+                </div>";
+                echo "<div class='row'>";
+                    echo "<div class='col-md-1
+                        <label>ID Campaña</label>
+                    </div>";
+                    echo "<div class='col-md-1
+                        <label>Sucursal</label>
+                    </div>";
+                    echo "<div class='col-md-1
+                        <label>Grupo</label>
+                    </div>";
+                    echo "<div class='col-md-1
+                        <label>Eventos</label>
+                    </div>";
+                    echo "<div class='col-md-1
+                        <label>Celular</label>
+                    </div>";
+                    echo "<div class='col-md-1
+                        <label>Fijo</label>
+                    </div>";
+                echo "</div>";
 
-            $consultacampania = "SELECT distinct d_campaign_id FROM reporte_5  WHERE u_start_time>='$fe_inicio 00:00:00' AND u_start_time<='$fe_termino 23:59:59' and c_dialstatus in ('ANSWER') ORDER BY d_campaign_id";
-            $resultadocampania = mysqli_query($conexion, $consultacampania);
-            echo '<div class="text-center font-weight-bold">Campaña</div>';
-            echo "<br>";
-            while ($mostrarcampania=mysqli_fetch_array($resultadocampania))
-            {
-                echo "<p class='text-lg-center'>".$mostrarcampania['d_campaign_id']."</p>";
-            }            
-        break;
-        case 'reporte_6':
-            $consulta ="SELECT distinct d_carrier_prefix FROM reporte_6 WHERE u_start_time>='$fe_inicio 00:00:00' AND u_start_time<='$fe_termino 23:59:59' AND c_dialstatus in ('ANSWER') ORDER BY d_carrier_prefix";
-            $resultado = mysqli_query($conexion, $consulta);
 
-            echo '<div class="text-center font-weight-bold">Prefijo</div>';
-            echo "<br>";
-            echo "<br>";
-            echo "<br>";
-            while ($mostrar=mysqli_fetch_array($resultado))
-            {
-                echo "<p class='text-lg-center'>".$mostrar['d_carrier_prefix']."</p>";
-            }
-                        
-        break;
-        case 'reporte_8':
-            $consulta ="SELECT distinct d_carrier_prefix FROM reporte_8 WHERE u_start_time>='$fe_inicio 00:00:00' AND u_start_time<='$fe_termino 23:59:59' AND c_dialstatus in ('ANSWER') ORDER BY d_carrier_prefix";
-            $resultado = mysqli_query($conexion, $consulta);
-            
-            echo '<div class="text-center font-weight-bold">Prefijo</div>';
-            echo "<br>";
-            echo "<br>";
-            echo "<br>";
-            while ($mostrar=mysqli_fetch_array($resultado))
-            {
-                echo "<p class='text-lg-center'>".$mostrar['d_carrier_prefix']."</p>";
-            }
-                        
-        break;
-        case 'reporte_11':
-            $consulta ="SELECT distinct d_carrier_prefix FROM reporte_11 WHERE u_start_time>='$fe_inicio 00:00:00' AND u_start_time<='$fe_termino 23:59:59' AND c_dialstatus in ('ANSWER') ORDER BY d_carrier_prefix";
-            $resultado = mysqli_query($conexion, $consulta);
-            
-            echo '<div class="text-center font-weight-bold">Prefijo</div>';
-            echo "<br>";
-            echo "<br>";
-            echo "<br>";
-            while ($mostrar=mysqli_fetch_array($resultado))
-            {
-                echo "<p class='text-lg-center'>".$mostrar['d_carrier_prefix']."</p>";
-            }
-                        
-        break;
-        case 'reporte_22':
-            $consulta ="SELECT distinct d_carrier_prefix FROM reporte_22 WHERE u_start_time>='$fe_inicio 00:00:00' AND u_start_time<='$fe_termino 23:59:59' AND c_dialstatus in ('ANSWER') ORDER BY d_carrier_prefix";
-            $resultado = mysqli_query($conexion, $consulta);
-            
-            echo '<div class="text-center font-weight-bold">Prefijo</div>';
-            echo "<br>";
-            echo "<br>";
-            echo "<br>";
-            while ($mostrar=mysqli_fetch_array($resultado))
-            {
-                echo "<p class='text-lg-center'>".$mostrar['d_carrier_prefix']."</p>";
-            }
-                        
-        break;
-        case 'reporte_27':
-            $consulta ="SELECT distinct d_carrier_prefix FROM reporte_27 WHERE u_start_time>='$fe_inicio 00:00:00' AND u_start_time<='$fe_termino 23:59:59' AND c_dialstatus in ('ANSWER') ORDER BY d_carrier_prefix";
-            $resultado = mysqli_query($conexion, $consulta);
-            
-            echo '<div class="text-center font-weight-bold">Prefijo</div>';
-            echo "<br>";
-            echo "<br>";
-            echo "<br>";
-            while ($mostrar=mysqli_fetch_array($resultado))
-            {
-                echo "<p class='text-lg-center'>".$mostrar['d_carrier_prefix']."</p>";
-            }
-                        
-        break;
-        case 'reporte_28':
-            $consulta ="SELECT distinct d_carrier_prefix FROM reporte_28 WHERE u_start_time>='$fe_inicio 00:00:00' AND u_start_time<='$fe_termino 23:59:59' AND c_dialstatus in ('ANSWER') ORDER BY d_carrier_prefix";
-            $resultado = mysqli_query($conexion, $consulta);
-            
-            echo '<div class="text-center font-weight-bold">Prefijo</div>';
-            echo "<br>";
-            echo "<br>";
-            echo "<br>";
-            while ($mostrar=mysqli_fetch_array($resultado))
-            {
-                echo "<p class='text-lg-center'>".$mostrar['d_carrier_prefix']."</p>";
-            }
-                        
-        break;
-        case 'reporte_29':
-            $consulta ="SELECT distinct d_carrier_prefix FROM reporte_29 WHERE u_start_time>='$fe_inicio 00:00:00' AND u_start_time<='$fe_termino 23:59:59' AND c_dialstatus in ('ANSWER') ORDER BY d_carrier_prefix";
-            $resultado = mysqli_query($conexion, $consulta);
-            
-            echo '<div class="text-center font-weight-bold">Prefijo</div>';
-            echo "<br>";
-            echo "<br>";
-            echo "<br>";
-            while ($mostrar=mysqli_fetch_array($resultado))
-            {
-                echo "<p class='text-lg-center'>".$mostrar['d_carrier_prefix']."</p>";
-            }
-                        
-        break;
-        case 'reporte_35':
-            $consulta ="SELECT distinct d_carrier_prefix FROM reporte_35 WHERE u_start_time>='$fe_inicio 00:00:00' AND u_start_time<='$fe_termino 23:59:59' AND c_dialstatus in ('ANSWER') ORDER BY d_carrier_prefix";
-            $resultado = mysqli_query($conexion, $consulta);
-            
-            echo '<div class="text-center font-weight-bold">Prefijo</div>';
-            echo "<br>";
-            echo "<br>";
-            echo "<br>";
-            while ($mostrar=mysqli_fetch_array($resultado))
-            {
-                echo "<p class='text-lg-center'>".$mostrar['d_carrier_prefix']."</p>";
-            }
-                        
-        break;
-        case 'reporte_36':
-            $consulta ="SELECT distinct d_carrier_prefix FROM reporte_36 WHERE u_start_time>='$fe_inicio 00:00:00' AND u_start_time<='$fe_termino 23:59:59' AND c_dialstatus in ('ANSWER') ORDER BY d_carrier_prefix";
-            $resultado = mysqli_query($conexion, $consulta);
-            
-            echo '<div class="text-center font-weight-bold">Prefijo</div>';
-            echo "<br>";
-            echo "<br>";
-            echo "<br>";
-            while ($mostrar=mysqli_fetch_array($resultado))
-            {
-                echo "<p class='text-lg-center'>".$mostrar['d_carrier_prefix']."</p>";
-            }
-                        
-        break;
-        case 'reporte_37':
-            $consulta ="SELECT distinct d_carrier_prefix FROM reporte_37 WHERE u_start_time>='$fe_inicio 00:00:00' AND u_start_time<='$fe_termino 23:59:59' AND c_dialstatus in ('ANSWER') ORDER BY d_carrier_prefix";
-            $resultado = mysqli_query($conexion, $consulta);
-            
-            echo '<div class="text-center font-weight-bold">Prefijo</div>';
-            echo "<br>";
-            echo "<br>";
-            echo "<br>";
-            while ($mostrar=mysqli_fetch_array($resultado))
-            {
-                echo "<p class='text-lg-center'>".$mostrar['d_carrier_prefix']."</p>";
-            }
-                        
-        break;
-        case 'reporte_38':
-            $consulta ="SELECT distinct d_carrier_prefix FROM reporte_38 WHERE u_start_time>='$fe_inicio 00:00:00' AND u_start_time<='$fe_termino 23:59:59' AND c_dialstatus in ('ANSWER') ORDER BY d_carrier_prefix";
-            $resultado = mysqli_query($conexion, $consulta);
-            
-            echo '<div class="text-center font-weight-bold">Prefijo</div>';
-            echo "<br>";
-            echo "<br>";
-            echo "<br>";
-            while ($mostrar=mysqli_fetch_array($resultado))
-            {
-                echo "<p class='text-lg-center'>".$mostrar['d_carrier_prefix']."</p>";
-            }
-                        
-        break;
-        case 'reporte_39':
-            $consulta ="SELECT distinct d_carrier_prefix FROM reporte_39 WHERE u_start_time>='$fe_inicio 00:00:00' AND u_start_time<='$fe_termino 23:59:59' AND c_dialstatus in ('ANSWER') ORDER BY d_carrier_prefix";
-            $resultado = mysqli_query($conexion, $consulta);
-            
-            echo '<div class="text-center font-weight-bold">Prefijo</div>';
-            echo "<br>";
-            echo "<br>";
-            echo "<br>";
-            while ($mostrar=mysqli_fetch_array($resultado))
-            {
-                echo "<p class='text-lg-center'>".$mostrar['d_carrier_prefix']."</p>";
-            }
-                        
-        break;
-        case 'reporte_41':
-            $consulta ="SELECT distinct d_carrier_prefix FROM reporte_41 WHERE u_start_time>='$fe_inicio 00:00:00' AND u_start_time<='$fe_termino 23:59:59' AND c_dialstatus in ('ANSWER') ORDER BY d_carrier_prefix";
-            $resultado = mysqli_query($conexion, $consulta);
-            
-            echo '<div class="text-center font-weight-bold">Prefijo</div>';
-            echo "<br>";
-            echo "<br>";
-            echo "<br>";
-            while ($mostrar=mysqli_fetch_array($resultado))
-            {
-                echo "<p class='text-lg-center'>".$mostrar['d_carrier_prefix']."</p>";
-            }
-                        
-        break;
-        case 'reporte_42':
-            $consulta ="SELECT distinct d_carrier_prefix FROM reporte_42 WHERE u_start_time>='$fe_inicio 00:00:00' AND u_start_time<='$fe_termino 23:59:59' AND c_dialstatus in ('ANSWER') ORDER BY d_carrier_prefix";
-            $resultado = mysqli_query($conexion, $consulta);
-            
-            echo '<div class="text-center font-weight-bold">Prefijo</div>';
-            echo "<br>";
-            echo "<br>";
-            echo "<br>";
-            while ($mostrar=mysqli_fetch_array($resultado))
-            {
-                echo "<p class='text-lg-center'>".$mostrar['d_carrier_prefix']."</p>";
-            }
-                        
-        break;
-        case 'reporte_43':
-            $consulta ="SELECT distinct d_carrier_prefix FROM reporte_43 WHERE u_start_time>='$fe_inicio 00:00:00' AND u_start_time<='$fe_termino 23:59:59' AND c_dialstatus in ('ANSWER') ORDER BY d_carrier_prefix";
-            $resultado = mysqli_query($conexion, $consulta);
-            
-            echo '<div class="text-center font-weight-bold">Prefijo</div>';
-            echo "<br>";
-            echo "<br>";
-            echo "<br>";
-            while ($mostrar=mysqli_fetch_array($resultado))
-            {
-                echo "<p class='text-lg-center'>".$mostrar['d_carrier_prefix']."</p>";
-            }
-                        
-        break;
-        case 'reporte_44':
-            $consulta ="SELECT distinct d_carrier_prefix FROM reporte_44 WHERE u_start_time>='$fe_inicio 00:00:00' AND u_start_time<='$fe_termino 23:59:59' AND c_dialstatus in ('ANSWER') ORDER BY d_carrier_prefix";
-            $resultado = mysqli_query($conexion, $consulta);
-            
-            echo '<div class="text-center font-weight-bold">Prefijo</div>';
-            echo "<br>";
-            echo "<br>";
-            echo "<br>";
-            while ($mostrar=mysqli_fetch_array($resultado))
-            {
-                echo "<p class='text-lg-center'>".$mostrar['d_carrier_prefix']."</p>";
-            }
-                        
-        break;
-        case 'reporte_45':
-            $consulta ="SELECT distinct d_carrier_prefix FROM reporte_45 WHERE u_start_time>='$fe_inicio 00:00:00' AND u_start_time<='$fe_termino 23:59:59' AND c_dialstatus in ('ANSWER') ORDER BY d_carrier_prefix";
-            $resultado = mysqli_query($conexion, $consulta);
-            
-            echo '<div class="text-center font-weight-bold">Prefijo</div>';
-            echo "<br>";
-            echo "<br>";
-            echo "<br>";
-            while ($mostrar=mysqli_fetch_array($resultado))
-            {
-                echo "<p class='text-lg-center'>".$mostrar['d_carrier_prefix']."</p>";
-            }
-                        
-        break;
-        case 'reporte_46':
-            $consulta ="SELECT distinct d_carrier_prefix FROM reporte_46 WHERE u_start_time>='$fe_inicio 00:00:00' AND u_start_time<='$fe_termino 23:59:59' AND c_dialstatus in ('ANSWER') ORDER BY d_carrier_prefix";
-            $resultado = mysqli_query($conexion, $consulta);
-            
-            echo '<div class="text-center font-weight-bold">Prefijo</div>';
-            echo "<br>";
-            echo "<br>";
-            echo "<br>";
-            while ($mostrar=mysqli_fetch_array($resultado))
-            {
-                echo "<p class='text-lg-center'>".$mostrar['d_carrier_prefix']."</p>";
-            }
-                        
-        break;
-        case 'reporte_201':
-            $consulta ="SELECT distinct d_carrier_prefix FROM reporte_201 WHERE u_start_time>='$fe_inicio 00:00:00' AND u_start_time<='$fe_termino 23:59:59' AND c_dialstatus in ('ANSWER') ORDER BY d_carrier_prefix";
-            $resultado = mysqli_query($conexion, $consulta);
-            
-            echo '<div class="text-center font-weight-bold">Prefijo</div>';
-            echo "<br>";
-            echo "<br>";
-            echo "<br>";
-            while ($mostrar=mysqli_fetch_array($resultado))
-            {
-                echo "<p class='text-lg-center'>".$mostrar['d_carrier_prefix']."</p>";
-            }
-                        
-        break;
-    }
-    
+                echo "<table class='customTable'>";
+                  echo "<thead>
+                    <tr>
+                      <th>Header 1</th>
+                      <th>Header 2</th>
+                      <th>Header 3</th>
+                      <th>Header 4</th>
+                      <th>Header 5</th>
+                      <th>Header 6</th>
+                    </tr>
+                        </thead>
+                  <tbody>
+                    <tr>
+                      <td>".$mostrar['d_carrier_prefix']."</td>
+                      <td>".$mostrar['d_campaign_id']."</td>
+                      <td>".$mostrar['d_user_group']."</td>
+                    </tr>
+                  </tbody>";
+                echo "</table>";
+            } 
 ?>
 </body>
 </html>
-
-
-
-
-

@@ -43,22 +43,6 @@
                 }
             });
         }
-        function revisarMemoriaRam(memoriaRAM){
-            var parametros = {
-                "memoriaRAM" : memoriaRAM,
-            };
-            $.ajax({
-                data:  parametros,
-                url:   'ping.php',
-                type:  'post',
-                beforeSend: function () {
-                    $("#resultado").html("Procesando, espere por favor...");
-                },
-                success:  function (response) {
-                    $("#resultado").html(response);
-                }
-            });
-        }
     </script>
 </head>
 <body>
