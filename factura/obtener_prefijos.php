@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Datos prefijos</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/estilos_obtener_datos.css">
+    <link rel="stylesheet" href="../css/estilos_obtener_datos.css">
     <!-- Javascript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
@@ -56,64 +56,82 @@ table.customTable thead {
                         WHERE    u_start_time>='$fe_inicio 00:00:00'  AND  u_start_time<='$fe_termino 23:59:59'
                         AND c_dialstatus IN ('ANSWER') AND d_carrier_prefix IN ($troncales)
                         ORDER BY d_carrier_prefix";
-            $resultado = mysqli_query($conexion, $consulta1);
+
+            $resultado      =   mysqli_query($conexion, $consulta1);
     ?>
-    <div class="text-center font-weight-bold container-fluid">Prefijo</div>
-    <br>
-        <div></div>
-        <?php
-                while ($mostrar=mysqli_fetch_array($resultado)) {
-        ?>
+    <div class="contenedor_principal">
+        <br>
+        <div class="contenedor_tablas">
+            <table class=" table ">
+                <tbody>
+                    <tr>
+                        <td id="colum_reporte">
+                            <label><?php echo "$server"; ?></label>
+                        </td>
+                        <td id="colum_prefijo">
+                            <?php 
+                           $consul_prefijo = "SELECT distinct d_carrier_prefix FROM $carrier WHERE u_start_time>='$fe_inicio 00:00:00' AND u_start_time<='$fe_termino 23:59:59' AND c_dialstatus in ('ANSWER') AND d_carrier_prefix IN ($troncales)";
+
+                            $resul_prefijo = mysqli_query($conexion, $consul_prefijo);
+                            echo "<br>";
+                            echo "<br>";
+                            echo "<br>";
+                            while ($mostrar=mysqli_fetch_array($resul_prefijo))
+                            {
+                                $prefijo_t  =   $mostrar['d_carrier_prefix'];
+                                if ($prefijo_t == '11') {
+                                    echo "<label>Local 11</label>";
+                                } else {
+                                    echo "<label>Raptor 999</label>";
+                                }
+                                //echo "<p class='text-lg-center'>".$mostrar['d_carrier_prefix']."</p>";
+                            }
+                        ?>
+                        </td>
+                        <td id="colum_vacia">
+                            <label for="">      </label>
+                        </td>
+                        <td id="colum_minutos">
+                            <label for="">Minutos</label>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <table class="resultado_factura_por_reporte" style="width: 100%;">
+                <thead>
+                    <th class="titulos_tabla_resultado">ID Campaña</th>
+                    <th class="titulos_tabla_resultado">Sucursal</th>
+                    <th class="titulos_tabla_resultado">Grupo</th>
+                    <th class="titulos_tabla_resultado">Eventos</th>
+                    <th class="titulos_tabla_resultado">Celular</th>
+                    <th class="titulos_tabla_resultado">Fijo</th>
+                </thead>
+                <?php
+                while ($mostrar=mysqli_fetch_array($resultado))
+                {
+                ?>
+            </table>
+            
+            
             <div class='row'>
-                <div class='col-md-2'>
-                    <label><?php echo "$server" ?></label>
-                </div>
-                <div class='col-md-1'>
+                
         <?php
-            $prefijo_t  =   $mostrar['d_carrier_prefix'];
-            if ($prefijo_t == '11') {
-                echo "<label>Local 11</label>";
-            } else {
-                echo "<label>Raptor 999</label>";
-            }
+            
         ?>
-    <?php     
+        </div>
+        </div>
+        
+        
+        <?php     
                         echo "</div>
                     
                 </div>";
-                echo "<div class='row'>";
-                    echo "<div class='col-md-1
-                        <label>ID Campaña</label>
-                    </div>";
-                    echo "<div class='col-md-1
-                        <label>Sucursal</label>
-                    </div>";
-                    echo "<div class='col-md-1
-                        <label>Grupo</label>
-                    </div>";
-                    echo "<div class='col-md-1
-                        <label>Eventos</label>
-                    </div>";
-                    echo "<div class='col-md-1
-                        <label>Celular</label>
-                    </div>";
-                    echo "<div class='col-md-1
-                        <label>Fijo</label>
-                    </div>";
-                echo "</div>";
+                
 
 
-                echo "<table class='customTable'>";
-                  echo "<thead>
-                    <tr>
-                      <th>Header 1</th>
-                      <th>Header 2</th>
-                      <th>Header 3</th>
-                      <th>Header 4</th>
-                      <th>Header 5</th>
-                      <th>Header 6</th>
-                    </tr>
-                        </thead>
+                echo "<table class='customTable'>
+                  
                   <tbody>
                     <tr>
                       <td>".$mostrar['d_carrier_prefix']."</td>

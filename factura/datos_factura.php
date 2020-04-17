@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
 	<meta charset="UTF-8">
 	<title>Datos Facturación</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/estilos_obtener_datos.css">
+    <link rel="stylesheet" href="../css/estilos_obtener_datos.css">
     <!-- Javascript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
@@ -34,7 +34,7 @@
                     //beforeSend:function (){},
                     beforeSend: function ()
                     {
-                    	$("#resp").html("Procesando, espere por favor...");
+                    	$("#resp").html("Consultando, espere por favor...");
                 	},
                 	success:function(data)
                     {
@@ -51,15 +51,15 @@
 		<div class="container">
 			<!-- Monto por server -->
 			<div class="row">
-				<h3>Datos</h3>
-				<table style="width: 100%;" border="1">
+				<h3>Datos para facturacion</h3>
+				<table style="width: 100%;">
 					<thead>
 						<tr>
-							<th>Reporte</th>
-							<th>Prefijos</th>
-							<th>Fecha de inicio</th>
-							<th>Fecha de termino</th>
-							<th>Botón</th>
+							<th class="titulos_tabla">Reporte</th>
+							<th class="titulos_tabla">Prefijos</th>
+							<th class="titulos_tabla">Fecha de inicio</th>
+							<th class="titulos_tabla">Fecha de termino</th>
+							<th class="titulos_tabla">Botón</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -99,18 +99,27 @@
 						<input class="form-control form-control-sm" id="fecha_termino" name="fecha_termino" type="date">
 					</td>
 					<td>
-						<input class="btn btn-secondary btn-lg btn-block" id='btn-obtener' name="btn-obtener" type="submit" value="Obtener" >
+						<input class="btn btn-secondary btn-sm btn-block" id='btn-obtener' name="btn-obtener" type="submit" value="Obtener" >
 					</td>
 					</tr>
 					</tbody>
 				</table>
 			</div>
 
-			<div class="row fondoresultados" id="resp">
+			<div class="row fondoresultados text-left" id="resp">
 
 			</div>
-			<!-- FIN PREFIJOS -->
-
+			
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
 			<!-- Segunda sección de la ventana -->
 			<div class="row">
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam nemo officiis ipsam, architecto ad, ipsa molestias dignissimos voluptate tempore, at expedita provident incidunt. Voluptas debitis quos, asperiores, molestias vitae sed.</p>

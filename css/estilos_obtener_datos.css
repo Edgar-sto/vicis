@@ -1,6 +1,17 @@
-.outset {
-	border-bottom-style: solid;
-	border-color: #FF5722;
+/*   CLASES     */
+.contenedor_principal {
+	width: 100%;
+}
+
+.contenedor_tablas {
+	width: 100%
+}
+
+.primera_fila {
+	background-color: #ffffff;
+	height: 30px;
+	text-align: center;
+	width: 100%;
 }
 
 .fondopanel {
@@ -9,4 +20,35 @@
 
 .fondoresultados {
 	background: #B0BEC5;
+	width: 100%;
+}
+
+.titulos_tabla {
+	font-size: 18px;
+	background-color: #263238;
+	border: 1px;
+	text-align: center;
+	color: #ffffff;
+}
+
+.titulos_tabla_resultado {
+	background-color: rgba(69,90,100,1);
+}
+
+/*   ID´S     */
+
+#colum_reporte {
+	width: 30%;
+}
+
+#colum_prefijo {
+	width: 30%;
+}
+
+#colum_vacia {
+	width: 10%;
+}
+
+#colum_minutos {
+	width: 30%;
 }
