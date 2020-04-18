@@ -11,7 +11,7 @@
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script> 
     <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 	<!-- Script obtener prefijos -->
-    <script>
+    <script> 
         $(document).on('ready',function()
         {
            	$('#btn-obtener').click(function()

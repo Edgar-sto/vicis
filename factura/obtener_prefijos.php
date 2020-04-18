@@ -48,7 +48,7 @@ table.customTable thead {
         $fe_termino=$_POST['fecha_termino'];
         //echo "$carrier";
         //echo "$fe_inicio";
-        //echo "$fe_termino";
+        //echo "$fe_termino"; 
  
             $server =   "$carrier";
             $consulta1 ="SELECT DISTINCT (d_carrier_prefix), (d_campaign_id) , (d_user_group)
@@ -62,13 +62,12 @@ table.customTable thead {
     <div class="contenedor_principal">
         <br>
         <div class="contenedor_tablas">
-            <table class=" table ">
+
+            <table class="comicGreen">
                 <tbody>
                     <tr>
-                        <td id="colum_reporte">
-                            <label><?php echo "$server"; ?></label>
-                        </td>
-                        <td id="colum_prefijo">
+                        <td colspan="2">    <label><?php echo "$server"; ?></label> </td>
+                        <td>
                             <?php 
                            $consul_prefijo = "SELECT distinct d_carrier_prefix FROM $carrier WHERE u_start_time>='$fe_inicio 00:00:00' AND u_start_time<='$fe_termino 23:59:59' AND c_dialstatus in ('ANSWER') AND d_carrier_prefix IN ($troncales)";
 
@@ -80,20 +79,18 @@ table.customTable thead {
                             {
                                 $prefijo_t  =   $mostrar['d_carrier_prefix'];
                                 if ($prefijo_t == '11') {
-                                    echo "<label>Local 11</label>";
+                                    
+                                    echo "<label>Raptor".$mostrar['d_carrier_prefix']."</label>";
                                 } else {
-                                    echo "<label>Raptor 999</label>";
+                                    
+                                    echo "<label>Raptor".$mostrar['d_carrier_prefix']."</label>";
                                 }
                                 //echo "<p class='text-lg-center'>".$mostrar['d_carrier_prefix']."</p>";
                             }
                         ?>
                         </td>
-                        <td id="colum_vacia">
-                            <label for="">      </label>
-                        </td>
-                        <td id="colum_minutos">
-                            <label for="">Minutos</label>
-                        </td>
+                        <td>cell4_1</td>
+                        <td colspan="2">Minutos</td>
                     </tr>
                 </tbody>
             </table>
@@ -120,7 +117,7 @@ table.customTable thead {
             
         ?>
         </div>
-        </div>
+    </div>
         
         
         <?php     

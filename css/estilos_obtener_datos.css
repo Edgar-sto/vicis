@@ -14,13 +14,36 @@
 	width: 100%;
 }
 
-.fondopanel {
+.fondopanel { 
 	background: #CFD8DC;
 }
 
 .fondoresultados {
 	background: #B0BEC5;
 	width: 100%;
+}
+
+table.comicGreen {
+  border: 2px solid #4F7849;
+  background-color: #EEEEEE;
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+table.comicGreen td, table.comicGreen th {
+  border: 1px solid #4F7849;
+  padding: 3px 2px;
+}
+table.comicGreen tbody td {
+  font-size: 19px;
+  font-weight: bold;
+  color: #4F7849;
+}
+table.comicGreen tr:nth-child(even) {
+  background: #CEE0CC;
+}
+table.comicGreen tfoot td {
+  font-size: 21px;
 }
 
 .titulos_tabla {
