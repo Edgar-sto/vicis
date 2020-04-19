@@ -1,153 +1,163 @@
 <!DOCTYPE html>
-<html lang="es">
-    <head>
-        <title>Panel Soporte</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <!-- ESTILOS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="css/index1.css">
-        <link rel="shortcut icon" href="img/favicon1.ico" />
-        <!-- Fuentes de iconos -->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Rubik+Mono+One&display=swap" rel="stylesheet">
-        <!-- SCRIPT -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-        <script>//Script para abrir ventana agregar y modificar de tamaño asignado.
-            function abrir(url) {
-                open(url,'','top=300,left=300,width=280,height=550') ;
-            }
-        //Script para abrir ventana eliminar de tamaño asignado.
-            function cerrar(url) {
-                open(url,'','top=300,left=300,width=280,height=200') ;
-            }
-        //Script para abrir ventana modificar de tamaño asignado.
-            function modificar(url) {
-                open(url,'','top=300,left=300,width=280,height=200') ;
-            }
-        //Script para abrir ventana agregar cpu de tamaño asignado.
-            function agregarCPU(url) {
-                open(url,'','top=300,left=300,width=280,height=370') ;
-            }
-        //Script para abrir ventana agregar monitor de tamaño asignado.
-            function agregarMONITOR(url) {
-                open(url,'','top=300,left=300,width=280,height=330') ;
-            }
-        //Script para abrir ventana reubicar equipo.
-            function reubicar(url) {
-                open(url,'','top=300,left=300,width=280,height=360') ;
-            }
-        //Script para abrir ventana ping.
-            function ping(url) {
-                open(url,'','top=300,left=300,width=480,height=360') ;
-            }
-        </script>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <title>Datos prefijos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/estilos_obtener_datos.css">
+    <!-- Javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script> 
+    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <style>
+table.customTable {
+  width: 100%;
+  background-color: #FFFFFF;
+  border-collapse: collapse;
+  border-width: 2px;
+  border-color: #7EA8F8;
+  border-style: dotted;
+  color: #000000;
+}
 
-        <script type="text/javascript">
-            $(document).ready(function(){
-                $("#hide").on('click', function() {
-                    $("#element").hide();
-                    return false;
-                });
-             
-                $("#show").on('click', function() {
-                    $("#element").show();
-                    return false;
-                });
-            });
+table.customTable td, table.customTable th {
+  border-width: 2px;
+  border-color: #7EA8F8;
+  border-style: dotted;
+  padding: 5px;
+}
 
-            $(document).ready(function(){
-                $("#hide1").on('click', function() {
-                    $("#element1").hide();
-                    return false;
-                });
-             
-                $("#show1").on('click', function() {
-                    $("#element1").show();
-                    return false;
-                });
-            });
+table.customTable thead {
+  background-color: #7EA8F8;
+}
+</style>
+</head>
+<body>
+    <?php
+        $usuario    = "root";
+        $pass       = "@l**pbx++t3l3";
+        $servidor   = "10.9.2.21";
+        $basededatos= "telefonia";
+        $conexion = mysqli_connect( $servidor, $usuario, $pass );
+        $db = mysqli_select_db( $conexion, $basededatos );
+                    
+       
+ 
+            $server =   "reporte_36";
+            $consulta1 ="SELECT DISTINCT (d_carrier_prefix), (d_campaign_id) , (d_user_group)
+                        FROM reporte_36
+                        WHERE    u_start_time>='2020/02/28 00:00:00'  AND  u_start_time<='2020/03/29 23:59:59'
+                        AND c_dialstatus IN ('ANSWER') AND d_carrier_prefix IN ('11','999')
+                        ORDER BY d_carrier_prefix";
 
-            $(document).ready(function(){
-                $("#hide2").on('click', function() {
-                    $("#element2").hide();
-                    return false;
-                });
-             
-                $("#show2").on('click', function() {
-                    $("#element2").show();
-                    return false;
-                });
-            });
-        </script>
-    </head>
-    <body>
-        
-      <div class="collapse" id="instagram">
-        <a class="instagram" href="#instagram"
-          ><i class="fab fa-instagram"></i> Instagram</a
-        >
-        <div class="content">
-          <div class="inner-content">
-            <h3>Instagram</h3>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
-            nobis iusto deleniti corporis alias quo a quam similique cupiditate
-            pariatur aliquid, omnis, officia dicta officiis impedit nisi dolores
-            ut, distinctio placeat. Magni dolores perferendis ab laborum in
-            neque, non exercitationem!
-          </div>
+            $resultado      =   mysqli_query($conexion, $consulta1);
+    ?>
+    <div class="contenedor_principal">
+        <br>
+        <div class="contenedor_tablas">
+            <table class="comicGreen">
+                <tbody>
+                    <tr>
+                        <td colspan="2">    <label><?php echo "$server"; ?></label> </td>
+                        <td>
+                            <?php 
+                           $consul_prefijo = "SELECT distinct d_carrier_prefix FROM reporte_36 WHERE u_start_time>='2020/02/28 00:00:00' AND u_start_time<='2020/03/29 23:59:59' AND c_dialstatus in ('ANSWER') AND d_carrier_prefix IN ('11','999')";
+
+                            $resul_prefijo = mysqli_query($conexion, $consul_prefijo);
+                            
+                            while ($mostrar=mysqli_fetch_array($resul_prefijo))
+                            {
+                                $prefijo_t  =   $mostrar['d_carrier_prefix'];
+                                if ($prefijo_t == '11') {
+                                    echo "<label>LOCAL 11</label>";
+                                } else {
+                                    echo "<label>Raptor 999</label>";
+                                }
+                                //echo "<p class='text-lg-center'>".$mostrar['d_carrier_prefix']."</p>";
+                            }
+                        ?>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="resultado_factura_por_reporte" style="width: 100%;">
+                <thead>
+                    <th class="titulos_tabla_resultado">ID Campaña</th>
+                    <th class="titulos_tabla_resultado">Sucursal</th>
+                    <th class="titulos_tabla_resultado">Grupo</th>
+                    <th class="titulos_tabla_resultado">Eventos</th>
+                    <th class="titulos_tabla_resultado">Celular</th>
+                    <th class="titulos_tabla_resultado">Fijo</th>
+                </thead>
+            </table>
         </div>
-      </div>
-      <div class="collapse" id="twitter">
-        <a class="twitter" href="#twitter"
-          ><i class="fab fa-twitter"></i> Twitter</a
-        >
-        <div class="content">
-          <div class="inner-content">
-            <h3>Twitter</h3>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
-            nobis iusto deleniti corporis alias quo a quam similique cupiditate
-            pariatur aliquid, omnis, officia dicta officiis impedit nisi dolores
-            ut, distinctio placeat. Magni dolores perferendis ab laborum in
-            neque, non exercitationem!
-          </div>
-        </div>
-      </div>
-      <div class="collapse" id="dribbble">
-        <a class="dribbble" href="#dribbble"
-          ><i class="fab fa-dribbble"></i> Dribble</a
-        >
-        <div class="content">
-          <div class="inner-content">
-            <h3>Dribbble</h3>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
-            nobis iusto deleniti corporis alias quo a quam similique cupiditate
-            pariatur aliquid, omnis, officia dicta officiis impedit nisi dolores
-            ut, distinctio placeat. Magni dolores perferendis ab laborum in
-            neque, non exercitationem!
-          </div>
-        </div>
-      </div>
-      <div class="collapse" id="youtube">
-        <a class="youtube" href="#youtube"
-          ><i class="fab fa-youtube"></i> Youtube</a
-        >
-        <div class="content">
-          <div class="inner-content">
-            <h3>Youtube</h3>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
-            nobis iusto deleniti corporis alias quo a quam similique cupiditate
-            pariatur aliquid, omnis, officia dicta officiis impedit nisi dolores
-            ut, distinctio placeat. Magni dolores perferendis ab laborum in
-            neque, non exercitationem!
-          </div>
-        </div>
-      </div>
+        <?php
+            echo "<table class='customTable'>  
+                <tbody>";
+                while ($mostrar=mysqli_fetch_array($resultado))
+                {
+                    echo "<tr>
+                            <td>"
+                                .$mostrar['d_campaign_id'].
+                            "</td>
+                            <td>           </td>
+                            <td>".$mostrar['d_user_group']."</td>
+                            <td>           </td>
+                            <td>";
+                                if ($mostrar['d_campaign_id'] == 11)
+                                {
+                                    $total_movil = 'SELECT SUM(redondea_a_minutos) FROM reporte_36
+                                        WHERE u_start_time>="2020-02-28 00:00:00"  AND  u_start_time<="2020-03-29 23:59:59"
+                                        AND c_dialstatus IN ("ANSWER") AND d_campaign_id="0003" AND d_carrier_prefix IN  ("11")
+                                        AND d_user_group="$mostrar["d_user_group"]" AND d_tipo_numero="movil" ';
+
+                                    $resultado_movil = mysqli_query($conexion, $total_movil);
+                                    echo "$resultado_movil";
+                                } else {
+                                    $total_movil = "SELECT SUM(redondea_a_minutos) FROM reporte_36
+                                                    WHERE u_start_time>='2020-02-28 00:00:00'
+                                                    AND  u_start_time<='2020-03-29 23:59:59'
+                                                    AND c_dialstatus IN ('ANSWER')
+                                                    AND d_campaign_id='0003'
+                                                    AND d_carrier_prefix IN  ('999')
+                                                    AND d_user_group='STOMIXCOAC-HSBC'
+                                                    AND d_tipo_numero='movil';";
+
+                                    $resultado_movil = mysqli_query($conexion, $total_movil);
+                                    echo "$resultado_movil";
+                                }      
+                            echo "</td>
+                            <td>           </td>
+                        </tr>";
+                }
+            echo "  <tr>
+                        <td>        </td>
+                        <td>        </td>
+                        <td>DROP</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>        </td>
+                        <td>        </td>
+                        <td>BUZON</td>
+                        <td>        </td>
+                        <td>        </td>
+                        <td>        </td>
+                    </tr>
+                    <tr>
+                        <td>        </td>
+                        <td>        </td>
+                        <td>CAMPAÑA 0</td>
+                        <td>        </td>
+                        <td>        </td>
+                        <td>        </td>
+                    </tr>
+                </tbody>
+                </table>";
+        ?>
     </div>
-    </body>
+</body>
 </html>

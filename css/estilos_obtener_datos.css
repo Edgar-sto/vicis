@@ -20,6 +20,7 @@
 
 .fondoresultados {
 	background: #B0BEC5;
+	margin: auto;
 	width: 100%;
 }
 
@@ -50,12 +51,16 @@ table.comicGreen tfoot td {
 	font-size: 18px;
 	background-color: #263238;
 	border: 1px;
-	text-align: center;
 	color: #ffffff;
+	text-align: center;
 }
 
 .titulos_tabla_resultado {
 	background-color: rgba(69,90,100,1);
+	border: 1px;
+	border-color: #000000;
+	color: #ffffff;
+	width: 16.66%;
 }
 
 /*   ID´S     */

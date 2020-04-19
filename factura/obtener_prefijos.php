@@ -62,7 +62,6 @@ table.customTable thead {
     <div class="contenedor_principal">
         <br>
         <div class="contenedor_tablas">
-
             <table class="comicGreen">
                 <tbody>
                     <tr>
@@ -72,29 +71,22 @@ table.customTable thead {
                            $consul_prefijo = "SELECT distinct d_carrier_prefix FROM $carrier WHERE u_start_time>='$fe_inicio 00:00:00' AND u_start_time<='$fe_termino 23:59:59' AND c_dialstatus in ('ANSWER') AND d_carrier_prefix IN ($troncales)";
 
                             $resul_prefijo = mysqli_query($conexion, $consul_prefijo);
-                            echo "<br>";
-                            echo "<br>";
-                            echo "<br>";
+                            
                             while ($mostrar=mysqli_fetch_array($resul_prefijo))
                             {
                                 $prefijo_t  =   $mostrar['d_carrier_prefix'];
                                 if ($prefijo_t == '11') {
-                                    
-                                    echo "<label>Raptor".$mostrar['d_carrier_prefix']."</label>";
+                                    echo "<label>LOCAL 11</label>";
                                 } else {
-                                    
-                                    echo "<label>Raptor".$mostrar['d_carrier_prefix']."</label>";
+                                    echo "<label>Raptor 999</label>";
                                 }
                                 //echo "<p class='text-lg-center'>".$mostrar['d_carrier_prefix']."</p>";
                             }
                         ?>
                         </td>
-                        <td>cell4_1</td>
-                        <td colspan="2">Minutos</td>
                     </tr>
                 </tbody>
             </table>
-            
             <table class="resultado_factura_por_reporte" style="width: 100%;">
                 <thead>
                     <th class="titulos_tabla_resultado">ID Campaña</th>
@@ -104,40 +96,27 @@ table.customTable thead {
                     <th class="titulos_tabla_resultado">Celular</th>
                     <th class="titulos_tabla_resultado">Fijo</th>
                 </thead>
-                <?php
+            </table>
+        </div>
+        <?php
+            echo "<table class='customTable'>  
+                <tbody>";
                 while ($mostrar=mysqli_fetch_array($resultado))
                 {
-                ?>
-            </table>
-            
-            
-            <div class='row'>
-                
-        <?php
-            
+                    echo "<tr>
+                            <td>"
+                                .$mostrar['d_campaign_id'].
+                            "</td>
+                            <td>           </td>
+                            <td>".$mostrar['d_user_group']."</td>
+                            <td>           </td>
+                            <td>           </td>
+                            <td>           </td>
+                        </tr>";
+                }
+            echo "</tbody>
+                </table>";
         ?>
-        </div>
     </div>
-        
-        
-        <?php     
-                        echo "</div>
-                    
-                </div>";
-                
-
-
-                echo "<table class='customTable'>
-                  
-                  <tbody>
-                    <tr>
-                      <td>".$mostrar['d_carrier_prefix']."</td>
-                      <td>".$mostrar['d_campaign_id']."</td>
-                      <td>".$mostrar['d_user_group']."</td>
-                    </tr>
-                  </tbody>";
-                echo "</table>";
-            } 
-?>
 </body>
 </html>
