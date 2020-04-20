@@ -105,23 +105,70 @@ table.customTable thead {
                 while ($mostrar=mysqli_fetch_array($resultado))
                 {
                     echo "<tr>
-                            <td>"
-                                .$mostrar['d_campaign_id'].
-                            "</td>
+                            <td>".$campaign = $mostrar['d_campaign_id']."</td>
                             <td>           </td>
-                            <td>".$mostrar['d_user_group']."</td>
-                            <td>           </td>";
+                            <td>".$groups = $mostrar['d_user_group']."</td>
+                            <td>           </td>
+                            <td>";
+                                $campanias  =   $campaign; 
+                                $grupos     =   $groups;    
+                                if ($mostrar['d_carrier_prefix'] == 11)
+                                {
+                                    $consulta_movil     = "SELECT SUM(redondea_a_minutos) as movil FROM reporte_36
+                                                            WHERE u_start_time>='2020-02-28 00:00:00'
+                                                            AND u_start_time<='2020-03-29 23:59:59'
+                                                            AND c_dialstatus IN ('ANSWER')
+                                                            AND d_campaign_id='$campanias'
+                                                            AND d_carrier_prefix IN  ('11')
+                                                            AND d_user_group='$grupos'
+                                                            AND d_tipo_numero='movil';";
+                                    $resultado_movil    = mysqli_query($conexion, $consulta_movil);
+                                    $mostrar_res_movil  = mysqli_fetch_array($resultado_movil);                                     
 
-                            $consulta_movil = "SELECT SUM redondea_a_minutos from reporte_36
-                                        where u_start_time>='2020-02-28 00:00:00'  and  u_start_time<='2020-03-29 23:59:59'
-                                        and c_dialstatus in ('ANSWER') and d_campaign_id='0003' and d_carrier_prefix IN  ('999')
-                                        and d_user_group='STOMIXCOAC-HSBC' and d_tipo_numero='movil'";
-                            $resultado_movil    =   mysqli_query($conexion, $consulta_movil);
-                            echo " <td>".$resultado_movil."</td>";
-                            echo "<td>           </td>
+                                    echo $mostrar_res_movil["movil"];
+                                } else {
+                                    $consulta_movil     = "SELECT SUM(redondea_a_minutos) as movil FROM reporte_36
+                                                            WHERE u_start_time>='2020-02-28 00:00:00'
+                                                            AND u_start_time<='2020-03-29 23:59:59'
+                                                            AND c_dialstatus IN ('ANSWER')
+                                                            AND d_campaign_id='$campanias'
+                                                            AND d_carrier_prefix IN  ('999')
+                                                            AND d_user_group='$grupos'
+                                                            AND d_tipo_numero='movil';";
+                                    $resultado_movil    = mysqli_query($conexion, $consulta_movil);
+                                    $mostrar_res_movil  = mysqli_fetch_array($resultado_movil);                                     
+
+                                    echo $mostrar_res_movil["movil"];
+                                }
+                            echo "</td>
+                            <td>$campaign</td>
                         </tr>";
                 }
-            echo "</tbody>
+            echo "  <tr>
+                        <td>        </td>
+                        <td>        </td>
+                        <td>DROP</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>        </td>
+                        <td>        </td>
+                        <td>BUZON</td>
+                        <td>        </td>
+                        <td>        </td>
+                        <td>        </td>
+                    </tr>
+                    <tr>
+                        <td>        </td>
+                        <td>        </td>
+                        <td>CAMPAÑA 0</td>
+                        <td>        </td>
+                        <td>        </td>
+                        <td>        </td>
+                    </tr>
+                </tbody>
                 </table>";
         ?>
     </div>
