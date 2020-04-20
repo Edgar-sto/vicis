@@ -5,6 +5,7 @@
     <title>Datos prefijos</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/estilos_obtener_datos.css">
+    <link rel="shortcut icon" href="../img/factura.ico" />
     <!-- Javascript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
@@ -50,14 +51,7 @@ table.customTable thead {
         //echo "$fe_inicio";
         //echo "$fe_termino"; 
  
-            $server =   "$carrier";
-            $consulta1 ="SELECT DISTINCT (d_carrier_prefix), (d_campaign_id) , (d_user_group)
-                        FROM $carrier
-                        WHERE    u_start_time>='$fe_inicio 00:00:00'  AND  u_start_time<='$fe_termino 23:59:59'
-                        AND c_dialstatus IN ('ANSWER') AND d_carrier_prefix IN ($troncales)
-                        ORDER BY d_carrier_prefix";
-
-            $resultado      =   mysqli_query($conexion, $consulta1);
+        $server =   "$carrier";    
     ?>
     <div class="contenedor_principal">
         <br>
@@ -99,6 +93,13 @@ table.customTable thead {
             </table>
         </div>
         <?php
+            $consulta1 ="SELECT DISTINCT (d_carrier_prefix), (d_campaign_id) , (d_user_group)
+                        FROM $carrier
+                        WHERE    u_start_time>='$fe_inicio 00:00:00'  AND  u_start_time<='$fe_termino 23:59:59'
+                        AND c_dialstatus IN ('ANSWER') AND d_carrier_prefix IN ($troncales)
+                        ORDER BY d_carrier_prefix";
+            $resultado      =   mysqli_query($conexion, $consulta1);
+
             echo "<table class='customTable'>  
                 <tbody>";
                 while ($mostrar=mysqli_fetch_array($resultado))
@@ -109,9 +110,15 @@ table.customTable thead {
                             "</td>
                             <td>           </td>
                             <td>".$mostrar['d_user_group']."</td>
-                            <td>           </td>
-                            <td>           </td>
-                            <td>           </td>
+                            <td>           </td>";
+
+                            $consulta_movil = "SELECT SUM redondea_a_minutos from reporte_36
+                                        where u_start_time>='2020-02-28 00:00:00'  and  u_start_time<='2020-03-29 23:59:59'
+                                        and c_dialstatus in ('ANSWER') and d_campaign_id='0003' and d_carrier_prefix IN  ('999')
+                                        and d_user_group='STOMIXCOAC-HSBC' and d_tipo_numero='movil'";
+                            $resultado_movil    =   mysqli_query($conexion, $consulta_movil);
+                            echo " <td>".$resultado_movil."</td>";
+                            echo "<td>           </td>
                         </tr>";
                 }
             echo "</tbody>

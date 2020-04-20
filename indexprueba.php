@@ -107,25 +107,26 @@ table.customTable thead {
                             <td>";
                                 if ($mostrar['d_campaign_id'] == 11)
                                 {
-                                    $total_movil = 'SELECT SUM(redondea_a_minutos) FROM reporte_36
+                                    $consulta_movil = 'SELECT SUM(redondea_a_minutos) FROM reporte_36
                                         WHERE u_start_time>="2020-02-28 00:00:00"  AND  u_start_time<="2020-03-29 23:59:59"
                                         AND c_dialstatus IN ("ANSWER") AND d_campaign_id="0003" AND d_carrier_prefix IN  ("11")
                                         AND d_user_group="$mostrar["d_user_group"]" AND d_tipo_numero="movil" ';
 
-                                    $resultado_movil = mysqli_query($conexion, $total_movil);
+                                    $resultado_movil = mysqli_query($conexion, $consulta_movil);
                                     echo "$resultado_movil";
                                 } else {
-                                    $total_movil = "SELECT SUM(redondea_a_minutos) FROM reporte_36
-                                                    WHERE u_start_time>='2020-02-28 00:00:00'
-                                                    AND  u_start_time<='2020-03-29 23:59:59'
-                                                    AND c_dialstatus IN ('ANSWER')
-                                                    AND d_campaign_id='0003'
-                                                    AND d_carrier_prefix IN  ('999')
-                                                    AND d_user_group='STOMIXCOAC-HSBC'
-                                                    AND d_tipo_numero='movil';";
+                                    $consulta_movil     = "SELECT SUM(redondea_a_minutos) as movil FROM reporte_36
+                                                            WHERE u_start_time>='2020-02-28 00:00:00'
+                                                            AND u_start_time<='2020-03-29 23:59:59'
+                                                            AND c_dialstatus IN ('ANSWER')
+                                                            AND d_campaign_id='0003'
+                                                            AND d_carrier_prefix IN  ('999')
+                                                            AND d_user_group='STOMIXCOAC-HSBC'
+                                                            AND d_tipo_numero='movil';";
+                                    $resultado_movil    = mysqli_query($conexion, $consulta_movil);
+                                    $mostrar_res_movil  = mysqli_fetch_array($resultado_movil);                                     
 
-                                    $resultado_movil = mysqli_query($conexion, $total_movil);
-                                    echo "$resultado_movil";
+                                    echo $mostrar_res_movil["movil"];
                                 }      
                             echo "</td>
                             <td>           </td>
