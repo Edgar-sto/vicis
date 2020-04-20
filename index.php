@@ -46,6 +46,10 @@
             function ping(url) {
                 open(url,'','top=300,left=300,width=480,height=360') ;
             }
+        //
+        function campanias_activas(url) {
+                open(url,'','top=300,left=300,width=480,height=300') ;
+            }
         </script>
 
         <script type="text/javascript">
@@ -89,15 +93,29 @@
     <body>
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
             <!-- Brand -->
-            <img class=".img-fluid" src="img/vicidial_admin_web_logo.png">
+            <img class="img-fluid" src="img/sto_admin_web_logo.png">
             <!-- Links -->
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="http://127.0.0.1/vicis/panelvicis/panel_vicis.php" target="_blank">VICIdial</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="" target="_blank" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
+                        <span class="nav-label">Panel VICIdial</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="http://127.0.0.1/vicis/panelvicis/panel_vicis.php" target="_blank">Servidores</a>
+                        </li>
+                        <li>
+                            <a href="Crear_Usuarios_vici/index.php" target="_blank">Activar, Restablecer Usuario</a>
+                        </li>
+                        <li>
+                            <a href="javascript:campanias_activas('panelvicis/camp_act_por_server.php')">Campañas Activas</a>
+                        </li>
+                    </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Crear_Usuarios_vici/index.php" target="_blank">Usuarios Vici</a>
-                </li>
+
+
+
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="" target="_blank" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
                         <span class="nav-label">Telefonía</span>
@@ -111,6 +129,9 @@
                         </li>
                     </ul>
                 </li>
+
+
+
                 <li class="nav-item dropdown"><!-- Inicio de cambios en nav-->
                     <a class="nav-link dropdown-toggle" href="" target="_blank" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
                         <span class="nav-label">Estaciones</span>

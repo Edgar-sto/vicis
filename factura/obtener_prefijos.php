@@ -43,15 +43,10 @@ table.customTable thead {
         $conexion = mysqli_connect( $servidor, $usuario, $pass );
         $db = mysqli_select_db( $conexion, $basededatos );
                     
-        $carrier=$_POST['carrier'];
-        $troncales=$_POST['troncales'];
-        $fe_inicio=$_POST['fecha_inicio'];
-        $fe_termino=$_POST['fecha_termino'];
-        //echo "$carrier";
-        //echo "$fe_inicio";
-        //echo "$fe_termino"; 
- 
-        $server =   "$carrier";    
+        $server     =$_POST['carrier'];
+        $troncales  =$_POST['troncales'];
+        $fe_inicio  =$_POST['fecha_inicio'];
+        $fe_termino =$_POST['fecha_termino'];    
     ?>
     <div class="contenedor_principal">
         <br>
@@ -62,17 +57,17 @@ table.customTable thead {
                         <td colspan="2">    <label><?php echo "$server"; ?></label> </td>
                         <td>
                             <?php 
-                           $consul_prefijo = "SELECT distinct d_carrier_prefix FROM $carrier WHERE u_start_time>='$fe_inicio 00:00:00' AND u_start_time<='$fe_termino 23:59:59' AND c_dialstatus in ('ANSWER') AND d_carrier_prefix IN ($troncales)";
+                           $consul_prefijo = "SELECT distinct d_carrier_prefix FROM $server WHERE u_start_time>='$fe_inicio 00:00:00' AND u_start_time<='$fe_termino 23:59:59' AND c_dialstatus in ('ANSWER') AND d_carrier_prefix IN ($troncales)";
 
                             $resul_prefijo = mysqli_query($conexion, $consul_prefijo);
                             
                             while ($mostrar=mysqli_fetch_array($resul_prefijo))
                             {
                                 $prefijo_t  =   $mostrar['d_carrier_prefix'];
-                                if ($prefijo_t == '11') {
-                                    echo "<label>LOCAL 11</label>";
+                                if ($prefijo_t == '888') {
+                                    echo "<label>RAPTOR $prefijo_t</label>";
                                 } else {
-                                    echo "<label>Raptor 999</label>";
+                                    echo "<label>LOCAL $prefijo_t</label>";
                                 }
                                 //echo "<p class='text-lg-center'>".$mostrar['d_carrier_prefix']."</p>";
                             }
@@ -94,7 +89,7 @@ table.customTable thead {
         </div>
         <?php
             $consulta1 ="SELECT DISTINCT (d_carrier_prefix), (d_campaign_id) , (d_user_group)
-                        FROM $carrier
+                        FROM $server
                         WHERE    u_start_time>='$fe_inicio 00:00:00'  AND  u_start_time<='$fe_termino 23:59:59'
                         AND c_dialstatus IN ('ANSWER') AND d_carrier_prefix IN ($troncales)
                         ORDER BY d_carrier_prefix";
@@ -106,71 +101,71 @@ table.customTable thead {
                 {
                     echo "<tr>
                             <td>".$campaign = $mostrar['d_campaign_id']."</td>
-                            <td>           </td>
+                            <td>REVOLUCION</td>
                             <td>".$groups = $mostrar['d_user_group']."</td>
-                            <td>           </td>
+                            <td>COUNT</td>
                             <td>";
                                 $campanias  =   $campaign; 
-                                $grupos     =   $groups;    
+                                $grupos     =   $groups;
                                 if ($mostrar['d_carrier_prefix'] == 11)
                                 {
-                                    $consulta_movil     = "SELECT SUM(redondea_a_minutos) as movil FROM reporte_36
+                                    $consulta_movil     = "SELECT SUM(redondea_a_minutos) as movil FROM $server
                                                             WHERE u_start_time>='2020-02-28 00:00:00'
                                                             AND u_start_time<='2020-03-29 23:59:59'
                                                             AND c_dialstatus IN ('ANSWER')
                                                             AND d_campaign_id='$campanias'
                                                             AND d_carrier_prefix IN  ('11')
                                                             AND d_user_group='$grupos'
-                                                            AND d_tipo_numero='movil';";
+                                                            AND d_tipo_numero='movil'";
                                     $resultado_movil    = mysqli_query($conexion, $consulta_movil);
                                     $mostrar_res_movil  = mysqli_fetch_array($resultado_movil);                                     
-
                                     echo $mostrar_res_movil["movil"];
                                 } else {
-                                    $consulta_movil     = "SELECT SUM(redondea_a_minutos) as movil FROM reporte_36
+                                    $consulta_movil     = "SELECT SUM(redondea_a_minutos) as movil FROM $server
                                                             WHERE u_start_time>='2020-02-28 00:00:00'
                                                             AND u_start_time<='2020-03-29 23:59:59'
                                                             AND c_dialstatus IN ('ANSWER')
                                                             AND d_campaign_id='$campanias'
                                                             AND d_carrier_prefix IN  ('999')
                                                             AND d_user_group='$grupos'
-                                                            AND d_tipo_numero='movil';";
+                                                            AND d_tipo_numero='movil'";
                                     $resultado_movil    = mysqli_query($conexion, $consulta_movil);
                                     $mostrar_res_movil  = mysqli_fetch_array($resultado_movil);                                     
-
                                     echo $mostrar_res_movil["movil"];
                                 }
                             echo "</td>
-                            <td>$campaign</td>
+                            <td>RESULTADO FIJO</td>
                         </tr>";
-                }
-            echo "  <tr>
-                        <td>        </td>
-                        <td>        </td>
-                        <td>DROP</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>        </td>
-                        <td>        </td>
-                        <td>BUZON</td>
-                        <td>        </td>
-                        <td>        </td>
-                        <td>        </td>
-                    </tr>
-                    <tr>
-                        <td>        </td>
-                        <td>        </td>
-                        <td>CAMPAÑA 0</td>
-                        <td>        </td>
-                        <td>        </td>
-                        <td>        </td>
-                    </tr>
-                </tbody>
-                </table>";
+                
+                    echo "  <tr>
+                                <td>        </td>
+                                <td>        </td>
+                                <td>DROP</td>
+                                <td>COUNT</td>
+                                <td>RESULTADO MOVIL</td>
+                                <td>RESULTADO FIJO</td>
+                            </tr>
+                            <tr>
+                                <td>        </td>
+                                <td>        </td>
+                                <td>BUZON</td>
+                                <td>COUNT</td>
+                                <td>RESULTADO MOVIL</td>
+                                <td>RESULTADO FIJO</td>
+                            </tr>
+                            <tr>
+                                <td>        </td>
+                                <td>        </td>
+                                <td>CAMPAÑA 0</td>
+                                <td>COUNT</td>
+                                <td>RESULTADO MOVIL</td>
+                                <td>RESULTADO FIJO</td>
+                            </tr>";
+                    }
+            echo "</tbody>
+            </table>";
         ?>
+
     </div>
 </body>
 </html>
