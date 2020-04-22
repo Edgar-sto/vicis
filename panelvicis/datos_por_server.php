@@ -26,19 +26,20 @@
             $('#ajaxBusy').hide();
         });
         /*Funcion para cargar  archivos de consulta*/
-        function realizaProceso(valorCaja1, valorCaja2){
+        function realizaconsulta(valorCaja1, valorCaja2){
             var parametros = {
                 "valorCaja1" : valorCaja1,
+                "valorCaja2" : valorCaja2,
             }; 
             $.ajax({
                 data:  parametros,
-                url:   'ping.php',
+                url:   'consulta_por_server.php',
                 type:  'post',
                 beforeSend: function () {
-                    $("#resultado").html("Procesando, espere por favor...");
+                    $("#area_de_resultados").html("Consultando, espere por favor...");
                 },
                 success:  function (response) {
-                    $("#resultado").html(response);
+                    $("#area_de_resultados").html(response);
                 }
             });
         }
@@ -51,32 +52,42 @@
 	-->
 	<div class="container-fluid">
 		<div id="area_de_datos" class="container">
-			<form class="form-inline">
-				<div class="form-group">
-			    	<select class="form-control form-control-sm" id="servidor" name="servidor">
-	                        <!--General etiquetas por reporte-->
-				            <?php
-				                $servidor = array(5, 6, 8, 11, 22, 27, 28, 29, 35, 36, 37, 38, 39, 41, 42, 43, 44, 45, 46, 201);
-				                $tamanio_array_servidor = count($servidor);
-				                echo "<br/>";
-				                for ($i=0; $i < $tamanio_array_servidor; $i++)
-				                {
-				                   	echo "<option>reporte_$servidor[$i]</option>";
-				                }
-				            ?>
-                    </select>
-				</div>
-				<div class="form-group mx-sm-3">
-			    	<select class="form-control form-control-sm" id="servidor" name="servidor">
-                        <option>Campañas</option>
-                        <option>Carrier Activos</option>
-                    </select>
-				</div>
-			   <button type="submit" class="btn btn-primary">Consultar</button>
+			<form class="">
+				<table class="datos_a_buscar">
+                    <tr>
+                        <td>
+                            <select class="form-control form-control-md" id="servidor" name="servidor">
+                                    <!--General etiquetas por reporte-->
+                                    <?php
+                                        $servidor = array(5, 6, 8, 11, 22, 27, 28, 29, 35, 36, 37, 38, 39, 41, 42, 43, 44, 45, 46, 201); 
+                                        $tamanio_array_servidor = count($servidor);
+                                        echo "<br/>";
+                                        for ($i=0; $i < $tamanio_array_servidor; $i++)
+                                        {
+                                            echo "<option>reporte_$servidor[$i]</option>";
+                                        }
+                                    ?>
+                            </select>
+                        </td>
+                        <td>
+                            <select class="form-control form-control-md" id="campania_carrier" name="cam_carr">
+                                <option>Campañas</option>
+                                <option>Carrier Activos</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="button" href="javascript:;" onclick="realizaconsulta($('#servidor').val(), $('#campania_carrier').val());return false;" value="Consultar"/>
+                        </td>
+                    </tr>
+                </table>
 			</form>
 		</div>
 		<div id="area_de_resultados" class="container">
-			
+			<!--div id="ajaxBusy">
+                <p>
+                    <img src="ajax-loader.gif">
+                </p>
+            </div-->
 		</div>
 	</div>
 </body>

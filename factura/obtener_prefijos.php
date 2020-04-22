@@ -121,13 +121,14 @@ table.customTable thead {
                                     $mostrar_res_movil  = mysqli_fetch_array($resultado_movil);                                     
                                     echo $mostrar_res_movil["movil"];
                                 } else {
-                                    $consulta_movil     = "SELECT SUM(redondea_a_minutos) as movil FROM $server
+                                    //echo "$campanias";
+                                    $consulta_movil     = "SELECT SUM(redondea_a_minutos) as movil FROM reporte_8
                                                             WHERE u_start_time>='2020-02-28 00:00:00'
                                                             AND u_start_time<='2020-03-29 23:59:59'
                                                             AND c_dialstatus IN ('ANSWER')
-                                                            AND d_campaign_id='$campanias'
+                                                            AND d_campaign_id='0009'
                                                             AND d_carrier_prefix IN  ('999')
-                                                            AND d_user_group='$grupos'
+                                                            AND d_user_group='STO-FORMALIZACION'
                                                             AND d_tipo_numero='movil'";
                                     $resultado_movil    = mysqli_query($conexion, $consulta_movil);
                                     $mostrar_res_movil  = mysqli_fetch_array($resultado_movil);                                     

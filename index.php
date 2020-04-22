@@ -108,7 +108,7 @@
                             <a href="Crear_Usuarios_vici/index.php" target="_blank">Activar, Restablecer Usuario</a>
                         </li>
                         <li>
-                            <a href="javascript:campanias_activas('panelvicis/camp_act_por_server.php')">Campañas Activas</a>
+                            <a href="javascript:campanias_activas('panelvicis/datos_por_server.php')">Campañas Activas</a>
                         </li>
                     </ul>
                 </li>
