@@ -83,7 +83,7 @@
 						<select class="form-control form-control-sm" id="troncales" name="troncales">
 	                        <!--General etiquetas por reporte-->
 				            <?php
-				                $troncales = array("'11', '999'" , "'444'" , "'888', '209','210','222','223'" , "'9', '777'");
+				                $troncales = array( "9", "11", "'209','210','222','223'", "444", "777", "888", "999");
 				                $tamanio_array_troncal = count($troncales);
 				                echo "<br/>";
 				                for ($z=0; $z < $tamanio_array_troncal; $z++)
@@ -107,7 +107,7 @@
 				</table>
 			</div>
 
-			<div class="row fondoresultados text-left" id="resp">
+			<div class="row text-left" id="resp">
 
 			</div>
 			
