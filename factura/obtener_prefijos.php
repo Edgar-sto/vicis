@@ -92,6 +92,10 @@
                                     echo "<td>SUCURSAL</td>";
                                     echo "<td>" .$groups. "</td>";
                                     echo "<td>EVENTOS</td>";
+                                    $monto_movil    =   "SELECT SUM(redondea_a_minutos) from telefonia.reporte_36
+where u_start_time>='2020-02-28 00:00:00'  and  u_start_time<='2020-03-29 23:59:59'
+and c_dialstatus in ('ANSWER') and d_campaign_id='0003' and d_carrier_prefix IN  ('999')
+and d_user_group='STOMIXCOAC-HSBC' and d_tipo_numero='movil';";
                                     echo "<td>MOVIL</td>";
                                     echo "<td>FIJO</td>";
                                     echo "</tr>";
