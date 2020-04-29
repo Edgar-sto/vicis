@@ -59,6 +59,7 @@
                         <th class="titulos_tabla_resultado" id="grupo">Grupo</th>
                         <th class="titulos_tabla_resultado" id="eventos">Eventos</th>
                         <th class="titulos_tabla_resultado" id="movil">Movil</th>
+                        <th class="titulos_tabla_resultado" id="fijo">fijo</th>
                     </tr>
                 </thead>
                 <tbody class="table-striped">
@@ -92,12 +93,27 @@
                                     echo "<td>SUCURSAL</td>";
                                     echo "<td>" .$groups. "</td>";
                                     echo "<td>EVENTOS</td>";
-                                    $monto_movil    =   "SELECT SUM(redondea_a_minutos) from telefonia.reporte_36
-where u_start_time>='2020-02-28 00:00:00'  and  u_start_time<='2020-03-29 23:59:59'
-and c_dialstatus in ('ANSWER') and d_campaign_id='0003' and d_carrier_prefix IN  ('999')
-and d_user_group='STOMIXCOAC-HSBC' and d_tipo_numero='movil';";
-                                    echo "<td>MOVIL</td>";
-                                    echo "<td>FIJO</td>";
+                                    $suma_monto_movil    =   "SELECT SUM(redondea_a_minutos) AS monto_movil from $server
+                                                        where u_start_time>='$fe_inicio 00:00:00'  and  u_start_time<='$fe_termino 23:59:59'
+                                                        and c_dialstatus in ('ANSWER') and d_campaign_id='$campaign' and d_carrier_prefix IN  ('$prefix')
+                                                        and d_user_group='$groups' and d_tipo_numero='movil'";
+                                    $resultado_monto_movil  =   mysqli_query($conexion, $suma_monto_movil);
+                                    while ($mostrar_monto_movil =   mysqli_fetch_array($resultado_monto_movil))
+                                    {   
+                                        $monto_movil    =   $mostrar_monto_movil['monto_movil'];
+                                        echo "<td>".$monto_movil."</td>";
+                                    }
+                                    $suma_monto_fijo    =   "SELECT SUM(redondea_a_minutos) AS monto_fijo from $server
+                                                        where u_start_time>='$fe_inicio 00:00:00'  and  u_start_time<='$fe_termino 23:59:59'
+                                                        and c_dialstatus in ('ANSWER') and d_campaign_id='$campaign' and d_carrier_prefix in  ('$prefix')
+                                                        and d_user_group='$groups' and d_tipo_numero='fijo'";
+                                    $resultado_monto_fijo   =   mysqli_query($conexion, $suma_monto_fijo);
+                                    while ($mostrar_monto_fijo  =   mysqli_fetch_array($resultado_monto_fijo))
+                                    {
+                                        $monto_fijo     =   $mostrar_monto_fijo['monto_fijo'];
+                                        echo "<td>".$monto_fijo."</td>";
+                                    }
+                                    
                                     echo "</tr>";
                                 }
                                 echo "<tr class='table-warning'>";
