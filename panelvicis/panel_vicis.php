@@ -15,7 +15,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-2">
-                    <img class=".img-fluid" src="../img/logo-STO.png">
+                    <img class="img-fluid" src="../img/sto_admin_web_logo.png">
                     <!--General botones-->
                     <?php
                         $servidor = array(5, 6, 8, 9, 14, 16, 22, 27, 28, 29, 35, 36, 37, 38, 39, 41, 42, 43, 44, 45, 46, 201);
