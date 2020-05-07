@@ -18,19 +18,23 @@
                     <img class="img-fluid" src="img/sto_admin_web_logo.png">
                     <!--General botones-->
                     <img src="img/gifs/Router-01.gif">
+                    <label for="">Server $servidor[$i]</label>
                     <img src="img/gifs/Router-01.gif">
                     <img src="img/gifs/Router-01.gif">
-                    <img src="img/gifs/server_5_activo.gif">
                     <?php
                         $servidor = array(5, 6, 8, 9, 14, 16, 22, 27, 28, 29, 35, 36, 37, 38, 39, 41, 42, 43, 44, 45, 46, 201);
                         $tamanio_array_servidor = count($servidor);
                         echo "<br/>";
-                        for ($i=0; $i < $tamanio_array_servidor; $i++) {
+                        for ($i=0; $i < $tamanio_array_servidor; $i++)
+                        {
+                            echo "<img src='img/gifs/Router-01.gif'>
+                                  <label>Server $servidor[$i]</label>";
+
                             echo "<input class=\"btn btn-primary btn-md btn-block\" type=\"button\" id=\"server_$servidor[$i]\" value=\"Server $servidor[$i]\" target=\"_blank\" />";
                         }
-                    ?>   
+                    ?> 
                 </div>
-                <div class="col-md-1 align-self-start">
+                <div class="col-md-1 align-self-start" id="element">
                     
                 </div>
             </div>            
