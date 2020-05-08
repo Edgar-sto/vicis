@@ -15,7 +15,6 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-2 table-responsive">
-                    
                     <!--General botones-->
                     <table class="table table-sm">
                         <thead class="thead-dark">
@@ -24,17 +23,26 @@
                             </tr>
                         </thead>
                     <?php
+                        echo "<tr>";
+                        echo "<td>";
                         $servidor = array(5, 6, 8, 9, 14, 16, 22, 27, 28, 29, 35, 36, 37, 38, 39, 41, 42, 43, 44, 45, 46, 201);
                         $tamanio_array_servidor = count($servidor);
                         for ($i=0; $i < $tamanio_array_servidor; $i++)
                         {
-                            echo "<tr>";
-                                echo "<td>
-                                    <img type=\"button\" src='../img/gifs/LED-VERDE.gif'>
-                                    <input class=\"btn btn-sm btn-block\" type=\"button\" id=\"server_$servidor[$i]\" value=\"Server $servidor[$i]\" target=\"_blank\" />
-                                    </td>";
-                            echo "</tr>";
+                            $res    = exec("ping 10.9.2.$servidor[$i]");
+                            
+                            if (strpos($res, "recibidos = 0"))
+                            {
+                                echo "
+                                    <img type=\"button\" src='img/gifs/LED-ROJO.gif'>";
+                            } else {
+                                echo "<img type=\"button\" src='img/gifs/LED-VERDE.gif'>";
+                            }
+                            echo " <input class=\"btn btn-sm btn-block\" type=\"button\" id=\"server_$servidor[$i]\" value=\"Server $servidor[$i]\" target=\"_blank\" />";
+                                    
                         }
+                        echo "</td>
+                            </tr>";
                     ?>
                     </table> 
                 </div>
