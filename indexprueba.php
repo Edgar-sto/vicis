@@ -23,13 +23,13 @@
                             </tr>
                         </thead>
                     <?php
-                        $servidor = array(5, 6, 57);
+                        $servidor = array(5, 6, );
                         $tamanio_array_servidor = count($servidor);
                         for ($i=0; $i < $tamanio_array_servidor; $i++)
                         {
                             $res    = exec("ping 10.9.2.$servidor[$i]");
                             
-                            if (strpos($res, "Request timeout for icmp_seq 3"))
+                            if (strpos($res, "recibidos = 0"))
                             {
                                 echo "<tr>";
                                 echo "<td>
