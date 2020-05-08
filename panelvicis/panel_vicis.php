@@ -14,17 +14,29 @@
     <body>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-2">
-                    <img class="img-fluid" src="../img/sto_admin_web_logo.png">
+                <div class="col-md-2 table-responsive">
+                    
                     <!--General botones-->
+                    <table class="table table-sm">
+                        <thead class="thead-dark">
+                            <tr>
+                              <th scope="col">Servidores</th>
+                            </tr>
+                        </thead>
                     <?php
                         $servidor = array(5, 6, 8, 9, 14, 16, 22, 27, 28, 29, 35, 36, 37, 38, 39, 41, 42, 43, 44, 45, 46, 201);
                         $tamanio_array_servidor = count($servidor);
-                        echo "<br/>";
-                        for ($i=0; $i < $tamanio_array_servidor; $i++) {
-                            echo "<input class=\"btn btn-primary btn-md btn-block\" type=\"button\" id=\"server_$servidor[$i]\" value=\"Server $servidor[$i]\" target=\"_blank\" />";
+                        for ($i=0; $i < $tamanio_array_servidor; $i++)
+                        {
+                            echo "<tr>";
+                                echo "<td>
+                                    <img type=\"button\" src='../img/gifs/LED-VERDE.gif'>
+                                    <input class=\"btn btn-sm btn-block\" type=\"button\" id=\"server_$servidor[$i]\" value=\"Server $servidor[$i]\" target=\"_blank\" />
+                                    </td>";
+                            echo "</tr>";
                         }
-                    ?>   
+                    ?>
+                    </table> 
                 </div>
                 <div class="col-md-1 align-self-start">
                     <script type="text/javascript">

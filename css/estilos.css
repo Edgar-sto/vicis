@@ -74,3 +74,10 @@
     top:1px;
 }
 
+table {
+  text-align: center;
+}
+
+td {
+    margin-top: 50px;
+}
