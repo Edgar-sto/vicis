@@ -24,7 +24,7 @@
                         </thead>
                     <?php
                         echo "<tr>";
-                        echo "<td>
+                        echo "<td>";
                         $servidor = array(5, 6, 57);
                         $tamanio_array_servidor = count($servidor);
                         for ($i=0; $i < $tamanio_array_servidor; $i++)
