@@ -14,7 +14,7 @@
     <body>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-2 table-responsive">
+                <div class=" table-responsive">
                     <!--General botones-->
                     <table class="table table-sm">
                         <thead class="thead-dark">
@@ -24,11 +24,12 @@
                         </thead>
                     <?php
                         echo "<tr>";
-                        echo "<td>";
+                        
                         $servidor = array(5, 6, 8, 9, 14, 16, 22, 27, 28, 29, 35, 36, 37, 38, 39, 41, 42, 43, 44, 45, 46, 201);
                         $tamanio_array_servidor = count($servidor);
                         for ($i=0; $i < $tamanio_array_servidor; $i++)
                         {
+                            echo "<td>";
                             $res    = exec("ping 10.9.2.$servidor[$i]");
                             
                             if (strpos($res, "recibidos = 0"))
@@ -39,10 +40,10 @@
                                 echo "<img type=\"button\" src='../img/gifs/LED-VERDE.gif'>";
                             }
                             echo " <input class=\"btn btn-sm btn-block\" type=\"button\" id=\"server_$servidor[$i]\" value=\"Server $servidor[$i]\" target=\"_blank\" />";
-                                    
+                                echo "</td>";    
                         }
-                        echo "</td>
-                            </tr>";
+                        
+                            echo "</tr>";
                     ?>
                     </table> 
                 </div>
