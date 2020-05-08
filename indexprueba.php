@@ -23,7 +23,7 @@
                             </tr>
                         </thead>
                     <?php
-                        $servidor = array(5, 6, );
+                        $servidor = array(5, 6, 57);
                         $tamanio_array_servidor = count($servidor);
                         for ($i=0; $i < $tamanio_array_servidor; $i++)
                         {
