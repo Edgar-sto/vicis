@@ -34,9 +34,9 @@
                             if (strpos($res, "recibidos = 0"))
                             {
                                 echo "
-                                    <img type=\"button\" src='img/gifs/LED-ROJO.gif'>";
+                                    <img type=\"button\" src='../img/gifs/LED-ROJO.gif'>";
                             } else {
-                                echo "<img type=\"button\" src='img/gifs/LED-VERDE.gif'>";
+                                echo "<img type=\"button\" src='../img/gifs/LED-VERDE.gif'>";
                             }
                             echo " <input class=\"btn btn-sm btn-block\" type=\"button\" id=\"server_$servidor[$i]\" value=\"Server $servidor[$i]\" target=\"_blank\" />";
                                     
