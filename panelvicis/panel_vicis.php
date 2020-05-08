@@ -14,7 +14,7 @@
     <body>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-2 table-responsive">
+                <div class="col-md-2 table-responsive">
                     <!--General botones-->
                     <table class="table table-sm">
                         <thead class="thead-dark">
