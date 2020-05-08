@@ -23,6 +23,8 @@
                             </tr>
                         </thead>
                     <?php
+                        echo "<tr>";
+                        echo "<td>
                         $servidor = array(5, 6, 57);
                         $tamanio_array_servidor = count($servidor);
                         for ($i=0; $i < $tamanio_array_servidor; $i++)
@@ -31,16 +33,16 @@
                             
                             if (strpos($res, "recibidos = 0"))
                             {
-                                echo "<tr>";
-                                echo "<td>
+                                echo "
                                     <img type=\"button\" src='img/gifs/LED-ROJO.gif'>";
                             } else {
                                 echo "<img type=\"button\" src='img/gifs/LED-VERDE.gif'>";
                             }
-                            echo " <input class=\"btn btn-sm btn-block\" type=\"button\" id=\"server_$servidor[$i]\" value=\"Server $servidor[$i]\" target=\"_blank\" />
-                                    </td>";
-                            echo "</tr>";
+                            echo " <input class=\"btn btn-sm btn-block\" type=\"button\" id=\"server_$servidor[$i]\" value=\"Server $servidor[$i]\" target=\"_blank\" />";
+                                    
                         }
+                        echo "</td>
+                            </tr>";
                     ?>
                     </table> 
                 </div>
