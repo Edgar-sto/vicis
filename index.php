@@ -90,7 +90,7 @@
             });
         </script>
     </head>
-    <body>
+    <body class="fondo_cuerpo">
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
             <!-- Brand -->
             <img class="img-fluid" src="img/sto_admin_web_logo.png">

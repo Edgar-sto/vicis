@@ -3,7 +3,7 @@
 }
 
 body {
-  background: #ffffff;
+  background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(9,9,121,1) 30%, rgba(0,212,255,1) 100%);
   /*background: url(../img/estaciones1.jpg);*/
   background-repeat: no-repeat;
   background-attachment: fixed;
