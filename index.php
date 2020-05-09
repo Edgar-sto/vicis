@@ -311,7 +311,7 @@
                 <br>
                 <br>
                 <br>
-                <!-- COLUMNA CONTENEDOR -->
+                
                 <div class="col align-self-start">
                     <section class="container datos_generales" id="element" style="display: none;">
                         <div id="close" class="row">
