@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+<g>
+	<polygon fill="#E5E5E5" points="64,64 0,32 0,0 64,32 	"/>
+	<polygon fill="#2D3134" points="53,57 55,58 55,36 37,27 37,49 39,50 39,33 53,40 	"/>
+	<polygon fill="#2D3134" points="21,41 23,42 23,20 5,11 5,33 7,34 7,17 21,24 	"/>
+	<g>
+		<polygon fill="#656565" points="39,33 53,40 53,56 39,49 		"/>
+		<polygon opacity="0.25" fill="#FFFFFF" points="53,55 39,48 39,47 53,54 		"/>
+		<polygon opacity="0.25" fill="#FFFFFF" points="53,53 39,46 39,45 53,52 		"/>
+		<polygon opacity="0.25" fill="#FFFFFF" points="53,51 39,44 39,43 53,50 		"/>
+		<polygon opacity="0.25" fill="#FFFFFF" points="53,49 39,42 39,41 53,48 		"/>
+		<polygon opacity="0.25" fill="#FFFFFF" points="53,47 39,40 39,39 53,46 		"/>
+		<polygon opacity="0.25" fill="#FFFFFF" points="53,45 39,38 39,37 53,44 		"/>
+		<polygon opacity="0.25" fill="#FFFFFF" points="53,43 39,36 39,35 53,42 		"/>
+		<polygon opacity="0.25" fill="#FFFFFF" points="53,41 39,34 39,33 53,40 		"/>
+	</g>
+	<g>
+		<polygon fill="#656565" points="7,17 21,24 21,40 7,33 		"/>
+		<polygon opacity="0.25" fill="#FFFFFF" points="21,39 7,32 7,31 21,38 		"/>
+		<polygon opacity="0.25" fill="#FFFFFF" points="21,37 7,30 7,29 21,36 		"/>
+		<polygon opacity="0.25" fill="#FFFFFF" points="21,35 7,28 7,27 21,34 		"/>
+		<polygon opacity="0.25" fill="#FFFFFF" points="21,33 7,26 7,25 21,32 		"/>
+		<polygon opacity="0.25" fill="#FFFFFF" points="21,31 7,24 7,23 21,30 		"/>
+		<polygon opacity="0.25" fill="#FFFFFF" points="21,29 7,22 7,21 21,28 		"/>
+		<polygon opacity="0.25" fill="#FFFFFF" points="21,27 7,20 7,19 21,26 		"/>
+		<polygon opacity="0.25" fill="#FFFFFF" points="21,25 7,18 7,17 21,24 		"/>
+	</g>
+	<polygon opacity="0.11" points="64,64 0,32 0,0 64,32 	"/>
+</g>
+</svg>

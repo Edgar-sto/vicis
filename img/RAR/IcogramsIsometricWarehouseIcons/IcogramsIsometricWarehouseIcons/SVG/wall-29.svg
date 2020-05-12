@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 64 96" enable-background="new 0 0 64 96" xml:space="preserve">
+<g>
+	<path fill="#E5E5E5" d="M0,32v64l64-32V0L0,32z M25,81l-14,7V72l14-7V81z M57,65l-14,7V56l14-7V65z"/>
+	<polygon fill="#2D3134" points="11,89 9,90 9,68 27,59 27,81 25,82 25,65 11,72 	"/>
+	<polygon fill="#2D3134" points="43,73 41,74 41,52 59,43 59,65 57,66 57,49 43,56 	"/>
+	<g>
+		<g>
+			<polygon fill="#FFFFFF" points="27,36 9,45 9,37 27,28 			"/>
+			<polygon fill="#3399CC" points="26,35.5 10,43.5 10,37.5 26,29.5 			"/>
+			<polygon opacity="0.15" points="26,32.5 10,40.5 10,37.5 26,29.5 			"/>
+			<polygon opacity="0.15" points="26,30.5 10,38.5 10,37.5 26,29.5 			"/>
+			<polygon opacity="0.15" points="26,35.5 10,37.5 26,29.5 			"/>
+		</g>
+		<g>
+			<polygon fill="#FFFFFF" points="59,20 41,29 41,21 59,12 			"/>
+			<polygon fill="#3399CC" points="58,19.5 42,27.5 42,21.5 58,13.5 			"/>
+			<polygon opacity="0.15" points="58,16.5 42,24.5 42,21.5 58,13.5 			"/>
+			<polygon opacity="0.15" points="58,14.5 42,22.5 42,21.5 58,13.5 			"/>
+			<polygon opacity="0.15" points="58,19.5 42,21.5 58,13.5 			"/>
+		</g>
+	</g>
+	<path opacity="0.29" d="M0,32v64l64-32V0L0,32z M25,81l-14,7V72l14-7V81z M57,65l-14,7V56l14-7V65z"/>
+</g>
+</svg>

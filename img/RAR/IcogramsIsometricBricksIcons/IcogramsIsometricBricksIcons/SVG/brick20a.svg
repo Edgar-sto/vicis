@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 80 64" enable-background="new 0 0 80 64" xml:space="preserve">
+<g>
+	<polygon fill="#CC291F" points="32,0.4 47.6,8.2 79.6,46.2 79.6,47.8 48,63.6 0.4,39.8 0.4,16.2 	"/>
+	<polygon opacity="0.19" points="79.6,47.8 48,63.6 48,62 16,24 47.6,8.2 79.6,46.2 	"/>
+	<polygon opacity="0.19" points="79.6,47.8 48,63.6 48,62 79.6,46.2 	"/>
+	<polygon opacity="0.11" points="0.4,39.8 48,63.6 48,62 16,24 0.4,16.2 	"/>
+	<path opacity="0.25" d="M40,5v3c0,2.2-3.6,4-8,4s-8-1.8-8-4V5H40z"/>
+	<ellipse fill="#CC291F" cx="32" cy="5" rx="8" ry="4"/>
+	<path opacity="0.25" d="M24,13v3c0,2.2-3.6,4-8,4s-8-1.8-8-4v-3H24z"/>
+	<ellipse fill="#CC291F" cx="16" cy="13" rx="8" ry="4"/>
+</g>
+</svg>

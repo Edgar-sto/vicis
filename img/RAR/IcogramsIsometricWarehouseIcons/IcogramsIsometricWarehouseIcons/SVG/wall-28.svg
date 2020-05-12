@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 64 96" enable-background="new 0 0 64 96" xml:space="preserve">
+<g>
+	<polygon fill="#E5E5E5" points="64,96 0,64 0,0 64,32 	"/>
+	<polygon fill="#2D3134" points="53,89 55,90 55,68 37,59 37,81 39,82 39,65 53,72 	"/>
+	<polygon fill="#2D3134" points="21,73 23,74 23,52 5,43 5,65 7,66 7,49 21,56 	"/>
+	<g>
+		<polygon fill="#656565" points="39,65 53,72 53,88 39,81 		"/>
+		<polygon opacity="0.25" fill="#FFFFFF" points="53,87 39,80 39,79 53,86 		"/>
+		<polygon opacity="0.25" fill="#FFFFFF" points="53,85 39,78 39,77 53,84 		"/>
+		<polygon opacity="0.25" fill="#FFFFFF" points="53,83 39,76 39,75 53,82 		"/>
+		<polygon opacity="0.25" fill="#FFFFFF" points="53,81 39,74 39,73 53,80 		"/>
+		<polygon opacity="0.25" fill="#FFFFFF" points="53,79 39,72 39,71 53,78 		"/>
+		<polygon opacity="0.25" fill="#FFFFFF" points="53,77 39,70 39,69 53,76 		"/>
+		<polygon opacity="0.25" fill="#FFFFFF" points="53,75 39,68 39,67 53,74 		"/>
+		<polygon opacity="0.25" fill="#FFFFFF" points="53,73 39,66 39,65 53,72 		"/>
+	</g>
+	<g>
+		<polygon fill="#656565" points="7,49 21,56 21,72 7,65 		"/>
+		<polygon opacity="0.25" fill="#FFFFFF" points="21,71 7,64 7,63 21,70 		"/>
+		<polygon opacity="0.25" fill="#FFFFFF" points="21,69 7,62 7,61 21,68 		"/>
+		<polygon opacity="0.25" fill="#FFFFFF" points="21,67 7,60 7,59 21,66 		"/>
+		<polygon opacity="0.25" fill="#FFFFFF" points="21,65 7,58 7,57 21,64 		"/>
+		<polygon opacity="0.25" fill="#FFFFFF" points="21,63 7,56 7,55 21,62 		"/>
+		<polygon opacity="0.25" fill="#FFFFFF" points="21,61 7,54 7,53 21,60 		"/>
+		<polygon opacity="0.25" fill="#FFFFFF" points="21,59 7,52 7,51 21,58 		"/>
+		<polygon opacity="0.25" fill="#FFFFFF" points="21,57 7,50 7,49 21,56 		"/>
+	</g>
+	<g>
+		<g>
+			<polygon fill="#FFFFFF" points="37,36 55,45 55,37 37,28 			"/>
+			<polygon fill="#3399CC" points="38,35.5 54,43.5 54,37.5 38,29.5 			"/>
+			<polygon opacity="0.15" points="38,32.5 54,40.5 54,37.5 38,29.5 			"/>
+			<polygon opacity="0.15" points="38,30.5 54,38.5 54,37.5 38,29.5 			"/>
+			<polygon opacity="0.15" points="38,35.5 54,37.5 38,29.5 			"/>
+		</g>
+		<g>
+			<polygon fill="#FFFFFF" points="5,20 23,29 23,21 5,12 			"/>
+			<polygon fill="#3399CC" points="6,19.5 22,27.5 22,21.5 6,13.5 			"/>
+			<polygon opacity="0.15" points="6,16.5 22,24.5 22,21.5 6,13.5 			"/>
+			<polygon opacity="0.15" points="6,14.5 22,22.5 22,21.5 6,13.5 			"/>
+			<polygon opacity="0.15" points="6,19.5 22,21.5 6,13.5 			"/>
+		</g>
+	</g>
+	<polygon opacity="0.11" points="64,96 0,64 0,0 64,32 	"/>
+</g>
+</svg>

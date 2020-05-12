@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 240 400" enable-background="new 0 0 240 400" xml:space="preserve">
+<g>
+	<polygon fill="#825012" points="0,120 0,360 80,400 240,320 240,80 160,40 	"/>
+	<polygon opacity="0.11" points="80,400 0,360 0,120 80,160 	"/>
+	<path opacity="0.29" d="M80,160v240l160-80V80L80,160z M230,313.8l-140,70V166l140-70V313.8z"/>
+	<polygon opacity="0.29" points="90,199 230,129 230,133 90,203 	"/>
+	<polygon opacity="0.29" points="90,236 230,166 230,170 90,240 	"/>
+	<polygon opacity="0.29" points="90,273 230,203 230,207 90,277 	"/>
+	<polygon opacity="0.29" points="90,310 230,240 230,244 90,314 	"/>
+	<polygon opacity="0.29" points="90,347 230,277 230,281 90,351 	"/>
+	<polygon opacity="0.11" points="197,112.5 230,129 230,96 	"/>
+	<polygon opacity="0.11" points="197,149.5 230,166 230,133 	"/>
+	<polygon opacity="0.11" points="197,186.5 230,203 230,170 	"/>
+	<polygon opacity="0.11" points="197,223.5 230,240 230,207 	"/>
+	<polygon opacity="0.11" points="197,260.5 230,277 230,244 	"/>
+	<polygon opacity="0.11" points="197,297.5 230,314 230,281 	"/>
+	<g>
+		<defs>
+			<polygon id="SVGID_1_" points="226,98 226,131 90,199 90,166 			"/>
+		</defs>
+		<clipPath id="SVGID_2_">
+			<use xlink:href="#SVGID_1_"  overflow="visible"/>
+		</clipPath>
+		<g clip-path="url(#SVGID_2_)">
+			<polygon fill="#CC291F" points="198,92 198,122 220,133 226,130 226,100 204,89 			"/>
+			<polygon opacity="0.11" points="220,133 198,122 198,92 220,103 			"/>
+			<polygon opacity="0.29" points="220,133 226,130 226,100 220,103 			"/>
+			<polygon fill="#999999" points="224,100 220,102 200,92 204,90 			"/>
+		</g>
+		<g clip-path="url(#SVGID_2_)">
+			<polygon fill="#FFCC00" points="190,96 190,126 212,137 218,134 218,104 196,93 			"/>
+			<polygon opacity="0.11" points="212,137 190,126 190,96 212,107 			"/>
+			<polygon opacity="0.29" points="212,137 218,134 218,104 212,107 			"/>
+			<polygon fill="#999999" points="216,104 212,106 192,96 196,94 			"/>
+		</g>
+		<g clip-path="url(#SVGID_2_)">
+			<polygon fill="#FF9900" points="182,100 182,130 204,141 210,138 210,108 188,97 			"/>
+			<polygon opacity="0.11" points="204,141 182,130 182,100 204,111 			"/>
+			<polygon opacity="0.29" points="204,141 210,138 210,108 204,111 			"/>
+			<polygon fill="#999999" points="208,108 204,110 184,100 188,98 			"/>
+		</g>
+		<g clip-path="url(#SVGID_2_)">
+			<polygon fill="#CC291F" points="168,107 168,137 190,148 196,145 196,115 174,104 			"/>
+			<polygon opacity="0.11" points="190,148 168,137 168,107 190,118 			"/>
+			<polygon opacity="0.29" points="190,148 196,145 196,115 190,118 			"/>
+			<polygon fill="#999999" points="194,115 190,117 170,107 174,105 			"/>
+		</g>
+		<g clip-path="url(#SVGID_2_)">
+			<polygon fill="#FFCC00" points="160,111 160,141 182,152 188,149 188,119 166,108 			"/>
+			<polygon opacity="0.11" points="182,152 160,141 160,111 182,122 			"/>
+			<polygon opacity="0.29" points="182,152 188,149 188,119 182,122 			"/>
+			<polygon fill="#999999" points="186,119 182,121 162,111 166,109 			"/>
+		</g>
+		<g clip-path="url(#SVGID_2_)">
+			<polygon fill="#FF9900" points="152,115 152,145 174,156 180,153 180,123 158,112 			"/>
+			<polygon opacity="0.11" points="174,156 152,145 152,115 174,126 			"/>
+			<polygon opacity="0.29" points="174,156 180,153 180,123 174,126 			"/>
+			<polygon fill="#999999" points="178,123 174,125 154,115 158,113 			"/>
+		</g>
+		<g clip-path="url(#SVGID_2_)">
+			<polygon fill="#99CC33" points="144,119 144,149 166,160 172,157 172,127 150,116 			"/>
+			<polygon opacity="0.11" points="166,160 144,149 144,119 166,130 			"/>
+			<polygon opacity="0.29" points="166,160 172,157 172,127 166,130 			"/>
+			<polygon fill="#999999" points="170,127 166,129 146,119 150,117 			"/>
+		</g>
+		<g clip-path="url(#SVGID_2_)">
+			<polygon fill="#CC291F" points="128,127 128,157 150,168 156,165 156,135 134,124 			"/>
+			<polygon opacity="0.11" points="150,168 128,157 128,127 150,138 			"/>
+			<polygon opacity="0.29" points="150,168 156,165 156,135 150,138 			"/>
+			<polygon fill="#999999" points="154,135 150,137 130,127 134,125 			"/>
+		</g>
+		<g clip-path="url(#SVGID_2_)">
+			<polygon fill="#FFCC00" points="120,131 120,161 142,172 148,169 148,139 126,128 			"/>
+			<polygon opacity="0.11" points="142,172 120,161 120,131 142,142 			"/>
+			<polygon opacity="0.29" points="142,172 148,169 148,139 142,142 			"/>
+			<polygon fill="#999999" points="146,139 142,141 122,131 126,129 			"/>
+		</g>
+		<g clip-path="url(#SVGID_2_)">
+			<polygon fill="#FF9900" points="112,135 112,165 134,176 140,173 140,143 118,132 			"/>
+			<polygon opacity="0.11" points="134,176 112,165 112,135 134,146 			"/>
+			<polygon opacity="0.29" points="134,176 140,173 140,143 134,146 			"/>
+			<polygon fill="#999999" points="138,143 134,145 114,135 118,133 			"/>
+		</g>
+		<g clip-path="url(#SVGID_2_)">
+			<polygon fill="#99CC33" points="98,142 98,172 120,183 126,180 126,150 104,139 			"/>
+			<polygon opacity="0.11" points="120,183 98,172 98,142 120,153 			"/>
+			<polygon opacity="0.29" points="120,183 126,180 126,150 120,153 			"/>
+			<polygon fill="#999999" points="124,150 120,152 100,142 104,140 			"/>
+		</g>
+		<g clip-path="url(#SVGID_2_)">
+			<polygon fill="#CC291F" points="90,146 90,176 112,187 118,184 118,154 96,143 			"/>
+			<polygon opacity="0.11" points="112,187 90,176 90,146 112,157 			"/>
+			<polygon opacity="0.29" points="112,187 118,184 118,154 112,157 			"/>
+			<polygon fill="#999999" points="116,154 112,156 92,146 96,144 			"/>
+		</g>
+		<g clip-path="url(#SVGID_2_)">
+			<polygon fill="#FF9900" points="82,150 82,180 104,191 110,188 110,158 88,147 			"/>
+			<polygon opacity="0.11" points="104,191 82,180 82,150 104,161 			"/>
+			<polygon opacity="0.29" points="104,191 110,188 110,158 104,161 			"/>
+			<polygon fill="#999999" points="108,158 104,160 84,150 88,148 			"/>
+		</g>
+	</g>
+	<g>
+		<defs>
+			<polygon id="SVGID_3_" points="226,135 226,168 90,236 90,203 			"/>
+		</defs>
+		<clipPath id="SVGID_4_">
+			<use xlink:href="#SVGID_3_"  overflow="visible"/>
+		</clipPath>
+		<g clip-path="url(#SVGID_4_)">
+			<polygon fill="#99CC33" points="192,132 192,162 214,173 220,170 220,140 198,129 			"/>
+			<polygon opacity="0.11" points="214,173 192,162 192,132 214,143 			"/>
+			<polygon opacity="0.29" points="214,173 220,170 220,140 214,143 			"/>
+			<polygon fill="#999999" points="218,140 214,142 194,132 198,130 			"/>
+		</g>
+		<g clip-path="url(#SVGID_4_)">
+			<polygon fill="#FFCC00" points="184,136 184,166 206,177 212,174 212,144 190,133 			"/>
+			<polygon opacity="0.11" points="206,177 184,166 184,136 206,147 			"/>
+			<polygon opacity="0.29" points="206,177 212,174 212,144 206,147 			"/>
+			<polygon fill="#999999" points="210,144 206,146 186,136 190,134 			"/>
+		</g>
+		<g clip-path="url(#SVGID_4_)">
+			<polygon fill="#FF9900" points="176,140 176,170 198,181 204,178 204,148 182,137 			"/>
+			<polygon opacity="0.11" points="198,181 176,170 176,140 198,151 			"/>
+			<polygon opacity="0.29" points="198,181 204,178 204,148 198,151 			"/>
+			<polygon fill="#999999" points="202,148 198,150 178,140 182,138 			"/>
+		</g>
+		<g clip-path="url(#SVGID_4_)">
+			<polygon fill="#99CC33" points="168,144 168,174 190,185 196,182 196,152 174,141 			"/>
+			<polygon opacity="0.11" points="190,185 168,174 168,144 190,155 			"/>
+			<polygon opacity="0.29" points="190,185 196,182 196,152 190,155 			"/>
+			<polygon fill="#999999" points="194,152 190,154 170,144 174,142 			"/>
+		</g>
+		<g clip-path="url(#SVGID_4_)">
+			<polygon fill="#FFCC00" points="160,148 160,178 182,189 188,186 188,156 166,145 			"/>
+			<polygon opacity="0.11" points="182,189 160,178 160,148 182,159 			"/>
+			<polygon opacity="0.29" points="182,189 188,186 188,156 182,159 			"/>
+			<polygon fill="#999999" points="186,156 182,158 162,148 166,146 			"/>
+		</g>
+		<g clip-path="url(#SVGID_4_)">
+			<polygon fill="#FF9900" points="152,152 152,182 174,193 180,190 180,160 158,149 			"/>
+			<polygon opacity="0.11" points="174,193 152,182 152,152 174,163 			"/>
+			<polygon opacity="0.29" points="174,193 180,190 180,160 174,163 			"/>
+			<polygon fill="#999999" points="178,160 174,162 154,152 158,150 			"/>
+		</g>
+		<g clip-path="url(#SVGID_4_)">
+			<polygon fill="#99CC33" points="144,156 144,186 166,197 172,194 172,164 150,153 			"/>
+			<polygon opacity="0.11" points="166,197 144,186 144,156 166,167 			"/>
+			<polygon opacity="0.29" points="166,197 172,194 172,164 166,167 			"/>
+			<polygon fill="#999999" points="170,164 166,166 146,156 150,154 			"/>
+		</g>
+		<g clip-path="url(#SVGID_4_)">
+			<polygon fill="#FFCC00" points="128,164 128,194 150,205 156,202 156,172 134,161 			"/>
+			<polygon opacity="0.11" points="150,205 128,194 128,164 150,175 			"/>
+			<polygon opacity="0.29" points="150,205 156,202 156,172 150,175 			"/>
+			<polygon fill="#999999" points="154,172 150,174 130,164 134,162 			"/>
+		</g>
+		<g clip-path="url(#SVGID_4_)">
+			<polygon fill="#FFCC00" points="120,168 120,198 142,209 148,206 148,176 126,165 			"/>
+			<polygon opacity="0.11" points="142,209 120,198 120,168 142,179 			"/>
+			<polygon opacity="0.29" points="142,209 148,206 148,176 142,179 			"/>
+			<polygon fill="#999999" points="146,176 142,178 122,168 126,166 			"/>
+		</g>
+		<g clip-path="url(#SVGID_4_)">
+			<polygon fill="#99CC33" points="112,172 112,202 134,213 140,210 140,180 118,169 			"/>
+			<polygon opacity="0.11" points="134,213 112,202 112,172 134,183 			"/>
+			<polygon opacity="0.29" points="134,213 140,210 140,180 134,183 			"/>
+			<polygon fill="#999999" points="138,180 134,182 114,172 118,170 			"/>
+		</g>
+		<g clip-path="url(#SVGID_4_)">
+			<polygon fill="#FF9900" points="88,184 88,214 110,225 116,222 116,192 94,181 			"/>
+			<polygon opacity="0.11" points="110,225 88,214 88,184 110,195 			"/>
+			<polygon opacity="0.29" points="110,225 116,222 116,192 110,195 			"/>
+			<polygon fill="#999999" points="114,192 110,194 90,184 94,182 			"/>
+		</g>
+		<g clip-path="url(#SVGID_4_)">
+			<polygon fill="#CC291F" points="80,188 80,218 102,229 108,226 108,196 86,185 			"/>
+			<polygon opacity="0.11" points="102,229 80,218 80,188 102,199 			"/>
+			<polygon opacity="0.29" points="102,229 108,226 108,196 102,199 			"/>
+			<polygon fill="#999999" points="106,196 102,198 82,188 86,186 			"/>
+		</g>
+		<g clip-path="url(#SVGID_4_)">
+			<polygon fill="#99CC33" points="72,192 72,222 94,233 100,230 100,200 78,189 			"/>
+			<polygon opacity="0.11" points="94,233 72,222 72,192 94,203 			"/>
+			<polygon opacity="0.29" points="94,233 100,230 100,200 94,203 			"/>
+			<polygon fill="#999999" points="98,200 94,202 74,192 78,190 			"/>
+		</g>
+	</g>
+	<g>
+		<defs>
+			<polygon id="SVGID_5_" points="226,172 226,205 90,273 90,240 			"/>
+		</defs>
+		<clipPath id="SVGID_6_">
+			<use xlink:href="#SVGID_5_"  overflow="visible"/>
+		</clipPath>
+		<g clip-path="url(#SVGID_6_)">
+			<polygon fill="#CC291F" points="198,166 198,196 220,207 226,204 226,174 204,163 			"/>
+			<polygon opacity="0.11" points="220,207 198,196 198,166 220,177 			"/>
+			<polygon opacity="0.29" points="220,207 226,204 226,174 220,177 			"/>
+			<polygon fill="#999999" points="224,174 220,176 200,166 204,164 			"/>
+		</g>
+		<g clip-path="url(#SVGID_6_)">
+			<polygon fill="#FFCC00" points="190,170 190,200 212,211 218,208 218,178 196,167 			"/>
+			<polygon opacity="0.11" points="212,211 190,200 190,170 212,181 			"/>
+			<polygon opacity="0.29" points="212,211 218,208 218,178 212,181 			"/>
+			<polygon fill="#999999" points="216,178 212,180 192,170 196,168 			"/>
+		</g>
+		<g clip-path="url(#SVGID_6_)">
+			<polygon fill="#FF9900" points="182,174 182,204 204,215 210,212 210,182 188,171 			"/>
+			<polygon opacity="0.11" points="204,215 182,204 182,174 204,185 			"/>
+			<polygon opacity="0.29" points="204,215 210,212 210,182 204,185 			"/>
+			<polygon fill="#999999" points="208,182 204,184 184,174 188,172 			"/>
+		</g>
+		<g clip-path="url(#SVGID_6_)">
+			<polygon fill="#CC291F" points="168,181 168,211 190,222 196,219 196,189 174,178 			"/>
+			<polygon opacity="0.11" points="190,222 168,211 168,181 190,192 			"/>
+			<polygon opacity="0.29" points="190,222 196,219 196,189 190,192 			"/>
+			<polygon fill="#999999" points="194,189 190,191 170,181 174,179 			"/>
+		</g>
+		<g clip-path="url(#SVGID_6_)">
+			<polygon fill="#FFCC00" points="160,185 160,215 182,226 188,223 188,193 166,182 			"/>
+			<polygon opacity="0.11" points="182,226 160,215 160,185 182,196 			"/>
+			<polygon opacity="0.29" points="182,226 188,223 188,193 182,196 			"/>
+			<polygon fill="#999999" points="186,193 182,195 162,185 166,183 			"/>
+		</g>
+		<g clip-path="url(#SVGID_6_)">
+			<polygon fill="#FF9900" points="152,189 152,219 174,230 180,227 180,197 158,186 			"/>
+			<polygon opacity="0.11" points="174,230 152,219 152,189 174,200 			"/>
+			<polygon opacity="0.29" points="174,230 180,227 180,197 174,200 			"/>
+			<polygon fill="#999999" points="178,197 174,199 154,189 158,187 			"/>
+		</g>
+		<g clip-path="url(#SVGID_6_)">
+			<polygon fill="#FFCC00" points="144,193 144,223 166,234 172,231 172,201 150,190 			"/>
+			<polygon opacity="0.11" points="166,234 144,223 144,193 166,204 			"/>
+			<polygon opacity="0.29" points="166,234 172,231 172,201 166,204 			"/>
+			<polygon fill="#999999" points="170,201 166,203 146,193 150,191 			"/>
+		</g>
+		<g clip-path="url(#SVGID_6_)">
+			<polygon fill="#CC291F" points="128,201 128,231 150,242 156,239 156,209 134,198 			"/>
+			<polygon opacity="0.11" points="150,242 128,231 128,201 150,212 			"/>
+			<polygon opacity="0.29" points="150,242 156,239 156,209 150,212 			"/>
+			<polygon fill="#999999" points="154,209 150,211 130,201 134,199 			"/>
+		</g>
+		<g clip-path="url(#SVGID_6_)">
+			<polygon fill="#FFCC00" points="120,205 120,235 142,246 148,243 148,213 126,202 			"/>
+			<polygon opacity="0.11" points="142,246 120,235 120,205 142,216 			"/>
+			<polygon opacity="0.29" points="142,246 148,243 148,213 142,216 			"/>
+			<polygon fill="#999999" points="146,213 142,215 122,205 126,203 			"/>
+		</g>
+		<g clip-path="url(#SVGID_6_)">
+			<polygon fill="#FF9900" points="112,209 112,239 134,250 140,247 140,217 118,206 			"/>
+			<polygon opacity="0.11" points="134,250 112,239 112,209 134,220 			"/>
+			<polygon opacity="0.29" points="134,250 140,247 140,217 134,220 			"/>
+			<polygon fill="#999999" points="138,217 134,219 114,209 118,207 			"/>
+		</g>
+	</g>
+	<g>
+		<defs>
+			<polygon id="SVGID_7_" points="226,209 226,242 90,310 90,277 			"/>
+		</defs>
+		<clipPath id="SVGID_8_">
+			<use xlink:href="#SVGID_7_"  overflow="visible"/>
+		</clipPath>
+		<g clip-path="url(#SVGID_8_)">
+			<polygon fill="#CC291F" points="174,215 174,245 196,256 202,253 202,223 180,212 			"/>
+			<polygon opacity="0.11" points="196,256 174,245 174,215 196,226 			"/>
+			<polygon opacity="0.29" points="196,256 202,253 202,223 196,226 			"/>
+			<polygon fill="#999999" points="200,223 196,225 176,215 180,213 			"/>
+		</g>
+		<g clip-path="url(#SVGID_8_)">
+			<polygon fill="#FFCC00" points="166,219 166,249 188,260 194,257 194,227 172,216 			"/>
+			<polygon opacity="0.11" points="188,260 166,249 166,219 188,230 			"/>
+			<polygon opacity="0.29" points="188,260 194,257 194,227 188,230 			"/>
+			<polygon fill="#999999" points="192,227 188,229 168,219 172,217 			"/>
+		</g>
+		<g clip-path="url(#SVGID_8_)">
+			<polygon fill="#FF9900" points="152,226 152,256 174,267 180,264 180,234 158,223 			"/>
+			<polygon opacity="0.11" points="174,267 152,256 152,226 174,237 			"/>
+			<polygon opacity="0.29" points="174,267 180,264 180,234 174,237 			"/>
+			<polygon fill="#999999" points="178,234 174,236 154,226 158,224 			"/>
+		</g>
+		<g clip-path="url(#SVGID_8_)">
+			<polygon fill="#99CC33" points="144,230 144,260 166,271 172,268 172,238 150,227 			"/>
+			<polygon opacity="0.11" points="166,271 144,260 144,230 166,241 			"/>
+			<polygon opacity="0.29" points="166,271 172,268 172,238 166,241 			"/>
+			<polygon fill="#999999" points="170,238 166,240 146,230 150,228 			"/>
+		</g>
+		<g clip-path="url(#SVGID_8_)">
+			<polygon fill="#FFCC00" points="136,234 136,264 158,275 164,272 164,242 142,231 			"/>
+			<polygon opacity="0.11" points="158,275 136,264 136,234 158,245 			"/>
+			<polygon opacity="0.29" points="158,275 164,272 164,242 158,245 			"/>
+			<polygon fill="#999999" points="162,242 158,244 138,234 142,232 			"/>
+		</g>
+		<g clip-path="url(#SVGID_8_)">
+			<polygon fill="#FFCC00" points="128,238 128,268 150,279 156,276 156,246 134,235 			"/>
+			<polygon opacity="0.11" points="150,279 128,268 128,238 150,249 			"/>
+			<polygon opacity="0.29" points="150,279 156,276 156,246 150,249 			"/>
+			<polygon fill="#999999" points="154,246 150,248 130,238 134,236 			"/>
+		</g>
+		<g clip-path="url(#SVGID_8_)">
+			<polygon fill="#FF9900" points="120,242 120,272 142,283 148,280 148,250 126,239 			"/>
+			<polygon opacity="0.11" points="142,283 120,272 120,242 142,253 			"/>
+			<polygon opacity="0.29" points="142,283 148,280 148,250 142,253 			"/>
+			<polygon fill="#999999" points="146,250 142,252 122,242 126,240 			"/>
+		</g>
+		<g clip-path="url(#SVGID_8_)">
+			<polygon fill="#99CC33" points="98,253 98,283 120,294 126,291 126,261 104,250 			"/>
+			<polygon opacity="0.11" points="120,294 98,283 98,253 120,264 			"/>
+			<polygon opacity="0.29" points="120,294 126,291 126,261 120,264 			"/>
+			<polygon fill="#999999" points="124,261 120,263 100,253 104,251 			"/>
+		</g>
+		<g clip-path="url(#SVGID_8_)">
+			<polygon fill="#CC291F" points="90,257 90,287 112,298 118,295 118,265 96,254 			"/>
+			<polygon opacity="0.11" points="112,298 90,287 90,257 112,268 			"/>
+			<polygon opacity="0.29" points="112,298 118,295 118,265 112,268 			"/>
+			<polygon fill="#999999" points="116,265 112,267 92,257 96,255 			"/>
+		</g>
+		<g clip-path="url(#SVGID_8_)">
+			<polygon fill="#FF9900" points="82,261 82,291 104,302 110,299 110,269 88,258 			"/>
+			<polygon opacity="0.11" points="104,302 82,291 82,261 104,272 			"/>
+			<polygon opacity="0.29" points="104,302 110,299 110,269 104,272 			"/>
+			<polygon fill="#999999" points="108,269 104,271 84,261 88,259 			"/>
+		</g>
+	</g>
+	<g>
+		<defs>
+			<polygon id="SVGID_9_" points="226,246 226,279 90,347 90,314 			"/>
+		</defs>
+		<clipPath id="SVGID_10_">
+			<use xlink:href="#SVGID_9_"  overflow="visible"/>
+		</clipPath>
+		<g clip-path="url(#SVGID_10_)">
+			<polygon fill="#99CC33" points="198,240 198,270 220,281 226,278 226,248 204,237 			"/>
+			<polygon opacity="0.11" points="220,281 198,270 198,240 220,251 			"/>
+			<polygon opacity="0.29" points="220,281 226,278 226,248 220,251 			"/>
+			<polygon fill="#999999" points="224,248 220,250 200,240 204,238 			"/>
+		</g>
+		<g clip-path="url(#SVGID_10_)">
+			<polygon fill="#CC291F" points="190,244 190,274 212,285 218,282 218,252 196,241 			"/>
+			<polygon opacity="0.11" points="212,285 190,274 190,244 212,255 			"/>
+			<polygon opacity="0.29" points="212,285 218,282 218,252 212,255 			"/>
+			<polygon fill="#999999" points="216,252 212,254 192,244 196,242 			"/>
+		</g>
+		<g clip-path="url(#SVGID_10_)">
+			<polygon fill="#FF9900" points="182,248 182,278 204,289 210,286 210,256 188,245 			"/>
+			<polygon opacity="0.11" points="204,289 182,278 182,248 204,259 			"/>
+			<polygon opacity="0.29" points="204,289 210,286 210,256 204,259 			"/>
+			<polygon fill="#999999" points="208,256 204,258 184,248 188,246 			"/>
+		</g>
+		<g clip-path="url(#SVGID_10_)">
+			<polygon fill="#99CC33" points="174,252 174,282 196,293 202,290 202,260 180,249 			"/>
+			<polygon opacity="0.11" points="196,293 174,282 174,252 196,263 			"/>
+			<polygon opacity="0.29" points="196,293 202,290 202,260 196,263 			"/>
+			<polygon fill="#999999" points="200,260 196,262 176,252 180,250 			"/>
+		</g>
+		<g clip-path="url(#SVGID_10_)">
+			<polygon fill="#FFCC00" points="166,256 166,286 188,297 194,294 194,264 172,253 			"/>
+			<polygon opacity="0.11" points="188,297 166,286 166,256 188,267 			"/>
+			<polygon opacity="0.29" points="188,297 194,294 194,264 188,267 			"/>
+			<polygon fill="#999999" points="192,264 188,266 168,256 172,254 			"/>
+		</g>
+		<g clip-path="url(#SVGID_10_)">
+			<polygon fill="#FF9900" points="152,263 152,293 174,304 180,301 180,271 158,260 			"/>
+			<polygon opacity="0.11" points="174,304 152,293 152,263 174,274 			"/>
+			<polygon opacity="0.29" points="174,304 180,301 180,271 174,274 			"/>
+			<polygon fill="#999999" points="178,271 174,273 154,263 158,261 			"/>
+		</g>
+		<g clip-path="url(#SVGID_10_)">
+			<polygon fill="#FFCC00" points="144,267 144,297 166,308 172,305 172,275 150,264 			"/>
+			<polygon opacity="0.11" points="166,308 144,297 144,267 166,278 			"/>
+			<polygon opacity="0.29" points="166,308 172,305 172,275 166,278 			"/>
+			<polygon fill="#999999" points="170,275 166,277 146,267 150,265 			"/>
+		</g>
+		<g clip-path="url(#SVGID_10_)">
+			<polygon fill="#FFCC00" points="120,279 120,309 142,320 148,317 148,287 126,276 			"/>
+			<polygon opacity="0.11" points="142,320 120,309 120,279 142,290 			"/>
+			<polygon opacity="0.29" points="142,320 148,317 148,287 142,290 			"/>
+			<polygon fill="#999999" points="146,287 142,289 122,279 126,277 			"/>
+		</g>
+		<g clip-path="url(#SVGID_10_)">
+			<polygon fill="#99CC33" points="112,283 112,313 134,324 140,321 140,291 118,280 			"/>
+			<polygon opacity="0.11" points="134,324 112,313 112,283 134,294 			"/>
+			<polygon opacity="0.29" points="134,324 140,321 140,291 134,294 			"/>
+			<polygon fill="#999999" points="138,291 134,293 114,283 118,281 			"/>
+		</g>
+		<g clip-path="url(#SVGID_10_)">
+			<polygon fill="#CC291F" points="80,299 80,329 102,340 108,337 108,307 86,296 			"/>
+			<polygon opacity="0.11" points="102,340 80,329 80,299 102,310 			"/>
+			<polygon opacity="0.29" points="102,340 108,337 108,307 102,310 			"/>
+			<polygon fill="#999999" points="106,307 102,309 82,299 86,297 			"/>
+		</g>
+		<g clip-path="url(#SVGID_10_)">
+			<polygon fill="#99CC33" points="72,303 72,333 94,344 100,341 100,311 78,300 			"/>
+			<polygon opacity="0.11" points="94,344 72,333 72,303 94,314 			"/>
+			<polygon opacity="0.29" points="94,344 100,341 100,311 94,314 			"/>
+			<polygon fill="#999999" points="98,311 94,313 74,303 78,301 			"/>
+		</g>
+	</g>
+	<g>
+		<defs>
+			<polygon id="SVGID_11_" points="226,283 226,316 90,384 90,351 			"/>
+		</defs>
+		<clipPath id="SVGID_12_">
+			<use xlink:href="#SVGID_11_"  overflow="visible"/>
+		</clipPath>
+		<g clip-path="url(#SVGID_12_)">
+			<polygon fill="#CC291F" points="198,277 198,307 220,318 226,315 226,285 204,274 			"/>
+			<polygon opacity="0.11" points="220,318 198,307 198,277 220,288 			"/>
+			<polygon opacity="0.29" points="220,318 226,315 226,285 220,288 			"/>
+			<polygon fill="#999999" points="224,285 220,287 200,277 204,275 			"/>
+		</g>
+		<g clip-path="url(#SVGID_12_)">
+			<polygon fill="#FFCC00" points="190,281 190,311 212,322 218,319 218,289 196,278 			"/>
+			<polygon opacity="0.11" points="212,322 190,311 190,281 212,292 			"/>
+			<polygon opacity="0.29" points="212,322 218,319 218,289 212,292 			"/>
+			<polygon fill="#999999" points="216,289 212,291 192,281 196,279 			"/>
+		</g>
+		<g clip-path="url(#SVGID_12_)">
+			<polygon fill="#FF9900" points="182,285 182,315 204,326 210,323 210,293 188,282 			"/>
+			<polygon opacity="0.11" points="204,326 182,315 182,285 204,296 			"/>
+			<polygon opacity="0.29" points="204,326 210,323 210,293 204,296 			"/>
+			<polygon fill="#999999" points="208,293 204,295 184,285 188,283 			"/>
+		</g>
+		<g clip-path="url(#SVGID_12_)">
+			<polygon fill="#CC291F" points="168,292 168,322 190,333 196,330 196,300 174,289 			"/>
+			<polygon opacity="0.11" points="190,333 168,322 168,292 190,303 			"/>
+			<polygon opacity="0.29" points="190,333 196,330 196,300 190,303 			"/>
+			<polygon fill="#999999" points="194,300 190,302 170,292 174,290 			"/>
+		</g>
+		<g clip-path="url(#SVGID_12_)">
+			<polygon fill="#FFCC00" points="160,296 160,326 182,337 188,334 188,304 166,293 			"/>
+			<polygon opacity="0.11" points="182,337 160,326 160,296 182,307 			"/>
+			<polygon opacity="0.29" points="182,337 188,334 188,304 182,307 			"/>
+			<polygon fill="#999999" points="186,304 182,306 162,296 166,294 			"/>
+		</g>
+		<g clip-path="url(#SVGID_12_)">
+			<polygon fill="#FF9900" points="152,300 152,330 174,341 180,338 180,308 158,297 			"/>
+			<polygon opacity="0.11" points="174,341 152,330 152,300 174,311 			"/>
+			<polygon opacity="0.29" points="174,341 180,338 180,308 174,311 			"/>
+			<polygon fill="#999999" points="178,308 174,310 154,300 158,298 			"/>
+		</g>
+		<g clip-path="url(#SVGID_12_)">
+			<polygon fill="#99CC33" points="144,304 144,334 166,345 172,342 172,312 150,301 			"/>
+			<polygon opacity="0.11" points="166,345 144,334 144,304 166,315 			"/>
+			<polygon opacity="0.29" points="166,345 172,342 172,312 166,315 			"/>
+			<polygon fill="#999999" points="170,312 166,314 146,304 150,302 			"/>
+		</g>
+		<g clip-path="url(#SVGID_12_)">
+			<polygon fill="#CC291F" points="128,312 128,342 150,353 156,350 156,320 134,309 			"/>
+			<polygon opacity="0.11" points="150,353 128,342 128,312 150,323 			"/>
+			<polygon opacity="0.29" points="150,353 156,350 156,320 150,323 			"/>
+			<polygon fill="#999999" points="154,320 150,322 130,312 134,310 			"/>
+		</g>
+		<g clip-path="url(#SVGID_12_)">
+			<polygon fill="#FFCC00" points="120,316 120,346 142,357 148,354 148,324 126,313 			"/>
+			<polygon opacity="0.11" points="142,357 120,346 120,316 142,327 			"/>
+			<polygon opacity="0.29" points="142,357 148,354 148,324 142,327 			"/>
+			<polygon fill="#999999" points="146,324 142,326 122,316 126,314 			"/>
+		</g>
+		<g clip-path="url(#SVGID_12_)">
+			<polygon fill="#FF9900" points="112,320 112,350 134,361 140,358 140,328 118,317 			"/>
+			<polygon opacity="0.11" points="134,361 112,350 112,320 134,331 			"/>
+			<polygon opacity="0.29" points="134,361 140,358 140,328 134,331 			"/>
+			<polygon fill="#999999" points="138,328 134,330 114,320 118,318 			"/>
+		</g>
+		<g clip-path="url(#SVGID_12_)">
+			<polygon fill="#99CC33" points="98,327 98,357 120,368 126,365 126,335 104,324 			"/>
+			<polygon opacity="0.11" points="120,368 98,357 98,327 120,338 			"/>
+			<polygon opacity="0.29" points="120,368 126,365 126,335 120,338 			"/>
+			<polygon fill="#999999" points="124,335 120,337 100,327 104,325 			"/>
+		</g>
+		<g clip-path="url(#SVGID_12_)">
+			<polygon fill="#CC291F" points="90,331 90,361 112,372 118,369 118,339 96,328 			"/>
+			<polygon opacity="0.11" points="112,372 90,361 90,331 112,342 			"/>
+			<polygon opacity="0.29" points="112,372 118,369 118,339 112,342 			"/>
+			<polygon fill="#999999" points="116,339 112,341 92,331 96,329 			"/>
+		</g>
+		<g clip-path="url(#SVGID_12_)">
+			<polygon fill="#FF9900" points="82,335 82,365 104,376 110,373 110,343 88,332 			"/>
+			<polygon opacity="0.11" points="104,376 82,365 82,335 104,346 			"/>
+			<polygon opacity="0.29" points="104,376 110,373 110,343 104,346 			"/>
+			<polygon fill="#999999" points="108,343 104,345 84,335 88,333 			"/>
+		</g>
+	</g>
+</g>
+</svg>

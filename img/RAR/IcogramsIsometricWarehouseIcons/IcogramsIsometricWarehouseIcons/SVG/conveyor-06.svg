@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 72 32" enable-background="new 0 0 72 32" xml:space="preserve">
+<g>
+	<g>
+		<polygon fill="#999999" points="24,22 24,26 25.2,26.6 26.4,26 26.4,22 25.2,21.4 		"/>
+		<polygon opacity="0.11" points="25.2,26.6 24,26 24,22 25.2,22.6 		"/>
+		<polygon opacity="0.29" points="25.2,26.6 26.4,26 26.4,22 25.2,22.6 		"/>
+	</g>
+	<g>
+		<polygon fill="#999999" points="61.6,14 61.6,18 62.8,18.6 64,18 64,14 62.8,13.4 		"/>
+		<polygon opacity="0.11" points="62.8,18.6 61.6,18 61.6,14 62.8,14.6 		"/>
+		<polygon opacity="0.29" points="62.8,18.6 64,18 64,14 62.8,14.6 		"/>
+	</g>
+	<g>
+		<polygon fill="#999999" points="45.6,22 45.6,26 46.8,26.6 48,26 48,22 46.8,21.4 		"/>
+		<polygon opacity="0.11" points="46.8,26.6 45.6,26 45.6,22 46.8,22.6 		"/>
+		<polygon opacity="0.29" points="46.8,26.6 48,26 48,22 46.8,22.6 		"/>
+	</g>
+	<g>
+		<polygon fill="#999999" points="8,14 8,18 9.2,18.6 10.4,18 10.4,14 9.2,13.4 		"/>
+		<polygon opacity="0.11" points="9.2,18.6 8,18 8,14 9.2,14.6 		"/>
+		<polygon opacity="0.29" points="9.2,18.6 10.4,18 10.4,14 9.2,14.6 		"/>
+	</g>
+	<path fill="#656565" d="M56,6L36,16L16,6L4,12v1l20,10c7.6,3.8,16.4,3.8,24,0l20-10v-1L56,6z"/>
+	<polygon opacity="0.3" points="50,21 51,20.5 39,14.5 38,15 	"/>
+	<polygon opacity="0.3" points="54,19 55,18.5 43,12.5 42,13 	"/>
+	<polygon opacity="0.3" points="58,17 59,16.5 47,10.5 46,11 	"/>
+	<polygon opacity="0.3" points="62,15 63,14.5 51,8.5 50,9 	"/>
+	<polygon opacity="0.3" points="66,13 67,12.5 55,6.5 54,7 	"/>
+	<polygon opacity="0.3" points="22,21 21,20.5 33,14.5 34,15 	"/>
+	<polygon opacity="0.3" points="18,19 17,18.5 29,12.5 30,13 	"/>
+	<polygon opacity="0.3" points="14,17 13,16.5 25,10.5 26,11 	"/>
+	<polygon opacity="0.3" points="10,15 9,14.5 21,8.5 22,9 	"/>
+	<polygon opacity="0.3" points="6,13 5,12.5 17,6.5 18,7 	"/>
+	<polygon opacity="0.11" points="24,22 4,12 4,13 24,23 	"/>
+	<path opacity="0.2" d="M24,23c7.6,3.8,16.4,3.8,24,0v-1c-7.6,3.8-16.4,3.8-24,0V23z"/>
+	<polygon opacity="0.29" points="48,23 68,13 68,12 48,22 	"/>
+	<g opacity="0.3">
+		<path d="M44.3,23.5L36,16l7.1,7.9C43.5,23.8,43.9,23.6,44.3,23.5z"/>
+		<path d="M39.4,24.6L36,16l2.4,8.7C38.7,24.7,39.1,24.6,39.4,24.6z"/>
+		<path d="M33.6,24.7L36,16l-3.4,8.6C32.9,24.6,33.3,24.7,33.6,24.7z"/>
+		<path d="M28.9,23.9L36,16l-8.3,7.5C28.1,23.6,28.5,23.8,28.9,23.9z"/>
+	</g>
+</g>
+</svg>
