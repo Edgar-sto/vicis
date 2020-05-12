@@ -38,7 +38,7 @@
                             } else {
                                 echo "<img type=\"button\" src='img/gifs/LED-VERDE.gif'>";
                             }
-                            echo " <input class=\"btn btn-sm btn-block\" type=\"button\" id=\"server_$servidor[$i]\" value=\"Server $servidor[$i]\" target=\"_blank\" />";
+                            echo " <a href=\"http://10.9.2.$servidor[$i]/vicidial/welcome.php\">Server $servidor[$i]</a>";
                                     
                         }
                         echo "</td>
