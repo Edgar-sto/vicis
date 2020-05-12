@@ -173,7 +173,7 @@
                                                     where u_start_time>='$fe_inicio 00:00:00'  and  u_start_time<='$fe_termino 23:59:59'
                                                     and c_dialstatus IN ('ANSWER') AND d_campaign_id ='' AND d_user_group ='' and d_carrier_prefix IN ('$prefix')";
                                 $resultado_monto_nulo = mysqli_query($conexion, $suma_monto_nulo);
-                                while ($mostrar_monto_nulo = mysql_fetch_array($resultado_monto_nulo))
+                                while ($mostrar_monto_nulo = mysqli_fetch_array($resultado_monto_nulo))
                                 {
                                     $monto_nulo = $mostrar_monto_nulo['monto_nulo'];
                                     echo "<td>".$monto_nulo."</td>";
@@ -185,6 +185,7 @@
                             $total_server = $monto_movil + $monto_fijo + $monto_movildrop + $monto_fijodrop + $monto_movilbuzon + $monto_fijobuzon + $monto_nulo;
                             echo "<td colspan='5' class='bg-danger'>".$total_server."</td>";
                             echo "</tr>";
+                        }
                     ?>
                 </tbody>
             </table>
