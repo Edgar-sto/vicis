@@ -46,6 +46,10 @@
             function ping(url) {
                 open(url,'','top=300,left=300,width=480,height=360') ;
             }
+        //servidores
+            function servidores(url) {
+                open(url,'','top=300,left=300,width=820,height=490');
+            }
         //
         function campanias_activas(url) {
                 open(url,'','top=300,left=300,width=480,height=300') ;
@@ -102,7 +106,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="http://127.0.0.1/vicis/panelvicis/panel_vicis.php" target="_blank">Servidores</a>
+                            <a href="javascript:servidores('panelvicis/panel_vicis.php')">Servidores</a>
                         </li>
                         <li>
                             <a href="Crear_Usuarios_vici/index.php" target="_blank">Activar, Restablecer Usuario</a>

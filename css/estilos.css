@@ -1,83 +1,34 @@
-
-.col-md-2{
-    -webkit-box-shadow: 6px 0px 5px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 6px 0px 5px 0px rgba(0,0,0,0.75);
-    box-shadow: 6px 0px 5px 0px rgba(0,0,0,0.75);
-    height: 912px;
-}
-
-.h3_titulos{
-    background: #FAFAFA;
-    display: inline;
-}
-
-.margen {
-    margin-right: 15px;
-}
-
-.sucursal-lazaro{
-    width: 1280px;
-    height: 914px;
-}
-
-
-.navbar .dropdown-toggle, .navbar .dropdown-menu a {
-    cursor: pointer;
-}
-
-.navbar .dropdown-item.active, .navbar .dropdown-item:active {
-    color: inherit;
-    text-decoration: none;
-    background-color: inherit;
-}
-
-.navbar .dropdown-item:focus, .navbar .dropdown-item:hover {
-    color: #16181b;
-    text-decoration: none;
-    background-color: #f8f9fa;
-}
-
-@media (min-width: 767px) {
-    .navbar .dropdown-toggle:not(.nav-link)::after {
-        display: inline-block;
-        width: 0;
-        height: 0;
-        margin-left: .5em;
-        vertical-align: 0;
-        border-bottom: .3em solid transparent;
-        border-top: .3em solid transparent;
-        border-left: .3em solid;
-    }
-}
-
-.boton {
-    box-shadow: 3px 4px 0px 0px #899599;
-    background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
-    background-color:#ededed;
-    border-radius:30px;
-    border:1px solid #d6bcd6;
-    display:inline-block;
-    cursor:pointer;
-    color:#3a8a9e;
-    font-family:Arial;
-    font-size:18px;
-    padding:12px 25px;
-    text-decoration:none;
-    text-shadow:0px 1px 0px #e1e2ed;
-}
-.boton:hover {
-    background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
-    background-color:#bab1ba;
-}
-.boton:active {
-    position:relative;
-    top:1px;
-}
-
-table {
-  text-align: center;
-}
-
-td {
-    margin-top: 50px;
-}
+body {
+    background-color: #000000;
+  }
+  
+  h1 {
+    color: #ffffff;
+    text-align: center;
+  }
+  
+  .myButton {
+      box-shadow:inset 0px 0px 14px -6px #000000;
+      background-color:transparent;
+      border-radius:17px;
+      border:2px solid #ffffff;
+      display:inline-block;
+      cursor:pointer;
+      color: #fffffF;
+      font-family:Arial;
+      font: size 5px;
+      padding:11px 15px;
+      text-decoration:none;
+  }
+  .myButton:hover {
+      background-color:transparent;
+  }
+  .myButton:active {
+      position:relative;
+      top:1px;
+  }
+  
+  .material-icons {
+    color: #ffffff;
+    display: block;
+  }
