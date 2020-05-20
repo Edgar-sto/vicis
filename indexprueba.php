@@ -181,80 +181,80 @@
     	<div class="col-md-1"></div>
   		<div class="col-md-4">
   			<h2 class="subtitulos">Servidores</h2>
-  			<table class="tbl_btn_vicidial">
+  			<table class="table">
   				<caption>table title and/or explanatory text</caption>
   				<thead class="cabecera_tbl">
                             <tr>
-                                <th colspan="5"><img class="img-fluid" src="../img/gifs/Router-01.gif"></th>
+                                <th colspan="5"><img class="rounded mx-auto d-block" src="img/gifs/Router-01.gif"></th>
                             </tr>
                           </thead>
-  				<tbody>
+  				<tbody class="cabecera_tbl">
   							<tr >
                                 <td class="columna_tabla_btn">
-                                    <button class="myButton" onclick="window.open('http://10.9.2.5/vicidial/welcome.php')">05</button>
+                                    <button class="myButton btn" onclick="window.open('http://10.9.2.5/vicidial/welcome.php')">05</button>
                                 </td>
                                 <td class="columna_tabla_btn">
-                                    <button class="myButton" onclick="window.open('http://10.9.2.6/vicidial/welcome.php')">06</button>
+                                    <button class="myButto btn" onclick="window.open('http://10.9.2.6/vicidial/welcome.php')">06</button>
                                 </td>
                                 <td class="columna_tabla_btn">
-                                    <button class="myButton" onclick="window.open('http://10.9.2.8/vicidial/welcome.php')">08</button> 
+                                    <button class="myButton btn" onclick="window.open('http://10.9.2.8/vicidial/welcome.php')">08</button> 
                                 </td>
                                 <td class="columna_tabla_btn">
-                                    <button class="myButton" onclick="window.open('http://10.9.2.9/vicidial/welcome.php')">09</button>
+                                    <button class="myButton btn" onclick="window.open('http://10.9.2.9/vicidial/welcome.php')">09</button>
                                 </td>
                                 <td class="columna_tabla_btn">
-                                    <button class="myButton" onclick="window.open('http://10.9.2.22/vicidial/welcome.php')">22</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="columna_tabla_btn">
-                                    <button class="myButton" onclick="window.open('http://10.9.2.27/vicidial/welcome.php')">27</button>
-                                </td>
-                                <td class="columna_tabla_btn">
-                                    <button class="myButton" onclick="window.open('http://10.9.2.28/vicidial/welcome.php')">28</button>
-                                </td>
-                                <td class="columna_tabla_btn">
-                                    <button class="myButton" onclick="window.open('http://10.9.2.29/vicidial/welcome.php')">29</button>
-                                </td>
-                                <td class="columna_tabla_btn">
-                                    <button class="myButton" onclick="window.open('http://10.9.2.35/vicidial/welcome.php')">35</button>
-                                </td>
-                                <td class="columna_tabla_btn">
-                                    <button class="myButton" onclick="window.open('http://10.9.2.36/vicidial/welcome.php')">36</button>
+                                    <button class="myButton btn" onclick="window.open('http://10.9.2.22/vicidial/welcome.php')">22</button>
                                 </td>
                             </tr>
                             <tr>
+                                <td class="columna_tabla_btn">
+                                    <button class="myButton btn" onclick="window.open('http://10.9.2.27/vicidial/welcome.php')">27</button>
+                                </td>
+                                <td class="columna_tabla_btn">
+                                    <button class="myButton btn" onclick="window.open('http://10.9.2.28/vicidial/welcome.php')">28</button>
+                                </td>
+                                <td class="columna_tabla_btn">
+                                    <button class="myButton btn" onclick="window.open('http://10.9.2.29/vicidial/welcome.php')">29</button>
+                                </td>
+                                <td class="columna_tabla_btn">
+                                    <button class="myButton btn" onclick="window.open('http://10.9.2.35/vicidial/welcome.php')">35</button>
+                                </td>
+                                <td class="columna_tabla_btn">
+                                    <button class="myButton btn" onclick="window.open('http://10.9.2.36/vicidial/welcome.php')">36</button>
+                                </td>
+                            </tr>
+                            <tr>
                               <td class="columna_tabla_btn">
-                                 <button class="myButton" onclick="window.open('http://10.9.2.37/vicidial/welcome.php')">37</button> 
+                                 <button class="myButton btn" onclick="window.open('http://10.9.2.37/vicidial/welcome.php')">37</button> 
                               </td>
                               <td class="columna_tabla_btn">
-                                 <button class="myButton" onclick="window.open('http://10.9.2.38/vicidial/welcome.php')">38</button> 
+                                 <button class="myButton btn" onclick="window.open('http://10.9.2.38/vicidial/welcome.php')">38</button> 
                               </td>
                               <td class="columna_tabla_btn">
-                                 <button class="myButton" onclick="window.open('http://10.9.2.39/vicidial/welcome.php')">39</button> 
+                                 <button class="myButton btn" onclick="window.open('http://10.9.2.39/vicidial/welcome.php')">39</button> 
                               </td>
                               <td class="columna_tabla_btn">
-                                 <button class="myButton" onclick="window.open('http://10.9.2.41/vicidial/welcome.php')">41</button> 
+                                 <button class="myButton btn" onclick="window.open('http://10.9.2.41/vicidial/welcome.php')">41</button> 
                               </td>
                               <td class="columna_tabla_btn">
-                                 <button class="myButton" onclick="window.open('http://10.9.2.42/vicidial/welcome.php')">42</button> 
+                                 <button class="myButton btn" onclick="window.open('http://10.9.2.42/vicidial/welcome.php')">42</button> 
                               </td>
                             </tr>
                             <tr>
                                 <td class="columna_tabla_btn">
-                                  <button class="myButton" onclick="window.open('http://10.9.2.43/vicidial/welcome.php')">43</button>  
+                                  <button class="myButton btn" onclick="window.open('http://10.9.2.43/vicidial/welcome.php')">43</button>  
                                 </td>
                                 <td class="columna_tabla_btn">
-                                  <button class="myButton" onclick="window.open('http://10.9.2.44/vicidial/welcome.php')">44</button>  
+                                  <button class="myButton btn" onclick="window.open('http://10.9.2.44/vicidial/welcome.php')">44</button>  
                                 </td>
                                 <td class="columna_tabla_btn">
-                                   <button class="myButton" onclick="window.open('http://10.9.2.45/vicidial/welcome.php')">45</button> 
+                                   <button class="myButton btn" onclick="window.open('http://10.9.2.45/vicidial/welcome.php')">45</button> 
                                 </td>
                                 <td class="columna_tabla_btn">
-                                   <button class="myButton" onclick="window.open('http://10.9.2.46/vicidial/welcome.php')">46</button> 
+                                   <button class="myButton btn" onclick="window.open('http://10.9.2.46/vicidial/welcome.php')">46</button> 
                                 </td>
                                 <td class="columna_tabla_btn">
-                                   <button class="myButton" onclick="window.open('http://10.9.2.201/vicidial/welcome.php')">201</button> 
+                                   <button class="myButton btn" onclick="window.open('http://10.9.2.201/vicidial/welcome.php')">201</button> 
                                 </td>
                             </tr>
   				</tbody>

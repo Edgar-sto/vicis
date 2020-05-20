@@ -1,4 +1,4 @@
-.tbl_btn_vicidial {
+/*.tbl_btn_vicidial {
 	margin-right: 420px;
 	width: 100%;
 	text-align: center;
@@ -34,7 +34,7 @@
 .myButton:active {
 	position:relative;
 	top:1px;
-}
+}*/
 /*----------------------------------------------------------------------*/
 .navbar {
     border-radius: 0px;
@@ -43,6 +43,10 @@
     position: fixed;
     width: 100%;
     z-index: 100
+}
+
+.cabecera_tbl {
+	text-align: center;
 }
 
 body {
@@ -76,4 +80,9 @@ h1 {
 	margin-top: 35px;
 	margin-left: 50px;
 	color: #F2ECCE;
+}
+
+.btn {
+	color: #F2ECCE;
+	font-size: 1.75em;
 }
