@@ -1,53 +1,279 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Panel ViciDial</title>
-        <!-- Stylesheets -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link rel="stylesheet" href="../css/estilos.css">
-        <!-- Javascript -->
-         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script> 
-        <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-</head>
+        <title>Panel Soporte</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <!-- ESTILOS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/index1.css">
+        <link rel="shortcut icon" href="img/favicon1.ico" />
+        <!-- Fuentes de iconos -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Rubik+Mono+One&display=swap" rel="stylesheet">
+        <!-- SCRIPT -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script>//Script para abrir ventana agregar y modificar de tamaño asignado.
+            function abrir(url) {
+                open(url,'','top=300,left=300,width=280,height=550') ;
+            }
+        //Script para abrir ventana eliminar de tamaño asignado.
+            function cerrar(url) {
+                open(url,'','top=300,left=300,width=280,height=200') ;
+            }
+        //Script para abrir ventana modificar de tamaño asignado.
+            function modificar(url) {
+                open(url,'','top=300,left=300,width=280,height=200') ;
+            }
+        //Script para abrir ventana agregar cpu de tamaño asignado.
+            function agregarCPU(url) {
+                open(url,'','top=300,left=300,width=280,height=370') ;
+            }
+        //Script para abrir ventana agregar monitor de tamaño asignado.
+            function agregarMONITOR(url) {
+                open(url,'','top=300,left=300,width=280,height=330') ;
+            }
+        //Script para abrir ventana reubicar equipo.
+            function reubicar(url) {
+                open(url,'','top=300,left=300,width=280,height=360') ;
+            }
+        //Script para abrir ventana ping.
+            function ping(url) {
+                open(url,'','top=300,left=300,width=480,height=360') ;
+            }
+        //servidores
+            function servidores(url) {
+                open(url,'','top=300,left=300,width=820,height=490');
+            }
+        //
+        function campanias_activas(url) {
+                open(url,'','top=300,left=300,width=480,height=300') ;
+            }
+        </script>
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#hide").on('click', function() {
+                    $("#element").hide();
+                    return false;
+                });
+             
+                $("#show").on('click', function() {
+                    $("#element").show();
+                    return false;
+                });
+            });
+
+            $(document).ready(function(){
+                $("#hide1").on('click', function() {
+                    $("#element1").hide();
+                    return false;
+                });
+             
+                $("#show1").on('click', function() {
+                    $("#element1").show();
+                    return false;
+                });
+            });
+
+            $(document).ready(function(){
+                $("#hide2").on('click', function() {
+                    $("#element2").hide();
+                    return false;
+                });
+             
+                $("#show2").on('click', function() {
+                    $("#element2").show();
+                    return false;
+                });
+            });
+        </script>
+    </head>
 <body>
-	<div class="container_fluid">
-		<div class="container">
-			<div class="row">
-				<div class="col"></div>
-				<table class="table table-bordered table-dark">
-				 	<thead>
-				    	<tr>
-				      		<th scope="col">#</th>
-				      		<th scope="col">Servidor</th>
-						    <th scope="col">Id campaña</th>
-						    <th scope="col">Handle</th>
-				    	</tr>
-				 	</thead>
-				 	<tbody>
-				    	<tr>
-				     		<th scope="row">1</th>
-				     		<td>Mark</td>
-				      		<td>Otto</td>
-				      		<td>@mdo</td>
-				    	</tr>
-					    <tr>
-						    <th scope="row">2</th>
-						    <td>Jacob</td>
-						    <td>Thornton</td>
-						    <td>@fat</td>
-					    </tr>
-					    <tr>
-						    <th scope="row">3</th>
-						    <td colspan="2">Larry the Bird</td>
-						    <td>@twitter</td>
-					    </tr>
-				 	</tbody>
-				</table>
-			</div>
-		</div>
-	</div>
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <!-- Brand -->
+            <img class="img-fluid" src="img/sto_admin_web_logo.png">
+            <!-- Links -->
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="" target="_blank" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
+                        <span class="nav-label">Panel VICIdial</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="javascript:servidores('panelvicis/panel_vicis.php')">Servidores</a>
+                        </li>
+                        <li>
+                            <a href="Crear_Usuarios_vici/index.php" target="_blank">Activar, Restablecer Usuario</a>
+                        </li>
+                        <li>
+                            <a href="javascript:campanias_activas('panelvicis/datos_por_server.php')">Campañas Activas</a>
+                        </li>
+                    </ul>
+                </li>
+
+
+
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="" target="_blank" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
+                        <span class="nav-label">Telefonía</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="http://127.0.0.1/vicis/factura/datos_factura.php" target="_blank">Datos Telefonía</a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1/facturacion/index.php" target="_blank">Factura</a>
+                        </li>
+                    </ul>
+                </li>
+
+
+
+                <li class="nav-item dropdown"><!-- Inicio de cambios en nav-->
+                    <a class="nav-link dropdown-toggle" href="" target="_blank" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
+                        <span class="nav-label">Estaciones</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="javascript:abrir('estaciones/agregar.html')">Agregar estación</a>
+                        </li>
+                        <li>
+                            <a href="javascript:agregarCPU('estaciones/agregar_cpu.html')">Agregar CPU</a>
+                        </li>
+                        <li>
+                            <a href="javascript:agregarMONITOR('estaciones/agregar_monitor.html')">Agregar Monitor</a>
+                        </li>
+                        <li><!--Elemento dehabilitado-->
+                            <a class="dropdown-item disabled" href="javascript:modificar('estaciones/modificar.php')">Modificar</a>
+                        </li>
+                        <li>
+                            <a href="javascript:cerrar('estaciones/eliminar.html')">Eliminar</a>
+                        </li>
+                        <li>
+                            <a href="javascript:reubicar('estaciones/reubicar.html')">Reubicar</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://127.0.0.1/facturacion/index.php" target="_blank">Facturación</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://127.0.0.1/vicis/correos/correos.HTML" target="_blank">Correos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:ping('ping/ping.html')">Ping</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://127.0.0.1/vicis/indexprueba.php" target="_blank">Pruebas</a>
+                </li>
+            </ul>
+    </nav> 
+    <br>
+    <h1 class="">Soporte Técnico</h1>
+    <div class="rowb fila_uno">
+    	<div class="col-md-1"></div>
+  		<div class="col-md-4">
+  			<h2 class="subtitulos">Servidores</h2>
+  			<table class="tbl_btn_vicidial">
+  				<caption>table title and/or explanatory text</caption>
+  				<thead class="cabecera_tbl">
+                            <tr>
+                                <th colspan="5"><img class="img-fluid" src="../img/gifs/Router-01.gif"></th>
+                            </tr>
+                          </thead>
+  				<tbody>
+  							<tr >
+                                <td class="columna_tabla_btn">
+                                    <button class="myButton" onclick="window.open('http://10.9.2.5/vicidial/welcome.php')">05</button>
+                                </td>
+                                <td class="columna_tabla_btn">
+                                    <button class="myButton" onclick="window.open('http://10.9.2.6/vicidial/welcome.php')">06</button>
+                                </td>
+                                <td class="columna_tabla_btn">
+                                    <button class="myButton" onclick="window.open('http://10.9.2.8/vicidial/welcome.php')">08</button> 
+                                </td>
+                                <td class="columna_tabla_btn">
+                                    <button class="myButton" onclick="window.open('http://10.9.2.9/vicidial/welcome.php')">09</button>
+                                </td>
+                                <td class="columna_tabla_btn">
+                                    <button class="myButton" onclick="window.open('http://10.9.2.22/vicidial/welcome.php')">22</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="columna_tabla_btn">
+                                    <button class="myButton" onclick="window.open('http://10.9.2.27/vicidial/welcome.php')">27</button>
+                                </td>
+                                <td class="columna_tabla_btn">
+                                    <button class="myButton" onclick="window.open('http://10.9.2.28/vicidial/welcome.php')">28</button>
+                                </td>
+                                <td class="columna_tabla_btn">
+                                    <button class="myButton" onclick="window.open('http://10.9.2.29/vicidial/welcome.php')">29</button>
+                                </td>
+                                <td class="columna_tabla_btn">
+                                    <button class="myButton" onclick="window.open('http://10.9.2.35/vicidial/welcome.php')">35</button>
+                                </td>
+                                <td class="columna_tabla_btn">
+                                    <button class="myButton" onclick="window.open('http://10.9.2.36/vicidial/welcome.php')">36</button>
+                                </td>
+                            </tr>
+                            <tr>
+                              <td class="columna_tabla_btn">
+                                 <button class="myButton" onclick="window.open('http://10.9.2.37/vicidial/welcome.php')">37</button> 
+                              </td>
+                              <td class="columna_tabla_btn">
+                                 <button class="myButton" onclick="window.open('http://10.9.2.38/vicidial/welcome.php')">38</button> 
+                              </td>
+                              <td class="columna_tabla_btn">
+                                 <button class="myButton" onclick="window.open('http://10.9.2.39/vicidial/welcome.php')">39</button> 
+                              </td>
+                              <td class="columna_tabla_btn">
+                                 <button class="myButton" onclick="window.open('http://10.9.2.41/vicidial/welcome.php')">41</button> 
+                              </td>
+                              <td class="columna_tabla_btn">
+                                 <button class="myButton" onclick="window.open('http://10.9.2.42/vicidial/welcome.php')">42</button> 
+                              </td>
+                            </tr>
+                            <tr>
+                                <td class="columna_tabla_btn">
+                                  <button class="myButton" onclick="window.open('http://10.9.2.43/vicidial/welcome.php')">43</button>  
+                                </td>
+                                <td class="columna_tabla_btn">
+                                  <button class="myButton" onclick="window.open('http://10.9.2.44/vicidial/welcome.php')">44</button>  
+                                </td>
+                                <td class="columna_tabla_btn">
+                                   <button class="myButton" onclick="window.open('http://10.9.2.45/vicidial/welcome.php')">45</button> 
+                                </td>
+                                <td class="columna_tabla_btn">
+                                   <button class="myButton" onclick="window.open('http://10.9.2.46/vicidial/welcome.php')">46</button> 
+                                </td>
+                                <td class="columna_tabla_btn">
+                                   <button class="myButton" onclick="window.open('http://10.9.2.201/vicidial/welcome.php')">201</button> 
+                                </td>
+                            </tr>
+  				</tbody>
+  			</table>
+
+
+
+  		</div>
+  		<div class="col-md-2"></div>
+  		<div class="col-md-4">
+  			
+
+
+
+
+
+  		</div>
+  		<div class="col-md-1"></div>
+    </div>
+
 </body>
 </html>
