@@ -32,3 +32,12 @@ body {
     color: #ffffff;
     display: block;
   }
+
+/* Estilos hoja p_vicis */
+.body_p_panel {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.campanias_p_panel {
+  width: 100%;
+}
