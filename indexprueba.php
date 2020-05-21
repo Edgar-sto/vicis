@@ -18,44 +18,44 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-        <script>//Script para abrir ventana agregar y modificar de tamaño asignado.
-            function abrir(url) {
-                open(url,'','top=300,left=300,width=280,height=550') ;
-            }
-        //Script para abrir ventana eliminar de tamaño asignado.
-            function cerrar(url) {
-                open(url,'','top=300,left=300,width=280,height=200') ;
-            }
-        //Script para abrir ventana modificar de tamaño asignado.
-            function modificar(url) {
-                open(url,'','top=300,left=300,width=280,height=200') ;
-            }
-        //Script para abrir ventana agregar cpu de tamaño asignado.
-            function agregarCPU(url) {
-                open(url,'','top=300,left=300,width=280,height=370') ;
-            }
-        //Script para abrir ventana agregar monitor de tamaño asignado.
-            function agregarMONITOR(url) {
-                open(url,'','top=300,left=300,width=280,height=330') ;
-            }
-        //Script para abrir ventana reubicar equipo.
-            function reubicar(url) {
-                open(url,'','top=300,left=300,width=280,height=360') ;
-            }
-        //Script para abrir ventana ping.
-            function ping(url) {
-                open(url,'','top=300,left=300,width=480,height=360') ;
-            }
-        //servidores
-            function servidores(url) {
-                open(url,'','top=300,left=300,width=820,height=490');
-            }
-        //
-        function campanias_activas(url) {
-                open(url,'','top=300,left=300,width=480,height=300') ;
-            }
+        <script>
+	        //Script para abrir ventana agregar y modificar de tamaño asignado.
+	            function abrir(url) {
+	                open(url,'','top=300,left=300,width=280,height=550') ;
+	            }
+	        //Script para abrir ventana eliminar de tamaño asignado.
+	            function cerrar(url) {
+	                open(url,'','top=300,left=300,width=280,height=200') ;
+	            }
+	        //Script para abrir ventana modificar de tamaño asignado.
+	            function modificar(url) {
+	                open(url,'','top=300,left=300,width=280,height=200') ;
+	            }
+	        //Script para abrir ventana agregar cpu de tamaño asignado.
+	            function agregarCPU(url) {
+	                open(url,'','top=300,left=300,width=280,height=370') ;
+	            }
+	        //Script para abrir ventana agregar monitor de tamaño asignado.
+	            function agregarMONITOR(url) {
+	                open(url,'','top=300,left=300,width=280,height=330') ;
+	            }
+	        //Script para abrir ventana reubicar equipo.
+	            function reubicar(url) {
+	                open(url,'','top=300,left=300,width=280,height=360') ;
+	            }
+	        //Script para abrir ventana ping.
+	            function ping(url) {
+	                open(url,'','top=300,left=300,width=480,height=360') ;
+	            }
+	        //servidores
+	            function servidores(url) {
+	                open(url,'','top=300,left=300,width=820,height=490');
+	            }
+	        //
+	        function campanias_activas(url) {
+	                open(url,'','top=300,left=300,width=480,height=300') ;
+	            }
         </script>
-
         <script type="text/javascript">
             $(document).ready(function(){
                 $("#hide").on('click', function() {
@@ -237,7 +237,7 @@
     </nav> 
     <br>
     <h1 class="">Soporte Técnico</h1>
-    <div class="rowb fila_uno">
+    <div class="row fila_uno">
     	<div class="col-md-1"></div>
   		<div class="col-md-4">
   			<h2 class="subtitulos">Servidores</h2>
@@ -332,6 +332,21 @@
   			</div>
   		</div>
   		<div class="col-md-1"></div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="row fila_dos">
+    	<div class="col-md-1">
+    		
+    	</div>
+		<div class="col-md-10">
+			
+		</div>
+		<div class="col-md-1">
+			
+		</div>
     </div>
 
 </body>
