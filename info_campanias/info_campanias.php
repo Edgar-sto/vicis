@@ -33,7 +33,7 @@
     $servidor_45    =   "10.9.2.45";
     $servidor_46    =   "10.9.2.46";
     $servidor_201   =   "10.9.2.201";
-
+                
 	$basededatos	= 	"asterisk";
 
 	$conectar_5 	= 	mysqli_connect($servidor_5, $usuario, $password, $basededatos);

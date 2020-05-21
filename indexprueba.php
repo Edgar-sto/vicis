@@ -342,7 +342,9 @@
     		
     	</div>
 		<div class="col-md-10">
-			
+			<?php
+  				require 'inventario/inventario.php';
+  			?>
 		</div>
 		<div class="col-md-1">
 			
