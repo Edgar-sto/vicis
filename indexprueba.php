@@ -180,14 +180,15 @@
     <div class="rowb fila_uno">
     	<div class="col-md-1"></div>
   		<div class="col-md-4">
-  			<h2 class="subtitulos">Servidores</h2>
+  			<h2 class="subtitulos">Informacion por servidor</h2>
+  			<br>
   			<table class="table">
-  				<caption>table title and/or explanatory text</caption>
+  				<caption class="cabecera_tbl">(Acceso a VICIdial)</caption>
   				<thead class="cabecera_tbl">
-                            <tr>
-                                <th colspan="5"><img class="rounded mx-auto d-block" src="img/gifs/Router-01.gif"></th>
-                            </tr>
-                          </thead>
+                    <tr>
+                        <!--th colspan="5"><img class="rounded mx-auto d-block" src="img/imagenes/red.png"></th-->
+                    </tr>
+                </thead>
   				<tbody class="cabecera_tbl">
   							<tr >
                                 <td class="columna_tabla_btn">
@@ -260,17 +261,15 @@
   				</tbody>
   			</table>
 
-
-
   		</div>
   		<div class="col-md-2"></div>
   		<div class="col-md-4">
-  			
-
-
-
-
-
+  			<h2 class="subtitulos">Informacion por servidor</h2>
+  			<div class='tm-notification-items'>
+  			<?php
+  				require 'info_campanias/info_campanias.php';
+  			?>
+  			</div>
   		</div>
   		<div class="col-md-1"></div>
     </div>
