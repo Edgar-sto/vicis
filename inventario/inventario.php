@@ -39,34 +39,34 @@
     <br>
     <br>
     <section class="row datos_generales" id="stock">
-        <table class="table">
+        <table class="table table-bordered tabla_campanias">
             <thead>
-                <th colspan='5'>Inventario</th>
+                <th colspan='10'>Inventario</th>
             </thead>
             <tbody class="cuerpo_tabla">                    
                 <?php
         echo "  <tr>
-                    <td class='datos_base'>
+                    <td class='medidas_cabecera' colspan='2'>
                         <p class='parrafo_enlaces'>
                             <a href='#'' id='show'><!--span class='material-icons'>remove_red_eye</span-->CPU</a>
                         </p>
                     </td>
-                    <td class='datos_base'>
+                    <td class='medidas_cabecera' colspan='2'>
                         <p class='parrafo_enlaces'>
                             <a href='#'' id='show1'><!--span class='material-icons'>remove_red_eye</span-->Monitor</a>
                         </p>
                     </td>
-                    <td colspan='2' class='datos_base'>
+                    <td class='medidas_cabecera' colspan='2'>
                         <p class='parrafo_enlaces'>
                             <a href='#'' id='show2'><!--span class='material-icons'>remove_red_eye</span-->Diademas</a>
                         </p>
                     </td>
-                    <td colspan='2' class='datos_base'>
+                    <td class='medidas_cabecera' colspan='2'>
                         <p class='parrafo_enlaces'>
                             Mouse
                         </p>
                     </td>
-                    <td colspan='2' class='datos_base'>
+                    <td class='medidas_cabecera' colspan='2'>
                         <p class='parrafo_enlaces'>
                             Teclado
                         </p>
