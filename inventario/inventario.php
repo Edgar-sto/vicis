@@ -1,103 +1,93 @@
 <?php
-	require 'estaciones/conexion.php';
-    $conectar       =   mysqli_connect($servidor, $usuario, $pass, $basededatos);
+    include 'conexion_inventario.php';
+    /*$usuario      =   "root";
+    $pass           =   "";
+    $servidor_local =   "127.0.0.1";
+    $bd_inventario  =   "soporte_mariano";*/
+    $conexion_inventario    =   mysqli_connect($servidor_local, $usuario, $pass, $bd_inventario);
     //querys
-    $consulta_cpu_operacion     =   "SELECT COUNT(*) ubicacion FROM cpu_oficial WHERE ubicacion != 'Almacen'";
-    $consulta_cpu_almacen       =   "SELECT COUNT(*) ubicacion FROM cpu_oficial WHERE ubicacion = 'Almacen'";
-    $consulta_monitor_operacion =   "SELECT COUNT(*) ubicacion FROM monitor_oficial WHERE ubicacion !='Almacen' ";
-    $consulta_monitor_almacen   =   "SELECT COUNT(*) ubicacion FROM monitor_oficial WHERE ubicacion ='Almacen' ";
-    $consulta_diadema_operacion =   "SELECT * FROM diadema_oficial";
-    $consulta_diadema_almacen   =   "SELECT * FROM diadema_oficial";
-    $consulta_mouse_operaciones =   "SELECT * FROM mouse";
-    $consulta_mouse_almacen     =   "SELECT * FROM mouse";
-    $consulta_teclado_operaciones =   "SELECT * FROM teclados";
-    $consulta_teclado_almacen     =   "SELECT * FROM teclados";
+    $consulta_inventario     =   "SELECT * FROM inv_general";
     //conexion y ejecucion de querys
-    $resul              =   mysqli_query($conectar, $consulta_cpu_operacion);
-    $resul2             =   mysqli_query($conectar, $consulta_cpu_almacen);
-    $resul_monitor      =   mysqli_query($conectar, $consulta_monitor_operacion);
-    $resul_monitor2     =   mysqli_query($conectar, $consulta_monitor_almacen);
-    $resul_diadema      =   mysqli_query($conectar, $consulta_diadema_operacion);
-    $resul_diadema2     =   mysqli_query($conectar, $consulta_diadema_almacen);
-    $resul_mouse        =   mysqli_query($conectar, $consulta_mouse_operaciones);
-    $resul_mouse2       =   mysqli_query($conectar, $consulta_mouse_almacen);
-    $resul_teclado        =   mysqli_query($conectar, $consulta_teclado_operaciones);
-    $resul_teclado2       =   mysqli_query($conectar, $consulta_teclado_almacen);                            
+    $resul              =   mysqli_query($conexion_inventario, $consulta_inventario);                           
     //resultados
     $fila   =   mysqli_fetch_assoc($resul);
-    $fila2  =   mysqli_fetch_assoc($resul2);
-    $fila3  =   mysqli_fetch_assoc($resul_monitor);
-    $fila4  =   mysqli_fetch_assoc($resul_monitor2);
-    $fila5  =   mysqli_fetch_assoc($resul_diadema);
-    $fila6  =   mysqli_fetch_assoc($resul_diadema2);
-    $fila7  =   mysqli_fetch_assoc($resul_mouse);
-    $fila8  =   mysqli_fetch_assoc($resul_mouse2);
-    $fila9  =   mysqli_fetch_assoc($resul_teclado);
-    $fila10  =   mysqli_fetch_assoc($resul_teclado2);
 ?>
     <br>
     <br>
     <br>
-    <section class="row datos_generales" id="stock">
-        <table class="table table-bordered tabla_campanias">
-            <thead>
-                <th colspan='10'>Inventario</th>
-            </thead>
-            <tbody class="cuerpo_tabla">                    
-                <?php
-        echo "  <tr>
-                    <td class='medidas_cabecera' colspan='2'>
-                        <p class='parrafo_enlaces'>
-                            <a href='#'' id='show'><!--span class='material-icons'>remove_red_eye</span-->CPU</a>
-                        </p>
-                    </td>
-                    <td class='medidas_cabecera' colspan='2'>
-                        <p class='parrafo_enlaces'>
-                            <a href='#'' id='show1'><!--span class='material-icons'>remove_red_eye</span-->Monitor</a>
-                        </p>
-                    </td>
-                    <td class='medidas_cabecera' colspan='2'>
-                        <p class='parrafo_enlaces'>
-                            <a href='#'' id='show2'><!--span class='material-icons'>remove_red_eye</span-->Diademas</a>
-                        </p>
-                    </td>
-                    <td class='medidas_cabecera' colspan='2'>
-                        <p class='parrafo_enlaces'>
-                            Mouse
-                        </p>
-                    </td>
-                    <td class='medidas_cabecera' colspan='2'>
-                        <p class='parrafo_enlaces'>
-                            Teclado
-                        </p>
-                    </td>              
-                </tr>";
-        echo "  <tr>
-                    <td>Piso</td>
-                    <td>Almacen</td>
-                    <td>Piso</td>
-                    <td>Almacen</td>
-                    <td>Piso</td>
-                    <td>Almacen</td>
-                    <td>Piso</td>
-                    <td>Almacen</td>
-                    <td>Piso</td>
-                    <td>Almacen</td>
-                </tr>";
-        echo "  <tr>
-                    <td class='texto'><i class='material-icons'>smartphone</i><br>".$fila['ubicacion']."</td>
-                    <td class='texto'><i class='material-icons'>smartphone</i><br>".$fila2['ubicacion']."</td>
-                    <td class='texto'><i class='material-icons'>desktop_windows</i><br>".$fila3['ubicacion']."</td>
-                    <td class='texto'><i class='material-icons'>desktop_windows</i><br>".$fila4['ubicacion']."</td>
-                    <td class='texto'><i class='material-icons'>headset_mic</i><br>".$fila5['piso']."</td>
-                    <td class='texto'><i class='material-icons'>headset_mic</i><br>".$fila6['almacen']."</td>
-                    <td class='texto'><i class='material-icons'>mouse</i><br>".$fila7['piso']."</td>
-                    <td class='texto'><i class='material-icons'>mouse</i><br>".$fila8['almacen']."</td>
-                    <td class='texto'><i class='material-icons'>keyboard</i><br>".$fila9['piso']."</td>
-                    <td class='texto'><i class='material-icons'>keyboard</i><br>".$fila10['almacen']."</td>
-                </tr>";
-                ?>
-                                
-            </tbody>
-        </table>
-    </section>
+        <div class="contenedor_tbl_inv">
+            <table class="table table-bordered tabla_inventarios">
+                <thead class="cabecera_tbl_inventario">
+                    <th colspan='15'>Inventario</th>
+                </thead>
+                <tbody class="cuerpo_tabla">                    
+                    <tr class="medidas_icon_inv">
+                        <td colspan='3'>
+                            <p>
+                                <i class='material-icons' style="font-size: 4em;">smartphone</i>
+                            </p>
+                        </td>
+                        <td colspan='3'>
+                            <p>
+                                <i class='material-icons' style="font-size: 4em;" >desktop_windows</i>
+                            </p>
+                        </td>
+                        <td colspan='3'>
+                            <p>
+                                <i class='material-icons' style="font-size: 4em;" >headset_mic</i>
+                            </p>
+                        </td>
+                        <td colspan='3'>
+                            <p>
+                                <i class='material-icons' style="font-size: 4em;" >mouse</i>
+                            </p>
+                        </td>
+                        <td colspan='3'>
+                            <p>
+                                <i class='material-icons' style="font-size: 4em;" >keyboard</i>
+                            </p>
+                        </td>              
+                    </tr>
+                    <tr>
+                        <td class="texto">Piso</td>
+                        <td class="texto">Almacen</td>
+                        <td class="texto">Dañado</td>
+                        <td class="texto">Piso</td>
+                        <td class="texto">Almacen</td>
+                        <td class="texto">Dañado</td>
+                        <td class="texto">Piso</td>
+                        <td class="texto">Almacen</td>
+                        <td class="texto">Dañado</td>
+                        <td class="texto">Piso</td>
+                        <td class="texto">Almacen</td>
+                        <td class="texto">Dañado</td>
+                        <td class="texto">Piso</td>
+                        <td class="texto">Almacen</td>
+                        <td class="texto">Dañado</td>
+                    </tr>
+<?php
+echo"               <tr>
+                        <td class='texto'>".$fila['cpu_almacen']."</td>
+                        <td class='texto'>".$fila['cpu_uso']."</td>
+                        <td class='texto'>".$fila['cpu_dañados']."</td>
+
+                        <td class='texto'>".$fila['monitor_almacen']."</td>
+                        <td class='texto'>".$fila['monitor_uso']."</td>
+                        <td class='texto'>".$fila['monitor_dañados']."</td>
+
+                        <td class='texto'>".$fila['diadema_almacen']."</td>
+                        <td class='texto'>".$fila['diadema_uso']."</td>
+                        <td class='texto'>".$fila['diadema_dañados']."</td>
+
+                        <td class='texto'>".$fila['teclado_almacen']."</td>
+                        <td class='texto'>".$fila['teclado_uso']."</td>
+                        <td class='texto'>".$fila['teclado_dañados']."</td>
+
+                        <td class='texto'>".$fila['mouse_almacen']."</td>
+                        <td class='texto'>".$fila['mouse_uso']."</td>
+                        <td class='texto'>".$fila['mouse_dañados']."</td>
+                    </tr>";
+    ?>                 
+                </tbody>
+            </table>
+        </div>
