@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
+<head>
         <title>Panel Soporte</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -18,44 +18,44 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-        <script>//Script para abrir ventana agregar y modificar de tamaño asignado.
-            function abrir(url) {
-                open(url,'','top=300,left=300,width=280,height=550') ;
-            }
-        //Script para abrir ventana eliminar de tamaño asignado.
-            function cerrar(url) {
-                open(url,'','top=300,left=300,width=280,height=200') ;
-            }
-        //Script para abrir ventana modificar de tamaño asignado.
-            function modificar(url) {
-                open(url,'','top=300,left=300,width=280,height=200') ;
-            }
-        //Script para abrir ventana agregar cpu de tamaño asignado.
-            function agregarCPU(url) {
-                open(url,'','top=300,left=300,width=280,height=370') ;
-            }
-        //Script para abrir ventana agregar monitor de tamaño asignado.
-            function agregarMONITOR(url) {
-                open(url,'','top=300,left=300,width=280,height=330') ;
-            }
-        //Script para abrir ventana reubicar equipo.
-            function reubicar(url) {
-                open(url,'','top=300,left=300,width=280,height=360') ;
-            }
-        //Script para abrir ventana ping.
-            function ping(url) {
-                open(url,'','top=300,left=300,width=480,height=360') ;
-            }
-        //servidores
-            function servidores(url) {
-                open(url,'','top=300,left=300,width=820,height=490');
-            }
-        //
-        function campanias_activas(url) {
-                open(url,'','top=300,left=300,width=480,height=300') ;
-            }
+        <script>
+            //Script para abrir ventana agregar y modificar de tamaño asignado.
+                function abrir(url) {
+                    open(url,'','top=300,left=300,width=280,height=550') ;
+                }
+            //Script para abrir ventana eliminar de tamaño asignado.
+                function cerrar(url) {
+                    open(url,'','top=300,left=300,width=280,height=200') ;
+                }
+            //Script para abrir ventana modificar de tamaño asignado.
+                function modificar(url) {
+                    open(url,'','top=300,left=300,width=280,height=200') ;
+                }
+            //Script para abrir ventana agregar cpu de tamaño asignado.
+                function agregarCPU(url) {
+                    open(url,'','top=300,left=300,width=280,height=370') ;
+                }
+            //Script para abrir ventana agregar monitor de tamaño asignado.
+                function agregarMONITOR(url) {
+                    open(url,'','top=300,left=300,width=280,height=330') ;
+                }
+            //Script para abrir ventana reubicar equipo.
+                function reubicar(url) {
+                    open(url,'','top=300,left=300,width=280,height=360') ;
+                }
+            //Script para abrir ventana ping.
+                function ping(url) {
+                    open(url,'','top=300,left=300,width=480,height=360') ;
+                }
+            //servidores
+                function servidores(url) {
+                    open(url,'','top=300,left=300,width=820,height=490');
+                }
+            //
+            function campanias_activas(url) {
+                    open(url,'','top=300,left=300,width=480,height=300') ;
+                }
         </script>
-
         <script type="text/javascript">
             $(document).ready(function(){
                 $("#hide").on('click', function() {
@@ -93,9 +93,69 @@
                 });
             });
         </script>
-    </head>
-    <body class="fondo_cuerpo">
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <script type="text/javascript" language="javascript">
+            function refreshDivs(divid,secs,url)
+            {
+
+            // define our vars
+            var divid,secs,url,fetch_unix_timestamp;
+
+            // Chequeamos que las variables no esten vacias..
+            if(divid == ""){ alert('Error: escribe el id del div que quieres refrescar'); return;}
+            else if(!document.getElementById(divid)){ alert('Error: el Div ID selectionado no esta definido: '+divid); return;}
+            else if(secs == ""){ alert('Error: indica la cantidad de segundos que quieres que el div se refresque'); return;}
+            else if(url == ""){ alert('Error: la URL del documento que quieres cargar en el div no puede estar vacia.'); return;}
+
+            // The XMLHttpRequest object
+
+            var xmlHttp;
+            try{
+            xmlHttp=new XMLHttpRequest(); // Firefox, Opera 8.0+, Safari
+            }
+            catch (e){
+            try{
+            xmlHttp=new ActiveXObject("Msxml2.XMLHTTP"); // Internet Explorer
+            }
+            catch (e){
+            try{
+            xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            catch (e){
+            alert("Tu explorador no soporta AJAX.");
+            return false;
+            }
+            }
+            }
+
+            // Timestamp para evitar que se cachee el array GET
+
+            fetch_unix_timestamp = function()
+            {
+            return parseInt(new Date().getTime().toString().substring(0, 10))
+            }
+
+            var timestamp = fetch_unix_timestamp();
+            var nocacheurl = url+"?t="+timestamp;
+
+            // the ajax call
+            xmlHttp.onreadystatechange=function(){
+            if(xmlHttp.readyState == 4 && xmlHttp.status == 200){
+            document.getElementById(divid).innerHTML=xmlHttp.responseText;
+            setTimeout(function(){refreshDivs(divid,secs,url);},secs*1000);
+            }
+            }
+            xmlHttp.open("GET",nocacheurl,true);
+            xmlHttp.send(null);
+            }
+
+            // LLamamos las funciones con los repectivos parametros de los DIVs que queremos refrescar.
+            window.onload = function startrefresh(){
+            refreshDivs('campañas',30000,'info_campanias.php');
+            }
+        </script>              
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
             <!-- Brand -->
             <img class="img-fluid" src="img/sto_admin_web_logo.png">
             <!-- Links -->
@@ -174,284 +234,122 @@
                     <a class="nav-link" href="http://127.0.0.1/vicis/indexprueba.php" target="_blank">Pruebas</a>
                 </li>
             </ul>
-        </nav> 
-        <br>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-2">
-                    <?php
-                        require 'estaciones/conexion.php';
-                        $conectar       =   mysqli_connect($servidor, $usuario, $pass, $basededatos);
-                        //querys
-                        $consulta_cpu_operacion     =   "SELECT COUNT(*) ubicacion FROM cpu_oficial WHERE ubicacion != 'Almacen'";
-                        $consulta_cpu_almacen       =   "SELECT COUNT(*) ubicacion FROM cpu_oficial WHERE ubicacion = 'Almacen'";
-                        $consulta_monitor_operacion =   "SELECT COUNT(*) ubicacion FROM monitor_oficial WHERE ubicacion !='Almacen' ";
-                        $consulta_monitor_almacen   =   "SELECT COUNT(*) ubicacion FROM monitor_oficial WHERE ubicacion ='Almacen' ";
-                        $consulta_diadema_operacion =   "SELECT * FROM diadema_oficial";
-                        $consulta_diadema_almacen   =   "SELECT * FROM diadema_oficial";
-                        $consulta_mouse_operaciones =   "SELECT * FROM mouse";
-                        $consulta_mouse_almacen     =   "SELECT * FROM mouse";
-                        $consulta_teclado_operaciones =   "SELECT * FROM teclados";
-                        $consulta_teclado_almacen     =   "SELECT * FROM teclados";
-                        //conexion y ejecucion de querys
-                        $resul              =   mysqli_query($conectar, $consulta_cpu_operacion);
-                        $resul2             =   mysqli_query($conectar, $consulta_cpu_almacen);
-                        $resul_monitor      =   mysqli_query($conectar, $consulta_monitor_operacion);
-                        $resul_monitor2     =   mysqli_query($conectar, $consulta_monitor_almacen);
-                        $resul_diadema      =   mysqli_query($conectar, $consulta_diadema_operacion);
-                        $resul_diadema2     =   mysqli_query($conectar, $consulta_diadema_almacen);
-                        $resul_mouse        =   mysqli_query($conectar, $consulta_mouse_operaciones);
-                        $resul_mouse2       =   mysqli_query($conectar, $consulta_mouse_almacen);
-                        $resul_teclado        =   mysqli_query($conectar, $consulta_teclado_operaciones);
-                        $resul_teclado2       =   mysqli_query($conectar, $consulta_teclado_almacen);                            
-                        //resultados
-                        $fila   =   mysqli_fetch_assoc($resul);
-                        $fila2  =   mysqli_fetch_assoc($resul2);
-                        $fila3  =   mysqli_fetch_assoc($resul_monitor);
-                        $fila4  =   mysqli_fetch_assoc($resul_monitor2);
-                        $fila5  =   mysqli_fetch_assoc($resul_diadema);
-                        $fila6  =   mysqli_fetch_assoc($resul_diadema2);
-                        $fila7  =   mysqli_fetch_assoc($resul_mouse);
-                        $fila8  =   mysqli_fetch_assoc($resul_mouse2);
-                        $fila9  =   mysqli_fetch_assoc($resul_teclado);
-                        $fila10  =   mysqli_fetch_assoc($resul_teclado2);
-                    ?>
-                    <br>
-                    <br>
-                    <br>
-                    <section class="row datos_generales" id="stock">
-                        <table class="table">
-                            <tr>
-                                <h1>Activos fijos</h1>
+    </nav> 
+    <br>
+    <h1 class="">Soporte Técnico</h1>
+    <div class="row fila_uno">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+            <h2 class="subtitulos">Servidores</h2>
+            <br>
+            <table class="table">
+                <caption class="cabecera_tbl">(Acceso a VICIdial)</caption>
+                <thead class="cabecera_tbl">
+                    <tr>
+                        <!--th colspan="5"><img class="rounded mx-auto d-block" src="img/imagenes/red.png"></th-->
+                    </tr>
+                </thead>
+                <tbody class="cabecera_tbl">
+                            <tr >
+                                <td class="columna_tabla_btn">
+                                    <button class="myButton btn" onclick="window.open('http://10.9.2.5/vicidial/welcome.php')">05</button>
+                                </td>
+                                <td class="columna_tabla_btn">
+                                    <button class="myButto btn" onclick="window.open('http://10.9.2.6/vicidial/welcome.php')">06</button>
+                                </td>
+                                <td class="columna_tabla_btn">
+                                    <button class="myButton btn" onclick="window.open('http://10.9.2.8/vicidial/welcome.php')">08</button> 
+                                </td>
+                                <td class="columna_tabla_btn">
+                                    <button class="myButton btn" onclick="window.open('http://10.9.2.9/vicidial/welcome.php')">09</button>
+                                </td>
+                                <td class="columna_tabla_btn">
+                                    <button class="myButton btn" onclick="window.open('http://10.9.2.22/vicidial/welcome.php')">22</button>
+                                </td>
                             </tr>
-                            <tbody class="cuerpo_tabla">                    
-                                <?php
-                                //Sección conteo CPU
-                                    echo "<tr>
-                                        <th class='cabecera_tabla'>PISO</th>
-                                        <th class='cabecera_tabla'>ALMACÉN</th>
-                                    </tr>";
-                                    echo "<tr>
-                                        <td colspan='2' class='datos_base'>
-                                            <p class='parrafo_enlaces'>
-                                                <a href='#'' id='show'><!--span class='material-icons'>remove_red_eye</span-->CPU</a>
-                                            </p>
-                                        </td>
-                                    </tr>";
-                                    echo "<tr>
-                                        <td class='texto'><i class='material-icons'>smartphone</i><br>".$fila['ubicacion']."</td>
-                                        <td class='texto'><i class='material-icons'>smartphone</i><br>".$fila2['ubicacion']."</td>
-                                    </tr>";
-                                //Sección conteo Monitor
-                                    echo "<tr>
-                                        <th class='cabecera_tabla'>PISO</th>
-                                        <th class='cabecera_tabla'>ALMACÉN</th>
-                                    </tr>";
-                                    echo "<tr>
-                                        <td colspan='2' class='datos_base'>
-                                            <p class='parrafo_enlaces'>
-                                                <a href='#'' id='show1'><!--span class='material-icons'>remove_red_eye</span-->Monitor
-                                                </a>
-                                            </p>
-                                        </td>";
-                                    echo "</tr>";
-                                    echo "<tr>
-                                        <td class='texto'><i class='material-icons'>desktop_windows</i><br>".$fila3['ubicacion']."</td>
-                                        <td class='texto'><i class='material-icons'>desktop_windows</i><br>".$fila4['ubicacion']."</td>
-                                    </tr>";
-                                //Sección conteo diadema
-                                    echo "<tr>
-                                        <th class='cabecera_tabla'>PISO</th>
-                                        <th class='cabecera_tabla'>ALMACÉN</th>
-                                    </tr>";
-                                    echo "<tr>
-                                        <td colspan='2' class='datos_base'>
-                                            <p class='parrafo_enlaces'>
-                                            <a href='#'' id='show2'><!--span class='material-icons'>remove_red_eye</span-->Diademas</a>
-                                            </p>
-                                        </td>
-                                    </tr>";
-                                    echo "<tr>
-                                        <td class='texto'><i class='material-icons'>headset_mic</i><br>".$fila5['piso']."</td>
-                                        <td class='texto'><i class='material-icons'>headset_mic</i><br>".$fila6['almacen']."</td>
-                                    </tr>";
-                                //Sección conteo mouse
-                                    echo "<tr>
-                                        <th class='cabecera_tabla'>PISO</th>
-                                        <th class='cabecera_tabla'>ALMACÉN</th>
-                                    </tr>";
-                                    echo "<tr>
-                                        <td colspan='2' class='datos_base'>
-                                            <p class='parrafo_enlaces'>
-                                                Mouse
-                                            </p>
-                                        </td>
-                                    </tr>";
-                                    echo "<tr>
-                                        <td class='texto'><i class='material-icons'>mouse</i><br>".$fila7['piso']."</td>
-                                        <td class='texto'><i class='material-icons'>mouse</i><br>".$fila8['almacen']."</td>
-                                    </tr>";
-                                //Sección conteo teclado
-                                    echo "<tr>
-                                        <th class='cabecera_tabla'>PISO</th>
-                                        <th class='cabecera_tabla'>ALMACÉN</th>
-                                    </tr>";
-                                    echo "<tr>
-                                        <td colspan='2' class='datos_base'>
-                                            <p class='parrafo_enlaces'>
-                                                Teclado
-                                            </p>
-                                        </td>
-                                    </tr>";
-                                    echo "<tr>
-                                        <td class='texto'><i class='material-icons'>keyboard</i><br>".$fila9['piso']."</td>
-                                        <td class='texto'><i class='material-icons'>keyboard</i><br>".$fila10['almacen']."</td>
-                                    </tr>";
-                                ?>
-                            </tbody>
-                        </table>
-                    </section>
-                </div>
-                <br>
-                <br>
-                <br>
-                
-                <div class="col align-self-start">
-                    <section class="container datos_generales" id="element" style="display: none;">
-                        <div id="close" class="row">
-                            <h2 id="cpu-id" class="col">CPU</h2>
-                            <a class="btn btn-small col" href="#" id="hide" title="Cerrar">
-                                <span class="material-icons">visibility_off</span>
-                            </a>
-                        </div>
-                        <table class="table table-dark table-hover" >
-                            <thead class="cabecera_tabla">
-                                <tr>
-                                    <th class="cabecera_tabla1">MARCA</th>
-                                    <th class="cabecera_tabla1">Serie</th>
-                                    <th class="cabecera_tabla1">Modelo</th>
-                                    <th class="cabecera_tabla1">Direccion MAC</th>
-                                    <th class="cabecera_tabla1">Ubicación</th>
-                                    <th class="cabecera_tabla1">Área</th>
-                                    <th class="cabecera_tabla1">Comentario</th>
-                                </tr> 
-                            </thead>
-                            <tbody class="cuerpo_tabla">
-                                <?php
-                                    $consulta_general_cpu       =   "SELECT * FROM cpu_oficial";
-                                    $res_consulta_general_cpu   =   mysqli_query($conectar, $consulta_general_cpu);
-                                    $contador=1;
-                                    while( $fila_general   =   mysqli_fetch_assoc($res_consulta_general_cpu)) {
-                                    echo "<tr>
-                                        <td class='texto1'>".$fila_general['marca_cpu']."</td>
-                                        <td class='texto1'>".$fila_general['serie_cpu']."</td>
-                                        <td class='texto1'>".$fila_general['modelo_cpu']."</td>
-                                        <td class='texto1'>".$fila_general['mac_address']."</td>
-                                        <td class='texto1'>".$fila_general['ubicacion']."</td>
-                                        <td class='texto1'>".$fila_general['area']."</td>
-                                        <td class='texto1'>".$fila_general['comentario']."</td>                 
-                                    </tr>";
-                                    }
-                                ?>
-                            </tbody>
-                        </table>
-                    </section>
-                    <section class="container datos_generales" id="element1" style="display: none;">
-                        <div id="close1" class="row">
-                            <h2 id="monitor-id" class="col">Monitores</h2>
-                            <a class="btn btn-small col" href="#" id="hide1" title="Cerrar">
-                                <span class="material-icons">visibility_off</span>
-                            </a>
-                        </div>
-                        <table class="table table-dark table-hover">
-                            <thead class="cabecera_tabla">
-                                <tr>
-                                    <th class="cabecera_tabla1">MARCA</th>
-                                    <th class="cabecera_tabla1">Serie</th>
-                                    <th class="cabecera_tabla1">Modelo</th>
-                                    <th class="cabecera_tabla1">Ubicación</th>
-                                    <th class="cabecera_tabla1">Área</th>
-                                    <th class="cabecera_tabla1">Comentario</th>
-                                </tr>
-                            </thead>
-                            <tbody class="cuerpo_tabla">
-                                <?php
-                                    $consulta_general_monitor       =   "SELECT * FROM monitor_oficial";
-                                    $res_consulta_general_monitor   =   mysqli_query($conectar, $consulta_general_monitor);
-                                    $contador=1; 
-                                    while( $fila_general   =   mysqli_fetch_assoc($res_consulta_general_monitor)) {
-                                    echo "<tr>
-                                        <td class='texto1'>".$fila_general['marca_monitor']."</td>
-                                        <td class='texto1'>".$fila_general['serie_monitor']."</td>
-                                        <td class='texto1'>".$fila_general['modelo_monitor']."</td>
-                                        <td class='texto1'>".$fila_general['ubicacion']."</td>
-                                        <td class='texto1'>".$fila_general['area']."</td>
-                                        <td class='texto1'>".$fila_general['comentario']."</td>
-                                    </tr>";
-                                    }
-                                ?>
-                            </tbody>
-                        </table>
-                    </section>
-                    <br>
-                    <section class="container datos_generales" id="element2" style="display: none;">
-                        <div id="close2" class="row">
-                            <h2 id="diadema-id" class="col">Diademas</h2>
-                            <a class="btn btn-small col" href="#" id="hide2" title="Cerrar">
-                                <span class="material-icons">visibility_off</span>
-                            </a>
-                        </div>
-                        <table class="table table-dark table-hover">
-                            <thead class="cabecera_tabla">
-                                <tr>
-                                    <th class="cabecera_tabla1">MARCA</th>
-                                    <th class="cabecera_tabla1">Serie</th>
-                                    <th class="cabecera_tabla1">Ubicación</th>
-                                    <th class="cabecera_tabla1">Área</th>
-                                    <th class="cabecera_tabla1">Piso</th>
-                                    <th class="cabecera_tabla1">Almacen</th>
-                                </tr>
-                            </thead>
-                            <tbody class="cuerpo_tabla">
-                                <?php
-                                    $consulta_general_diadema       =   "SELECT * FROM diademas";
-                                    $res_consulta_general_diadema   =   mysqli_query($conectar, $consulta_general_diadema);
-                                    $contador=1;
-                                    while( $fila_general   =   mysqli_fetch_assoc($res_consulta_general_diadema)) {
-                                    echo "<tr>
-                                        <td class='texto1'>".$fila_general['marca_diadema']."</td>
-                                        <td class='texto1'>".$fila_general['num_serie']."</td>
-                                        <td class='texto1'>".$fila_general['ubicacion']."</td>
-                                        <td class='texto1'>".$fila_general['area']."</td>
-                                        <td class='texto1'>".$fila_general['piso']."</td>
-                                        <td class='texto1'>".$fila_general['almacen']."</td>
-                                    </tr>";
-                                    }
-                                ?>
-                            </tbody>
-                        </table>
-                    </section>
-                </div>
+                            <tr>
+                                <td class="columna_tabla_btn">
+                                    <button class="myButton btn" onclick="window.open('http://10.9.2.27/vicidial/welcome.php')">27</button>
+                                </td>
+                                <td class="columna_tabla_btn">
+                                    <button class="myButton btn" onclick="window.open('http://10.9.2.28/vicidial/welcome.php')">28</button>
+                                </td>
+                                <td class="columna_tabla_btn">
+                                    <button class="myButton btn" onclick="window.open('http://10.9.2.29/vicidial/welcome.php')">29</button>
+                                </td>
+                                <td class="columna_tabla_btn">
+                                    <button class="myButton btn" onclick="window.open('http://10.9.2.35/vicidial/welcome.php')">35</button>
+                                </td>
+                                <td class="columna_tabla_btn">
+                                    <button class="myButton btn" onclick="window.open('http://10.9.2.36/vicidial/welcome.php')">36</button>
+                                </td>
+                            </tr>
+                            <tr>
+                              <td class="columna_tabla_btn">
+                                 <button class="myButton btn" onclick="window.open('http://10.9.2.37/vicidial/welcome.php')">37</button> 
+                              </td>
+                              <td class="columna_tabla_btn">
+                                 <button class="myButton btn" onclick="window.open('http://10.9.2.38/vicidial/welcome.php')">38</button> 
+                              </td>
+                              <td class="columna_tabla_btn">
+                                 <button class="myButton btn" onclick="window.open('http://10.9.2.39/vicidial/welcome.php')">39</button> 
+                              </td>
+                              <td class="columna_tabla_btn">
+                                 <button class="myButton btn" onclick="window.open('http://10.9.2.41/vicidial/welcome.php')">41</button> 
+                              </td>
+                              <td class="columna_tabla_btn">
+                                 <button class="myButton btn" onclick="window.open('http://10.9.2.42/vicidial/welcome.php')">42</button> 
+                              </td>
+                            </tr>
+                            <tr>
+                                <td class="columna_tabla_btn">
+                                  <button class="myButton btn" onclick="window.open('http://10.9.2.43/vicidial/welcome.php')">43</button>  
+                                </td>
+                                <td class="columna_tabla_btn">
+                                  <button class="myButton btn" onclick="window.open('http://10.9.2.44/vicidial/welcome.php')">44</button>  
+                                </td>
+                                <td class="columna_tabla_btn">
+                                   <button class="myButton btn" onclick="window.open('http://10.9.2.45/vicidial/welcome.php')">45</button> 
+                                </td>
+                                <td class="columna_tabla_btn">
+                                   <button class="myButton btn" onclick="window.open('http://10.9.2.46/vicidial/welcome.php')">46</button> 
+                                </td>
+                                <td class="columna_tabla_btn">
+                                   <button class="myButton btn" onclick="window.open('http://10.9.2.201/vicidial/welcome.php')">201</button> 
+                                </td>
+                            </tr>
+                </tbody>
+            </table>
+
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
+            <h2 class="subtitulos">Informacion por servidor</h2>
+            <div id="campañas" class='tm-notification-items'>
+            <?php
+                include 'info_campanias/info_campanias.php';
+            ?>
             </div>
         </div>
-    </body>
+        <div class="col-md-1"></div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="row fila_dos">
+        <div class="col-md-1">
+            
+        </div>
+        <div class="col-md-10">
+            <?php
+                require 'inventario/inventario.php';
+            ?>
+        </div>
+        <div class="col-md-1">
+            
+        </div>
+    </div>
+
+</body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

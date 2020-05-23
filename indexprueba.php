@@ -12,6 +12,7 @@
         <!-- Fuentes de iconos -->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Rubik+Mono+One&display=swap" rel="stylesheet">
+        
         <!-- SCRIPT -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -152,7 +153,7 @@
 			window.onload = function startrefresh(){
 			refreshDivs('campañas',30000,'info_campanias.php');
 			}
-		</script>
+		</script>        
 </head>
 <body>
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -326,30 +327,22 @@
   		<div class="col-md-4">
   			<h2 class="subtitulos">Informacion por servidor</h2>
   			<div id="campañas" class='tm-notification-items'>
+                <div class='media tm-notification-item'>
+                    <div class='media-body'>
+                        <table id="example" class='table table-bordered tabla_campanias'>
   			<?php
-  				require 'info_campanias/info_campanias.php';
+  				include 'info_campanias/info_campanias_prueba.php';
   			?>
-  			</div>
+                        </table>
+                        
+                    </div>
+                </div>
+            </div>
   		</div>
+  	</div>
   		<div class="col-md-1"></div>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="row fila_dos">
-    	<div class="col-md-1">
-    		
-    	</div>
-		<div class="col-md-10">
-			<?php
-  				require 'inventario/inventario.php';
-  			?>
-		</div>
-		<div class="col-md-1">
-			
-		</div>
-    </div>
+
 
 </body>
 </html>

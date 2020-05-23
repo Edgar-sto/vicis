@@ -65,9 +65,7 @@
     $resultado   =   mysqli_fetch_assoc($ejecucion_consulta);
     //Tabla 5
   	echo "  
-                <div class='media tm-notification-item'>
-                    <div class='media-body'>
-                        <table id='campaign_table' class='table table-bordered tabla_campanias'>
+                
                             <thead >
                                 <th colspan='5'>Server 5</th>
                             </thead>
@@ -89,10 +87,7 @@
                                             <td>".$resultado['dial_method']."</td>
                                         </tr>";
                                 }                              
-                    echo "  </tbody>
-                        </table>
-                    </div>
-                </div>";
+                    echo "  </tbody>";
 
     //consulta servidor 6
     $info_servidor_6 =  "SELECT campaign_id, campaign_name, active, dial_prefix, dial_method FROM vicidial_campaigns ORDER BY campaign_id";
