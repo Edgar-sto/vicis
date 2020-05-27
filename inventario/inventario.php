@@ -49,21 +49,21 @@
                         </td>              
                     </tr>
                     <tr>
-                        <td class="texto">Piso</td>
-                        <td class="texto">Almacen</td>
-                        <td class="texto">Dañado</td>
-                        <td class="texto">Piso</td>
-                        <td class="texto">Almacen</td>
-                        <td class="texto">Dañado</td>
-                        <td class="texto">Piso</td>
-                        <td class="texto">Almacen</td>
-                        <td class="texto">Dañado</td>
-                        <td class="texto">Piso</td>
-                        <td class="texto">Almacen</td>
-                        <td class="texto">Dañado</td>
-                        <td class="texto">Piso</td>
-                        <td class="texto">Almacen</td>
-                        <td class="texto">Dañado</td>
+                        <td class="texto">ALMACEN</td>
+                        <td class="texto">PISO</td>
+                        <td class="texto">DAÑADO</td>
+                        <td class="texto">ALMACEN</td>
+                        <td class="texto">PISO</td>
+                        <td class="texto">DAÑADO</td>
+                        <td class="texto">ALMACEN</td>
+                        <td class="texto">PISO</td>
+                        <td class="texto">DAÑADO</td>
+                        <td class="texto">ALMACEN</td>
+                        <td class="texto">PISO</td>
+                        <td class="texto">DAÑADO</td>
+                        <td class="texto">ALMACEN</td>
+                        <td class="texto">PISO</td>
+                        <td class="texto">DAÑADO</td>
                     </tr>
 <?php
 echo"               <tr>
