@@ -23,7 +23,6 @@ ENGINE=InnoDB
 AUTO_INCREMENT=99
 ;
 
-INSERT INTO `consumo_dia` (ip_cinco, ip_seis, ip_ocho, ip_once, ip_veintidos, ip_veintisiete, ip_veintiocho,
-ip_veintinueve, ip_treintaycinco, ip_treintayseis, ip_treintaysiete, ip_treintayocho, ip_treintaynueve, ip_cuarentayuno,
-ip_cuarentaydos, ip_cuarentaytres, ip_cuarentaycuatro, ip_cuarentaycinco, ip_cuarentayseis, ip_doscientosuno, fecha_registro)
-VALUES (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,'2020-05-10');
+INSERT INTO `inv_general` (cpu_almacen, cpu_uso, cpu_dañados, monitor_almacen, monitor_uso, monitor_dañados, diadema_almacen,
+diadema_uso, diadema_dañados, teclado_almacen, teclado_uso, teclado_dañados, mouse_almacen, mouse_uso, mouse_dañados)
+VALUES (2, 172, 0, 7, 172, 0, 0, 0, 0, 0, 172, 0, 0, 172, 0);

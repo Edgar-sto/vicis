@@ -14,7 +14,6 @@
 ?>
     <br>
     <br>
-    <br>
         <div class="contenedor_tbl_inv">
             <table class="table table-bordered tabla_inventarios">
                 <thead class="cabecera_tbl_inventario">
@@ -67,25 +66,25 @@
                     </tr>
 <?php
 echo"               <tr>
-                        <td class='texto'>".$fila['cpu_almacen']."</td>
-                        <td class='texto'>".$fila['cpu_uso']."</td>
-                        <td class='texto'>".$fila['cpu_dañados']."</td>
+                        <td class='texto'><b>".$fila['cpu_almacen']."</b></td>
+                        <td class='texto'><b>".$fila['cpu_uso']."</b></td>
+                        <td class='texto'><b>".$fila['cpu_dañados']."</b></td>
 
-                        <td class='texto'>".$fila['monitor_almacen']."</td>
-                        <td class='texto'>".$fila['monitor_uso']."</td>
-                        <td class='texto'>".$fila['monitor_dañados']."</td>
+                        <td class='texto'><b>".$fila['monitor_almacen']."</b></td>
+                        <td class='texto'><b>".$fila['monitor_uso']."</b></td>
+                        <td class='texto'><b>".$fila['monitor_dañados']."</b></td>
 
-                        <td class='texto'>".$fila['diadema_almacen']."</td>
-                        <td class='texto'>".$fila['diadema_uso']."</td>
-                        <td class='texto'>".$fila['diadema_dañados']."</td>
+                        <td class='texto'><b>".$fila['diadema_almacen']."</b></td>
+                        <td class='texto'><b>".$fila['diadema_uso']."</b></td>
+                        <td class='texto'><b>".$fila['diadema_dañados']."</b></td>
 
-                        <td class='texto'>".$fila['teclado_almacen']."</td>
-                        <td class='texto'>".$fila['teclado_uso']."</td>
-                        <td class='texto'>".$fila['teclado_dañados']."</td>
+                        <td class='texto'><b>".$fila['teclado_almacen']."</b></td>
+                        <td class='texto'><b>".$fila['teclado_uso']."</b></td>
+                        <td class='texto'><b>".$fila['teclado_dañados']."</b></td>
 
-                        <td class='texto'>".$fila['mouse_almacen']."</td>
-                        <td class='texto'>".$fila['mouse_uso']."</td>
-                        <td class='texto'>".$fila['mouse_dañados']."</td>
+                        <td class='texto'><b>".$fila['mouse_almacen']."</b></td>
+                        <td class='texto'><b>".$fila['mouse_uso']."</b></td>
+                        <td class='texto'><b>".$fila['mouse_dañados']."</b></td>
                     </tr>";
     ?>                 
                 </tbody>

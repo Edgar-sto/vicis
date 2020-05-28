@@ -57,7 +57,7 @@ h1 {
   font-size: 10px;
   padding: auto;
 }
-.tabla_campanias {
+.tabla_campanias, .tabla_registros_por_dia {
   border-radius: 50px;
   color: #F2ECCE;
   margin-bottom: 0rem;
@@ -71,7 +71,7 @@ h1 {
 /*
   Tabla inventarios
  */
-.cabecera_tbl_inventario {
+.cabecera_tbl_inventario{
   font-size: 1.75em;
   text-align: center;
 }
@@ -107,5 +107,15 @@ h1 {
 }
 
 .texto {
+  font-size: 1.2em;
   text-align: center;
+}
+
+/*
+  Tabla registro servidor por día
+*/ 
+.b {
+  background-color: rgba(17, 102, 136, .70);
+  border-radius: 50px;
+  height: 450px;  
 }

@@ -55,6 +55,9 @@
             function campanias_activas(url) {
                     open(url,'','top=300,left=300,width=480,height=300') ;
                 }
+            function registro_x_dia(url) {
+                    open(url,'','top=300,left=300,width=280,height=370');
+            }
         </script>
         <script type="text/javascript">
             $(document).ready(function(){
@@ -155,11 +158,11 @@
         </script>              
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <nav class="navbar navbar-expand-sm bg-info navbar-dark justify-content-center">
             <!-- Brand -->
-            <img class="img-fluid" src="img/sto_admin_web_logo.png">
+            <!--img class="img-fluid" src="img/sto_admin_web_logo.png"-->
             <!-- Links -->
-            <ul class="navbar-nav">
+            <ul class="navbar-nav text-white">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="" target="_blank" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
                         <span class="nav-label">Panel VICIdial</span>
@@ -179,7 +182,6 @@
 
 
 
-
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="" target="_blank" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
                         <span class="nav-label">Telefonía</span>
@@ -190,6 +192,9 @@
                         </li>
                         <li>
                             <a href="http://127.0.0.1/facturacion/index.php" target="_blank">Factura</a>
+                        </li>
+                        <li>
+                            <a href="javascript:registro_x_dia('factura/registro_dia.html')">Registros por día</a>
                         </li>
                     </ul>
                 </li>
@@ -237,6 +242,7 @@
     </nav> 
     <br>
     <h1 class="">Soporte Técnico</h1>
+    <!--Fila UNO-->
     <div class="row fila_uno">
         <div class="col-md-1"></div>
         <div class="col-md-4">
@@ -324,8 +330,8 @@
         </div>
         <div class="col-md-2"></div>
         <div class="col-md-4">
-            <h2 class="subtitulos">Informacion por servidor</h2>
-            <div id="campañas" class='tm-notification-items'>
+            <h2 class="subtitulos">Informacion de campañas</h2>
+            <div class='tm-notification-items'>
             <?php
                 include 'info_campanias/info_campanias.php';
             ?>
@@ -334,9 +340,7 @@
         <div class="col-md-1"></div>
     </div>
     <br>
-    <br>
-    <br>
-    <br>
+    <!--fILA DOS-->
     <div class="row fila_dos">
         <div class="col-md-1">
             
@@ -350,6 +354,20 @@
             
         </div>
     </div>
+    <br>
+    <!--Fila TRES-->
+    <div class="row fila ">
+        <div class="col-md-1"></div>
+        <div class="col-md-10 b">
+            <h2 class="subtitulos">Consumo por día</h2>
+            <div class='tm-notification-items'>
+            <?php 
+                include 'factura/registro_dia.php';
+             ?>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+    
 
 </body>
 </html>
