@@ -154,5 +154,7 @@ a.GeneratedLink:active {
 }
 
 .GeneratedLink {
+  float: right;
   font-size: 12px;
+  margin-right: 3em;
 }

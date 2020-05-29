@@ -304,21 +304,6 @@
         <div class="col-md-1"></div>
     </div>
     <br>
-    <!--Fila CUATRO-->
-    <div class="row fila_cuatro">
-        <div class="col-md-2">
-            
-        </div>
-        <div class="col-md-8">
-            
-        </div>
-        <div class="col-md-2">
-            
-        </div>
-        
-    </div>
-    
-
 </body>
     <!-- Recargar Div -->
     <script type="text/javascript">
