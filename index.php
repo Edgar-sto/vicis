@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-        <title>Panel Soporte</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <!-- ESTILOS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <link rel="shortcut icon" href="img/favicon1.ico" />
-        <!-- Fuentes de iconos -->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Rubik+Mono+One&display=swap" rel="stylesheet">
-        <!-- SCRIPT -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-        <script>
+    <title>Panel Soporte</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!-- ESTILOS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="shortcut icon" href="img/favicon1.ico" />
+    <!-- Fuentes de iconos -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rubik+Mono+One&display=swap" rel="stylesheet">
+    <!-- SCRIPT -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script>
             //Script para abrir ventana agregar y modificar de tamaño asignado.
                 function abrir(url) {
                     open(url,'','top=300,left=300,width=280,height=550') ;
@@ -56,10 +57,10 @@
                     open(url,'','top=300,left=300,width=480,height=300') ;
                 }
             function registro_x_dia(url) {
-                    open(url,'','top=300,left=300,width=280,height=370');
+                    open(url,'','top=420,left=420,width=400,height=720');
             }
-        </script>
-        <script type="text/javascript">
+    </script>
+    <script type="text/javascript">
             $(document).ready(function(){
                 $("#hide").on('click', function() {
                     $("#element").hide();
@@ -95,67 +96,7 @@
                     return false;
                 });
             });
-        </script>
-        <script type="text/javascript" language="javascript">
-            function refreshDivs(divid,secs,url)
-            {
-
-            // define our vars
-            var divid,secs,url,fetch_unix_timestamp;
-
-            // Chequeamos que las variables no esten vacias..
-            if(divid == ""){ alert('Error: escribe el id del div que quieres refrescar'); return;}
-            else if(!document.getElementById(divid)){ alert('Error: el Div ID selectionado no esta definido: '+divid); return;}
-            else if(secs == ""){ alert('Error: indica la cantidad de segundos que quieres que el div se refresque'); return;}
-            else if(url == ""){ alert('Error: la URL del documento que quieres cargar en el div no puede estar vacia.'); return;}
-
-            // The XMLHttpRequest object
-
-            var xmlHttp;
-            try{
-            xmlHttp=new XMLHttpRequest(); // Firefox, Opera 8.0+, Safari
-            }
-            catch (e){
-            try{
-            xmlHttp=new ActiveXObject("Msxml2.XMLHTTP"); // Internet Explorer
-            }
-            catch (e){
-            try{
-            xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
-            }
-            catch (e){
-            alert("Tu explorador no soporta AJAX.");
-            return false;
-            }
-            }
-            }
-
-            // Timestamp para evitar que se cachee el array GET
-
-            fetch_unix_timestamp = function()
-            {
-            return parseInt(new Date().getTime().toString().substring(0, 10))
-            }
-
-            var timestamp = fetch_unix_timestamp();
-            var nocacheurl = url+"?t="+timestamp;
-
-            // the ajax call
-            xmlHttp.onreadystatechange=function(){
-            if(xmlHttp.readyState == 4 && xmlHttp.status == 200){
-            document.getElementById(divid).innerHTML=xmlHttp.responseText;
-            setTimeout(function(){refreshDivs(divid,secs,url);},secs*1000);
-            }
-            }
-            xmlHttp.open("GET",nocacheurl,true);
-            xmlHttp.send(null);
-            }
-
-            // LLamamos las funciones con los repectivos parametros de los DIVs que queremos refrescar.
-            window.onload = function startrefresh(){
-            refreshDivs('campañas',30000,'info_campanias.php');
-            }
-        </script>              
+    </script>  
 </head>
 <body>
     <nav class="navbar navbar-expand-sm bg-info navbar-dark justify-content-center">
@@ -192,9 +133,6 @@
                         </li>
                         <li>
                             <a href="http://127.0.0.1/facturacion/index.php" target="_blank">Factura</a>
-                        </li>
-                        <li>
-                            <a href="javascript:registro_x_dia('factura/registro_dia.html')">Registros por día</a>
                         </li>
                     </ul>
                 </li>
@@ -326,15 +264,12 @@
                             </tr>
                 </tbody>
             </table>
-
         </div>
         <div class="col-md-2"></div>
         <div class="col-md-4">
             <h2 class="subtitulos">Informacion de campañas</h2>
-            <div class='tm-notification-items'>
-            <?php
-                include 'info_campanias/info_campanias.php';
-            ?>
+            <div id="campanias" class='tm-notification-items'>
+            
             </div>
         </div>
         <div class="col-md-1"></div>
@@ -343,7 +278,6 @@
     <!--fILA DOS-->
     <div class="row fila_dos">
         <div class="col-md-1">
-            
         </div>
         <div class="col-md-10">
             <?php
@@ -351,7 +285,6 @@
             ?>
         </div>
         <div class="col-md-1">
-            
         </div>
     </div>
     <br>
@@ -360,14 +293,49 @@
         <div class="col-md-1"></div>
         <div class="col-md-10 b">
             <h2 class="subtitulos">Consumo por día</h2>
-            <div class='tm-notification-items'>
-            <?php 
-                include 'factura/registro_dia.php';
-             ?>
+            <div id="recargar_registros" class='tm-notification-items'>
+        
+            </div>
+            <script type="text/javascript">
+                
+            </script>
+            <a class="GeneratedLink" href="javascript:registro_x_dia('factura/agregar_registro.html')">Agregar Registro</a>
         </div>
         <div class="col-md-1"></div>
+    </div>
+    <br>
+    <!--Fila CUATRO-->
+    <div class="row fila_cuatro">
+        <div class="col-md-2">
+            
+        </div>
+        <div class="col-md-8">
+            
+        </div>
+        <div class="col-md-2">
+            
+        </div>
+        
     </div>
     
 
 </body>
+    <!-- Recargar Div -->
+    <script type="text/javascript">
+        $(document).ready(function(){
+            setInterval(
+                function(){
+                    $('#recargar_registros').load('factura/registro_dia.php');
+                },3000
+            );
+        });
+
+        $(document).ready(function(){
+            setInterval(
+                function(){
+                    $('#campanias').load('info_campanias/info_campanias.php');
+                },5000
+            );
+        });
+    </script>
 </html>

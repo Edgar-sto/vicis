@@ -14,32 +14,32 @@
     //Tabla 5
   	echo "
                 <div class='media tm-notification-item'>
-                    <div class='media-body'>
+                    <div class='media-body table-responsive'>
                         <table class='table table-bordered tabla_registros_por_dia'>
                             <thead class='cabecera_tbl_consumo'>
-                            	<th>Ser 5</th>
-								<th>Ser 6</th>
-								<th>Ser 8</th>
-								<th>Ser 11</th>
-								<th>Ser 22</th>
-								<th>Ser 27</th>
-								<th>Ser 28</th>
-								<th>Ser 29</th>
-								<th>Ser 35</th>
-								<th>Ser 36</th>
-								<th>Ser 37</th>
-								<th>Ser 38</th>
-								<th>Ser 39</th>
-								<th>Ser 41</th>
-								<th>Ser 42</th>
-								<th>Ser 43</th>
-								<th>Ser 44</th>
-								<th>Ser 45</th>
-								<th>Ser 46</th>
-								<th>Ser 201</th>
+                            	<th>SER 5</th>
+								<th>SER 6</th>
+								<th>SER 8</th>
+								<th>SER 11</th>
+								<th>SER 22</th>
+								<th>SER 27</th>
+								<th>SER 28</th>
+								<th>SER 29</th>
+								<th>SER 35</th>
+								<th>SER 36</th>
+								<th>SER 37</th>
+								<th>SER 38</th>
+								<th>SER 39</th>
+								<th>SER 41</th>
+								<th>SER 42</th>
+								<th>SER 43</th>
+								<th>SER 44</th>
+								<th>SER 45</th>
+								<th>SER 46</th>
+								<th>SER 201</th>
 								<th>Fecha de registro</th>
                             </thead>
-                            <tbody>";
+                            <tbody class='resultado_consulta'>";
                                 while( $resultado   =   mysqli_fetch_assoc($ejecucion_consulta)) {
 					                echo "<tr>";
 					                echo "

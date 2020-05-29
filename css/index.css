@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------*/
 .navbar {
     border-radius: 0px;
-    font-size: 14px;
+    font-size: 16px;
     margin-bottom: 0px;
     position: fixed;
     width: 100%;
@@ -41,6 +41,7 @@ h1 {
 }
 
 .subtitulos {
+  display: inline-flex;
   margin-top: 25px;
   margin-bottom: 25px;
   margin-left: 30px;
@@ -118,4 +119,40 @@ h1 {
   background-color: rgba(17, 102, 136, .70);
   border-radius: 50px;
   height: 450px;  
+}
+
+.resultado_consulta {
+  text-align: right;
+  font-size: 1em;
+}
+
+.cabecera_tbl_consumo {
+  color: #F2ECCE;
+  font-size: 1em;
+  margin: auto;
+  text-align: center;
+}
+
+a.GeneratedLink:link {
+  color:#F2ECCE;
+  font-size: 12px;
+  margin-left: 2em;
+  text-decoration:none;
+  text-align: right;
+}
+
+a.GeneratedLink:visited {
+  color:#FF0000;
+}
+
+a.GeneratedLink:hover {
+  color:#FF0000;
+}
+
+a.GeneratedLink:active {
+  color:#FF9900;
+}
+
+.GeneratedLink {
+  font-size: 12px;
 }

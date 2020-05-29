@@ -148,3 +148,7 @@ h1 {
    font-size: 12px;
    margin-left: 12px;
 }
+
+.btn_agregar_registros {
+   text-align: center;
+}

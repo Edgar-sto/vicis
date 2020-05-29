@@ -1,0 +1,9 @@
+<?php
+	$usuario="root";$password="";$servidor="127.0.0.1";$basededatos="consumo_server_dia";
+	$server_5=$_POST['server_5'];$server_6=$_POST['server_6'];$server_8=$_POST['server_8'];$server_11=$_POST['server_11'];$server_22=$_POST['server_22'];$server_27=$_POST['server_27'];$server_28=$_POST['server_28'];$server_29=$_POST['server_29'];$server_35=$_POST['server_35'];$server_36=$_POST['server_36'];$server_37=$_POST['server_37'];$server_38=$_POST['server_38'];$server_39=$_POST['server_39'];$server_41=$_POST['server_41'];$server_42=$_POST['server_42'];$server_43=$_POST['server_43'];$server_44=$_POST['server_44'];$server_45=$_POST['server_45'];$server_46=$_POST['server_46'];$server_201=$_POST['server_201'];$fecha_registro=$_POST['fecha_registro'];
+	echo "<br>";
+	$conectar=mysqli_connect($servidor,$usuario,$password,$basededatos);
+	$insertar="INSERT INTO consumo_dia (ip_cinco,ip_seis,ip_ocho,ip_once,ip_veintidos,ip_veintisiete,ip_veintiocho,ip_veintinueve,ip_treintaycinco,ip_treintayseis,ip_treintaysiete,ip_treintayocho, ip_treintaynueve,ip_cuarentayuno,ip_cuarentaydos,ip_cuarentaytres,ip_cuarentaycuatro,ip_cuarentaycinco,ip_cuarentayseis,ip_doscientosuno,fecha_registro) VALUES ( '$server_5','$server_6','$server_8', '$server_11','$server_22','$server_27','$server_28','$server_29','$server_35','$server_36','$server_37','$server_38','$server_39','$server_41','$server_42','$server_43','$server_44','$server_45','$server_46','$server_201','$fecha_registro')";
+	$query = mysqli_query($conectar, $insertar);
+	if($query){echo"<script>alert('Datos Guardados');window.close();</script>";}else{echo"<script>alert('No se guardo');</script>";}
+?>
