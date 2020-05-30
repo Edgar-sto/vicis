@@ -35,9 +35,10 @@ h1 {
 }
 
 .col-md-4 {
-  background-color: rgba(17, 102, 136, .70);
-  height: 400px;
-  border-radius: 50px;
+    background-color: rgba(17, 102, 136, .70);
+    height: 400px;
+    border-radius: 50px;
+    float: center;
 }
 
 .subtitulos {
@@ -68,6 +69,7 @@ h1 {
   overflow-y: scroll;
   margin-bottom: 12px;
   height: 70%;
+  width: 100%;
 }
 /*
   Tabla inventarios
@@ -157,4 +159,9 @@ a.GeneratedLink:active {
   float: right;
   font-size: 12px;
   margin-right: 3em;
+}
+
+.spinner-grow {
+  float: right;
+  margin: 3em;
 }

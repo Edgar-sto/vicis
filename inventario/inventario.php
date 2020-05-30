@@ -1,9 +1,5 @@
 <?php
     include 'conexion_inventario.php';
-    /*$usuario      =   "root";
-    $pass           =   "";
-    $servidor_local =   "127.0.0.1";
-    $bd_inventario  =   "soporte_mariano";*/
     $conexion_inventario    =   mysqli_connect($servidor_local, $usuario, $pass, $bd_inventario);
     //querys
     $consulta_inventario     =   "SELECT * FROM inv_general";
@@ -67,25 +63,51 @@
 <?php
 echo"               <tr>
                         <td class='texto'><b>".$fila['cpu_almacen']."</b></td>
-                        <td class='texto'><b>".$fila['cpu_uso']."</b></td>
-                        <td class='texto'><b>".$fila['cpu_dañados']."</b></td>
+                        <td class='texto'><b>".$fila['cpu_uso']."</b></td>";
+                        $CPU_dañado = $fila['cpu_dañados'];
+                        if ($CPU_dañado == 0 ) {
+                            echo "<td class='texto'><b>".$CPU_dañado."</b></td>";
+                        } else {
+                            echo "<td class='texto text-danger'><b>".$CPU_dañado."</b></td>";
+                        }
+                        
 
-                        <td class='texto'><b>".$fila['monitor_almacen']."</b></td>
-                        <td class='texto'><b>".$fila['monitor_uso']."</b></td>
-                        <td class='texto'><b>".$fila['monitor_dañados']."</b></td>
+                  echo "<td class='texto'><b>".$fila['monitor_almacen']."</b></td>
+                        <td class='texto'><b>".$fila['monitor_uso']."</b></td>";
+                        $MONITOR_dañado = $fila['monitor_dañados'];
+                        if ($MONITOR_dañado == 0 ) {
+                            echo "<td class='texto'><b>".$MONITOR_dañado."</b></td>";
+                        } else {
+                            echo "<td class='texto text-danger'><b>".$MONITOR_dañado."</b></td>";
+                        }
 
-                        <td class='texto'><b>".$fila['diadema_almacen']."</b></td>
-                        <td class='texto'><b>".$fila['diadema_uso']."</b></td>
-                        <td class='texto'><b>".$fila['diadema_dañados']."</b></td>
+                  echo"<td class='texto'><b>".$fila['diadema_almacen']."</b></td>
+                        <td class='texto'><b>".$fila['diadema_uso']."</b></td>";
+                        $DIADEMA_dañado = $fila['diadema_dañados'];
+                        if ($DIADEMA_dañado == 0 ) {
+                            echo "<td class='texto'><b>".$DIADEMA_dañado."</b></td>";
+                        } else {
+                            echo "<td class='texto text-danger'><b>".$DIADEMA_dañado."</b></td>";
+                        }
 
-                        <td class='texto'><b>".$fila['teclado_almacen']."</b></td>
-                        <td class='texto'><b>".$fila['teclado_uso']."</b></td>
-                        <td class='texto'><b>".$fila['teclado_dañados']."</b></td>
+                  echo" <td class='texto'><b>".$fila['teclado_almacen']."</b></td>
+                        <td class='texto'><b>".$fila['teclado_uso']."</b></td>";
+                        $TECLADO_dañado = $fila['teclado_dañados'];
+                        if ($TECLADO_dañado == 0 ) {
+                            echo "<td class='texto'><b>".$TECLADO_dañado."</b></td>";
+                        } else {
+                            echo "<td class='texto text-danger'><b>".$TECLADO_dañado."</b></td>";
+                        }
 
-                        <td class='texto'><b>".$fila['mouse_almacen']."</b></td>
-                        <td class='texto'><b>".$fila['mouse_uso']."</b></td>
-                        <td class='texto'><b>".$fila['mouse_dañados']."</b></td>
-                    </tr>";
+                  echo"<td class='texto'><b>".$fila['mouse_almacen']."</b></td>
+                        <td class='texto'><b>".$fila['mouse_uso']."</b></td>";
+                        $MOUSE_dañado = $fila['mouse_dañados'];
+                        if ($MOUSE_dañado == 0 ) {
+                            echo "<td class='texto'><b>".$MOUSE_dañado."</b></td>";
+                        } else {
+                            echo "<td class='texto text-danger'><b>".$MOUSE_dañado."</b></td>";
+                        }
+                  echo"</tr>";
     ?>                 
                 </tbody>
             </table>

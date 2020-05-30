@@ -268,6 +268,7 @@
         <div class="col-md-2"></div>
         <div class="col-md-4">
             <h2 class="subtitulos">Informacion de campañas</h2>
+            <div class='spinner-grow text-success' ></div>
             <div id="campanias" class='tm-notification-items'>
             
             </div>
@@ -281,7 +282,7 @@
         </div>
         <div class="col-md-10">
             <?php
-                require 'inventario/inventario.php';
+                include 'inventario/inventario.php';
             ?>
         </div>
         <div class="col-md-1">
@@ -293,6 +294,7 @@
         <div class="col-md-1"></div>
         <div class="col-md-10 b">
             <h2 class="subtitulos">Consumo por día</h2>
+            <div class='spinner-grow text-success' ></div>
             <div id="recargar_registros" class='tm-notification-items'>
         
             </div>
