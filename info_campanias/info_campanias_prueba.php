@@ -70,10 +70,10 @@
     {
 
 
-  	echo "  
-                
+  	echo "   
+                            $cual_server = $servidor[$i];
                             <thead >
-                                <th colspan='5'>Server" .$servidor[$i]."</th>
+                                <th colspan='5'>Server" .$cual_server."</th>
                             </thead>
                             <tbody>";
                                 echo "<td class='medidas_cabecera'>Id Campaña</td>
@@ -81,7 +81,7 @@
                                 <td class='medidas_cabecera'>Estado</td>
                                 <td class='medidas_cabecera'>Prefijo</td>
                                 <td class='medidas_cabecera'>Método</td>";
-                                $ejecucion_consulta = mysqli_query($conectar_$servidor[$i], $info_servidor_$servidor[$i]);
+                                $ejecucion_consulta = mysqli_query($conectar_.$cual_server, $info_servidor_.$cual_server);
                                 while ($resultado =   mysqli_fetch_array($ejecucion_consulta))
                                 {
                                     echo "<tr>
