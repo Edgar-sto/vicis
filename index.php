@@ -290,7 +290,8 @@
     </div>
     <br>
     <!--Fila TRES-->
-    <div class="row fila ">
+    <section class="row fila ">
+
         <div class="col-md-1"></div>
         <div class="col-md-10 b">
             <h2 class="subtitulos">Consumo por día</h2>
@@ -304,7 +305,7 @@
             <a class="GeneratedLink" href="javascript:registro_x_dia('factura/agregar_registro.html')">Agregar Registro</a>
         </div>
         <div class="col-md-1"></div>
-    </div>
+    </section>
     <br>
 </body>
     <!-- Recargar Div -->

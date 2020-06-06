@@ -238,20 +238,21 @@
     </nav> 
     <br>
     <h1 class="">Soporte Técnico</h1>
+    <!--Fila UNO-->
     <div class="row fila_uno">
-    	<div class="col-md-1"></div>
-  		<div class="col-md-4">
-  			<h2 class="subtitulos">Servidores</h2>
-  			<br>
-  			<table class="table">
-  				<caption class="cabecera_tbl">(Acceso a VICIdial)</caption>
-  				<thead class="cabecera_tbl">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+            <h2 class="subtitulos">Servidores</h2>
+            <br>
+            <table class="table">
+                <caption class="cabecera_tbl">(Acceso a VICIdial)</caption>
+                <thead class="cabecera_tbl">
                     <tr>
                         <!--th colspan="5"><img class="rounded mx-auto d-block" src="img/imagenes/red.png"></th-->
                     </tr>
                 </thead>
-  				<tbody class="cabecera_tbl">
-  							<tr >
+                <tbody class="cabecera_tbl">
+                            <tr >
                                 <td class="columna_tabla_btn">
                                     <button class="myButton btn" onclick="window.open('http://10.9.2.5/vicidial/welcome.php')">05</button>
                                 </td>
@@ -319,30 +320,48 @@
                                    <button class="myButton btn" onclick="window.open('http://10.9.2.201/vicidial/welcome.php')">201</button> 
                                 </td>
                             </tr>
-  				</tbody>
-  			</table>
-
-  		</div>
-  		<div class="col-md-2"></div>
-  		<div class="col-md-4">
-  			<h2 class="subtitulos">Informacion por servidor</h2>
-  			<div id="campañas" class='tm-notification-items'>
-                <div class='media tm-notification-item'>
-                    <div class='media-body'>
-                        <table id="example" class='table table-bordered tabla_campanias'>
-  			<?php
-  				include 'info_campanias/info_campanias_prueba.php';
-  			?>
-                        </table>
-                        
-                    </div>
-                </div>
-            </div>
-  		</div>
-  	</div>
-  		<div class="col-md-1"></div>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
+            
+        </div>
+        <div class="col-md-1"></div>
     </div>
+    <br>
+    <!--fILA DOS-->
+    <div class="row fila_dos">
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-10">
+            <h2 class="subtitulos">Informacion de campañas</h2>
+            <div class='spinner-grow text-success' ></div>
+            <div id="campanias" class='tm-notification-items'>
+            
+            </div>
+        </div>
+        <div class="col-md-1">
+        </div>
+    </div>
+    <br>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            setInterval(
+                function(){
+                    $('#recargar_registros').load('factura/registro_dia.php');
+                },3000
+            );
+        });
 
-
+        $(document).ready(function(){
+            setInterval(
+                function(){
+                    $('#campanias').load('info_campanias/info_campanias.php');
+                },5000
+            );
+        });
+    </script>
+    
 </body>
 </html>
