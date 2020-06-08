@@ -9,7 +9,29 @@
 }
 
 .cabecera_tbl {
-  text-align: center;
+	text-align: center;
+	color: #F2ECCE;
+}
+
+.colores_carrier {
+	text-align: center;
+	font-size: 11px;
+}
+
+#lista1 li {
+	display:inline;
+	padding-left:3px;
+	padding-right:3px;
+}
+
+.color_carrier {
+  margin:		10px;
+  margin-bottom: 5px;
+  font-size:	12px;
+}
+
+.etiqueta_carrier {
+	padding: 5px;
 }
 
 body {
@@ -36,7 +58,7 @@ h1 {
 
 .col-md-4 {
     background-color: rgba(17, 102, 136, .70);
-    height: 400px;
+    height: 420px;
     border-radius: 50px;
     float: center;
 }
@@ -152,7 +174,7 @@ a.GeneratedLink:hover {
 }
 
 a.GeneratedLink:active {
-  color:#FF9900;
+  color:rgb(255, 153, 0);
 }
 
 .GeneratedLink {
@@ -164,4 +186,11 @@ a.GeneratedLink:active {
 .spinner-grow {
   float: right;
   margin: 3em;
+}
+
+/* Colores carrier's*/
+
+td.bg-primary, td.bg-warning, td.bg-success, td.bg-danger, td.bg-info {
+  font-size: 14px;
+  text-align: center;
 }

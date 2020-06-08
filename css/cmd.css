@@ -14,3 +14,8 @@
     width: 100px;
     height: 100px;
 }
+
+.btn-buscar-usuario {
+    font-size: 10px;
+    padding-right: 70%;
+}

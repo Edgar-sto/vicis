@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es"> 
 <head>
     <title>Panel Soporte</title>
     <meta charset="utf-8">
@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/cmd.css">
     <link rel="shortcut icon" href="img/favicon1.ico" />
     <!-- Fuentes de iconos -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -96,11 +97,38 @@
                     return false;
                 });
             });
-    </script>  
+    </script> 
+    <!-- Tabla busqueda de usuario -->
+    <script>
+        /*Cargar imagen GIF de carga*/
+        $(document).ajaxStart(function () {
+            $('#ajaxBusy').hide();
+        }).ajaxStop(function () {
+            $('#ajaxBusy').show();
+        });
+        /*Funcion para cargar  archivos de consulta*/
+        function buscarUsuario(valorCaja1, valorCaja2){
+            var parametros = {
+                "valorCaja1" : valorCaja1,
+                "valorCaja2" : valorCaja2,
+            }; 
+            $.ajax({
+                data:  parametros,
+                url:   'buscar_usuario.php',
+                type:  'post',
+                beforeSend: function () {
+                    $("#resultado").html("Procesando, espere por favor...");
+                },
+                success:  function (response) {
+                    $("#resultado").html(response);
+                }
+            });
+        }
+    </script>
 </head>
 <body>
     <nav class="navbar navbar-expand-sm bg-info navbar-dark justify-content-center">
-            <!-- Brand -->
+            <!-- Brand --> 
             <!--img class="img-fluid" src="img/sto_admin_web_logo.png"-->
             <!-- Links -->
             <ul class="navbar-nav text-white">
@@ -179,7 +207,9 @@
             </ul>
     </nav> 
     <br>
-    <h1 class="">Soporte Técnico</h1>
+    <spawn>
+        <h1 class="">Soporte Técnico</h1>
+    </spawn>
     <!--Fila UNO-->
     <div class="row fila_uno">
         <div class="col-md-1"></div>
@@ -272,9 +302,30 @@
             <div id="campanias" class='tm-notification-items'>
             
             </div>
+            <div class="colores_carrier">
+                <ul id="lista1">
+                    <li class="color_carrier">
+                        <label class='bg-warning etiqueta_carrier'>DIRECTO</label>
+                    </li>
+                    <li class="color_carrier">
+                        <label class='bg-primary etiqueta_carrier'>MARCATEL</label>
+                    </li>
+                    <li class="color_carrier">
+                        <label class='bg-success etiqueta_carrier'>MCM</label>
+                    </li>
+                    <li class="color_carrier">
+                        <label class='bg-danger etiqueta_carrier'>IPCOM</label>
+                    </li>
+                    <li class="color_carrier">
+                        <label class='bg-info etiqueta_carrier'>HAZZ</label> 
+                    </li>
+                </ul>                         
+            </div>
         </div>
         <div class="col-md-1"></div>
     </div>
+    <br>
+    <br>
     <br>
     <!--fILA DOS-->
     <div class="row fila_dos">
@@ -307,6 +358,57 @@
         <div class="col-md-1"></div>
     </section>
     <br>
+    <br>
+    <!-- Fila CUATRO -->
+    <section class="row fila">
+        <div class="col-md-1">
+
+        </div>
+
+        <div class="col-md-10 b">
+            <h2 class="subtitulos">Reactivacion de usuarios</h2>
+            <form method="POST" name="form_search_user">
+                <table id="campaign_table" class="table table-bordered tabla_campanias">
+                    <tbody>
+                        <tr class="caja_de_texto">
+                            <td>
+                                <input class="form-control" type="text" name="caja_texto" id="usuario" placeholder="Usuario">
+                            </td>
+                            <td>
+                                <select class="form-control form-control-sm" id="s" name="carrier">
+                                <!--General etiquetas por reporte-->
+                                    <?php
+                                        $servidor = array(5, 6, 8, 11, 22, 27, 28, 29, 35, 36, 37, 38, 39, 41, 42, 43, 44, 45, 46, 201);
+                                        $tamanio_array_servidor = count($servidor);
+                                        echo "<br/>";
+                                        for ($i=0; $i < $tamanio_array_servidor; $i++)
+                                        {
+                                            echo "<option>10.9.2.$servidor[$i]</option>";
+                                        }
+                                    ?>
+                                </select>
+                            </td>
+                            <td class="columna_btn">
+                                <input class="btn btn-danger btn-buscar-usuario" type="button" href="javascript:;" onclick="buscarUsuario($('#usuario').val(), $('#usuario_server').val());return false;" value="BUSCAR"/>
+                            </td>
+                        </tr>
+                        <tr id="resultado">
+                            <div id="ajaxBusy">
+                            <p>
+                                <img src="ping/ajax-loader.gif">
+                            </p>
+                            </div>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+
+        <div class="col-md-1">
+
+        </div>
+
+    </section>
 </body>
     <!-- Recargar Div -->
     <script type="text/javascript">
