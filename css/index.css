@@ -20,8 +20,7 @@
 
 #lista1 li {
 	display:inline;
-	padding-left:3px;
-	padding-right:3px;
+  text-align: center;
 }
 
 .color_carrier {
