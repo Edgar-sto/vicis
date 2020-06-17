@@ -59,7 +59,7 @@
     $conectar_201   =   mysqli_connect($servidor_201, $usuario, $contraseña, $basededatos);
 
     //consulta servidor 5
-	$info_servidor_5 =	"SELECT campaign_id, campaign_name, active, dial_prefix, dial_method FROM vicidial_campaigns WHERE active = 'Y' ORDER BY campaign_id";
+	$info_servidor_5 =	"SELECT campaign_id, campaign_name, active, dial_prefix, manual_dial_prefix, dial_method FROM vicidial_campaigns WHERE active = 'Y' ORDER BY campaign_id";
 	//conexion y ejecucion de querys
     $ejecucion_consulta              =   mysqli_query($conectar_5, $info_servidor_5);
     $resultado   =   mysqli_fetch_assoc($ejecucion_consulta);
@@ -73,9 +73,10 @@
                             </thead>
                             <tbody>";
                                 echo "<td class='medidas_cabecera'>Id Campaña</td>
-                                <td class='medidas_cabecera'>Nombre</td>
-                                <td class='medidas_cabecera'>Estado</td>
-                                <td class='medidas_cabecera'>Prefijo</td>
+                                <td class='medidas_cabecera'>Nombre Camapaña</td>
+                                <td class='medidas_cabecera'>Status</td>
+                                <td class='medidas_cabecera'>Prefijo Dial</td>
+                                <td class='medidas_cabecera'>Prefijo Manual</td>
                                 <td class='medidas_cabecera'>Método</td>";
                                 $ejecucion_consulta              =   mysqli_query($conectar_5, $info_servidor_5);
                                 while ($resultado =   mysqli_fetch_array($ejecucion_consulta))
@@ -108,6 +109,30 @@
                                             } elseif ($prefijo == 555) {
                                                 echo "<td class='bg-info'>".$prefijo."</td>";
                                             }
+                                            /* Prefijo manual*/
+                                            $prefijomanual = $resultado['manual_dial_prefix'];
+                                            /** Directo */
+                                            if ($prefijomanual == 209 || $prefijomanual == 210 || $prefijomanual == 222 || $prefijomanual == 223) {
+                                                echo "<td class='bg-warning'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 888) {
+                                                echo "<td class='bg-warning'>".$prefijomanual."</td>";
+                                            /** Marcatel*/
+                                            } elseif ($prefijomanual == 9) {
+                                                echo "<td class='bg-primary'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 777) {
+                                                echo "<td class='bg-primary'>".$prefijomanual."</td>";
+                                            /** MCM */
+                                            } elseif ($prefijomanual == 11) {
+                                                echo "<td class='bg-success'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 999) {
+                                                echo "<td class='bg-success'>".$prefijomanual."</td>";
+                                            /** IPCOM */
+                                            } elseif ($prefijomanual == 444) {
+                                                echo "<td class='bg-danger'>".$prefijomanual."</td>";
+                                            /** HAZZ */
+                                            } elseif ($prefijomanual == 555) {
+                                                echo "<td class='bg-info'>".$prefijomanual."</td>";
+                                            }
 
                                     echo "  <td>".$resultado['dial_method']."</td>
                                         </tr>";
@@ -118,7 +143,7 @@
                 </div>";
 
     //consulta servidor 6
-    $info_servidor_6 =  "SELECT campaign_id, campaign_name, active, dial_prefix, dial_method FROM vicidial_campaigns WHERE active = 'Y' ORDER BY campaign_id";
+    $info_servidor_6 =  "SELECT campaign_id, campaign_name, active, dial_prefix, manual_dial_prefix, dial_method FROM vicidial_campaigns WHERE active = 'Y' ORDER BY campaign_id";
     //conexion y ejecucion de querys
     $ejecucion_consulta              =   mysqli_query($conectar_6, $info_servidor_6);
     $resultado   =   mysqli_fetch_assoc($ejecucion_consulta);
@@ -134,6 +159,7 @@
                                 <td class='medidas_cabecera'>Nombre</td>
                                 <td class='medidas_cabecera'>Estado</td>
                                 <td class='medidas_cabecera'>Prefijo</td>
+                                <td class='medidas_cabecera'>Prefijo Manual</td>
                                 <td class='medidas_cabecera'>Método</td>";
                                 $ejecucion_consulta              =   mysqli_query($conectar_6, $info_servidor_6);
                                 while ($resultado =   mysqli_fetch_array($ejecucion_consulta))
@@ -167,6 +193,30 @@
                                             } elseif ($prefijo == 555) {
                                                 echo "<td class='bg-info'>".$prefijo."</td>";
                                             }
+                                            /* Prefijo manual*/
+                                            $prefijomanual = $resultado['manual_dial_prefix'];
+                                            /** Directo */
+                                            if ($prefijomanual == 209 || $prefijomanual == 210 || $prefijomanual == 222 || $prefijomanual == 223) {
+                                                echo "<td class='bg-warning'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 888) {
+                                                echo "<td class='bg-warning'>".$prefijomanual."</td>";
+                                            /** Marcatel*/
+                                            } elseif ($prefijomanual == 9) {
+                                                echo "<td class='bg-primary'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 777) {
+                                                echo "<td class='bg-primary'>".$prefijomanual."</td>";
+                                            /** MCM */
+                                            } elseif ($prefijomanual == 11) {
+                                                echo "<td class='bg-success'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 999) {
+                                                echo "<td class='bg-success'>".$prefijomanual."</td>";
+                                            /** IPCOM */
+                                            } elseif ($prefijomanual == 444) {
+                                                echo "<td class='bg-danger'>".$prefijomanual."</td>";
+                                            /** HAZZ */
+                                            } elseif ($prefijomanual == 555) {
+                                                echo "<td class='bg-info'>".$prefijomanual."</td>";
+                                            }
 
                                     echo "  <td>".$resultado['dial_method']."</td>
                                         </tr>";
@@ -177,7 +227,7 @@
                 </div>";
 
     //consulta servidor 8
-    $info_servidor_8 =  "SELECT campaign_id, campaign_name, active, dial_prefix, dial_method FROM vicidial_campaigns WHERE active = 'Y' ORDER BY campaign_id";
+    $info_servidor_8 =  "SELECT campaign_id, campaign_name, active, dial_prefix, manual_dial_prefix, dial_method FROM vicidial_campaigns WHERE active = 'Y' ORDER BY campaign_id";
     //conexion y ejecucion de querys
     $ejecucion_consulta              =   mysqli_query($conectar_8, $info_servidor_8);
     $resultado   =   mysqli_fetch_assoc($ejecucion_consulta);
@@ -193,6 +243,7 @@
                                 <td class='medidas_cabecera'>Nombre</td>
                                 <td class='medidas_cabecera'>Estado</td>
                                 <td class='medidas_cabecera'>Prefijo</td>
+                                <td class='medidas_cabecera'>Prefijo Manual</td>
                                 <td class='medidas_cabecera'>Método</td>";
                                 $ejecucion_consulta              =   mysqli_query($conectar_8, $info_servidor_8);
                                 while ($resultado =   mysqli_fetch_array($ejecucion_consulta))
@@ -225,6 +276,30 @@
                                             } elseif ($prefijo == 555) {
                                                 echo "<td class='bg-info'>".$prefijo."</td>";
                                             }
+                                            /* Prefijo manual*/
+                                            $prefijomanual = $resultado['manual_dial_prefix'];
+                                            /** Directo */
+                                            if ($prefijomanual == 209 || $prefijomanual == 210 || $prefijomanual == 222 || $prefijomanual == 223) {
+                                                echo "<td class='bg-warning'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 888) {
+                                                echo "<td class='bg-warning'>".$prefijomanual."</td>";
+                                            /** Marcatel*/
+                                            } elseif ($prefijomanual == 9) {
+                                                echo "<td class='bg-primary'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 777) {
+                                                echo "<td class='bg-primary'>".$prefijomanual."</td>";
+                                            /** MCM */
+                                            } elseif ($prefijomanual == 11) {
+                                                echo "<td class='bg-success'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 999) {
+                                                echo "<td class='bg-success'>".$prefijomanual."</td>";
+                                            /** IPCOM */
+                                            } elseif ($prefijomanual == 444) {
+                                                echo "<td class='bg-danger'>".$prefijomanual."</td>";
+                                            /** HAZZ */
+                                            } elseif ($prefijomanual == 555) {
+                                                echo "<td class='bg-info'>".$prefijomanual."</td>";
+                                            }
 
                                     echo "  <td>".$resultado['dial_method']."</td>
                                         </tr>";
@@ -235,7 +310,7 @@
                 </div>";
 
     //consulta servidor 11
-    $info_servidor_11 =  "SELECT campaign_id, campaign_name, active, dial_prefix, dial_method FROM vicidial_campaigns WHERE active = 'Y' ORDER BY campaign_id";
+    $info_servidor_11 =  "SELECT campaign_id, campaign_name, active, dial_prefix, manual_dial_prefix, dial_method FROM vicidial_campaigns WHERE active = 'Y' ORDER BY campaign_id";
     //conexion y ejecucion de querys
     $ejecucion_consulta              =   mysqli_query($conectar_11, $info_servidor_11);
     $resultado   =   mysqli_fetch_assoc($ejecucion_consulta);
@@ -251,6 +326,7 @@
                                 <td class='medidas_cabecera'>Nombre</td>
                                 <td class='medidas_cabecera'>Estado</td>
                                 <td class='medidas_cabecera'>Prefijo</td>
+                                <td class='medidas_cabecera'>Prefijo Manual</td>
                                 <td class='medidas_cabecera'>Método</td>";
                                 $ejecucion_consulta              =   mysqli_query($conectar_11, $info_servidor_11);
                                 while ($resultado =   mysqli_fetch_array($ejecucion_consulta))
@@ -283,7 +359,30 @@
                                             } elseif ($prefijo == 555) {
                                                 echo "<td class='bg-info'>".$prefijo."</td>";
                                             }
-
+                                            /* Prefijo manual*/
+                                            $prefijomanual = $resultado['manual_dial_prefix'];
+                                            /** Directo */
+                                            if ($prefijomanual == 209 || $prefijomanual == 210 || $prefijomanual == 222 || $prefijomanual == 223) {
+                                                echo "<td class='bg-warning'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 888) {
+                                                echo "<td class='bg-warning'>".$prefijomanual."</td>";
+                                            /** Marcatel*/
+                                            } elseif ($prefijomanual == 9) {
+                                                echo "<td class='bg-primary'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 777) {
+                                                echo "<td class='bg-primary'>".$prefijomanual."</td>";
+                                            /** MCM */
+                                            } elseif ($prefijomanual == 11) {
+                                                echo "<td class='bg-success'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 999) {
+                                                echo "<td class='bg-success'>".$prefijomanual."</td>";
+                                            /** IPCOM */
+                                            } elseif ($prefijomanual == 444) {
+                                                echo "<td class='bg-danger'>".$prefijomanual."</td>";
+                                            /** HAZZ */
+                                            } elseif ($prefijomanual == 555) {
+                                                echo "<td class='bg-info'>".$prefijomanual."</td>";
+                                            }
                                     echo "  <td>".$resultado['dial_method']."</td>
                                         </tr>";
                                 }                              
@@ -293,7 +392,7 @@
                 </div>";
 
     //consulta servidor 22
-    $info_servidor_22 =  "SELECT campaign_id, campaign_name, active, dial_prefix, dial_method FROM vicidial_campaigns WHERE active = 'Y' ORDER BY campaign_id";
+    $info_servidor_22 =  "SELECT campaign_id, campaign_name, active, dial_prefix, manual_dial_prefix, dial_method FROM vicidial_campaigns WHERE active = 'Y' ORDER BY campaign_id";
     //conexion y ejecucion de querys
     $ejecucion_consulta              =   mysqli_query($conectar_22, $info_servidor_22);
     $resultado   =   mysqli_fetch_assoc($ejecucion_consulta);
@@ -309,6 +408,7 @@
                                 <td class='medidas_cabecera'>Nombre</td>
                                 <td class='medidas_cabecera'>Estado</td>
                                 <td class='medidas_cabecera'>Prefijo</td>
+                                <td class='medidas_cabecera'>Prefijo Manual</td>
                                 <td class='medidas_cabecera'>Método</td>";
                                 $ejecucion_consulta              =   mysqli_query($conectar_22, $info_servidor_22);
                                 while ($resultado =   mysqli_fetch_array($ejecucion_consulta))
@@ -341,7 +441,30 @@
                                             } elseif ($prefijo == 555) {
                                                 echo "<td class='bg-info'>".$prefijo."</td>";
                                             }
-
+                                            /* Prefijo manual*/
+                                            $prefijomanual = $resultado['manual_dial_prefix'];
+                                            /** Directo */
+                                            if ($prefijomanual == 209 || $prefijomanual == 210 || $prefijomanual == 222 || $prefijomanual == 223) {
+                                                echo "<td class='bg-warning'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 888) {
+                                                echo "<td class='bg-warning'>".$prefijomanual."</td>";
+                                            /** Marcatel*/
+                                            } elseif ($prefijomanual == 9) {
+                                                echo "<td class='bg-primary'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 777) {
+                                                echo "<td class='bg-primary'>".$prefijomanual."</td>";
+                                            /** MCM */
+                                            } elseif ($prefijomanual == 11) {
+                                                echo "<td class='bg-success'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 999) {
+                                                echo "<td class='bg-success'>".$prefijomanual."</td>";
+                                            /** IPCOM */
+                                            } elseif ($prefijomanual == 444) {
+                                                echo "<td class='bg-danger'>".$prefijomanual."</td>";
+                                            /** HAZZ */
+                                            } elseif ($prefijomanual == 555) {
+                                                echo "<td class='bg-info'>".$prefijomanual."</td>";
+                                            }
                                     echo "  <td>".$resultado['dial_method']."</td>
                                         </tr>";
                                 }                              
@@ -351,7 +474,7 @@
                 </div>";
 
     //consulta servidor 27
-    $info_servidor_27 =  "SELECT campaign_id, campaign_name, active, dial_prefix, dial_method FROM vicidial_campaigns WHERE active = 'Y' ORDER BY campaign_id";
+    $info_servidor_27 =  "SELECT campaign_id, campaign_name, active, dial_prefix, manual_dial_prefix, dial_method FROM vicidial_campaigns WHERE active = 'Y' ORDER BY campaign_id";
     //conexion y ejecucion de querys
     $ejecucion_consulta              =   mysqli_query($conectar_27, $info_servidor_27);
     $resultado   =   mysqli_fetch_assoc($ejecucion_consulta);
@@ -367,6 +490,7 @@
                                 <td class='medidas_cabecera'>Nombre</td>
                                 <td class='medidas_cabecera'>Estado</td>
                                 <td class='medidas_cabecera'>Prefijo</td>
+                                <td class='medidas_cabecera'>Prefijo Manual</td>
                                 <td class='medidas_cabecera'>Método</td>";
                                 $ejecucion_consulta              =   mysqli_query($conectar_27, $info_servidor_27);
                                 while ($resultado =   mysqli_fetch_array($ejecucion_consulta))
@@ -399,7 +523,30 @@
                                             } elseif ($prefijo == 555) {
                                                 echo "<td class='bg-info'>".$prefijo."</td>";
                                             }
-
+                                            /* Prefijo manual*/
+                                            $prefijomanual = $resultado['manual_dial_prefix'];
+                                            /** Directo */
+                                            if ($prefijomanual == 209 || $prefijomanual == 210 || $prefijomanual == 222 || $prefijomanual == 223) {
+                                                echo "<td class='bg-warning'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 888) {
+                                                echo "<td class='bg-warning'>".$prefijomanual."</td>";
+                                            /** Marcatel*/
+                                            } elseif ($prefijomanual == 9) {
+                                                echo "<td class='bg-primary'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 777) {
+                                                echo "<td class='bg-primary'>".$prefijomanual."</td>";
+                                            /** MCM */
+                                            } elseif ($prefijomanual == 11) {
+                                                echo "<td class='bg-success'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 999) {
+                                                echo "<td class='bg-success'>".$prefijomanual."</td>";
+                                            /** IPCOM */
+                                            } elseif ($prefijomanual == 444) {
+                                                echo "<td class='bg-danger'>".$prefijomanual."</td>";
+                                            /** HAZZ */
+                                            } elseif ($prefijomanual == 555) {
+                                                echo "<td class='bg-info'>".$prefijomanual."</td>";
+                                            }
                                     echo "  <td>".$resultado['dial_method']."</td>
                                         </tr>";
                                 }                              
@@ -409,7 +556,7 @@
                 </div>";
 
     //consulta servidor 28
-    $info_servidor_28 =  "SELECT campaign_id, campaign_name, active, dial_prefix, dial_method FROM vicidial_campaigns WHERE active = 'Y' ORDER BY campaign_id";
+    $info_servidor_28 =  "SELECT campaign_id, campaign_name, active, dial_prefix, manual_dial_prefix, dial_method FROM vicidial_campaigns WHERE active = 'Y' ORDER BY campaign_id";
     //conexion y ejecucion de querys
     $ejecucion_consulta              =   mysqli_query($conectar_28, $info_servidor_28);
     $resultado   =   mysqli_fetch_assoc($ejecucion_consulta);
@@ -425,6 +572,7 @@
                                 <td class='medidas_cabecera'>Nombre</td>
                                 <td class='medidas_cabecera'>Estado</td>
                                 <td class='medidas_cabecera'>Prefijo</td>
+                                <td class='medidas_cabecera'>Prefijo Manual</td>
                                 <td class='medidas_cabecera'>Método</td>";
                                 $ejecucion_consulta              =   mysqli_query($conectar_28, $info_servidor_28);
                                 while ($resultado =   mysqli_fetch_array($ejecucion_consulta))
@@ -457,7 +605,30 @@
                                             } elseif ($prefijo == 555) {
                                                 echo "<td class='bg-info'>".$prefijo."</td>";
                                             }
-
+                                            /* Prefijo manual*/
+                                            $prefijomanual = $resultado['manual_dial_prefix'];
+                                            /** Directo */
+                                            if ($prefijomanual == 209 || $prefijomanual == 210 || $prefijomanual == 222 || $prefijomanual == 223) {
+                                                echo "<td class='bg-warning'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 888) {
+                                                echo "<td class='bg-warning'>".$prefijomanual."</td>";
+                                            /** Marcatel*/
+                                            } elseif ($prefijomanual == 9) {
+                                                echo "<td class='bg-primary'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 777) {
+                                                echo "<td class='bg-primary'>".$prefijomanual."</td>";
+                                            /** MCM */
+                                            } elseif ($prefijomanual == 11) {
+                                                echo "<td class='bg-success'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 999) {
+                                                echo "<td class='bg-success'>".$prefijomanual."</td>";
+                                            /** IPCOM */
+                                            } elseif ($prefijomanual == 444) {
+                                                echo "<td class='bg-danger'>".$prefijomanual."</td>";
+                                            /** HAZZ */
+                                            } elseif ($prefijomanual == 555) {
+                                                echo "<td class='bg-info'>".$prefijomanual."</td>";
+                                            }
                                     echo "  <td>".$resultado['dial_method']."</td>
                                         </tr>";
                                 }                              
@@ -467,7 +638,7 @@
                 </div>";
 
     //consulta servidor 29
-    $info_servidor_29 =  "SELECT campaign_id, campaign_name, active, dial_prefix, dial_method FROM vicidial_campaigns WHERE active = 'Y' ORDER BY campaign_id";
+    $info_servidor_29 =  "SELECT campaign_id, campaign_name, active, dial_prefix, manual_dial_prefix, dial_method FROM vicidial_campaigns WHERE active = 'Y' ORDER BY campaign_id";
     //conexion y ejecucion de querys
     $ejecucion_consulta              =   mysqli_query($conectar_29, $info_servidor_29);
     $resultado   =   mysqli_fetch_assoc($ejecucion_consulta);
@@ -483,6 +654,7 @@
                                 <td class='medidas_cabecera'>Nombre</td>
                                 <td class='medidas_cabecera'>Estado</td>
                                 <td class='medidas_cabecera'>Prefijo</td>
+                                <td class='medidas_cabecera'>Prefijo Manual</td>
                                 <td class='medidas_cabecera'>Método</td>";
                                 $ejecucion_consulta              =   mysqli_query($conectar_29, $info_servidor_29);
                                 while ($resultado =   mysqli_fetch_array($ejecucion_consulta))
@@ -515,7 +687,30 @@
                                             } elseif ($prefijo == 555) {
                                                 echo "<td class='bg-info'>".$prefijo."</td>";
                                             }
-
+                                            /* Prefijo manual*/
+                                            $prefijomanual = $resultado['manual_dial_prefix'];
+                                            /** Directo */
+                                            if ($prefijomanual == 209 || $prefijomanual == 210 || $prefijomanual == 222 || $prefijomanual == 223) {
+                                                echo "<td class='bg-warning'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 888) {
+                                                echo "<td class='bg-warning'>".$prefijomanual."</td>";
+                                            /** Marcatel*/
+                                            } elseif ($prefijomanual == 9) {
+                                                echo "<td class='bg-primary'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 777) {
+                                                echo "<td class='bg-primary'>".$prefijomanual."</td>";
+                                            /** MCM */
+                                            } elseif ($prefijomanual == 11) {
+                                                echo "<td class='bg-success'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 999) {
+                                                echo "<td class='bg-success'>".$prefijomanual."</td>";
+                                            /** IPCOM */
+                                            } elseif ($prefijomanual == 444) {
+                                                echo "<td class='bg-danger'>".$prefijomanual."</td>";
+                                            /** HAZZ */
+                                            } elseif ($prefijomanual == 555) {
+                                                echo "<td class='bg-info'>".$prefijomanual."</td>";
+                                            }
                                     echo "  <td>".$resultado['dial_method']."</td>
                                         </tr>";
                                 }                              
@@ -525,7 +720,7 @@
                 </div>";
 
     //consulta servidor 35
-    $info_servidor_35 =  "SELECT campaign_id, campaign_name, active, dial_prefix, dial_method FROM vicidial_campaigns WHERE active = 'Y' ORDER BY campaign_id";
+    $info_servidor_35 =  "SELECT campaign_id, campaign_name, active, dial_prefix, manual_dial_prefix, dial_method FROM vicidial_campaigns WHERE active = 'Y' ORDER BY campaign_id";
     //conexion y ejecucion de querys
     $ejecucion_consulta              =   mysqli_query($conectar_35, $info_servidor_35);
     $resultado   =   mysqli_fetch_assoc($ejecucion_consulta);
@@ -541,6 +736,7 @@
                                 <td class='medidas_cabecera'>Nombre</td>
                                 <td class='medidas_cabecera'>Estado</td>
                                 <td class='medidas_cabecera'>Prefijo</td>
+                                <td class='medidas_cabecera'>Prefijo Manual</td>
                                 <td class='medidas_cabecera'>Método</td>";
                                 $ejecucion_consulta              =   mysqli_query($conectar_35, $info_servidor_35);
                                 while ($resultado =   mysqli_fetch_array($ejecucion_consulta))
@@ -573,7 +769,30 @@
                                             } elseif ($prefijo == 555) {
                                                 echo "<td class='bg-info'>".$prefijo."</td>";
                                             }
-
+                                            /* Prefijo manual*/
+                                            $prefijomanual = $resultado['manual_dial_prefix'];
+                                            /** Directo */
+                                            if ($prefijomanual == 209 || $prefijomanual == 210 || $prefijomanual == 222 || $prefijomanual == 223) {
+                                                echo "<td class='bg-warning'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 888) {
+                                                echo "<td class='bg-warning'>".$prefijomanual."</td>";
+                                            /** Marcatel*/
+                                            } elseif ($prefijomanual == 9) {
+                                                echo "<td class='bg-primary'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 777) {
+                                                echo "<td class='bg-primary'>".$prefijomanual."</td>";
+                                            /** MCM */
+                                            } elseif ($prefijomanual == 11) {
+                                                echo "<td class='bg-success'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 999) {
+                                                echo "<td class='bg-success'>".$prefijomanual."</td>";
+                                            /** IPCOM */
+                                            } elseif ($prefijomanual == 444) {
+                                                echo "<td class='bg-danger'>".$prefijomanual."</td>";
+                                            /** HAZZ */
+                                            } elseif ($prefijomanual == 555) {
+                                                echo "<td class='bg-info'>".$prefijomanual."</td>";
+                                            }
                                     echo "  <td>".$resultado['dial_method']."</td>
                                         </tr>";
                                 }                              
@@ -583,11 +802,11 @@
                 </div>";
 
     //consulta servidor 36
-    $info_servidor_36 =  "SELECT campaign_id, campaign_name, active, dial_prefix, dial_method FROM vicidial_campaigns WHERE active = 'Y' ORDER BY campaign_id";
+    $info_servidor_36 =  "SELECT campaign_id, campaign_name, active, dial_prefix, manual_dial_prefix, dial_method FROM vicidial_campaigns WHERE active = 'Y' ORDER BY campaign_id";
     //conexion y ejecucion de querys
     $ejecucion_consulta              =   mysqli_query($conectar_36, $info_servidor_36);
     $resultado   =   mysqli_fetch_assoc($ejecucion_consulta);
-    //Tabla .36
+    //Tabla 35
     echo "  <div class='media tm-notification-item'>
                     <div class='media-body'>
                         <table class='table table-bordered tabla_campanias'>
@@ -599,6 +818,7 @@
                                 <td class='medidas_cabecera'>Nombre</td>
                                 <td class='medidas_cabecera'>Estado</td>
                                 <td class='medidas_cabecera'>Prefijo</td>
+                                <td class='medidas_cabecera'>Prefijo Manual</td>
                                 <td class='medidas_cabecera'>Método</td>";
                                 $ejecucion_consulta              =   mysqli_query($conectar_36, $info_servidor_36);
                                 while ($resultado =   mysqli_fetch_array($ejecucion_consulta))
@@ -631,15 +851,31 @@
                                             } elseif ($prefijo == 555) {
                                                 echo "<td class='bg-info'>".$prefijo."</td>";
                                             }
-
+                                            /* Prefijo manual*/
+                                            $prefijomanual = $resultado['manual_dial_prefix'];
+                                            /** Directo */
+                                            if ($prefijomanual == 209 || $prefijomanual == 210 || $prefijomanual == 222 || $prefijomanual == 223) {
+                                                echo "<td class='bg-warning'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 888) {
+                                                echo "<td class='bg-warning'>".$prefijomanual."</td>";
+                                            /** Marcatel*/
+                                            } elseif ($prefijomanual == 9) {
+                                                echo "<td class='bg-primary'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 777) {
+                                                echo "<td class='bg-primary'>".$prefijomanual."</td>";
+                                            /** MCM */
+                                            } elseif ($prefijomanual == 11) {
+                                                echo "<td class='bg-success'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 999) {
+                                                echo "<td class='bg-success'>".$prefijomanual."</td>";
+                                            /** IPCOM */
+                                            } elseif ($prefijomanual == 444) {
+                                                echo "<td class='bg-danger'>".$prefijomanual."</td>";
+                                            /** HAZZ */
+                                            } elseif ($prefijomanual == 555) {
+                                                echo "<td class='bg-info'>".$prefijomanual."</td>";
+                                            }
                                     echo "  <td>".$resultado['dial_method']."</td>
-                                        </tr>";$id_campania    =   $resultado['campaign_id'];
-                                    echo "<tr>
-                                            <td>".$resultado['campaign_id']."</td>
-                                            <td>".$resultado['campaign_name']."</td>
-                                            <td>".$resultado['active']."</td>
-                                            <td>".$resultado['dial_prefix']."</td>
-                                            <td>".$resultado['dial_method']."</td>
                                         </tr>";
                                 }                              
                     echo "  </tbody>
@@ -648,7 +884,7 @@
                 </div>";
 
     //consulta servidor 37
-    $info_servidor_37 =  "SELECT campaign_id, campaign_name, active, dial_prefix, dial_method FROM vicidial_campaigns WHERE active = 'Y' ORDER BY campaign_id";
+    $info_servidor_37 =  "SELECT campaign_id, campaign_name, active, dial_prefix, manual_dial_prefix, dial_method FROM vicidial_campaigns WHERE active = 'Y' ORDER BY campaign_id";
     //conexion y ejecucion de querys
     $ejecucion_consulta              =   mysqli_query($conectar_37, $info_servidor_37);
     $resultado   =   mysqli_fetch_assoc($ejecucion_consulta);
@@ -664,6 +900,7 @@
                                 <td class='medidas_cabecera'>Nombre</td>
                                 <td class='medidas_cabecera'>Estado</td>
                                 <td class='medidas_cabecera'>Prefijo</td>
+                                <td class='medidas_cabecera'>Prefijo Manual</td>
                                 <td class='medidas_cabecera'>Método</td>";
                                 $ejecucion_consulta              =   mysqli_query($conectar_37, $info_servidor_37);
                                 while ($resultado =   mysqli_fetch_array($ejecucion_consulta))
@@ -696,7 +933,30 @@
                                             } elseif ($prefijo == 555) {
                                                 echo "<td class='bg-info'>".$prefijo."</td>";
                                             }
-
+                                            /* Prefijo manual*/
+                                            $prefijomanual = $resultado['manual_dial_prefix'];
+                                            /** Directo */
+                                            if ($prefijomanual == 209 || $prefijomanual == 210 || $prefijomanual == 222 || $prefijomanual == 223) {
+                                                echo "<td class='bg-warning'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 888) {
+                                                echo "<td class='bg-warning'>".$prefijomanual."</td>";
+                                            /** Marcatel*/
+                                            } elseif ($prefijomanual == 9) {
+                                                echo "<td class='bg-primary'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 777) {
+                                                echo "<td class='bg-primary'>".$prefijomanual."</td>";
+                                            /** MCM */
+                                            } elseif ($prefijomanual == 11) {
+                                                echo "<td class='bg-success'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 999) {
+                                                echo "<td class='bg-success'>".$prefijomanual."</td>";
+                                            /** IPCOM */
+                                            } elseif ($prefijomanual == 444) {
+                                                echo "<td class='bg-danger'>".$prefijomanual."</td>";
+                                            /** HAZZ */
+                                            } elseif ($prefijomanual == 555) {
+                                                echo "<td class='bg-info'>".$prefijomanual."</td>";
+                                            }
                                     echo "  <td>".$resultado['dial_method']."</td>
                                         </tr>";
                                 }                              
@@ -706,7 +966,7 @@
                 </div>";
 
     //consulta servidor 38
-    $info_servidor_38 =  "SELECT campaign_id, campaign_name, active, dial_prefix, dial_method FROM vicidial_campaigns WHERE active = 'Y' ORDER BY campaign_id";
+    $info_servidor_38 =  "SELECT campaign_id, campaign_name, active, dial_prefix, manual_dial_prefix, dial_method FROM vicidial_campaigns WHERE active = 'Y' ORDER BY campaign_id";
     //conexion y ejecucion de querys
     $ejecucion_consulta              =   mysqli_query($conectar_38, $info_servidor_38);
     $resultado   =   mysqli_fetch_assoc($ejecucion_consulta);
@@ -722,6 +982,7 @@
                                 <td class='medidas_cabecera'>Nombre</td>
                                 <td class='medidas_cabecera'>Estado</td>
                                 <td class='medidas_cabecera'>Prefijo</td>
+                                <td class='medidas_cabecera'>Prefijo Manual</td>
                                 <td class='medidas_cabecera'>Método</td>";
                                 $ejecucion_consulta              =   mysqli_query($conectar_38, $info_servidor_38);
                                 while ($resultado =   mysqli_fetch_array($ejecucion_consulta))
@@ -754,7 +1015,30 @@
                                             } elseif ($prefijo == 555) {
                                                 echo "<td class='bg-info'>".$prefijo."</td>";
                                             }
-
+                                            /* Prefijo manual*/
+                                            $prefijomanual = $resultado['manual_dial_prefix'];
+                                            /** Directo */
+                                            if ($prefijomanual == 209 || $prefijomanual == 210 || $prefijomanual == 222 || $prefijomanual == 223) {
+                                                echo "<td class='bg-warning'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 888) {
+                                                echo "<td class='bg-warning'>".$prefijomanual."</td>";
+                                            /** Marcatel*/
+                                            } elseif ($prefijomanual == 9) {
+                                                echo "<td class='bg-primary'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 777) {
+                                                echo "<td class='bg-primary'>".$prefijomanual."</td>";
+                                            /** MCM */
+                                            } elseif ($prefijomanual == 11) {
+                                                echo "<td class='bg-success'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 999) {
+                                                echo "<td class='bg-success'>".$prefijomanual."</td>";
+                                            /** IPCOM */
+                                            } elseif ($prefijomanual == 444) {
+                                                echo "<td class='bg-danger'>".$prefijomanual."</td>";
+                                            /** HAZZ */
+                                            } elseif ($prefijomanual == 555) {
+                                                echo "<td class='bg-info'>".$prefijomanual."</td>";
+                                            }
                                     echo "  <td>".$resultado['dial_method']."</td>
                                         </tr>";
                                 }                              
@@ -764,7 +1048,7 @@
                 </div>";
 
     //consulta servidor 39
-    $info_servidor_39 =  "SELECT campaign_id, campaign_name, active, dial_prefix, dial_method FROM vicidial_campaigns WHERE active = 'Y' ORDER BY campaign_id";
+    $info_servidor_39 =  "SELECT campaign_id, campaign_name, active, dial_prefix, manual_dial_prefix, dial_method FROM vicidial_campaigns WHERE active = 'Y' ORDER BY campaign_id";
     //conexion y ejecucion de querys
     $ejecucion_consulta              =   mysqli_query($conectar_39, $info_servidor_39);
     $resultado   =   mysqli_fetch_assoc($ejecucion_consulta);
@@ -780,6 +1064,7 @@
                                 <td class='medidas_cabecera'>Nombre</td>
                                 <td class='medidas_cabecera'>Estado</td>
                                 <td class='medidas_cabecera'>Prefijo</td>
+                                <td class='medidas_cabecera'>Prefijo Manual</td>
                                 <td class='medidas_cabecera'>Método</td>";
                                 $ejecucion_consulta              =   mysqli_query($conectar_39, $info_servidor_39);
                                 while ($resultado =   mysqli_fetch_array($ejecucion_consulta))
@@ -812,7 +1097,30 @@
                                             } elseif ($prefijo == 555) {
                                                 echo "<td class='bg-info'>".$prefijo."</td>";
                                             }
-
+                                            /* Prefijo manual*/
+                                            $prefijomanual = $resultado['manual_dial_prefix'];
+                                            /** Directo */
+                                            if ($prefijomanual == 209 || $prefijomanual == 210 || $prefijomanual == 222 || $prefijomanual == 223) {
+                                                echo "<td class='bg-warning'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 888) {
+                                                echo "<td class='bg-warning'>".$prefijomanual."</td>";
+                                            /** Marcatel*/
+                                            } elseif ($prefijomanual == 9) {
+                                                echo "<td class='bg-primary'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 777) {
+                                                echo "<td class='bg-primary'>".$prefijomanual."</td>";
+                                            /** MCM */
+                                            } elseif ($prefijomanual == 11) {
+                                                echo "<td class='bg-success'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 999) {
+                                                echo "<td class='bg-success'>".$prefijomanual."</td>";
+                                            /** IPCOM */
+                                            } elseif ($prefijomanual == 444) {
+                                                echo "<td class='bg-danger'>".$prefijomanual."</td>";
+                                            /** HAZZ */
+                                            } elseif ($prefijomanual == 555) {
+                                                echo "<td class='bg-info'>".$prefijomanual."</td>";
+                                            }
                                     echo "  <td>".$resultado['dial_method']."</td>
                                         </tr>";
                                 }                              
@@ -822,7 +1130,7 @@
                 </div>";
 
     //consulta servidor 41
-    $info_servidor_41 =  "SELECT campaign_id, campaign_name, active, dial_prefix, dial_method FROM vicidial_campaigns WHERE active = 'Y' ORDER BY campaign_id";
+    $info_servidor_41 =  "SELECT campaign_id, campaign_name, active, dial_prefix, manual_dial_prefix, dial_method FROM vicidial_campaigns WHERE active = 'Y' ORDER BY campaign_id";
     //conexion y ejecucion de querys
     $ejecucion_consulta              =   mysqli_query($conectar_41, $info_servidor_41);
     $resultado   =   mysqli_fetch_assoc($ejecucion_consulta);
@@ -838,6 +1146,7 @@
                                 <td class='medidas_cabecera'>Nombre</td>
                                 <td class='medidas_cabecera'>Estado</td>
                                 <td class='medidas_cabecera'>Prefijo</td>
+                                <td class='medidas_cabecera'>Prefijo Manual</td>
                                 <td class='medidas_cabecera'>Método</td>";
                                 $ejecucion_consulta              =   mysqli_query($conectar_41, $info_servidor_41);
                                 while ($resultado =   mysqli_fetch_array($ejecucion_consulta))
@@ -870,7 +1179,30 @@
                                             } elseif ($prefijo == 555) {
                                                 echo "<td class='bg-info'>".$prefijo."</td>";
                                             }
-
+                                            /* Prefijo manual*/
+                                            $prefijomanual = $resultado['manual_dial_prefix'];
+                                            /** Directo */
+                                            if ($prefijomanual == 209 || $prefijomanual == 210 || $prefijomanual == 222 || $prefijomanual == 223) {
+                                                echo "<td class='bg-warning'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 888) {
+                                                echo "<td class='bg-warning'>".$prefijomanual."</td>";
+                                            /** Marcatel*/
+                                            } elseif ($prefijomanual == 9) {
+                                                echo "<td class='bg-primary'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 777) {
+                                                echo "<td class='bg-primary'>".$prefijomanual."</td>";
+                                            /** MCM */
+                                            } elseif ($prefijomanual == 11) {
+                                                echo "<td class='bg-success'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 999) {
+                                                echo "<td class='bg-success'>".$prefijomanual."</td>";
+                                            /** IPCOM */
+                                            } elseif ($prefijomanual == 444) {
+                                                echo "<td class='bg-danger'>".$prefijomanual."</td>";
+                                            /** HAZZ */
+                                            } elseif ($prefijomanual == 555) {
+                                                echo "<td class='bg-info'>".$prefijomanual."</td>";
+                                            }
                                     echo "  <td>".$resultado['dial_method']."</td>
                                         </tr>";
                                 }                              
@@ -880,7 +1212,7 @@
                 </div>";
 
     //consulta servidor 42
-    $info_servidor_42 =  "SELECT campaign_id, campaign_name, active, dial_prefix, dial_method FROM vicidial_campaigns WHERE active = 'Y' ORDER BY campaign_id";
+    $info_servidor_42 =  "SELECT campaign_id, campaign_name, active, dial_prefix, manual_dial_prefix, dial_method FROM vicidial_campaigns WHERE active = 'Y' ORDER BY campaign_id";
     //conexion y ejecucion de querys
     $ejecucion_consulta              =   mysqli_query($conectar_42, $info_servidor_42);
     $resultado   =   mysqli_fetch_assoc($ejecucion_consulta);
@@ -896,6 +1228,7 @@
                                 <td class='medidas_cabecera'>Nombre</td>
                                 <td class='medidas_cabecera'>Estado</td>
                                 <td class='medidas_cabecera'>Prefijo</td>
+                                <td class='medidas_cabecera'>Prefijo Manual</td>
                                 <td class='medidas_cabecera'>Método</td>";
                                 $ejecucion_consulta              =   mysqli_query($conectar_42, $info_servidor_42);
                                 while ($resultado =   mysqli_fetch_array($ejecucion_consulta))
@@ -928,7 +1261,30 @@
                                             } elseif ($prefijo == 555) {
                                                 echo "<td class='bg-info'>".$prefijo."</td>";
                                             }
-
+                                            /* Prefijo manual*/
+                                            $prefijomanual = $resultado['manual_dial_prefix'];
+                                            /** Directo */
+                                            if ($prefijomanual == 209 || $prefijomanual == 210 || $prefijomanual == 222 || $prefijomanual == 223) {
+                                                echo "<td class='bg-warning'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 888) {
+                                                echo "<td class='bg-warning'>".$prefijomanual."</td>";
+                                            /** Marcatel*/
+                                            } elseif ($prefijomanual == 9) {
+                                                echo "<td class='bg-primary'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 777) {
+                                                echo "<td class='bg-primary'>".$prefijomanual."</td>";
+                                            /** MCM */
+                                            } elseif ($prefijomanual == 11) {
+                                                echo "<td class='bg-success'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 999) {
+                                                echo "<td class='bg-success'>".$prefijomanual."</td>";
+                                            /** IPCOM */
+                                            } elseif ($prefijomanual == 444) {
+                                                echo "<td class='bg-danger'>".$prefijomanual."</td>";
+                                            /** HAZZ */
+                                            } elseif ($prefijomanual == 555) {
+                                                echo "<td class='bg-info'>".$prefijomanual."</td>";
+                                            }
                                     echo "  <td>".$resultado['dial_method']."</td>
                                         </tr>";
                                 }                              
@@ -938,7 +1294,7 @@
                 </div>";
 
     //consulta servidor 43
-    $info_servidor_43 =  "SELECT campaign_id, campaign_name, active, dial_prefix, dial_method FROM vicidial_campaigns WHERE active = 'Y' ORDER BY campaign_id";
+    $info_servidor_43 =  "SELECT campaign_id, campaign_name, active, dial_prefix, manual_dial_prefix, dial_method FROM vicidial_campaigns WHERE active = 'Y' ORDER BY campaign_id";
     //conexion y ejecucion de querys
     $ejecucion_consulta              =   mysqli_query($conectar_43, $info_servidor_43);
     $resultado   =   mysqli_fetch_assoc($ejecucion_consulta);
@@ -954,6 +1310,7 @@
                                 <td class='medidas_cabecera'>Nombre</td>
                                 <td class='medidas_cabecera'>Estado</td>
                                 <td class='medidas_cabecera'>Prefijo</td>
+                                <td class='medidas_cabecera'>Prefijo Manual</td>
                                 <td class='medidas_cabecera'>Método</td>";
                                 $ejecucion_consulta              =   mysqli_query($conectar_43, $info_servidor_43);
                                 while ($resultado =   mysqli_fetch_array($ejecucion_consulta))
@@ -986,7 +1343,30 @@
                                             } elseif ($prefijo == 555) {
                                                 echo "<td class='bg-info'>".$prefijo."</td>";
                                             }
-
+                                            /* Prefijo manual*/
+                                            $prefijomanual = $resultado['manual_dial_prefix'];
+                                            /** Directo */
+                                            if ($prefijomanual == 209 || $prefijomanual == 210 || $prefijomanual == 222 || $prefijomanual == 223) {
+                                                echo "<td class='bg-warning'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 888) {
+                                                echo "<td class='bg-warning'>".$prefijomanual."</td>";
+                                            /** Marcatel*/
+                                            } elseif ($prefijomanual == 9) {
+                                                echo "<td class='bg-primary'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 777) {
+                                                echo "<td class='bg-primary'>".$prefijomanual."</td>";
+                                            /** MCM */
+                                            } elseif ($prefijomanual == 11) {
+                                                echo "<td class='bg-success'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 999) {
+                                                echo "<td class='bg-success'>".$prefijomanual."</td>";
+                                            /** IPCOM */
+                                            } elseif ($prefijomanual == 444) {
+                                                echo "<td class='bg-danger'>".$prefijomanual."</td>";
+                                            /** HAZZ */
+                                            } elseif ($prefijomanual == 555) {
+                                                echo "<td class='bg-info'>".$prefijomanual."</td>";
+                                            }
                                     echo "  <td>".$resultado['dial_method']."</td>
                                         </tr>";
                                 }                              
@@ -996,7 +1376,7 @@
                 </div>";
 
     //consulta servidor 44
-    $info_servidor_44 =  "SELECT campaign_id, campaign_name, active, dial_prefix, dial_method FROM vicidial_campaigns WHERE active = 'Y' ORDER BY campaign_id";
+    $info_servidor_44 =  "SELECT campaign_id, campaign_name, active, dial_prefix, manual_dial_prefix, dial_method FROM vicidial_campaigns WHERE active = 'Y' ORDER BY campaign_id";
     //conexion y ejecucion de querys
     $ejecucion_consulta              =   mysqli_query($conectar_44, $info_servidor_44);
     $resultado   =   mysqli_fetch_assoc($ejecucion_consulta);
@@ -1012,6 +1392,7 @@
                                 <td class='medidas_cabecera'>Nombre</td>
                                 <td class='medidas_cabecera'>Estado</td>
                                 <td class='medidas_cabecera'>Prefijo</td>
+                                <td class='medidas_cabecera'>Prefijo Manual</td>
                                 <td class='medidas_cabecera'>Método</td>";
                                 $ejecucion_consulta              =   mysqli_query($conectar_44, $info_servidor_44);
                                 while ($resultado =   mysqli_fetch_array($ejecucion_consulta))
@@ -1044,7 +1425,30 @@
                                             } elseif ($prefijo == 555) {
                                                 echo "<td class='bg-info'>".$prefijo."</td>";
                                             }
-
+                                            /* Prefijo manual*/
+                                            $prefijomanual = $resultado['manual_dial_prefix'];
+                                            /** Directo */
+                                            if ($prefijomanual == 209 || $prefijomanual == 210 || $prefijomanual == 222 || $prefijomanual == 223) {
+                                                echo "<td class='bg-warning'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 888) {
+                                                echo "<td class='bg-warning'>".$prefijomanual."</td>";
+                                            /** Marcatel*/
+                                            } elseif ($prefijomanual == 9) {
+                                                echo "<td class='bg-primary'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 777) {
+                                                echo "<td class='bg-primary'>".$prefijomanual."</td>";
+                                            /** MCM */
+                                            } elseif ($prefijomanual == 11) {
+                                                echo "<td class='bg-success'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 999) {
+                                                echo "<td class='bg-success'>".$prefijomanual."</td>";
+                                            /** IPCOM */
+                                            } elseif ($prefijomanual == 444) {
+                                                echo "<td class='bg-danger'>".$prefijomanual."</td>";
+                                            /** HAZZ */
+                                            } elseif ($prefijomanual == 555) {
+                                                echo "<td class='bg-info'>".$prefijomanual."</td>";
+                                            }
                                     echo "  <td>".$resultado['dial_method']."</td>
                                         </tr>";
                                 }                              
@@ -1054,7 +1458,7 @@
                 </div>";
 
     //consulta servidor 45
-    $info_servidor_45 =  "SELECT campaign_id, campaign_name, active, dial_prefix, dial_method FROM vicidial_campaigns WHERE active = 'Y' ORDER BY campaign_id";
+    $info_servidor_45 =  "SELECT campaign_id, campaign_name, active, dial_prefix, manual_dial_prefix, dial_method FROM vicidial_campaigns WHERE active = 'Y' ORDER BY campaign_id";
     //conexion y ejecucion de querys
     $ejecucion_consulta              =   mysqli_query($conectar_45, $info_servidor_45);
     $resultado   =   mysqli_fetch_assoc($ejecucion_consulta);
@@ -1070,6 +1474,7 @@
                                 <td class='medidas_cabecera'>Nombre</td>
                                 <td class='medidas_cabecera'>Estado</td>
                                 <td class='medidas_cabecera'>Prefijo</td>
+                                <td class='medidas_cabecera'>Prefijo Manual</td>
                                 <td class='medidas_cabecera'>Método</td>";
                                 $ejecucion_consulta              =   mysqli_query($conectar_45, $info_servidor_45);
                                 while ($resultado =   mysqli_fetch_array($ejecucion_consulta))
@@ -1102,7 +1507,30 @@
                                             } elseif ($prefijo == 555) {
                                                 echo "<td class='bg-info'>".$prefijo."</td>";
                                             }
-
+                                            /* Prefijo manual*/
+                                            $prefijomanual = $resultado['manual_dial_prefix'];
+                                            /** Directo */
+                                            if ($prefijomanual == 209 || $prefijomanual == 210 || $prefijomanual == 222 || $prefijomanual == 223) {
+                                                echo "<td class='bg-warning'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 888) {
+                                                echo "<td class='bg-warning'>".$prefijomanual."</td>";
+                                            /** Marcatel*/
+                                            } elseif ($prefijomanual == 9) {
+                                                echo "<td class='bg-primary'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 777) {
+                                                echo "<td class='bg-primary'>".$prefijomanual."</td>";
+                                            /** MCM */
+                                            } elseif ($prefijomanual == 11) {
+                                                echo "<td class='bg-success'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 999) {
+                                                echo "<td class='bg-success'>".$prefijomanual."</td>";
+                                            /** IPCOM */
+                                            } elseif ($prefijomanual == 444) {
+                                                echo "<td class='bg-danger'>".$prefijomanual."</td>";
+                                            /** HAZZ */
+                                            } elseif ($prefijomanual == 555) {
+                                                echo "<td class='bg-info'>".$prefijomanual."</td>";
+                                            }
                                     echo "  <td>".$resultado['dial_method']."</td>
                                         </tr>";
                                 }                              
@@ -1112,7 +1540,7 @@
                 </div>";
 
     //consulta servidor 46
-    $info_servidor_46 =  "SELECT campaign_id, campaign_name, active, dial_prefix, dial_method FROM vicidial_campaigns WHERE active = 'Y' ORDER BY campaign_id";
+    $info_servidor_46 =  "SELECT campaign_id, campaign_name, active, dial_prefix, manual_dial_prefix, dial_method FROM vicidial_campaigns WHERE active = 'Y' ORDER BY campaign_id";
     //conexion y ejecucion de querys
     $ejecucion_consulta              =   mysqli_query($conectar_46, $info_servidor_46);
     $resultado   =   mysqli_fetch_assoc($ejecucion_consulta);
@@ -1128,6 +1556,7 @@
                                 <td class='medidas_cabecera'>Nombre</td>
                                 <td class='medidas_cabecera'>Estado</td>
                                 <td class='medidas_cabecera'>Prefijo</td>
+                                <td class='medidas_cabecera'>Prefijo Manual</td>
                                 <td class='medidas_cabecera'>Método</td>";
                                 $ejecucion_consulta              =   mysqli_query($conectar_46, $info_servidor_46);
                                 while ($resultado =   mysqli_fetch_array($ejecucion_consulta))
@@ -1160,7 +1589,30 @@
                                             } elseif ($prefijo == 555) {
                                                 echo "<td class='bg-info'>".$prefijo."</td>";
                                             }
-
+                                            /* Prefijo manual*/
+                                            $prefijomanual = $resultado['manual_dial_prefix'];
+                                            /** Directo */
+                                            if ($prefijomanual == 209 || $prefijomanual == 210 || $prefijomanual == 222 || $prefijomanual == 223) {
+                                                echo "<td class='bg-warning'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 888) {
+                                                echo "<td class='bg-warning'>".$prefijomanual."</td>";
+                                            /** Marcatel*/
+                                            } elseif ($prefijomanual == 9) {
+                                                echo "<td class='bg-primary'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 777) {
+                                                echo "<td class='bg-primary'>".$prefijomanual."</td>";
+                                            /** MCM */
+                                            } elseif ($prefijomanual == 11) {
+                                                echo "<td class='bg-success'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 999) {
+                                                echo "<td class='bg-success'>".$prefijomanual."</td>";
+                                            /** IPCOM */
+                                            } elseif ($prefijomanual == 444) {
+                                                echo "<td class='bg-danger'>".$prefijomanual."</td>";
+                                            /** HAZZ */
+                                            } elseif ($prefijomanual == 555) {
+                                                echo "<td class='bg-info'>".$prefijomanual."</td>";
+                                            }
                                     echo "  <td>".$resultado['dial_method']."</td>
                                         </tr>";
                                 }                              
@@ -1170,7 +1622,7 @@
                 </div>";
 
     //consulta servidor 201
-    $info_servidor_201 =  "SELECT campaign_id, campaign_name, active, dial_prefix, dial_method FROM vicidial_campaigns WHERE active = 'Y' ORDER BY campaign_id";
+    $info_servidor_201 =  "SELECT campaign_id, campaign_name, active, dial_prefix, manual_dial_prefix, dial_method FROM vicidial_campaigns WHERE active = 'Y' ORDER BY campaign_id";
     //conexion y ejecucion de querys
     $ejecucion_consulta              =   mysqli_query($conectar_201, $info_servidor_201);
     $resultado   =   mysqli_fetch_assoc($ejecucion_consulta);
@@ -1186,6 +1638,7 @@
                                 <td class='medidas_cabecera'>Nombre</td>
                                 <td class='medidas_cabecera'>Estado</td>
                                 <td class='medidas_cabecera'>Prefijo</td>
+                                <td class='medidas_cabecera'>Prefijo Manual</td>
                                 <td class='medidas_cabecera'>Método</td>";
                                 $ejecucion_consulta              =   mysqli_query($conectar_201, $info_servidor_201);
                                 while ($resultado =   mysqli_fetch_array($ejecucion_consulta))
@@ -1218,7 +1671,30 @@
                                             } elseif ($prefijo == 555) {
                                                 echo "<td class='bg-info'>".$prefijo."</td>";
                                             }
-
+                                            /* Prefijo manual*/
+                                            $prefijomanual = $resultado['manual_dial_prefix'];
+                                            /** Directo */
+                                            if ($prefijomanual == 209 || $prefijomanual == 210 || $prefijomanual == 222 || $prefijomanual == 223) {
+                                                echo "<td class='bg-warning'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 888) {
+                                                echo "<td class='bg-warning'>".$prefijomanual."</td>";
+                                            /** Marcatel*/
+                                            } elseif ($prefijomanual == 9) {
+                                                echo "<td class='bg-primary'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 777) {
+                                                echo "<td class='bg-primary'>".$prefijomanual."</td>";
+                                            /** MCM */
+                                            } elseif ($prefijomanual == 11) {
+                                                echo "<td class='bg-success'>".$prefijomanual."</td>";
+                                            } elseif ($prefijomanual == 999) {
+                                                echo "<td class='bg-success'>".$prefijomanual."</td>";
+                                            /** IPCOM */
+                                            } elseif ($prefijomanual == 444) {
+                                                echo "<td class='bg-danger'>".$prefijomanual."</td>";
+                                            /** HAZZ */
+                                            } elseif ($prefijomanual == 555) {
+                                                echo "<td class='bg-info'>".$prefijomanual."</td>";
+                                            }
                                     echo "  <td>".$resultado['dial_method']."</td>
                                         </tr>";
                                 }                              

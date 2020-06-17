@@ -7,6 +7,7 @@
     <!-- ESTILOS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" type="text/css" href="css/cmd.css">
     <link rel="shortcut icon" href="img/favicon1.ico" />
@@ -14,6 +15,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Rubik+Mono+One&display=swap" rel="stylesheet">
     <!-- SCRIPT -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -127,7 +130,7 @@
     </script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm bg-info navbar-dark justify-content-center">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
             <!-- Brand --> 
             <!--img class="img-fluid" src="img/sto_admin_web_logo.png"-->
             <!-- Links -->
@@ -196,7 +199,7 @@
                     <a class="nav-link" href="http://127.0.0.1/facturacion/index.php" target="_blank">Facturación</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="http://127.0.0.1/vicis/correos/correos.HTML" target="_blank">Correos</a>
+                    <a class="nav-link" href="http://127.0.0.1/vicis/personal/personal.html" target="_blank">Personal Home office</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="javascript:ping('ping/ping.html')">Ping</a>
@@ -210,205 +213,173 @@
     <spawn>
         <h1 class="">Soporte Técnico</h1>
     </spawn>
-    <!--Fila UNO-->
-    <div class="row fila_uno">
-        <div class="col-md-1"></div>
-        <div class="col-md-4">
-            <h2 class="subtitulos">Servidores</h2>
+    <!--fila uno-->
+    <div class="container">
+        <div class="container-fluid">
+            <div class="row fila">
             <br>
-            <table class="table">
-                <caption class="cabecera_tbl">(Acceso a VICIdial)</caption>
-                <thead class="cabecera_tbl">
-                    <tr>
-                        <!--th colspan="5"><img class="rounded mx-auto d-block" src="img/imagenes/red.png"></th-->
-                    </tr>
-                </thead>
-                <tbody class="cabecera_tbl">
-                            <tr >
-                                <td class="columna_tabla_btn">
-                                    <button class="myButton btn" onclick="window.open('http://10.9.2.5/vicidial/welcome.php')">05</button>
-                                </td>
-                                <td class="columna_tabla_btn">
-                                    <button class="myButto btn" onclick="window.open('http://10.9.2.6/vicidial/welcome.php')">06</button>
-                                </td>
-                                <td class="columna_tabla_btn">
-                                    <button class="myButton btn" onclick="window.open('http://10.9.2.8/vicidial/welcome.php')">08</button> 
-                                </td>
-                                <td class="columna_tabla_btn">
+                <table class="table">
+                    <caption class="cabecera_tbl">(Acceso a VICIdial)</caption>
+                    <thead class="cabecera_tbl">
+                        <th colspan="5">
+                            <img src="img/vicidial_admin_web_logo.png" alt="vicidial">
+                        </th>
+                    </thead>
+                    <tbody class="cabecera_tbl">
+                        <tr >
+                            <td class="columna_tabla_btn">
+                                <button class="myButton btn" onclick="window.open('http://10.9.2.5/vicidial/welcome.php')">05</button>
+                            </td>
+                            <td class="columna_tabla_btn">
+                                <button class="myButto btn" onclick="window.open('http://10.9.2.6/vicidial/welcome.php')">06</button>
+                            </td>
+                            <td class="columna_tabla_btn">
+                                <button class="myButton btn" onclick="window.open('http://10.9.2.8/vicidial/welcome.php')">08</button> 
+                            </td>
+                            <td class="columna_tabla_btn">
                                     <button class="myButton btn" onclick="window.open('http://10.9.2.9/vicidial/welcome.php')">09</button>
-                                </td>
-                                <td class="columna_tabla_btn">
-                                    <button class="myButton btn" onclick="window.open('http://10.9.2.22/vicidial/welcome.php')">22</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="columna_tabla_btn">
-                                    <button class="myButton btn" onclick="window.open('http://10.9.2.27/vicidial/welcome.php')">27</button>
-                                </td>
-                                <td class="columna_tabla_btn">
-                                    <button class="myButton btn" onclick="window.open('http://10.9.2.28/vicidial/welcome.php')">28</button>
-                                </td>
-                                <td class="columna_tabla_btn">
-                                    <button class="myButton btn" onclick="window.open('http://10.9.2.29/vicidial/welcome.php')">29</button>
-                                </td>
-                                <td class="columna_tabla_btn">
-                                    <button class="myButton btn" onclick="window.open('http://10.9.2.35/vicidial/welcome.php')">35</button>
-                                </td>
-                                <td class="columna_tabla_btn">
-                                    <button class="myButton btn" onclick="window.open('http://10.9.2.36/vicidial/welcome.php')">36</button>
-                                </td>
-                            </tr>
-                            <tr>
-                              <td class="columna_tabla_btn">
-                                 <button class="myButton btn" onclick="window.open('http://10.9.2.37/vicidial/welcome.php')">37</button> 
-                              </td>
-                              <td class="columna_tabla_btn">
-                                 <button class="myButton btn" onclick="window.open('http://10.9.2.38/vicidial/welcome.php')">38</button> 
-                              </td>
-                              <td class="columna_tabla_btn">
-                                 <button class="myButton btn" onclick="window.open('http://10.9.2.39/vicidial/welcome.php')">39</button> 
-                              </td>
-                              <td class="columna_tabla_btn">
-                                 <button class="myButton btn" onclick="window.open('http://10.9.2.41/vicidial/welcome.php')">41</button> 
-                              </td>
-                              <td class="columna_tabla_btn">
-                                 <button class="myButton btn" onclick="window.open('http://10.9.2.42/vicidial/welcome.php')">42</button> 
-                              </td>
-                            </tr>
-                            <tr>
-                                <td class="columna_tabla_btn">
-                                  <button class="myButton btn" onclick="window.open('http://10.9.2.43/vicidial/welcome.php')">43</button>  
-                                </td>
-                                <td class="columna_tabla_btn">
-                                  <button class="myButton btn" onclick="window.open('http://10.9.2.44/vicidial/welcome.php')">44</button>  
-                                </td>
-                                <td class="columna_tabla_btn">
-                                   <button class="myButton btn" onclick="window.open('http://10.9.2.45/vicidial/welcome.php')">45</button> 
-                                </td>
-                                <td class="columna_tabla_btn">
-                                   <button class="myButton btn" onclick="window.open('http://10.9.2.46/vicidial/welcome.php')">46</button> 
-                                </td>
-                                <td class="columna_tabla_btn">
-                                   <button class="myButton btn" onclick="window.open('http://10.9.2.201/vicidial/welcome.php')">201</button> 
-                                </td>
-                            </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="col-md-2"></div>
-        <div class="col-md-4">
-            <h2 class="subtitulos">Informacion de campañas</h2>
-            <div class='spinner-grow text-success' ></div>
-            <div id="campanias" class='tm-notification-items'>
-            
+                            </td>
+                            <td class="columna_tabla_btn">
+                                <button class="myButton btn" onclick="window.open('http://10.9.2.22/vicidial/welcome.php')">22</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="columna_tabla_btn">
+                                <button class="myButton btn" onclick="window.open('http://10.9.2.27/vicidial/welcome.php')">27</button>
+                            </td>
+                            <td class="columna_tabla_btn">
+                                <button class="myButton btn" onclick="window.open('http://10.9.2.28/vicidial/welcome.php')">28</button>
+                            </td>
+                            <td class="columna_tabla_btn">
+                                <button class="myButton btn" onclick="window.open('http://10.9.2.29/vicidial/welcome.php')">29</button>
+                            </td>
+                            <td class="columna_tabla_btn">
+                                <button class="myButton btn" onclick="window.open('http://10.9.2.35/vicidial/welcome.php')">35</button>
+                            </td>
+                            <td class="columna_tabla_btn">
+                                <button class="myButton btn" onclick="window.open('http://10.9.2.36/vicidial/welcome.php')">36</button>
+                            </td>
+                        </tr>
+                        <tr>
+                                    <td class="columna_tabla_btn">
+                                        <button class="myButton btn" onclick="window.open('http://10.9.2.37/vicidial/welcome.php')">37</button> 
+                                    </td>
+                                    <td class="columna_tabla_btn">
+                                        <button class="myButton btn" onclick="window.open('http://10.9.2.38/vicidial/welcome.php')">38</button> 
+                                    </td>
+                                    <td class="columna_tabla_btn">
+                                        <button class="myButton btn" onclick="window.open('http://10.9.2.39/vicidial/welcome.php')">39</button> 
+                                    </td>
+                                    <td class="columna_tabla_btn">
+                                        <button class="myButton btn" onclick="window.open('http://10.9.2.41/vicidial/welcome.php')">41</button> 
+                                    </td>
+                                    <td class="columna_tabla_btn">
+                                        <button class="myButton btn" onclick="window.open('http://10.9.2.42/vicidial/welcome.php')">42</button> 
+                                    </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="columna_tabla_btn">
+                                        <button class="myButton btn" onclick="window.open('http://10.9.2.43/vicidial/welcome.php')">43</button>  
+                                        </td>
+                                        <td class="columna_tabla_btn">
+                                        <button class="myButton btn" onclick="window.open('http://10.9.2.44/vicidial/welcome.php')">44</button>  
+                                        </td>
+                                        <td class="columna_tabla_btn">
+                                        <button class="myButton btn" onclick="window.open('http://10.9.2.45/vicidial/welcome.php')">45</button> 
+                                        </td>
+                                        <td class="columna_tabla_btn">
+                                        <button class="myButton btn" onclick="window.open('http://10.9.2.46/vicidial/welcome.php')">46</button> 
+                                        </td>
+                                        <td class="columna_tabla_btn">
+                                        <button class="myButton btn" onclick="window.open('http://10.9.2.201/vicidial/welcome.php')">201</button> 
+                                        </td>
+                                    </tr>
+                        </tbody>
+                    </table>
             </div>
-            <div class="colores_carrier">
-                <ul id="lista1">
-                    <li class="color_carrier">
-                        <label class='bg-warning etiqueta_carrier'>DIRECTO</label>
-                    </li>
-                    <li class="color_carrier">
-                        <label class='bg-primary etiqueta_carrier'>MARCATEL</label>
-                    </li>
-                    <li class="color_carrier">
-                        <label class='bg-success etiqueta_carrier'>MCM</label>
-                    </li>
-                    <li class="color_carrier">
-                        <label class='bg-danger etiqueta_carrier'>IPCOM</label>
-                    </li>
-                    <li class="color_carrier">
-                        <label class='bg-info etiqueta_carrier'>HAZZ</label> 
-                    </li>
-                </ul>                         
-            </div>
-        </div>
-        <div class="col-md-1"></div>
-    </div>
-    <br>
-    <br>
-    <br>
-    <!--fILA DOS-->
-    <div class="row fila_dos">
-        <div class="col-md-1">
-        </div>
-        <div class="col-md-10">
-            <?php
-                include 'inventario/inventario.php';
-            ?>
-        </div>
-        <div class="col-md-1">
         </div>
     </div>
     <br>
-    <!--Fila TRES-->
-    <section class="row fila ">
-
-        <div class="col-md-1"></div>
-        <div class="col-md-10 b">
-            <h2 class="subtitulos">Consumo por día</h2>
-            <div class='spinner-grow text-success' ></div>
-            <div id="recargar_registros" class='tm-notification-items'>
-        
+    <!--fila dos-->
+    <div class="container">
+        <div class="container-fluid">
+            <div class="row fila">
+                <h2 class="subtitulos">Informacion de campañas</h2>
+                <div class='spinner-grow text-success' ></div>
+                <div id="campanias" class='tm-notification-items'>
+                    
+                </div>
             </div>
-            <script type="text/javascript">
+        </div>
+    </div>
+    <br>
+    <!--Fila tres-->
+    <div class="container">
+        <div class="container-fluid">
+            <div class="row fila">
+                <?php
+                    include 'inventario/inventario.php';
+                ?>
+            </div>
+        </div>
+    </div>
+    <br>
+    <!--fila cuatro-->
+    <div class="container">
+        <div class="container-fluid">
+            <section class="row fila">
+                    <h2 class="subtitulos">Consumo por día</h2>
+                    <div class='spinner-grow text-success' ></div>
+                    <div id="recargar_registros" class='tm-notification-items'>
                 
-            </script>
-            <a class="GeneratedLink" href="javascript:registro_x_dia('factura/agregar_registro.html')">Agregar Registro</a>
-        </div>
-        <div class="col-md-1"></div>
-    </section>
+                    </div>
+                    <a class="GeneratedLink" href="javascript:registro_x_dia('factura/agregar_registro.html')">Agregar Registro</a>
+            </section>
     <br>
     <br>
-    <!-- Fila CUATRO -->
-    <section class="row fila">
-        <div class="col-md-1">
+    <!--fila cinco -->
+    <div class="container">
+        <div class="container-fluid">
+            <section class="row fila">
+                <h2 class="subtitulos">Reactivacion de usuarios</h2>
+                <form method="POST" name="form_search_user">
+                    <table id="campaign_table" class="table table-bordered tabla_campanias">
+                        <tbody>
+                            <tr class="caja_de_texto">
+                                <td>
+                                    <input class="form-control" type="text" name="caja_texto" id="usuario" placeholder="Usuario">
+                                </td>
+                                <td>
+                                    <select class="form-control form-control-sm" id="s" name="carrier">
+                                        <!--General etiquetas por reporte-->
+                                        <?php
+                                            $servidor = array(5, 6, 8, 11, 22, 27, 28, 29, 35, 36, 37, 38, 39, 41, 42, 43, 44, 45, 46, 201);
+                                            $tamanio_array_servidor = count($servidor);
+                                            echo "<br/>";
+                                            for ($i=0; $i < $tamanio_array_servidor; $i++)
+                                            {
+                                                echo "<option>10.9.2.$servidor[$i]</option>";
+                                            }
+                                        ?>
+                                    </select>
+                                </td>
+                                <td class="columna_btn">
+                                    <input class="btn btn-danger btn-buscar-usuario" type="button" href="javascript:;" onclick="buscarUsuario($('#usuario').val(), $('#usuario_server').val());return false;" value="BUSCAR"/>
+                                </td>
+                            </tr>
+                            <tr id="resultado">
+                                <div id="ajaxBusy">
+                                    <p>
 
+                                    </p>
+                                </div>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </section>
         </div>
-
-        <div class="col-md-10 b">
-            <h2 class="subtitulos">Reactivacion de usuarios</h2>
-            <form method="POST" name="form_search_user">
-                <table id="campaign_table" class="table table-bordered tabla_campanias">
-                    <tbody>
-                        <tr class="caja_de_texto">
-                            <td>
-                                <input class="form-control" type="text" name="caja_texto" id="usuario" placeholder="Usuario">
-                            </td>
-                            <td>
-                                <select class="form-control form-control-sm" id="s" name="carrier">
-                                <!--General etiquetas por reporte-->
-                                    <?php
-                                        $servidor = array(5, 6, 8, 11, 22, 27, 28, 29, 35, 36, 37, 38, 39, 41, 42, 43, 44, 45, 46, 201);
-                                        $tamanio_array_servidor = count($servidor);
-                                        echo "<br/>";
-                                        for ($i=0; $i < $tamanio_array_servidor; $i++)
-                                        {
-                                            echo "<option>10.9.2.$servidor[$i]</option>";
-                                        }
-                                    ?>
-                                </select>
-                            </td>
-                            <td class="columna_btn">
-                                <input class="btn btn-danger btn-buscar-usuario" type="button" href="javascript:;" onclick="buscarUsuario($('#usuario').val(), $('#usuario_server').val());return false;" value="BUSCAR"/>
-                            </td>
-                        </tr>
-                        <tr id="resultado">
-                            <div id="ajaxBusy">
-                            <p>
-                                <img src="ping/ajax-loader.gif">
-                            </p>
-                            </div>
-                        </tr>
-                    </tbody>
-                </table>
-            </form>
-        </div>
-
-        <div class="col-md-1">
-
-        </div>
-
-    </section>
+    </div>
 </body>
     <!-- Recargar Div -->
     <script type="text/javascript">
