@@ -14,14 +14,15 @@
 </head>
 <body>
     <?php
-        $usuario    = "root";
-        $pass       = "@l**pbx++t3l3";
+        $usuario    = "EdgarTele";
+        $pass       = "**tele++fonia2";
         $servidor   = "10.9.2.21";
         $basededatos= "telefonia";
         $conexion = mysqli_connect( $servidor, $usuario, $pass );
         $db = mysqli_select_db( $conexion, $basededatos );
                     
         $server     =$_POST['carrier'];
+        $tipo       =$_POST['tipo'];
         $prefix     =$_POST['troncales'];
         $fe_inicio  =$_POST['fecha_inicio'];
         $fe_termino =$_POST['fecha_termino'];    
@@ -38,6 +39,19 @@
     <div class="container-fluid">
         <br>
         <div class=" container table-responsive">
+        <?php
+            switch ($tipo) {
+                case 0:
+                    echo "i es igual a 0";
+                    break;
+                case 1:
+                    echo "i es igual a 1";
+                    break;
+                case 2:
+                    echo "i es igual a 2";
+                    break;
+            }
+        ?>    
             <table class="table table-bordered">
                 <thead class="">
                     <tr class="table-success">

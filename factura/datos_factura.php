@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Datos Facturación</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/estilos_obtener_datos.css">
+    <link rel="stylesheet" href="../css/datos_conteo_factura.css">
     <link rel="shortcut icon" href="../img/factura.ico" />
     <!-- Javascript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -17,21 +17,21 @@
         {
            	$('#btn-obtener').click(function()
            	{
-                var url = "obtener_prefijos.php";
-                var carrier= $('#carrier').val();
-                var troncales = $('#troncales').val();
-                var f_inicio = $('#fecha_inicio').val();
-                var f_termino = $('#fecha_termino').val();
-                console.log(f_inicio+f_termino);
-                if(f_inicio =='')
+                var url			= "obtener_datos.php";
+                var carrier		= $('#carrier').val();
+				var tipo		= $('#tipo').val();
+                var troncales	= $('#troncales').val();
+                var f_inicio	= $('#fecha_inicio').val();
+                var f_termino	= $('#fecha_termino').val();
+                if(carrier == '')
                 {
-                    alert('hola mundo');
+                    alert('No se selecciono servidor');
 			    }
                 $.ajax(
     	        {
                     type: "POST",
                     url: url,
-                    data:{carrier:carrier, troncales:troncales, fecha_inicio:f_inicio, fecha_termino:f_termino},
+                    data:{carrier:carrier, tipo:tipo, troncales:troncales, fecha_inicio:f_inicio, fecha_termino:f_termino},
                     //beforeSend:function (){},
                     beforeSend: function ()
                     {
@@ -52,11 +52,12 @@
 		<div class="container">
 			<!-- Monto por server -->
 			<div class="row">
-				<h3>Datos para facturacion</h3>
+				<h3>Conteo por servidor</h3>
 				<table style="width: 100%;">
 					<thead>
 						<tr>
-							<th class="titulos_tabla">Reporte</th>
+							<th class="titulos_tabla">Servidor</th>
+							<th class="titulos_tabla">Tipo</th>
 							<th class="titulos_tabla">Prefijos</th>
 							<th class="titulos_tabla">Fecha de inicio</th>
 							<th class="titulos_tabla">Fecha de termino</th>
@@ -75,6 +76,20 @@
 				                for ($i=0; $i < $tamanio_array_servidor; $i++)
 				                {
 				                   	echo "<option>reporte_$servidor[$i]</option>";
+				                }
+				            ?>
+	                    </select>
+					</td>
+					<td>
+						<select class="form-control form-control-sm" id="tipo" name="tipo">
+	                        <!--General etiquetas por reporte-->
+				            <?php
+				                $tipo = array("movil","fijo","drop","buzon");
+				                $tamanio_array_tipo = count($tipo);
+				                echo "<br/>";
+				                for ($i=0; $i < $tamanio_array_tipo; $i++)
+				                {
+				                   	echo "<option>$tipo[$i]</option>";
 				                }
 				            ?>
 	                    </select>
