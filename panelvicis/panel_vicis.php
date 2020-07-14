@@ -28,10 +28,6 @@
     <div class="container-fluid">
         <div class="container">
             <h1>Servidores</h1>
-            <br>
-            <br>
-            <!-- FILA UNO -->
-            <br>
             <div class="row">
                 <div class="col">
                     <button class="myButton" onclick="window.open('http://10.9.2.5/vicidial/welcome.php')">Server
