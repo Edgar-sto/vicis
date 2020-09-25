@@ -394,7 +394,7 @@
         $(document).ready(function(){
             setInterval(
                 function(){
-                    $('#campanias').load('info_campanias/info_campanias.php');
+                    $('#campanias').load('info_campanias/info_campanias_.php');
                 },5000
             );
         });
